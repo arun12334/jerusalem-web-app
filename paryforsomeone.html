@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>New Jerusalem App</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#f5f5f5;
+    font-family:Georgia, serif;
+}
+
+ /*====================================
+HEADER
+====================================*/
+
+.prayer-header{
+
+    height:72px;
+
+    background:#ffffff;
+
+    border:1px solid #e7e7e7;
+
+    display:flex;
+
+    align-items:center;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+
+}
+
+/* Back */
+
+.back-btn{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#173d86;
+
+    font-size:32px;
+
+    text-decoration:none;
+
+}
+
+.back-btn:hover{
+
+    color:#0d2d6f;
+
+}
+
+/* Title */
+
+.page-title{
+
+    margin:0;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#173d86;
+
+    font-family:Georgia, serif;
+
+}
+
+/* Add Button */
+
+.add-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    text-decoration:none;
+
+    color:#173d86;
+
+    font-weight:600;
+
+    font-size:18px;
+
+}
+
+.add-btn i{
+
+    font-size:28px;
+
+}
+
+.add-btn:hover{
+
+    color:#0d2d6f;
+
+}
+
+@media(max-width:768px){
+
+.prayer-header{
+
+    height:60px;
+
+    padding:0 10px;
+
+}
+
+.page-title{
+
+    font-size:20px;
+
+}
+
+.add-btn span{
+
+    display:none;
+
+}
+
+.add-btn i{
+
+    font-size:24px;
+
+}
+
+.back-btn{
+
+    font-size:26px;
+
+}
+
+}
+
+
+
+/*==========================
+FOOTER
+==========================*/
+
+.footer-section{
+
+background:#16377c;
+
+padding:90px 0 40px;
+
+color:#fff;
+
+margin-top:70px;
+
+}
+
+.footer-circle{
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+border:3px solid #d7a437;
+
+margin:auto;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:40px;
+
+color:#d7a437;
+
+}
+
+.footer-title{
+
+font-size:42px;
+
+font-weight:700;
+
+}
+
+.footer-subtitle{
+
+font-size:20px;
+
+color:rgba(255,255,255,.8);
+
+}
+
+.footer-card{
+
+background:#21488f;
+
+padding:45px;
+
+border-radius:25px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+text-align:center;
+
+}
+
+.footer-card h4{
+
+font-size:32px;
+
+margin-bottom:25px;
+
+}
+
+.footer-card blockquote{
+
+font-size:26px;
+
+font-style:italic;
+
+line-height:1.6;
+
+margin-bottom:20px;
+
+}
+
+.footer-card small{
+
+font-size:18px;
+
+opacity:.8;
+
+}
+
+.footer-box{
+
+text-align:center;
+
+padding:25px;
+
+}
+
+.footer-box i{
+
+font-size:40px;
+
+color:#d7a437;
+
+margin-bottom:20px;
+
+display:block;
+
+}
+
+.footer-box h5{
+
+font-weight:700;
+
+margin-bottom:15px;
+
+}
+
+.footer-box p{
+
+color:rgba(255,255,255,.75);
+
+line-height:1.7;
+
+}
+
+.footer-divider{
+
+border-color:rgba(255,255,255,.2);
+
+margin:40px 0;
+
+}
+
+.footer-section a{
+
+color:#fff;
+
+text-decoration:none;
+
+margin:0 8px;
+
+}
+
+.footer-section a:hover{
+
+color:#d7a437;
+
+}
+
+.copyright{
+
+margin:0;
+
+color:rgba(255,255,255,.7);
+
+}
+
+@media(max-width:991px){
+
+.footer-title{
+
+font-size:34px;
+
+}
+
+.footer-card{
+
+padding:30px;
+
+}
+
+.footer-card blockquote{
+
+font-size:22px;
+
+}
+
+.footer-box{
+
+margin-bottom:30px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.footer-section{
+
+padding:60px 0 30px;
+
+}
+
+.footer-title{
+
+font-size:28px;
+
+}
+
+.footer-subtitle{
+
+font-size:16px;
+
+}
+
+.footer-card{
+
+padding:20px;
+
+}
+
+.footer-card h4{
+
+font-size:24px;
+
+}
+
+.footer-card blockquote{
+
+font-size:18px;
+
+}
+
+.footer-circle{
+
+width:70px;
+
+height:70px;
+
+font-size:30px;
+
+}
+
+}
+
+
+
+/*Common Page*/
+
+
+ 
+@media(max-width:991px){
+
+.hero-banner{
+
+    min-height:230px;
+
+}
+
+.hero-overlay{
+
+    min-height:230px;
+
+}
+
+.hero-box{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.hero-box h2{
+
+    font-size:30px;
+
+}
+
+.hero-box p{
+
+    font-size:18px;
+
+}
+
+.hero-box span{
+
+    font-size:18px;
+
+}
+
+.request-btn{
+
+    width:100%;
+
+    min-width:auto;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.hero-icon{
+
+    width:70px;
+
+    height:70px;
+
+    font-size:34px;
+
+}
+
+.request-btn{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:18px;
+
+}
+
+.request-btn h4{
+
+    font-size:24px;
+
+}
+
+.request-btn small{
+
+    font-size:15px;
+
+}
+
+.info-box{
+
+    font-size:15px;
+
+}
+
+}
+
+/*==========================================
+PAGE
+==========================================*/
+
+.prayer-page{
+
+    background:#f6f6f6;
+
+    padding:25px 0 40px;
+
+}
+
+.container-xl{
+
+    max-width:1200px;
+
+}
+
+/*==========================================
+Banner
+==========================================*/
+
+.prayer-banner{
+
+    position:relative;
+
+    height:180px;
+
+    overflow:hidden;
+
+    border-radius:0;
+
+}
+
+.banner-img{
+
+    width:100%;
+
+    height:180px;
+
+    object-fit:cover;
+
+}
+
+.banner-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.banner-content{
+
+    position:absolute;
+
+    left:55px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+}
+
+.hero-icon{
+
+    width:95px;
+
+    height:95px;
+
+    border-radius:50%;
+
+    background:#eef5ff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#0a6cc2;
+
+    font-size:50px;
+
+}
+
+.hero-text h2{
+
+    color:#173d86;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    margin-bottom:6px;
+
+}
+
+.hero-text p{
+
+    margin:0;
+
+    color:#173d86;
+
+    font-size:17px;
+
+    line-height:1.5;
+
+}
+
+.hero-text span{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#173d86;
+
+    font-weight:700;
+
+    font-style:italic;
+
+    font-size:16px;
+
+}
+
+/*==========================================
+Request Button
+==========================================*/
+
+.request-wrapper{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:-22px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.request-prayer{
+
+    width:530px;
+
+    height:76px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#173d86;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:18px;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+}
+
+.request-icon{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(255,255,255,.6);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+}
+
+.request-prayer h3{
+
+    margin:0;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.request-prayer small{
+
+    font-size:15px;
+
+}
+
+/*==========================================
+Notice
+==========================================*/
+
+.notice-box{
+
+    width:780px;
+
+    margin:18px auto 0;
+
+    background:#eef1fb;
+
+    border-radius:8px;
+
+    text-align:center;
+
+    padding:10px 15px;
+
+    color:#173d86;
+
+    font-size:16px;
+
+}
+
+.notice-box i{
+
+    margin-right:8px;
+
+}
+
+/*==========================================
+Responsive
+==========================================*/
+
+@media(max-width:991px){
+
+.banner-content{
+
+    left:20px;
+
+    right:20px;
+
+}
+
+.hero-icon{
+
+    width:70px;
+
+    height:70px;
+
+    font-size:34px;
+
+}
+
+.hero-text h2{
+
+    font-size:22px;
+
+}
+
+.hero-text p{
+
+    font-size:15px;
+
+}
+
+.request-prayer{
+
+    width:95%;
+
+}
+
+.notice-box{
+
+    width:95%;
+
+}
+
+}
+
+@media(max-width:767px){
+
+.banner-content{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.prayer-banner{
+
+    height:240px;
+
+}
+
+.banner-img{
+
+    height:240px;
+
+}
+
+.request-prayer{
+
+    height:auto;
+
+    padding:15px;
+
+    flex-direction:column;
+
+}
+
+}
+
+
+/*====================================
+Prayer List
+====================================*/
+
+.prayer-list-section{
+
+    padding-bottom:40px;
+
+}
+
+/* Tabs */
+
+.prayer-tabs{
+
+    display:flex;
+
+    align-items:center;
+
+    border-bottom:2px solid #e7e7e7;
+
+    margin-bottom:25px;
+
+}
+
+.tab{
+
+    padding:18px 28px;
+
+    color:#6d6d6d;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    position:relative;
+
+}
+
+.tab.active{
+
+    color:#16377c;
+
+}
+
+.tab.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-2px;
+
+    width:100%;
+
+    height:3px;
+
+    background:#173d86;
+
+}
+
+/* Right */
+
+.total-prayers{
+
+    color:#555;
+
+    font-size:17px;
+
+}
+
+.total-prayers strong{
+
+    font-size:30px;
+
+    color:#16377c;
+
+    margin-left:8px;
+
+}
+
+.total-prayers i{
+
+    color:#16377c;
+
+    margin-right:8px;
+
+}
+
+/* Card */
+
+.prayer-card{
+
+    background:#fff;
+
+    border:1px solid #ececec;
+
+    border-radius:16px;
+
+    padding:22px 25px;
+
+    margin-bottom:18px;
+
+    box-shadow:0 6px 15px rgba(0,0,0,.05);
+
+    transition:.3s;
+
+}
+
+.prayer-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.12);
+
+}
+
+/* Left */
+
+.request-left{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+}
+
+/* Avatar */
+
+.avatar{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    flex-shrink:0;
+
+}
+
+.blue{
+
+    background:#edf5ff;
+
+    color:#173d86;
+
+}
+
+.purple{
+
+    background:#f2ebff;
+
+    color:#7147c8;
+
+}
+
+/* Text */
+
+.request-left h4{
+
+    color:#16377c;
+
+    font-size:27px;
+
+    margin-bottom:6px;
+
+}
+
+.request-left p{
+
+    color:#444;
+
+    margin-bottom:6px;
+
+}
+
+.request-left small{
+
+    color:#8a8a8a;
+
+}
+
+/* Count */
+
+.count-box h5{
+
+    color:#16377c;
+
+    font-weight:700;
+
+    margin-bottom:4px;
+
+}
+
+.count-box small{
+
+    color:#777;
+
+}
+
+/* Button */
+
+.pray-btn{
+
+    background:#173d86;
+
+    color:#fff;
+
+    border:none;
+
+    padding:12px 28px;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.pray-btn:hover{
+
+    background:#0f2f6e;
+
+}
+
+.pray-btn i{
+
+    margin-right:10px;
+
+}
+
+
+@media(max-width:991px){
+
+.prayer-tabs{
+
+    flex-wrap:wrap;
+
+}
+
+.total-prayers{
+
+    width:100%;
+
+    margin-top:15px;
+
+}
+
+.prayer-card{
+
+    text-align:center;
+
+}
+
+.request-left{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.count-box{
+
+    margin:20px 0;
+
+}
+
+.text-end{
+
+    text-align:center!important;
+
+}
+
+.pray-btn{
+
+    width:100%;
+
+}
+
+}
+
+/*======================================
+Extra Avatar Colors
+======================================*/
+
+.avatar.green{
+
+    background:#edf8ec;
+
+    color:#4b8d5e;
+
+}
+
+.avatar.orange{
+
+    background:#fff1e8;
+
+    color:#d97745;
+
+}
+
+/*======================================
+Load More
+======================================*/
+
+.load-more-btn{
+
+    background:#173d86;
+
+    color:#fff;
+
+    border:none;
+
+    padding:15px 38px;
+
+    border-radius:40px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.load-more-btn:hover{
+
+    background:#0d2d6f;
+
+    transform:translateY(-3px);
+
+}
+
+/*======================================
+Hover
+======================================*/
+
+.prayer-card{
+
+    overflow:hidden;
+
+}
+
+.prayer-card:hover{
+
+    border-color:#d8dff0;
+
+}
+
+.prayer-card:hover .avatar{
+
+    transform:scale(1.08);
+
+}
+
+.prayer-card:hover .pray-btn{
+
+    background:#0b2f73;
+
+}
+
+.avatar{
+
+    transition:.35s;
+
+}
+
+.pray-btn{
+
+    transition:.35s;
+
+}
+
+/*======================================
+Divider
+======================================*/
+
+.prayer-card+.prayer-card{
+
+    margin-top:18px;
+
+}
+
+/*======================================
+Desktop
+======================================*/
+
+@media(min-width:992px){
+
+.request-left{
+
+    min-height:75px;
+
+}
+
+.count-box{
+
+    border-left:1px solid #ececec;
+
+    border-right:1px solid #ececec;
+
+    padding:0 20px;
+
+}
+
+}
+
+/*======================================
+Tablet
+======================================*/
+
+@media(max-width:991px){
+
+.prayer-card{
+
+    padding:25px;
+
+}
+
+.count-box{
+
+    margin:18px 0;
+
+}
+
+.load-more-btn{
+
+    width:100%;
+
+}
+
+}
+
+/*======================================
+Mobile
+======================================*/
+
+@media(max-width:576px){
+
+.prayer-card{
+
+    padding:18px;
+
+}
+
+.avatar{
+
+    width:52px;
+
+    height:52px;
+
+    font-size:20px;
+
+}
+
+.request-left h4{
+
+    font-size:22px;
+
+}
+
+.request-left p{
+
+    font-size:15px;
+
+}
+
+.request-left small{
+
+    font-size:13px;
+
+}
+
+.pray-btn{
+
+    width:100%;
+
+    font-size:16px;
+
+    padding:12px;
+
+}
+
+.load-more-btn{
+
+    font-size:16px;
+
+}
+
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+ <!--==================================
+Prayer Header
+===================================-->
+
+<header class="prayer-header">
+
+    <div class="container-fluid px-4">
+
+        <div class="row align-items-center">
+
+            <!-- Left -->
+
+            <div class="col-3">
+
+                <a href="#" class="back-btn">
+
+                    <i class="bi bi-chevron-left"></i>
+
+                </a>
+
+            </div>
+
+            <!-- Center -->
+
+            <div class="col-6 text-center">
+
+                <h1 class="page-title">
+
+                    Pray for Someone in Need
+
+                </h1>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="col-3 text-end">
+
+                <a href="#" class="add-btn">
+
+                    <i class="bi bi-plus-circle"></i>
+
+                    <span>Add Prayer Request</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+    <!-- ===========================
+PRAYER HERO SECTION
+=========================== -->
+<!-- ===========================================
+PRAYER PAGE HERO
+=========================================== -->
+
+<section class="prayer-page">
+
+    <div class="container-xl px-0">
+
+        <!-- Banner -->
+
+        <div class="prayer-banner">
+
+            <img src="assets/prayer/prayer-banner.jpg"
+                 class="banner-img">
+
+            <div class="banner-overlay"></div>
+
+            <div class="banner-content">
+
+                <div class="hero-icon">
+
+                    <i class="bi bi-person-praying"></i>
+
+                </div>
+
+                <div class="hero-text">
+
+                    <h2>
+                        Lift and receive prayers in faith.
+                    </h2>
+
+                    <p>
+                        The effectual fervent prayer of a righteous
+                        man availeth much.
+                    </p>
+
+                    <span>
+                        James 5:16
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Request Prayer -->
+
+        <div class="request-wrapper mt-5">
+
+            <button class="request-prayer">
+
+                <div class="request-icon">
+
+                    <i class="bi bi-person-praying"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>Request Prayers</h3>
+
+                    <small>
+                        For yourself, your family, or a loved one
+                    </small>
+
+                </div>
+
+            </button>
+
+        </div>
+
+        <!-- Notice -->
+
+        <div class="notice-box">
+
+            <i class="bi bi-info-circle-fill"></i>
+
+            You may have a maximum of three (3) prayer requests
+            outstanding at any point in time.
+
+        </div>
+
+    </div>
+
+</section>
+ 
+
+<!-- =====================================
+PART 2
+Prayer Tabs + Prayer List
+====================================== -->
+
+<section class="prayer-list-section">
+
+    <div class="container">
+
+        <!-- Tabs -->
+
+        <div class="prayer-tabs">
+
+            <div class="tab active">
+                Prayer Requests
+            </div>
+
+            <div class="tab">
+                My Prayers Offered
+            </div>
+
+            <div class="ms-auto total-prayers">
+
+                <i class="bi bi-heart"></i>
+
+                Total Prayers Offered
+
+                <strong>1,246</strong>
+
+            </div>
+
+        </div>
+
+        <!-- Prayer Card 1 -->
+
+        <div class="prayer-card">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-7">
+
+                    <div class="request-left">
+
+                        <div class="avatar blue">
+
+                            JM
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Healing and Strength
+                            </h4>
+
+                            <p>
+                                Please pray for my mother, Joan,
+                                who is recovering from surgery.
+                            </p>
+
+                            <small>
+
+                                Requested by Jane M.
+
+                                •
+
+                                Self
+
+                                •
+
+                                Apr 30, 2025
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-2 text-center">
+
+                    <div class="count-box">
+
+                        <h5>12 Prayers</h5>
+
+                        <small>
+
+                            offered
+
+                            <br>
+
+                            Expires May 14
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 text-end">
+
+                    <button class="pray-btn">
+
+                        <i class="bi bi-heart"></i>
+
+                        I've Prayed
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Prayer Card 2 -->
+
+        <div class="prayer-card">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-7">
+
+                    <div class="request-left">
+
+                        <div class="avatar purple">
+
+                            BR
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Wisdom in a Decision
+                            </h4>
+
+                            <p>
+                                Please pray for guidance as I
+                                consider a job change.
+                            </p>
+
+                            <small>
+
+                                Requested by Brian R.
+
+                                •
+
+                                Self
+
+                                •
+
+                                Apr 29, 2025
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-2 text-center">
+
+                    <div class="count-box">
+
+                        <h5>8 Prayers</h5>
+
+                        <small>
+
+                            offered
+
+                            <br>
+
+                            Expires May 13
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 text-end">
+
+                    <button class="pray-btn">
+
+                        <i class="bi bi-heart"></i>
+
+                        I've Prayed
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+   <!-- ==========================================
+PART 3
+Prayer Requests (3 & 4)
+===========================================-->
+
+<!-- Prayer Card 3 -->
+
+<div class="prayer-card">
+
+    <div class="row align-items-center">
+
+        <div class="col-lg-7">
+
+            <div class="request-left">
+
+                <div class="avatar green">
+
+                    AK
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        Peace and Comfort
+                    </h4>
+
+                    <p>
+                        Please pray for our family as we grieve the loss
+                        of our father.
+                    </p>
+
+                    <small>
+
+                        Requested by Anna K.
+
+                        •
+
+                        Family
+
+                        •
+
+                        Apr 28, 2025
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-2 text-center">
+
+            <div class="count-box">
+
+                <h5>24 Prayers</h5>
+
+                <small>
+
+                    offered
+
+                    <br>
+
+                    Expires May 12
+
+                </small>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 text-end">
+
+            <button class="pray-btn">
+
+                <i class="bi bi-heart"></i>
+
+                I've Prayed
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Prayer Card 4 -->
+
+<div class="prayer-card">
+
+    <div class="row align-items-center">
+
+        <div class="col-lg-7">
+
+            <div class="request-left">
+
+                <div class="avatar orange">
+
+                    TL
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        Help with Anxiety
+                    </h4>
+
+                    <p>
+                        Please pray that I can feel God's peace and
+                        overcome my anxiety.
+                    </p>
+
+                    <small>
+
+                        Requested by Thomas L.
+
+                        •
+
+                        Self
+
+                        •
+
+                        Apr 27, 2025
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-2 text-center">
+
+            <div class="count-box">
+
+                <h5>6 Prayers</h5>
+
+                <small>
+
+                    offered
+
+                    <br>
+
+                    Expires May 11
+
+                </small>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 text-end">
+
+            <button class="pray-btn">
+
+                <i class="bi bi-heart"></i>
+
+                I've Prayed
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Load More -->
+
+<div class="text-center mt-5">
+
+    <button class="load-more-btn">
+
+        Load More Prayer Requests
+
+    </button>
+
+</div>
+
+
+
+
+
+    </div>
+
+
+
+
+</section>
+
+
+
+
+ 
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer-section">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12 text-center">
+
+                <div class="footer-logo mb-4">
+
+                    <div class="footer-circle">
+                        <i class="bi bi-building"></i>
+                    </div>
+
+                </div>
+
+                <h2 class="footer-title mb-3">
+                    New Jerusalem App
+                </h2>
+
+                <p class="footer-subtitle mb-5">
+                    United in Christ • Strengthened by Faith • Gathering Zion Together
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-xl-9">
+
+                <div class="footer-card">
+
+                    <h4 class="mb-4">
+                        Articles of Faith
+                    </h4>
+
+                    <blockquote>
+
+                        "We believe in God, the Eternal Father,
+                        and in His Son, Jesus Christ,
+                        and in the Holy Ghost."
+
+                    </blockquote>
+
+                    <small>
+                        — Articles of Faith 1:1
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row mt-5">
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="footer-box">
+
+                    <i class="bi bi-book-half"></i>
+
+                    <h5>Scriptures</h5>
+
+                    <p>
+                        Read daily scripture, inspirational messages,
+                        and gospel teachings.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="footer-box">
+
+                    <i class="bi bi-people-fill"></i>
+
+                    <h5>Community</h5>
+
+                    <p>
+                        Join local groups, events,
+                        and strengthen relationships.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="footer-box">
+
+                    <i class="bi bi-heart-fill"></i>
+
+                    <h5>Serve Others</h5>
+
+                    <p>
+                        Love, serve and uplift everyone
+                        around your neighborhood.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="row">
+
+            <div class="col-lg-6">
+
+                <p class="copyright">
+
+                    © 2026 New Jerusalem App.
+                    All Rights Reserved.
+
+                </p>
+
+            </div>
+
+            <div class="col-lg-6 text-lg-end">
+
+                <a href="#">Privacy Policy</a>
+
+                <span>|</span>
+
+                <a href="#">Terms</a>
+
+                <span>|</span>
+
+                <a href="#">Contact</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
