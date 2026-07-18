@@ -132,7 +132,7 @@ HERO
 ==========================*/
 .hero-section{
     position:relative;
-    background:url("assets/home/home-header.png") center center/cover no-repeat;
+    background:url("assets/home/home-header.jpg") center center/cover no-repeat;
     min-height:650px;
     display:flex;
     align-items:center;
@@ -143,7 +143,7 @@ HERO
 /* Mobile */
 @media(max-width:768px){
 .hero-section{
-    background-image:url('assets/home/home-header-mobile.png');
+    background-image:url('assets/home/home-header-mobile.jpg');
 }
 }
 
@@ -438,251 +438,7 @@ height:60px;
 }
 
 
-
-/*==========================
-FOOTER
-==========================*/
-
-.footer-section{
-
-background:#16377c;
-
-padding:90px 0 40px;
-
-color:#fff;
-
-margin-top:70px;
-
-}
-
-.footer-circle{
-
-width:90px;
-
-height:90px;
-
-border-radius:50%;
-
-border:3px solid #d7a437;
-
-margin:auto;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:40px;
-
-color:#d7a437;
-
-}
-
-.footer-title{
-
-font-size:42px;
-
-font-weight:700;
-
-}
-
-.footer-subtitle{
-
-font-size:20px;
-
-color:rgba(255,255,255,.8);
-
-}
-
-.footer-card{
-
-background:#21488f;
-
-padding:45px;
-
-border-radius:25px;
-
-box-shadow:0 15px 40px rgba(0,0,0,.25);
-
-text-align:center;
-
-}
-
-.footer-card h4{
-
-font-size:32px;
-
-margin-bottom:25px;
-
-}
-
-.footer-card blockquote{
-
-font-size:26px;
-
-font-style:italic;
-
-line-height:1.6;
-
-margin-bottom:20px;
-
-}
-
-.footer-card small{
-
-font-size:18px;
-
-opacity:.8;
-
-}
-
-.footer-box{
-
-text-align:center;
-
-padding:25px;
-
-}
-
-.footer-box i{
-
-font-size:40px;
-
-color:#d7a437;
-
-margin-bottom:20px;
-
-display:block;
-
-}
-
-.footer-box h5{
-
-font-weight:700;
-
-margin-bottom:15px;
-
-}
-
-.footer-box p{
-
-color:rgba(255,255,255,.75);
-
-line-height:1.7;
-
-}
-
-.footer-divider{
-
-border-color:rgba(255,255,255,.2);
-
-margin:40px 0;
-
-}
-
-.footer-section a{
-
-color:#fff;
-
-text-decoration:none;
-
-margin:0 8px;
-
-}
-
-.footer-section a:hover{
-
-color:#d7a437;
-
-}
-
-.copyright{
-
-margin:0;
-
-color:rgba(255,255,255,.7);
-
-}
-
-@media(max-width:991px){
-
-.footer-title{
-
-font-size:34px;
-
-}
-
-.footer-card{
-
-padding:30px;
-
-}
-
-.footer-card blockquote{
-
-font-size:22px;
-
-}
-
-.footer-box{
-
-margin-bottom:30px;
-
-}
-
-}
-
-@media(max-width:576px){
-
-.footer-section{
-
-padding:60px 0 30px;
-
-}
-
-.footer-title{
-
-font-size:28px;
-
-}
-
-.footer-subtitle{
-
-font-size:16px;
-
-}
-
-.footer-card{
-
-padding:20px;
-
-}
-
-.footer-card h4{
-
-font-size:24px;
-
-}
-
-.footer-card blockquote{
-
-font-size:18px;
-
-}
-
-.footer-circle{
-
-width:70px;
-
-height:70px;
-
-font-size:30px;
-
-}
-
-}
-
+ 
 
 
 /* Desktop */
@@ -808,6 +564,129 @@ body{
 
 }
 
+
+/*=========================
+COMPACT FOOTER
+=========================*/
+
+.mini-footer{
+
+    background:#0d2d68;
+
+    padding:18px 0;
+
+    color:#fff;
+
+}
+
+.footer-temple{
+
+    width:150px;
+
+}
+
+.footer-quote{
+
+    margin:0;
+
+    font-size:20px;
+
+    font-style:italic;
+
+    font-weight:600;
+
+}
+
+.mini-footer h5{
+
+    color:#d7a437;
+
+    margin-top:8px;
+
+    margin-bottom:0;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+.mini-footer hr{
+
+    border-color:#c99832;
+
+    opacity:.5;
+
+    margin:18px 0;
+
+}
+
+.scripture-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:28px;
+
+}
+
+.scripture-links a{
+
+    color:#d7a437;
+
+    text-decoration:none;
+
+    font-size:26px;
+
+    font-weight:600;
+
+}
+
+.scripture-links a:hover{
+
+    color:#fff;
+
+}
+
+
+@media(max-width:768px){
+
+.footer-temple{
+
+    width:110px;
+
+    margin-bottom:15px;
+
+}
+
+.footer-quote{
+
+    font-size:14px;
+
+}
+
+.mini-footer h5{
+
+    font-size:20px;
+
+}
+
+.scripture-links{
+
+    gap:12px;
+
+}
+
+.scripture-links a{
+
+    font-size:14px;
+
+}
+
+}
 
 
 
@@ -1093,7 +972,7 @@ body{
 
             </div>
 
-            <img src="assets/img/cards/card1.jpg"
+            <img src="assets\home\home-loving.jpg"
                  class="card-img-top px-3"
                  style="height:220px;object-fit:cover;border-radius:18px;">
 
@@ -1145,7 +1024,7 @@ body{
 
             </div>
 
-            <img src="assets/img/cards/card2.jpg"
+            <img src="assets\home\home-sharing.jpg"
                  class="card-img-top px-3"
                  style="height:220px;object-fit:cover;border-radius:18px;">
 
@@ -1197,7 +1076,7 @@ body{
 
             </div>
 
-            <img src="assets/img/cards/card3.jpg"
+            <img src="assets\home\home-invitaion.jpg"
                  class="card-img-top px-3"
                  style="height:220px;object-fit:cover;border-radius:18px;">
 
@@ -1258,7 +1137,7 @@ body{
 
                     </div>
 
-                    <img src="assets/img/cards/card4.jpg"
+                    <img src="assets\home\home-unity.jpg"
                         class="card-img-top px-3"
                         style="height:220px;object-fit:cover;border-radius:18px;">
 
@@ -1301,7 +1180,7 @@ body{
 
                     </div>
 
-                    <img src="assets/img/cards/card5.jpg"
+                    <img src="assets\home\home-worshping.jpg"
                         class="card-img-top px-3"
                         style="height:220px;object-fit:cover;border-radius:18px;">
 
@@ -1345,7 +1224,7 @@ body{
 
                     </div>
 
-                    <img src="assets/img/cards/card6.jpg"
+                    <img src="assets\home\home-neighborhood.jpg"
                         class="card-img-top px-3"
                         style="height:220px;object-fit:cover;border-radius:18px;">
 
@@ -1569,7 +1448,7 @@ body{
 
                         <div class="d-flex">
 
-                            <img src="assets/img/jesus.png"
+                            <img src="assets/home/home-jesues.jpg"
                                 width="90"
                                 height="90"
                                 class="rounded-circle me-3"
@@ -1720,152 +1599,67 @@ body{
 
 <!-- ================= FOOTER ================= -->
 
-<footer class="footer-section">
+<footer class="mini-footer">
 
-    <div class="container">
+    <div class="container-fluid">
 
-        <div class="row">
+        <!-- Top Row -->
 
-            <div class="col-lg-12 text-center">
+        <div class="row align-items-center">
 
-                <div class="footer-logo mb-4">
+            <div class="col-lg-2 text-center">
 
-                    <div class="footer-circle">
-                        <i class="bi bi-building"></i>
-                    </div>
-
-                </div>
-
-                <h2 class="footer-title mb-3">
-                    New Jerusalem App
-                </h2>
-
-                <p class="footer-subtitle mb-5">
-                    United in Christ • Strengthened by Faith • Gathering Zion Together
-                </p>
+                <img src="assets/home/home-footer.jpg"
+                     class="footer-temple"
+                     alt="Temple">
 
             </div>
 
-        </div>
+            <div class="col-lg-10 text-center">
 
-        <div class="row justify-content-center">
+                <p class="footer-quote">
 
-            <div class="col-xl-9">
-
-                <div class="footer-card">
-
-                    <h4 class="mb-4">
-                        Articles of Faith
-                    </h4>
-
-                    <blockquote>
-
-                        "We believe in God, the Eternal Father,
-                        and in His Son, Jesus Christ,
-                        and in the Holy Ghost."
-
-                    </blockquote>
-
-                    <small>
-                        — Articles of Faith 1:1
-                    </small>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="row mt-5">
-
-            <div class="col-lg-4 mb-4">
-
-                <div class="footer-box">
-
-                    <i class="bi bi-book-half"></i>
-
-                    <h5>Scriptures</h5>
-
-                    <p>
-                        Read daily scripture, inspirational messages,
-                        and gospel teachings.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-4 mb-4">
-
-                <div class="footer-box">
-
-                    <i class="bi bi-people-fill"></i>
-
-                    <h5>Community</h5>
-
-                    <p>
-                        Join local groups, events,
-                        and strengthen relationships.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-4 mb-4">
-
-                <div class="footer-box">
-
-                    <i class="bi bi-heart-fill"></i>
-
-                    <h5>Serve Others</h5>
-
-                    <p>
-                        Love, serve and uplift everyone
-                        around your neighborhood.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <hr class="footer-divider">
-
-        <div class="row">
-
-            <div class="col-lg-6">
-
-                <p class="copyright">
-
-                    © 2026 New Jerusalem App.
-                    All Rights Reserved.
+                    "We believe in being honest, true, chaste,
+                    benevolent, virtuous, and in doing good
+                    to all men."
 
                 </p>
 
-            </div>
+                <h5>
 
-            <div class="col-lg-6 text-lg-end">
+                    Articles of Faith 1:13
 
-                <a href="#">Privacy Policy</a>
-
-                <span>|</span>
-
-                <a href="#">Terms</a>
-
-                <span>|</span>
-
-                <a href="#">Contact</a>
+                </h5>
 
             </div>
+
+        </div>
+
+        <hr>
+
+        <!-- Scripture Links -->
+
+        <div class="scripture-links">
+
+            <a href="#">1 Timothy 6:15</a>
+
+            <a href="#">Revelation 17:14</a>
+
+            <a href="#">Revelation 19:16</a>
+
+            <a href="#">Revelation 22:20</a>
+
+            <a href="#">Isaiah 64:1</a>
+
+            <a href="#">D&C 133:40</a>
+
+            <a href="#">Matthew 6:10</a>
 
         </div>
 
     </div>
 
 </footer>
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
