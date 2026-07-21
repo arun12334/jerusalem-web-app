@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Authentication & Security</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    background:#f5f5f5;
+    font-family:Georgia, serif;
+}
+
+/*==========================
+HEADER
+===========================*/
+
+.header{
+    background:#fff;
+/*    border-radius:20px 20px 0 0;*/
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo-circle{
+
+    width:62px;
+    height:62px;
+    border-radius:50%;
+    border:2px solid #d99c21;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#d99c21;
+    font-size:26px;
+    margin-right:12px;
+
+}
+
+.logo h3{
+    margin:0;
+    color:#16377c;
+    font-weight:700;
+    font-size:20px;
+}
+
+.logo small{
+    color:#666;
+}
+
+/*=========================
+NAVIGATION
+==========================*/
+
+.nav-menu{
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    gap:38px;
+}
+
+.nav-item-custom{
+
+    text-align:center;
+    text-decoration:none;
+    color:#16377c;
+    transition:.3s;
+    font-size:14px;
+}
+
+.nav-item-custom i{
+
+    display:block;
+    font-size:23px;
+    margin-bottom:8px;
+
+}
+
+.nav-item-custom:hover{
+
+color:#d89d21;
+
+}
+
+.active-nav{
+
+position:relative;
+color:#16377c;
+font-weight:700;
+
+}
+
+.active-nav::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+right:0;
+
+bottom:-16px;
+
+height:4px;
+
+background:#d89d21;
+
+border-radius:20px;
+
+}
+
+ 
+
+/*==========================
+FOOTER
+==========================*/
+
+.footer-section{
+
+background:#16377c;
+
+padding:90px 0 40px;
+
+color:#fff;
+
+margin-top:70px;
+
+}
+
+.footer-circle{
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+border:3px solid #d7a437;
+
+margin:auto;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:40px;
+
+color:#d7a437;
+
+}
+
+.footer-title{
+
+font-size:42px;
+
+font-weight:700;
+
+}
+
+.footer-subtitle{
+
+font-size:20px;
+
+color:rgba(255,255,255,.8);
+
+}
+
+.footer-card{
+
+background:#21488f;
+
+padding:45px;
+
+border-radius:25px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+text-align:center;
+
+}
+
+.footer-card h4{
+
+font-size:32px;
+
+margin-bottom:25px;
+
+}
+
+.footer-card blockquote{
+
+font-size:26px;
+
+font-style:italic;
+
+line-height:1.6;
+
+margin-bottom:20px;
+
+}
+
+.footer-card small{
+
+font-size:18px;
+
+opacity:.8;
+
+}
+
+.footer-box{
+
+text-align:center;
+
+padding:25px;
+
+}
+
+.footer-box i{
+
+font-size:40px;
+
+color:#d7a437;
+
+margin-bottom:20px;
+
+display:block;
+
+}
+
+.footer-box h5{
+
+font-weight:700;
+
+margin-bottom:15px;
+
+}
+
+.footer-box p{
+
+color:rgba(255,255,255,.75);
+
+line-height:1.7;
+
+}
+
+.footer-divider{
+
+border-color:rgba(255,255,255,.2);
+
+margin:40px 0;
+
+}
+
+.footer-section a{
+
+color:#fff;
+
+text-decoration:none;
+
+margin:0 8px;
+
+}
+
+.footer-section a:hover{
+
+color:#d7a437;
+
+}
+
+.copyright{
+
+margin:0;
+
+color:rgba(255,255,255,.7);
+
+}
+
+@media(max-width:991px){
+
+.footer-title{
+
+font-size:34px;
+
+}
+
+.footer-card{
+
+padding:30px;
+
+}
+
+.footer-card blockquote{
+
+font-size:22px;
+
+}
+
+.footer-box{
+
+margin-bottom:30px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.footer-section{
+
+padding:60px 0 30px;
+
+}
+
+.footer-title{
+
+font-size:28px;
+
+}
+
+.footer-subtitle{
+
+font-size:16px;
+
+}
+
+.footer-card{
+
+padding:20px;
+
+}
+
+.footer-card h4{
+
+font-size:24px;
+
+}
+
+.footer-card blockquote{
+
+font-size:18px;
+
+}
+
+.footer-circle{
+
+width:70px;
+
+height:70px;
+
+font-size:30px;
+
+}
+
+}
+
+
+
+/* Desktop */
+
+.desktop-header{
+    display:block;
+}
+
+/* Mobile */
+
+@media (max-width:991px){
+
+.desktop-header{
+    display:none;
+}
+
+body{
+    padding-top:65px;
+}
+
+.offcanvas{
+    width:320px;
+}
+
+.offcanvas-header{
+    background:#17346f;
+    color:#fff;
+}
+
+.offcanvas-title{
+    font-weight:700;
+}
+
+.offcanvas-body{
+    padding:20px;
+}
+
+.mobile-menu-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-radius:16px;
+    background:#fff;
+    text-decoration:none;
+    margin-bottom:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.mobile-menu-item:hover{
+    transform:translateX(6px);
+    background:#17346f;
+}
+
+.mobile-menu-item:hover h6,
+.mobile-menu-item:hover small{
+    color:#fff;
+}
+
+.mobile-menu-item:hover .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+.menu-icon{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    background:#edf3ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    color:#17346f;
+    transition:.3s;
+}
+
+.mobile-menu-item h6{
+    margin:0;
+    color:#17346f;
+    font-weight:700;
+}
+
+.mobile-menu-item small{
+    color:#777;
+}
+
+.mobile-menu-item.active{
+    background:#17346f;
+}
+
+.mobile-menu-item.active h6,
+.mobile-menu-item.active small{
+    color:#fff;
+}
+
+.mobile-menu-item.active .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+}
+
+
+@media(max-width:991px){
+
+.footer-menu{
+    display:none;
+}
+
+.mobile-header{
+    display:block;
+}
+
+}
+
+@media(min-width:992px){
+
+.mobile-header{
+    display:none;
+}
+
+}
+
+
+/*Common Page*/
+
+
+
+</style>
+
+<style>
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#faf9f6;
+    color:#2b2b2b;
+}
+
+a{
+    text-decoration:none;
+}
+
+/*==============================
+        NAVBAR
+===============================*/
+
+.navbar{
+    background:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+    padding:14px 0;
+}
+
+.brand-logo{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:linear-gradient(#f8d87a,#d58a12);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:28px;
+}
+
+.brand-title{
+    font-size:32px;
+    font-family:'Playfair Display',serif;
+    color:#143f8a;
+    font-weight:700;
+    line-height:1;
+}
+
+.brand-sub{
+    color:#c18b20;
+    font-size:14px;
+}
+
+.nav-item{
+    text-align:center;
+    margin:0 10px;
+}
+
+.nav-link{
+    color:#173f89 !important;
+    font-size:15px;
+    font-weight:600;
+}
+
+.nav-link i{
+    display:block;
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.active-menu{
+    color:#c48a12 !important;
+    position:relative;
+}
+
+.active-menu::after{
+    content:'';
+    width:100%;
+    height:4px;
+    background:#c48a12;
+    position:absolute;
+    bottom:-18px;
+    left:0;
+    border-radius:30px;
+}
+
+/*==============================
+        HERO
+===============================*/
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    background:url("https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1600")
+    center center/cover;
+    min-height:560px;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to right,
+    rgba(255,250,240,.95),
+    rgba(255,250,240,.55),
+    rgba(255,250,240,.05));
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:90px 0;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:64px;
+    font-weight:700;
+    color:#1c1b1b;
+}
+
+.hero h2{
+    color:#2d6d42;
+    font-size:44px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:520px;
+    line-height:1.8;
+    font-size:18px;
+}
+
+/*==============================
+      SAFETY CARD
+===============================*/
+
+.safety-card{
+    position:absolute;
+    right:80px;
+    bottom:70px;
+    background:#fff;
+    border-radius:22px;
+    padding:28px;
+    width:290px;
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+    z-index:5;
+}
+
+.safety-card i{
+    color:#c7921b;
+    font-size:42px;
+}
+
+.safety-card h5{
+    font-weight:700;
+    margin-top:10px;
+}
+
+.safe-badge{
+    margin-top:15px;
+    color:#2f8748;
+    font-weight:600;
+}
+
+/*==============================
+      RESPONSIVE
+===============================*/
+
+@media(max-width:991px){
+
+.brand-title{
+    font-size:25px;
+}
+
+.hero{
+    min-height:auto;
+}
+
+.hero-content{
+    padding:70px 0;
+}
+
+.hero h1{
+    font-size:46px;
+}
+
+.hero h2{
+    font-size:30px;
+}
+
+.safety-card{
+    position:relative;
+    right:auto;
+    bottom:auto;
+    margin-top:40px;
+    width:100%;
+}
+
+}
+
+/* ===============================
+   Hero Mobile Responsive
+================================ */
+
+@media (max-width:768px){
+
+.hero{
+
+    min-height:380px;
+    background-position:center center;
+    background-size:cover;
+}
+
+.hero::before{
+
+    background:linear-gradient(
+        to right,
+        rgba(255,250,240,.95) 0%,
+        rgba(255,250,240,.70) 45%,
+        rgba(255,250,240,.25) 100%
+    );
+
+}
+
+.hero-content{
+
+    padding:45px 20px;
+    display:flex;
+    align-items:center;
+    min-height:380px;
+
+}
+
+.hero h1{
+
+    font-size:34px;
+    line-height:1.15;
+    margin-bottom:10px;
+
+}
+
+.hero h2{
+
+    font-size:22px;
+    line-height:1.3;
+    margin-bottom:15px;
+
+}
+
+.hero p{
+
+    font-size:16px;
+    line-height:1.7;
+    max-width:100%;
+
+}
+
+.safety-card{
+
+    position:static;
+    width:100%;
+    margin-top:25px;
+    padding:20px;
+
+}
+
+}
+</style>
+
+
+<style>
+
+/*==============================
+     FEATURE STRIP
+===============================*/
+
+.feature-strip{
+    margin-top:-40px;
+    position:relative;
+    z-index:20;
+}
+
+.feature-box{
+    background:#fff;
+    border:1px solid #ececec;
+    padding:28px;
+    height:100%;
+    transition:.3s;
+}
+
+.feature-box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+}
+
+.feature-icon{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.green{
+    color:#2c6d44;
+}
+
+.blue{
+    color:#234a97;
+}
+
+.feature-box h5{
+    font-family:'Playfair Display',serif;
+    font-size:28px;
+    color:#1b2d6b;
+}
+
+.feature-box p{
+    margin:0;
+    color:#555;
+    line-height:1.7;
+}
+
+
+/*==============================
+      SECURITY CARDS
+===============================*/
+
+.security-section{
+    padding:70px 0;
+}
+
+.security-card{
+    background:#fff;
+    border-radius:18px;
+    padding:30px;
+    border:1px solid #e8e8e8;
+    height:100%;
+    transition:.35s;
+}
+
+.security-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+}
+
+.security-icon{
+    font-size:65px;
+    margin-bottom:20px;
+}
+
+.green-icon{
+    color:#2b5e34;
+}
+
+.blue-icon{
+    color:#1d3d91;
+}
+
+.gold-icon{
+    color:#be8510;
+}
+
+.security-card h3{
+    font-family:'Playfair Display',serif;
+    color:#22386d;
+    margin-bottom:15px;
+}
+
+.security-card p{
+    color:#666;
+}
+
+.security-list{
+    list-style:none;
+    padding:0;
+    margin:25px 0;
+}
+
+.security-list li{
+    margin-bottom:18px;
+    display:flex;
+    align-items:flex-start;
+}
+
+.security-list i{
+    margin-right:12px;
+    margin-top:3px;
+    font-size:18px;
+}
+
+.check-green{
+    color:#2f7d46;
+}
+
+.check-blue{
+    color:#1f4fa7;
+}
+
+.check-gold{
+    color:#c18a15;
+}
+
+.security-btn{
+    border:none;
+    padding:12px 28px;
+    border-radius:8px;
+    color:#fff;
+    font-weight:600;
+}
+
+.btn-green{
+    background:#2d5d35;
+}
+
+.btn-blue{
+    background:#214897;
+}
+
+.btn-gold{
+    background:#c28712;
+}
+
+.btn-green:hover,
+.btn-blue:hover,
+.btn-gold:hover{
+    opacity:.9;
+}
+
+@media(max-width:991px){
+
+.feature-strip{
+    margin-top:30px;
+}
+
+.security-card{
+    margin-bottom:25px;
+}
+
+}
+
+</style>
+<!-- =====================================================
+        ADDITIONAL SECURITY TOOLS
+====================================================== -->
+
+<style>
+
+.additional-tools{
+    padding:20px 0 70px;
+}
+
+.tools-wrapper{
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.tools-left{
+    padding:40px;
+}
+
+.tools-left h3{
+    font-family:'Playfair Display',serif;
+    color:#203b77;
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.tools-left p{
+    color:#666;
+    margin-bottom:35px;
+}
+
+.tool-item{
+    text-align:center;
+    padding:15px;
+}
+
+.tool-item i{
+    font-size:42px;
+    color:#204593;
+    margin-bottom:15px;
+}
+
+.tool-item h5{
+    font-size:18px;
+    color:#22386d;
+    font-weight:600;
+}
+
+.tool-item span{
+    display:block;
+    color:#666;
+    font-size:15px;
+    line-height:1.6;
+}
+
+
+/*==============================
+       SUPPORT CARD
+===============================*/
+
+.support-card{
+
+    height:100%;
+    background:url("https://images.unsplash.com/photo-1573496799515-eebbb63814f2?q=80&w=900")
+    center center/cover;
+
+    position:relative;
+}
+
+.support-card::before{
+
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,.82);
+
+}
+
+.support-content{
+
+    position:relative;
+    z-index:2;
+    padding:45px;
+
+}
+
+.support-content h2{
+
+    font-family:'Playfair Display',serif;
+    color:#203b77;
+
+}
+
+.support-content p{
+
+    color:#666;
+    margin:20px 0;
+
+}
+
+.support-btn{
+
+    background:#c78a12;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    padding:12px 28px;
+    font-weight:600;
+
+}
+
+.support-btn:hover{
+
+    background:#b97b08;
+
+}
+
+
+/*==============================
+      BIBLE QUOTE
+===============================*/
+
+.quote-bar{
+
+    background:linear-gradient(90deg,#173d27,#2b5c39,#173d27);
+    color:#fff;
+    padding:22px;
+    text-align:center;
+    border-radius:0 0 15px 15px;
+
+}
+
+.quote-bar p{
+
+    margin:0;
+    font-size:24px;
+    font-family:'Playfair Display',serif;
+
+}
+
+.quote-bar small{
+
+    color:#d8c48d;
+
+}
+
+@media(max-width:991px){
+
+.support-card{
+
+    min-height:350px;
+
+}
+
+}
+
+/* ============================
+   Tablet
+============================ */
+
+@media (max-width: 991px){
+
+.security-list li{
+    gap:10px;
+    margin-bottom:16px;
+}
+
+.security-list li strong{
+    font-size:15px;
+}
+
+.security-list li div{
+    font-size:13px;
+}
+
+}
+
+/* ============================
+   Mobile
+============================ */
+
+@media (max-width: 576px){
+
+.security-list{
+    margin:20px 0;
+}
+
+.security-list li{
+    gap:8px;
+    margin-bottom:14px;
+}
+
+.security-list li i{
+    font-size:16px;
+}
+
+.security-list li strong{
+    font-size:14px;
+}
+
+.security-list li div{
+    font-size:13px;
+    line-height:1.4;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+ <header class="header d-none d-lg-block">
+  <div class="container py-3">
+    <div class="row align-items-center">
+
+      <div class="col-lg-3">
+        <div class="logo">
+          <div class="logo-circle">
+            <i class="bi bi-building"></i>
+          </div>
+
+          <div>
+            <h3>Hastening App</h3>
+            <small>Hasten the Gathering and Unity in Zion</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="nav-menu">
+
+        <a href="index.html" class="nav-item-custom ">
+    <i class="bi bi-house-fill"></i>
+    Home<br>
+    <span class="invisible">.</span>
+</a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-heart"></i>
+            Loving<br>Our Neighbor
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-book"></i>
+            Sharing Our<br>Faith in Christ
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-people-fill"></i>
+            Invitation<br>to Unity
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-droplet-fill"></i>
+            Does Unity<br>Require Baptism?
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-music-note-beamed"></i>
+            Worshiping Christ<br>through Music
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-calendar-event"></i>
+            Neighborhood<br>B&amp;B Events
+          </a>
+
+          <a href="#" class="nav-item-custom active-nav">
+            <i class="bi bi-shield-check"></i>
+            Security<br>&amp; More
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Header -->
+<nav class="navbar navbar-dark  d-lg-none fixed-top" style="background-color: #16377c !important;">
+
+    <div class="container-fluid">
+        <span class="navbar-brand fw-bold">
+            Hastening
+        </span>
+
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+      
+    </div>
+
+</nav>
+
+<!-- Mobile Menu -->
+<div class="offcanvas offcanvas-start"
+     tabindex="-1"
+     id="mobileMenu">
+
+    <div class="offcanvas-header">
+
+        <h5 class="offcanvas-title">
+            Menu
+        </h5>
+
+        <button class="btn-close"
+                data-bs-dismiss="offcanvas">
+        </button>
+
+    </div>
+
+<div class="offcanvas-body bg-light">
+
+    <a href="index.html" class="mobile-menu-item ">
+        <div class="menu-icon">
+            <i class="bi bi-house-fill"></i>
+        </div>
+        <div>
+            <h6>Home</h6>
+            <small>Dashboard</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-heart"></i>
+        </div>
+        <div>
+            <h6>Loving Our Neighbor</h6>
+            <small>Serve with love</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-book"></i>
+        </div>
+        <div>
+            <h6>Sharing Our Faith</h6>
+            <small>Read Scriptures</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-people-fill"></i>
+        </div>
+        <div>
+            <h6>Invitation to Unity</h6>
+            <small>Invite Friends</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-droplet-fill"></i>
+        </div>
+        <div>
+            <h6>Baptism</h6>
+            <small>Learn More</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-music-note-beamed"></i>
+        </div>
+        <div>
+            <h6>Music</h6>
+            <small>Worship Songs</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-calendar-event"></i>
+        </div>
+        <div>
+            <h6>Events</h6>
+            <small>Upcoming Meetings</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item active">
+        <div class="menu-icon">
+            <i class="bi bi-shield-check"></i>
+        </div>
+        <div>
+            <h6>Security</h6>
+            <small>Account Safety</small>
+        </div>
+    </a>
+
+</div>
+
+</div>
+
+<!-- ===================================
+            HERO
+==================================== -->
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6">
+
+<h1>
+Authentication &
+Security
+</h1>
+
+<h2>
+Protecting Faith and Community in Christ.
+</h2>
+
+<p>
+
+We are committed to providing a safe,
+trusted and secure space for gathering,
+sharing and growing together in Christ.
+
+</p>
+
+</div>
+
+<div class="col-lg-6">
+
+</div>
+
+</div>
+
+<div class="safety-card">
+
+<i class="bi bi-shield-check"></i>
+
+<h5>
+Your Safety.<br>
+Our Priority.
+</h5>
+
+<div class="safe-badge">
+<i class="bi bi-check-circle-fill"></i>
+Protected in Christ
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- Feature Strip -->
+
+<section class="feature-strip">
+
+<div class="container">
+
+<div class="row g-0 shadow rounded overflow-hidden bg-white">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="feature-box">
+
+<div class="feature-icon green">
+<i class="bi bi-shield-lock"></i>
+</div>
+
+<h5>Faith-Aligned Security</h5>
+
+<p>
+Built on values of trust,
+respect and Christlike love.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="feature-box">
+
+<div class="feature-icon blue">
+<i class="bi bi-people"></i>
+</div>
+
+<h5>Community Protection</h5>
+
+<p>
+Tools that help keep
+our community safe
+and welcoming.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="feature-box">
+
+<div class="feature-icon blue">
+<i class="bi bi-lock"></i>
+</div>
+
+<h5>Privacy by Design</h5>
+
+<p>
+Your data stays protected
+and never shared
+without consent.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="feature-box">
+
+<div class="feature-icon green">
+<i class="bi bi-check-circle"></i>
+</div>
+
+<h5>Transparency First</h5>
+
+<p>
+Clear policies,
+honest practices
+and openness.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+        SECURITY CARDS
+========================================== -->
+
+<section class="security-section">
+
+<div class="container">
+
+<div class="row g-4">
+
+
+<!-- Card 1 -->
+
+<div class="col-lg-3 col-md-6">
+
+<div class="security-card">
+
+<div class="security-icon green-icon">
+<i class="bi bi-person-badge-fill"></i>
+</div>
+
+<h3>Account Verification</h3>
+
+<p>
+Build trust through verified
+identities and reliable members.
+</p>
+
+<ul class="security-list">
+
+<li>
+<i class="bi bi-check-circle-fill check-green"></i>
+<div>
+<strong>Email Verification</strong><br>
+Confirm your email address
+</div>
+</li>
+
+<li>
+<i class="bi bi-check-circle-fill check-green"></i>
+<div>
+<strong>Phone Verification</strong><br>
+Verify your phone number
+</div>
+</li>
+
+<li>
+<i class="bi bi-check-circle-fill check-green"></i>
+<div>
+<strong>Trusted Member Badge</strong><br>
+Earn a trusted badge
+</div>
+</li>
+
+<li>
+<i class="bi bi-check-circle-fill check-green"></i>
+<div>
+<strong>Identity Confirmation</strong><br>
+Optional for leaders
+</div>
+</li>
+
+</ul>
+
+<button class="security-btn btn-green w-100">
+Verify My Account
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- Card 2 -->
+
+<div class="col-lg-3 col-md-6">
+
+<div class="security-card">
+
+<div class="security-icon blue-icon">
+<i class="bi bi-people-fill"></i>
+</div>
+
+<h3>Youth Safety & Privacy</h3>
+
+<p>
+Protect youth and encourage
+healthy online interactions.
+</p>
+
+<ul class="security-list">
+
+<li><i class="bi bi-check-circle-fill check-blue"></i>
+<div><strong>Parental Controls</strong><br>Manage account settings</div></li>
+
+<li><i class="bi bi-check-circle-fill check-blue"></i>
+<div><strong>Safe Interaction</strong><br>Filter harmful content</div></li>
+
+<li><i class="bi bi-check-circle-fill check-blue"></i>
+<div><strong>Content Guidelines</strong><br>Faith based standards</div></li>
+
+<li><i class="bi bi-check-circle-fill check-blue"></i>
+<div><strong>Report & Support</strong><br>Report concerns safely</div></li>
+
+</ul>
+
+<button class="security-btn btn-blue w-100">
+Manage Youth Settings
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- Card 3 -->
+
+<div class="col-lg-3 col-md-6">
+
+<div class="security-card">
+
+<div class="security-icon gold-icon">
+<i class="bi bi-people-fill"></i>
+</div>
+
+<h3>Community Trust Indicators</h3>
+
+<p>
+Know who you're connecting with.
+</p>
+
+<ul class="security-list">
+
+<li><i class="bi bi-check-circle-fill check-gold"></i>
+<div><strong>Verified Members</strong><br>Trusted badge holders</div></li>
+
+<li><i class="bi bi-check-circle-fill check-gold"></i>
+<div><strong>Verified Hosts</strong><br>Background checked</div></li>
+
+<li><i class="bi bi-check-circle-fill check-gold"></i>
+<div><strong>Group Integrity</strong><br>Trusted by leaders</div></li>
+
+<li><i class="bi bi-check-circle-fill check-gold"></i>
+<div><strong>Activity & Reputation</strong><br>Positive participation</div></li>
+
+</ul>
+
+<button class="security-btn btn-gold w-100">
+Learn About Trust
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- Card 4 -->
+
+<div class="col-lg-3 col-md-6">
+
+<div class="security-card">
+
+<div class="security-icon green-icon">
+<i class="bi bi-lock-fill"></i>
+</div>
+
+<h3>Secure Sign-In & Recovery</h3>
+
+<p>
+Keep your account secure
+and accessible.
+</p>
+
+<ul class="security-list">
+
+<li><i class="bi bi-check-circle-fill check-green"></i>
+<div><strong>Two-Factor Authentication</strong><br>Add an extra layer</div></li>
+
+<li><i class="bi bi-check-circle-fill check-green"></i>
+<div><strong>Strong Passwords</strong><br>Create secure passwords</div></li>
+
+<li><i class="bi bi-check-circle-fill check-green"></i>
+<div><strong>Account Recovery</strong><br>Recover access quickly</div></li>
+
+<li><i class="bi bi-check-circle-fill check-green"></i>
+<div><strong>Device Management</strong><br>Manage active devices</div></li>
+
+</ul>
+
+<button class="security-btn btn-green w-100">
+Security Settings
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<section class="additional-tools">
+
+<div class="container">
+
+<div class="tools-wrapper">
+
+<div class="row g-0">
+
+<!-- LEFT -->
+
+<div class="col-lg-8">
+
+<div class="tools-left">
+
+<h3>Additional Security Tools</h3>
+
+<p>
+More ways we help keep you and our community safe.
+</p>
+
+<div class="row text-center">
+
+<div class="col-6 col-md-3">
+
+<div class="tool-item">
+
+<i class="bi bi-bell"></i>
+
+<h5>Login Alerts</h5>
+
+<span>
+Get notified of new sign-ins.
+</span>
+
+</div>
+
+</div>
+
+<div class="col-6 col-md-3">
+
+<div class="tool-item">
+
+<i class="bi bi-display"></i>
+
+<h5>Session Management</h5>
+
+<span>
+Manage active sessions.
+</span>
+
+</div>
+
+</div>
+
+<div class="col-6 col-md-3">
+
+<div class="tool-item">
+
+<i class="bi bi-shield-lock"></i>
+
+<h5>Privacy Center</h5>
+
+<span>
+Control your data and privacy.
+</span>
+
+</div>
+
+</div>
+
+<div class="col-6 col-md-3">
+
+<div class="tool-item">
+
+<i class="bi bi-life-preserver"></i>
+
+<h5>Help & Support</h5>
+
+<span>
+Support whenever you need.
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="col-lg-4">
+
+<div class="support-card">
+
+<div class="support-content">
+
+<h2>Need Help?</h2>
+
+<p>
+
+Our support team is here
+to help you anytime.
+
+</p>
+
+<button class="support-btn">
+
+Contact Support
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- QUOTE -->
+
+<div class="quote-bar">
+
+<p>
+
+"The Lord is my light and my salvation; whom shall I fear?"
+
+<small> — Psalm 27:1</small>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
