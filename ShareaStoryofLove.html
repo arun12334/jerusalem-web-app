@@ -1,0 +1,4474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Hastening App</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#f5f5f5;
+    font-family:Georgia, serif;
+}
+
+/*==========================
+HEADER
+===========================*/
+
+.header{
+    background:#fff;
+/*    border-radius:20px 20px 0 0;*/
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo-circle{
+
+    width:62px;
+    height:62px;
+    border-radius:50%;
+    border:2px solid #d99c21;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#d99c21;
+    font-size:26px;
+    margin-right:12px;
+
+}
+
+.logo h3{
+    margin:0;
+    color:#16377c;
+    font-weight:700;
+    font-size:20px;
+}
+
+.logo small{
+    color:#666;
+}
+
+/*=========================
+NAVIGATION
+==========================*/
+
+.nav-menu{
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    gap:38px;
+}
+
+.nav-item-custom{
+
+    text-align:center;
+    text-decoration:none;
+    color:#16377c;
+    transition:.3s;
+    font-size:14px;
+}
+
+.nav-item-custom i{
+
+    display:block;
+    font-size:23px;
+    margin-bottom:8px;
+
+}
+
+.nav-item-custom:hover{
+
+color:#d89d21;
+
+}
+
+.active-nav{
+
+position:relative;
+color:#16377c;
+font-weight:700;
+
+}
+
+.active-nav::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+right:0;
+
+bottom:-16px;
+
+height:4px;
+
+background:#d89d21;
+
+border-radius:20px;
+
+}
+
+ 
+
+
+
+/* Desktop */
+
+.desktop-header{
+    display:block;
+}
+
+/* Mobile */
+
+@media (max-width:991px){
+
+.desktop-header{
+    display:none;
+}
+
+body{
+    padding-top:65px;
+}
+
+.offcanvas{
+    width:320px;
+}
+
+.offcanvas-header{
+    background:#17346f;
+    color:#fff;
+}
+
+.offcanvas-title{
+    font-weight:700;
+}
+
+.offcanvas-body{
+    padding:20px;
+}
+
+.mobile-menu-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-radius:16px;
+    background:#fff;
+    text-decoration:none;
+    margin-bottom:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.mobile-menu-item:hover{
+    transform:translateX(6px);
+    background:#17346f;
+}
+
+.mobile-menu-item:hover h6,
+.mobile-menu-item:hover small{
+    color:#fff;
+}
+
+.mobile-menu-item:hover .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+.menu-icon{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    background:#edf3ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    color:#17346f;
+    transition:.3s;
+}
+
+.mobile-menu-item h6{
+    margin:0;
+    color:#17346f;
+    font-weight:700;
+}
+
+.mobile-menu-item small{
+    color:#777;
+}
+
+.mobile-menu-item.active{
+    background:#17346f;
+}
+
+.mobile-menu-item.active h6,
+.mobile-menu-item.active small{
+    color:#fff;
+}
+
+.mobile-menu-item.active .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+}
+
+
+@media(max-width:991px){
+
+.footer-menu{
+    display:none;
+}
+
+.mobile-header{
+    display:block;
+}
+
+}
+
+@media(min-width:992px){
+
+.mobile-header{
+    display:none;
+}
+
+}
+
+
+/*Common Page*/
+
+/*=========================================
+        Banner
+==========================================*/
+
+.ShareaStoryofLove-page-ui-banner{
+
+    background:#f8f4ed;
+
+    overflow:hidden;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-wrapper{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    min-height:300px;
+
+    background:linear-gradient(
+    90deg,
+    #d8b36b 0%,
+    #f7ead7 20%,
+    #fffdf8 50%,
+    #f7ead7 80%,
+    #d8b36b 100%);
+
+}
+
+/* Left */
+
+.ShareaStoryofLove-page-ui-banner-left{
+
+    width:28%;
+
+    height:300px;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-left img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* Right */
+
+.ShareaStoryofLove-page-ui-banner-right{
+
+    width:28%;
+
+    height:300px;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-right img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* Center */
+
+.ShareaStoryofLove-page-ui-banner-content{
+
+    width:44%;
+
+    text-align:center;
+
+    padding:25px;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-icon{
+
+    width:70px;
+
+    height:70px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    color:#d4a126;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:34px;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.12);
+
+}
+
+.ShareaStoryofLove-page-ui-banner-title{
+
+    margin-top:15px;
+
+    color:#173b72;
+
+    font-size:54px;
+
+    font-family:Georgia,serif;
+
+    font-weight:700;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-subtitle{
+
+    color:#6b5d47;
+
+    font-size:22px;
+
+    margin-top:10px;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-verse{
+
+    margin-top:18px;
+
+    color:#5a4b39;
+
+    font-style:italic;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-reference{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#173b72;
+
+    font-weight:700;
+
+}
+/*=========================================
+        Tablet
+==========================================*/
+
+@media(max-width:991px){
+
+.ShareaStoryofLove-page-ui-banner-wrapper{
+
+flex-direction:column;
+
+padding:30px 15px;
+
+min-height:auto;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-left,
+.ShareaStoryofLove-page-ui-banner-right{
+
+width:100%;
+
+height:220px;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-content{
+
+width:100%;
+
+padding:30px 15px;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-title{
+
+font-size:42px;
+
+}
+
+}
+
+/*=========================================
+        Mobile
+==========================================*/
+
+@media(max-width:767px){
+
+.ShareaStoryofLove-page-ui-banner-left,
+.ShareaStoryofLove-page-ui-banner-right{
+
+height:160px;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-icon{
+
+width:55px;
+
+height:55px;
+
+font-size:26px;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-title{
+
+font-size:30px;
+
+line-height:1.2;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-subtitle{
+
+font-size:18px;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-verse{
+
+font-size:15px;
+
+line-height:1.6;
+
+}
+
+}
+
+/*=========================================
+      Small Mobile
+==========================================*/
+
+@media(max-width:576px){
+
+.ShareaStoryofLove-page-ui-banner-title{
+
+font-size:26px;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-subtitle{
+
+font-size:16px;
+
+}
+
+.ShareaStoryofLove-page-ui-banner-verse{
+
+font-size:14px;
+
+}
+
+}
+
+/*=====================================
+      Top Information Cards
+======================================*/
+
+.ShareaStoryofLove-page-ui-top-info{
+
+    margin-top:-20px;
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+.ShareaStoryofLove-page-ui-top-info .row{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 22px rgba(0,0,0,.08);
+
+    border:1px solid #ececec;
+
+}
+
+.ShareaStoryofLove-page-ui-info-card{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:16px;
+
+    padding:22px;
+
+    height:100%;
+
+    border-right:1px solid #ececec;
+
+    transition:.35s;
+
+    background:#fff;
+
+}
+
+.ShareaStoryofLove-page-ui-info-card:last-child{
+
+    border-right:none;
+
+}
+
+.ShareaStoryofLove-page-ui-info-card:hover{
+
+    background:#f8fbff;
+
+}
+
+.ShareaStoryofLove-page-ui-info-icon{
+
+    width:54px;
+
+    height:54px;
+
+    border-radius:50%;
+
+    background:#edf3ff;
+
+    color:#153b74;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    flex-shrink:0;
+
+}
+
+.ShareaStoryofLove-page-ui-info-card h5{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#173b72;
+
+    margin-bottom:8px;
+
+    font-family:Georgia, serif;
+
+}
+
+.ShareaStoryofLove-page-ui-info-card p{
+
+    margin:0;
+
+    color:#666;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+/*==========================
+        Tablet
+===========================*/
+
+@media(max-width:991px){
+
+.ShareaStoryofLove-page-ui-info-card{
+
+border-right:none;
+
+border-bottom:1px solid #ececec;
+
+}
+
+}
+
+/*==========================
+        Mobile
+===========================*/
+
+@media(max-width:767px){
+
+.ShareaStoryofLove-page-ui-top-info{
+
+margin-top:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-info-card{
+
+padding:18px;
+
+gap:14px;
+
+}
+
+.ShareaStoryofLove-page-ui-info-icon{
+
+width:46px;
+
+height:46px;
+
+font-size:20px;
+
+}
+
+.ShareaStoryofLove-page-ui-info-card h5{
+
+font-size:16px;
+
+}
+
+.ShareaStoryofLove-page-ui-info-card p{
+
+font-size:13px;
+
+}
+
+}
+
+/*==========================
+      Small Mobile
+===========================*/
+
+@media(max-width:576px){
+
+.ShareaStoryofLove-page-ui-info-card{
+
+padding:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-info-icon{
+
+width:42px;
+
+height:42px;
+
+font-size:18px;
+
+}
+
+.ShareaStoryofLove-page-ui-info-card h5{
+
+font-size:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-info-card p{
+
+font-size:12px;
+
+line-height:1.5;
+
+}
+
+}
+
+/*=========================================
+    MY STORIES PANEL
+==========================================*/
+
+.ShareaStoryofLove-page-ui-story-panel{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    border:1px solid #e8e8e8;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    overflow:hidden;
+
+}
+
+/*=========================================
+    HEADER
+==========================================*/
+
+.ShareaStoryofLove-page-ui-story-header{
+
+    padding:24px;
+
+    border-bottom:1px solid #ececec;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-title{
+
+    margin:0 0 8px;
+
+    color:#18386f;
+
+    font-size:28px;
+
+    font-family:Georgia, serif;
+
+    font-weight:700;
+
+}
+
+.ShareaStoryofLove-page-ui-story-header p{
+
+    margin:0;
+
+    color:#666;
+
+    font-size:14px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+.ShareaStoryofLove-page-ui-story-buttons .btn{
+
+    border-radius:30px;
+
+    padding:9px 18px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/*=========================================
+    STORY LIST
+==========================================*/
+
+.ShareaStoryofLove-page-ui-story-list{
+
+    padding:20px;
+
+}
+
+/*=========================================
+    STORY ITEM
+==========================================*/
+
+.ShareaStoryofLove-page-ui-story-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:18px;
+
+    border:1px solid #ececec;
+
+    border-radius:14px;
+
+    margin-bottom:18px;
+
+    transition:.35s;
+
+    background:#fff;
+
+}
+
+.ShareaStoryofLove-page-ui-story-item:hover{
+
+    border-color:#d4e4ff;
+
+    box-shadow:0 10px 24px rgba(0,0,0,.08);
+
+    transform:translateY(-3px);
+
+}
+
+/*=========================================
+    IMAGE
+==========================================*/
+
+.ShareaStoryofLove-page-ui-story-image{
+
+    width:110px;
+
+    height:90px;
+
+    border-radius:12px;
+
+    object-fit:cover;
+
+    flex-shrink:0;
+
+}
+
+/*=========================================
+    CONTENT
+==========================================*/
+
+.ShareaStoryofLove-page-ui-story-content{
+
+    flex:1;
+
+}
+
+.ShareaStoryofLove-page-ui-story-content h5{
+
+    color:#173b72;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-content p{
+
+    margin:0;
+
+    color:#666;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+/*=========================================
+    META
+==========================================*/
+
+.ShareaStoryofLove-page-ui-story-meta{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+    gap:8px;
+
+    min-width:120px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-meta small{
+
+    color:#888;
+
+    font-size:12px;
+
+}
+
+/*=========================================
+    ACTIONS
+==========================================*/
+
+.ShareaStoryofLove-page-ui-story-actions{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-actions i{
+
+    font-size:16px;
+
+    color:#6c757d;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.ShareaStoryofLove-page-ui-story-actions i:hover{
+
+    color:#0d6efd;
+
+    transform:scale(1.15);
+
+}
+
+/*=========================================
+    FOOTER
+==========================================*/
+
+.ShareaStoryofLove-page-ui-story-footer{
+
+    padding:20px 24px;
+
+    border-top:1px solid #ececec;
+
+    text-align:center;
+
+    background:#fafafa;
+
+}
+
+.ShareaStoryofLove-page-ui-story-footer a{
+
+    text-decoration:none;
+
+    color:#173b72;
+
+    font-weight:700;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.ShareaStoryofLove-page-ui-story-footer a i{
+
+    margin-left:6px;
+
+    transition:.3s;
+
+}
+
+.ShareaStoryofLove-page-ui-story-footer a:hover{
+
+    color:#0d6efd;
+
+}
+
+.ShareaStoryofLove-page-ui-story-footer a:hover i{
+
+    transform:translateX(5px);
+
+}
+
+/*=========================================
+    BADGES
+==========================================*/
+
+.ShareaStoryofLove-page-ui-story-meta .badge{
+
+    font-size:12px;
+
+    padding:6px 10px;
+
+    border-radius:30px;
+
+}
+
+/*=========================================
+        LARGE TABLET
+=========================================*/
+
+@media (max-width:1199px){
+
+.ShareaStoryofLove-page-ui-story-header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.ShareaStoryofLove-page-ui-story-buttons{
+
+width:100%;
+
+}
+
+.ShareaStoryofLove-page-ui-story-buttons .btn{
+
+flex:1;
+
+}
+
+.ShareaStoryofLove-page-ui-story-meta{
+
+min-width:100px;
+
+}
+
+}
+
+/*=========================================
+            TABLET
+=========================================*/
+
+@media (max-width:991px){
+
+.ShareaStoryofLove-page-ui-story-panel{
+
+margin-bottom:30px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-header{
+
+padding:20px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-title{
+
+font-size:24px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-item{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.ShareaStoryofLove-page-ui-story-image{
+
+width:100%;
+
+height:220px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-content{
+
+width:100%;
+
+}
+
+.ShareaStoryofLove-page-ui-story-meta{
+
+width:100%;
+
+flex-direction:row;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-top:10px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-actions{
+
+margin-left:auto;
+
+}
+
+}
+
+/*=========================================
+            MOBILE
+=========================================*/
+
+@media (max-width:767px){
+
+.ShareaStoryofLove-page-ui-story-header{
+
+padding:18px;
+
+gap:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-title{
+
+font-size:22px;
+
+line-height:1.3;
+
+}
+
+.ShareaStoryofLove-page-ui-story-header p{
+
+font-size:13px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-buttons{
+
+display:flex;
+
+flex-direction:column;
+
+width:100%;
+
+}
+
+.ShareaStoryofLove-page-ui-story-buttons .btn{
+
+width:100%;
+
+}
+
+.ShareaStoryofLove-page-ui-story-list{
+
+padding:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-item{
+
+padding:15px;
+
+border-radius:12px;
+
+margin-bottom:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-image{
+
+height:180px;
+
+border-radius:10px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-content h5{
+
+font-size:18px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-content p{
+
+font-size:13px;
+
+line-height:1.6;
+
+}
+
+.ShareaStoryofLove-page-ui-story-meta{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:10px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-actions{
+
+margin-left:0;
+
+}
+
+.ShareaStoryofLove-page-ui-story-actions i{
+
+font-size:18px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-footer{
+
+padding:18px;
+
+}
+
+}
+
+/*=========================================
+          SMALL MOBILE
+=========================================*/
+
+@media (max-width:576px){
+
+.ShareaStoryofLove-page-ui-story-header{
+
+padding:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-title{
+
+font-size:20px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-buttons .btn{
+
+font-size:13px;
+
+padding:10px 14px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-list{
+
+padding:12px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-item{
+
+padding:12px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-image{
+
+height:160px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-content h5{
+
+font-size:16px;
+
+margin-bottom:6px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-content p{
+
+font-size:12px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-meta{
+
+gap:8px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-meta .badge{
+
+font-size:11px;
+
+padding:5px 10px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-meta small{
+
+font-size:11px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-actions{
+
+gap:16px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-actions i{
+
+font-size:17px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-footer{
+
+padding:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-footer a{
+
+font-size:14px;
+
+}
+
+}
+
+/*=========================================
+      EXTRA SMALL DEVICES
+=========================================*/
+
+@media (max-width:400px){
+
+.ShareaStoryofLove-page-ui-story-title{
+
+font-size:18px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-image{
+
+height:140px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-content h5{
+
+font-size:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-content p{
+
+font-size:11px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-buttons .btn{
+
+font-size:12px;
+
+padding:9px 12px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-actions{
+
+justify-content:space-between;
+
+width:100%;
+
+}
+
+}
+
+
+/*==================================================
+        RIGHT PANEL
+==================================================*/
+
+.ShareaStoryofLove-page-ui-details-panel{
+
+    background:#ffffff;
+
+    border:1px solid #e8e8e8;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+/*==================================================
+        SEARCH AREA
+==================================================*/
+
+.ShareaStoryofLove-page-ui-search-area{
+
+    padding:24px;
+
+    border-bottom:1px solid #ececec;
+
+    background:#fafafa;
+
+}
+
+.ShareaStoryofLove-page-ui-search-area .input-group{
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.ShareaStoryofLove-page-ui-search-area .input-group-text{
+
+    background:#fff;
+
+    border:1px solid #ced4da;
+
+    border-right:none;
+
+    padding:0 18px;
+
+}
+
+.ShareaStoryofLove-page-ui-search-area .form-control{
+
+    border-left:none;
+
+    border-right:none;
+
+    height:50px;
+
+    box-shadow:none;
+
+}
+
+.ShareaStoryofLove-page-ui-search-area .btn{
+
+    border-radius:0;
+
+    padding:0 30px;
+
+    font-weight:600;
+
+}
+
+/*==================================================
+        FILTER
+==================================================*/
+
+.ShareaStoryofLove-page-ui-filter-area{
+
+    padding:20px 24px;
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.ShareaStoryofLove-page-ui-filter-area .btn{
+
+    border-radius:30px;
+
+    padding:8px 20px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/*==================================================
+        FEATURED STORY
+==================================================*/
+
+.ShareaStoryofLove-page-ui-featured-story{
+
+    padding:25px;
+
+}
+
+/*==================================================
+        IMAGE
+==================================================*/
+
+.ShareaStoryofLove-page-ui-featured-image{
+
+    margin-bottom:25px;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-image img{
+
+    width:100%;
+
+    height:420px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+}
+
+/*==================================================
+        BODY
+==================================================*/
+
+.ShareaStoryofLove-page-ui-featured-body h2{
+
+    color:#173b72;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    margin:18px 0;
+
+    font-family:Georgia, serif;
+
+    line-height:1.3;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-body p{
+
+    color:#666;
+
+    line-height:1.9;
+
+    font-size:15px;
+
+}
+
+/*==================================================
+        AUTHOR
+==================================================*/
+
+.ShareaStoryofLove-page-ui-author{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin:20px 0;
+
+}
+
+.ShareaStoryofLove-page-ui-author img{
+
+    width:65px;
+
+    height:65px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+}
+
+.ShareaStoryofLove-page-ui-author h6{
+
+    margin:0;
+
+    color:#173b72;
+
+    font-size:17px;
+
+    font-weight:700;
+
+}
+
+.ShareaStoryofLove-page-ui-author small{
+
+    color:#777;
+
+}
+
+/*==================================================
+        SCRIPTURE
+==================================================*/
+
+.ShareaStoryofLove-page-ui-scripture{
+
+    display:flex;
+
+    gap:18px;
+
+    margin:30px 0;
+
+    padding:20px;
+
+    border-left:5px solid #d6a42b;
+
+    background:#fdf8ec;
+
+    border-radius:10px;
+
+}
+
+.ShareaStoryofLove-page-ui-scripture i{
+
+    font-size:34px;
+
+    color:#d6a42b;
+
+}
+
+.ShareaStoryofLove-page-ui-scripture strong{
+
+    display:block;
+
+    color:#173b72;
+
+    margin-bottom:8px;
+
+    font-size:18px;
+
+}
+
+.ShareaStoryofLove-page-ui-scripture p{
+
+    margin:0;
+
+    font-style:italic;
+
+}
+
+/*==================================================
+        TAGS
+==================================================*/
+
+.ShareaStoryofLove-page-ui-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin:30px 0;
+
+}
+
+.ShareaStoryofLove-page-ui-tags span{
+
+    background:#edf4ff;
+
+    color:#173b72;
+
+    border-radius:25px;
+
+    padding:8px 16px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.ShareaStoryofLove-page-ui-tags span:hover{
+
+    background:#173b72;
+
+    color:#fff;
+
+}
+
+/*==================================================
+        STORY STATS
+==================================================*/
+
+.ShareaStoryofLove-page-ui-story-stats{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:30px 0;
+
+    padding:20px;
+
+    border:1px solid #ececec;
+
+    border-radius:12px;
+
+    background:#fafafa;
+
+}
+
+.ShareaStoryofLove-page-ui-story-stats div{
+
+    color:#555;
+
+    font-weight:600;
+
+    font-size:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-stats i{
+
+    color:#173b72;
+
+    margin-right:6px;
+
+}
+
+/*==================================================
+        ACTION BUTTONS
+==================================================*/
+
+.ShareaStoryofLove-page-ui-action-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.ShareaStoryofLove-page-ui-action-buttons .btn{
+
+    border-radius:30px;
+
+    padding:10px 24px;
+
+    font-weight:600;
+
+}
+
+.ShareaStoryofLove-page-ui-action-buttons i{
+
+    margin-right:8px;
+
+}
+
+/*==================================================
+        BADGE
+==================================================*/
+
+.ShareaStoryofLove-page-ui-featured-body .badge{
+
+    font-size:13px;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+}
+
+/*=========================================
+        LARGE TABLET
+=========================================*/
+
+@media (max-width:1199px){
+
+.ShareaStoryofLove-page-ui-featured-body h2{
+
+font-size:30px;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-image img{
+
+height:360px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-stats{
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+.ShareaStoryofLove-page-ui-action-buttons{
+
+gap:12px;
+
+}
+
+}
+
+/*=========================================
+            TABLET
+=========================================*/
+
+@media (max-width:991px){
+
+.ShareaStoryofLove-page-ui-details-panel{
+
+margin-top:30px;
+
+}
+
+.ShareaStoryofLove-page-ui-search-area{
+
+padding:20px;
+
+}
+
+.ShareaStoryofLove-page-ui-filter-area{
+
+padding:18px;
+
+justify-content:center;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-story{
+
+padding:20px;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-image img{
+
+height:320px;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-body h2{
+
+font-size:28px;
+
+}
+
+.ShareaStoryofLove-page-ui-author{
+
+margin:18px 0;
+
+}
+
+.ShareaStoryofLove-page-ui-story-stats{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+text-align:center;
+
+padding:18px;
+
+}
+
+.ShareaStoryofLove-page-ui-action-buttons{
+
+justify-content:center;
+
+}
+
+.ShareaStoryofLove-page-ui-action-buttons .btn{
+
+flex:1 1 45%;
+
+}
+
+}
+
+/*=========================================
+              MOBILE
+=========================================*/
+
+@media (max-width:767px){
+
+.ShareaStoryofLove-page-ui-search-area{
+
+padding:16px;
+
+}
+
+.ShareaStoryofLove-page-ui-search-area .input-group{
+
+display:block;
+
+}
+
+.ShareaStoryofLove-page-ui-search-area .input-group-text{
+
+display:none;
+
+}
+
+.ShareaStoryofLove-page-ui-search-area .form-control{
+
+width:100%;
+
+border:1px solid #ced4da;
+
+border-radius:8px;
+
+margin-bottom:10px;
+
+}
+
+.ShareaStoryofLove-page-ui-search-area .btn{
+
+width:100%;
+
+border-radius:8px;
+
+height:45px;
+
+}
+
+.ShareaStoryofLove-page-ui-filter-area{
+
+padding:15px;
+
+gap:10px;
+
+justify-content:flex-start;
+
+}
+
+.ShareaStoryofLove-page-ui-filter-area .btn{
+
+width:100%;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-story{
+
+padding:18px;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-image img{
+
+height:240px;
+
+border-radius:12px;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-body h2{
+
+font-size:24px;
+
+line-height:1.4;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-body p{
+
+font-size:14px;
+
+line-height:1.8;
+
+}
+
+.ShareaStoryofLove-page-ui-author{
+
+gap:12px;
+
+}
+
+.ShareaStoryofLove-page-ui-author img{
+
+width:55px;
+
+height:55px;
+
+}
+
+.ShareaStoryofLove-page-ui-author h6{
+
+font-size:16px;
+
+}
+
+.ShareaStoryofLove-page-ui-scripture{
+
+flex-direction:column;
+
+gap:12px;
+
+padding:18px;
+
+}
+
+.ShareaStoryofLove-page-ui-scripture i{
+
+font-size:28px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-stats{
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+text-align:left;
+
+padding:18px;
+
+}
+
+.ShareaStoryofLove-page-ui-action-buttons{
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+.ShareaStoryofLove-page-ui-action-buttons .btn{
+
+width:100%;
+
+}
+
+}
+
+/*=========================================
+          SMALL MOBILE
+=========================================*/
+
+@media (max-width:576px){
+
+.ShareaStoryofLove-page-ui-search-area{
+
+padding:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-story{
+
+padding:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-image img{
+
+height:200px;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-body h2{
+
+font-size:22px;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-body p{
+
+font-size:13px;
+
+}
+
+.ShareaStoryofLove-page-ui-author img{
+
+width:48px;
+
+height:48px;
+
+}
+
+.ShareaStoryofLove-page-ui-author h6{
+
+font-size:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-scripture{
+
+padding:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-scripture strong{
+
+font-size:16px;
+
+}
+
+.ShareaStoryofLove-page-ui-scripture p{
+
+font-size:13px;
+
+}
+
+.ShareaStoryofLove-page-ui-tags{
+
+gap:8px;
+
+}
+
+.ShareaStoryofLove-page-ui-tags span{
+
+font-size:12px;
+
+padding:6px 12px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-stats{
+
+padding:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-stats div{
+
+font-size:14px;
+
+}
+
+.ShareaStoryofLove-page-ui-action-buttons .btn{
+
+font-size:14px;
+
+padding:10px 16px;
+
+}
+
+}
+
+/*=========================================
+        EXTRA SMALL DEVICES
+=========================================*/
+
+@media (max-width:400px){
+
+.ShareaStoryofLove-page-ui-featured-image img{
+
+height:170px;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-body h2{
+
+font-size:20px;
+
+}
+
+.ShareaStoryofLove-page-ui-featured-body p{
+
+font-size:12px;
+
+line-height:1.7;
+
+}
+
+.ShareaStoryofLove-page-ui-author{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.ShareaStoryofLove-page-ui-scripture{
+
+padding:12px;
+
+}
+
+.ShareaStoryofLove-page-ui-scripture strong{
+
+font-size:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-story-stats{
+
+font-size:13px;
+
+}
+
+.ShareaStoryofLove-page-ui-action-buttons .btn{
+
+font-size:13px;
+
+padding:9px 14px;
+
+}
+
+}
+
+.ShareaStoryofLove-page-ui-main-section{
+
+    padding:60px 0;
+
+}
+
+.ShareaStoryofLove-page-ui-story-panel,
+.ShareaStoryofLove-page-ui-details-panel{
+
+    height:100%;
+
+}
+
+.ShareaStoryofLove-page-ui-details-panel{
+
+    margin-top:0 !important;
+
+}
+
+
+/*=========================================
+        ACTION SECTION
+=========================================*/
+
+.ShareaStoryofLove-page-ui-action-section{
+
+    margin-top:25px;
+
+    margin-bottom:40px;
+
+}
+
+.ShareaStoryofLove-page-ui-action-card,
+.ShareaStoryofLove-page-ui-scripture-card{
+
+    height:100%;
+
+    background:#fff;
+
+    border:1px solid #ececec;
+
+    padding:24px;
+
+    display:flex;
+
+    gap:18px;
+
+    transition:.3s;
+
+}
+
+.ShareaStoryofLove-page-ui-action-card:hover,
+.ShareaStoryofLove-page-ui-scripture-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.ShareaStoryofLove-page-ui-action-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    font-size:30px;
+
+}
+
+.ShareaStoryofLove-page-ui-action-icon.blue{
+
+    background:#edf4ff;
+
+    color:#17438b;
+
+}
+
+.ShareaStoryofLove-page-ui-action-icon.green{
+
+    background:#edf9ee;
+
+    color:#3b8d3d;
+
+}
+
+.ShareaStoryofLove-page-ui-action-icon.purple{
+
+    background:#f2ecfb;
+
+    color:#6d4aa2;
+
+}
+
+.ShareaStoryofLove-page-ui-action-content{
+
+    flex:1;
+
+}
+
+.ShareaStoryofLove-page-ui-action-content h4{
+
+    color:#163c74;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.ShareaStoryofLove-page-ui-action-content p{
+
+    color:#666;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+    margin-bottom:18px;
+
+}
+
+.ShareaStoryofLove-page-ui-action-content .btn{
+
+    border-radius:8px;
+
+    padding:9px 18px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/*=========================================
+      SCRIPTURE CARD
+=========================================*/
+
+.ShareaStoryofLove-page-ui-scripture-card{
+
+    border:2px solid #e7b354;
+
+    align-items:center;
+
+}
+
+.ShareaStoryofLove-page-ui-scripture-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:#fff8e8;
+
+    color:#d69a17;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:32px;
+
+}
+
+.ShareaStoryofLove-page-ui-scripture-text{
+
+    font-style:italic;
+
+    color:#173b72;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    margin-bottom:10px;
+
+}
+
+.ShareaStoryofLove-page-ui-scripture-card span{
+
+    color:#173b72;
+
+    font-weight:700;
+
+}
+
+@media(max-width:991px){
+
+.ShareaStoryofLove-page-ui-action-card,
+.ShareaStoryofLove-page-ui-scripture-card{
+
+margin-bottom:20px;
+
+}
+
+}
+
+@media(max-width:767px){
+
+.ShareaStoryofLove-page-ui-action-card,
+.ShareaStoryofLove-page-ui-scripture-card{
+
+flex-direction:column;
+
+text-align:center;
+
+align-items:center;
+
+padding:22px;
+
+}
+
+.ShareaStoryofLove-page-ui-action-content .btn{
+
+width:100%;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.ShareaStoryofLove-page-ui-action-content h4{
+
+font-size:20px;
+
+}
+
+.ShareaStoryofLove-page-ui-action-content p{
+
+font-size:14px;
+
+}
+
+}
+
+
+/*====================================================
+            FOOTER
+====================================================*/
+
+.ShareaStoryofLove-page-ui-footer{
+
+    background:#0b2d63;
+
+    color:#ffffff;
+
+    overflow:hidden;
+
+}
+
+/*====================================================
+            TOP FOOTER
+====================================================*/
+
+.ShareaStoryofLove-page-ui-footer-top{
+
+    padding:45px 40px;
+
+}
+
+/*====================================================
+            SKYLINE
+====================================================*/
+
+.ShareaStoryofLove-page-ui-footer-skyline{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    height:150px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-skyline img{
+
+    width:100%;
+
+    max-width:260px;
+
+    height:auto;
+
+}
+
+/*====================================================
+          SCRIPTURE
+====================================================*/
+
+.ShareaStoryofLove-page-ui-footer-scripture{
+
+    text-align:center;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-scripture h3{
+
+    color:#d8a548;
+
+    font-size:34px;
+
+    font-family:Georgia,serif;
+
+    font-weight:700;
+
+    margin-bottom:22px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-scripture ul{
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-scripture li{
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    line-height:2;
+
+    opacity:.95;
+
+}
+
+/*====================================================
+            DIVIDER
+====================================================*/
+
+.ShareaStoryofLove-page-ui-footer-divider{
+
+    width:2px;
+
+    height:170px;
+
+    background:rgba(216,165,72,.55);
+
+}
+
+/*====================================================
+          NAVIGATION
+====================================================*/
+
+.ShareaStoryofLove-page-ui-footer-menu{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-item i{
+
+    font-size:34px;
+
+    color:#d8a548;
+
+    margin-bottom:10px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-item span{
+
+    color:#ffffff;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-item:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.ShareaStoryofLove-page-ui-footer-item:hover i{
+
+    color:#ffd47a;
+
+}
+
+/*====================================================
+            BOTTOM
+====================================================*/
+
+.ShareaStoryofLove-page-ui-footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    padding:18px 40px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-bottom p{
+
+    margin:0;
+
+    color:#d6d6d6;
+
+    font-size:14px;
+
+}
+
+/*====================================================
+            LINKS
+====================================================*/
+
+.ShareaStoryofLove-page-ui-footer-links{
+
+    margin:0;
+
+    padding:0;
+
+    list-style:none;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:30px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-links li{
+
+    list-style:none;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-links a{
+
+    text-decoration:none;
+
+    color:#ffffff;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-links a:hover{
+
+    color:#d8a548;
+
+}
+
+/*====================================================
+          SPACING
+====================================================*/
+
+.ShareaStoryofLove-page-ui-footer .container-fluid{
+
+    max-width:1600px;
+
+}
+
+/*=========================================
+        LARGE DEVICES
+=========================================*/
+
+@media (max-width:1199px){
+
+.ShareaStoryofLove-page-ui-footer-top{
+
+padding:40px 25px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-divider{
+
+display:none;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-scripture{
+
+margin:35px 0;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-menu{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-skyline{
+
+justify-content:center;
+
+height:auto;
+
+margin-bottom:30px;
+
+}
+
+}
+
+/*=========================================
+            TABLET
+=========================================*/
+
+@media (max-width:991px){
+
+.ShareaStoryofLove-page-ui-footer-top{
+
+padding:35px 20px;
+
+text-align:center;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-scripture h3{
+
+font-size:28px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-scripture .row{
+
+row-gap:20px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-menu{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+margin-top:35px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-bottom{
+
+padding:20px;
+
+text-align:center;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-links{
+
+justify-content:center;
+
+margin-top:15px;
+
+flex-wrap:wrap;
+
+gap:18px;
+
+}
+
+}
+
+/*=========================================
+              MOBILE
+=========================================*/
+
+@media (max-width:767px){
+
+.ShareaStoryofLove-page-ui-footer-top{
+
+padding:30px 18px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-skyline img{
+
+max-width:220px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-scripture h3{
+
+font-size:24px;
+
+line-height:1.4;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-scripture li{
+
+font-size:14px;
+
+line-height:1.8;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-menu{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-item i{
+
+font-size:30px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-item span{
+
+font-size:14px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-bottom{
+
+padding:18px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-bottom p{
+
+font-size:13px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-links{
+
+gap:15px;
+
+}
+
+}
+
+/*=========================================
+          SMALL MOBILE
+=========================================*/
+
+@media (max-width:576px){
+
+.ShareaStoryofLove-page-ui-footer-top{
+
+padding:25px 15px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-skyline img{
+
+max-width:180px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-scripture h3{
+
+font-size:20px;
+
+margin-bottom:18px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-scripture li{
+
+font-size:13px;
+
+line-height:1.7;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-menu{
+
+grid-template-columns:1fr;
+
+gap:18px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-item{
+
+padding:10px 0;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-item i{
+
+font-size:28px;
+
+margin-bottom:8px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-item span{
+
+font-size:13px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-bottom{
+
+padding:15px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-links{
+
+flex-direction:column;
+
+gap:10px;
+
+align-items:center;
+
+}
+
+}
+
+/*=========================================
+        EXTRA SMALL DEVICES
+=========================================*/
+
+@media (max-width:400px){
+
+.ShareaStoryofLove-page-ui-footer-scripture h3{
+
+font-size:18px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-scripture li{
+
+font-size:12px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-skyline img{
+
+max-width:150px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-item i{
+
+font-size:24px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-item span{
+
+font-size:12px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-bottom p{
+
+font-size:12px;
+
+}
+
+.ShareaStoryofLove-page-ui-footer-links a{
+
+font-size:12px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+ <header class="header d-none d-lg-block">
+  <div class="container py-3">
+    <div class="row align-items-center">
+
+      <div class="col-lg-3">
+        <div class="logo">
+          <div class="logo-circle">
+            <i class="bi bi-building"></i>
+          </div>
+
+          <div>
+            <h3>Hastening App</h3>
+            <small>Hasten the Gathering and Unity in Zion</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="nav-menu">
+
+        <a href="index.html" class="nav-item-custom ">
+    <i class="bi bi-house-fill"></i>
+    Home<br>
+    <span class="invisible">.</span>
+</a>
+
+          <a href="Loving.html" class="nav-item-custom active-nav">
+            <i class="bi bi-heart"></i>
+            Loving<br>Our Neighbor
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-book"></i>
+            Sharing Our<br>Faith in Christ
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-people-fill"></i>
+            Invitation<br>to Unity
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-droplet-fill"></i>
+            Does Unity<br>Require Baptism?
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-music-note-beamed"></i>
+            Worshiping Christ<br>through Music
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-calendar-event"></i>
+            Neighborhood<br>B&amp;B Events
+          </a>
+
+          <a href="security.html" class="nav-item-custom">
+            <i class="bi bi-shield-check"></i>
+            Security<br>&amp; More
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Header -->
+<nav class="navbar navbar-dark  d-lg-none fixed-top" style="background-color: #16377c !important;">
+
+    <div class="container-fluid">
+        <span class="navbar-brand fw-bold">
+           Hastening
+        </span>
+
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+      
+    </div>
+
+</nav>
+
+<!-- Mobile Menu -->
+<div class="offcanvas offcanvas-start"
+     tabindex="-1"
+     id="mobileMenu">
+
+    <div class="offcanvas-header">
+
+        <h5 class="offcanvas-title">
+            Menu
+        </h5>
+
+        <button class="btn-close"
+                data-bs-dismiss="offcanvas">
+        </button>
+
+    </div>
+
+<div class="offcanvas-body bg-light">
+
+    <a href="index.html" class="mobile-menu-item ">
+        <div class="menu-icon">
+            <i class="bi bi-house-fill"></i>
+        </div>
+        <div>
+            <h6>Home</h6>
+            <small>Dashboard</small>
+        </div>
+    </a>
+
+    <a href="Loving.html" class="mobile-menu-item active">
+        <div class="menu-icon">
+            <i class="bi bi-heart"></i>
+        </div>
+        <div>
+            <h6>Loving Our Neighbor</h6>
+            <small>Serve with love</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-book"></i>
+        </div>
+        <div>
+            <h6>Sharing Our Faith</h6>
+            <small>Read Scriptures</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-people-fill"></i>
+        </div>
+        <div>
+            <h6>Invitation to Unity</h6>
+            <small>Invite Friends</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-droplet-fill"></i>
+        </div>
+        <div>
+            <h6>Baptism</h6>
+            <small>Learn More</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-music-note-beamed"></i>
+        </div>
+        <div>
+            <h6>Music</h6>
+            <small>Worship Songs</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-calendar-event"></i>
+        </div>
+        <div>
+            <h6>Events</h6>
+            <small>Upcoming Meetings</small>
+        </div>
+    </a>
+
+    <a href="security.html" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-shield-check"></i>
+        </div>
+        <div>
+            <h6>Security</h6>
+            <small>Account Safety</small>
+        </div>
+    </a>
+
+</div>
+
+</div>
+
+ 
+
+ <!--=========================================
+    Share a Story of Love - Banner
+==========================================-->
+
+<section class="ShareaStoryofLove-page-ui-banner">
+
+    <div class="container-fluid p-0">
+
+        <div class="ShareaStoryofLove-page-ui-banner-wrapper">
+
+            <!-- Left Image -->
+
+            <div class="ShareaStoryofLove-page-ui-banner-left">
+
+                <img src="assets/story/banner-left.jpg"
+                    alt="Love Story">
+
+            </div>
+
+            <!-- Center Content -->
+
+            <div class="ShareaStoryofLove-page-ui-banner-content">
+
+                <div class="ShareaStoryofLove-page-ui-banner-icon">
+
+                    <i class="bi bi-chat-heart-fill"></i>
+
+                </div>
+
+                <h1 class="ShareaStoryofLove-page-ui-banner-title">
+
+                    Sharing a Story of Love
+
+                </h1>
+
+                <p class="ShareaStoryofLove-page-ui-banner-subtitle">
+
+                    Inspiring others with acts of faith,
+                    kindness and service.
+
+                </p>
+
+                <p class="ShareaStoryofLove-page-ui-banner-verse">
+
+                    "Behold, I say unto you, lift up your light
+                    that it may shine unto the world."
+
+                </p>
+
+                <span class="ShareaStoryofLove-page-ui-banner-reference">
+
+                    — 3 Nephi 18:24
+
+                </span>
+
+            </div>
+
+            <!-- Right Image -->
+
+            <div class="ShareaStoryofLove-page-ui-banner-right">
+
+                <img src="assets/story/banner-right.jpg"
+                    alt="Temple">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================================
+    Story Information Cards
+========================================== -->
+
+<section class="ShareaStoryofLove-page-ui-top-info">
+
+    <div class="container-fluid ">
+
+        <div class="row g-0 ">
+
+            <!-- Card 1 -->
+
+            <div class="col-lg col-md-6">
+
+                <div class="ShareaStoryofLove-page-ui-info-card">
+
+                    <div class="ShareaStoryofLove-page-ui-info-icon">
+
+                        <i class="bi bi-people-fill"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h5>Share up to five stories</h5>
+
+                        <p>You may have up to five stories at any point in time.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 2 -->
+
+            <div class="col-lg col-md-6">
+
+                <div class="ShareaStoryofLove-page-ui-info-card">
+
+                    <div class="ShareaStoryofLove-page-ui-info-icon">
+
+                        <i class="bi bi-pencil-square"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h5>Update your stories</h5>
+
+                        <p>Delete one story and add another to keep your stories current.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 3 -->
+
+            <div class="col-lg col-md-6">
+
+                <div class="ShareaStoryofLove-page-ui-info-card">
+
+                    <div class="ShareaStoryofLove-page-ui-info-icon">
+
+                        <i class="bi bi-eye-fill"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h5>Reviewed for kindness</h5>
+
+                        <p>Stories will be reviewed for appropriate content.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 4 -->
+
+            <div class="col-lg col-md-6">
+
+                <div class="ShareaStoryofLove-page-ui-info-card">
+
+                    <div class="ShareaStoryofLove-page-ui-info-icon">
+
+                        <i class="bi bi-shield-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h5>Share what's true</h5>
+
+                        <p>Mark your story as a real experience or Story Only.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 5 -->
+
+            <div class="col-lg col-md-12">
+
+                <div class="ShareaStoryofLove-page-ui-info-card">
+
+                    <div class="ShareaStoryofLove-page-ui-info-icon">
+
+                        <i class="bi bi-file-earmark-text"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h5>Share and Inspire</h5>
+
+                        <p>Copy your story and share it with family and friends.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+                     <div class="d-flex justify-content-between py-3 gap-2">
+
+
+ <!--=========================================
+      MY STORIES PANEL
+==========================================-->
+
+<div class="col-xl-5 col-lg-5 ">
+
+<div class="ShareaStoryofLove-page-ui-story-panel">
+
+    <!-- Header -->
+
+    <div class="ShareaStoryofLove-page-ui-story-header">
+
+        <div>
+
+            <h3 class="ShareaStoryofLove-page-ui-story-title">
+
+                My Stories (5 of 5)
+
+            </h3>
+
+            <p>
+
+                You can have up to five stories at any point in time.
+
+            </p>
+
+        </div>
+
+        <div class="ShareaStoryofLove-page-ui-story-buttons">
+
+            <button class="btn btn-primary">
+
+                <i class="bi bi-plus-lg"></i>
+
+                Add New Story
+
+            </button>
+
+            <button class="btn btn-outline-secondary">
+
+                Manage Stories
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Story List -->
+
+    <div class="ShareaStoryofLove-page-ui-story-list">
+
+        <!-- Story Item -->
+
+        <div class="ShareaStoryofLove-page-ui-story-item">
+
+            <img src="assets/story/story1.jpg"
+                 class="ShareaStoryofLove-page-ui-story-image"
+                 alt="">
+
+            <div class="ShareaStoryofLove-page-ui-story-content">
+
+                <h5>
+
+                    A Simple Meal, A Grateful Heart
+
+                </h5>
+
+                <p>
+
+                    We delivered meals to a family in need.
+                    Their gratitude touched our hearts.
+
+                </p>
+
+            </div>
+
+            <div class="ShareaStoryofLove-page-ui-story-meta">
+
+                <span class="badge bg-success">
+
+                    True
+
+                </span>
+
+                <small>
+
+                    May 12, 2024
+
+                </small>
+
+                <div class="ShareaStoryofLove-page-ui-story-actions">
+
+                    <i class="bi bi-copy"></i>
+
+                    <i class="bi bi-pencil"></i>
+
+                    <i class="bi bi-trash"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Story -->
+
+        <div class="ShareaStoryofLove-page-ui-story-item">
+
+            <img src="assets/story/story2.jpg"
+                 class="ShareaStoryofLove-page-ui-story-image"
+                 alt="">
+
+            <div class="ShareaStoryofLove-page-ui-story-content">
+
+                <h5>
+
+                    Planting Hope in the Community
+
+                </h5>
+
+                <p>
+
+                    Our neighborhood garden project helped
+                    many families.
+
+                </p>
+
+            </div>
+
+            <div class="ShareaStoryofLove-page-ui-story-meta">
+
+                <span class="badge bg-success">
+
+                    True
+
+                </span>
+
+                <small>
+
+                    May 5, 2024
+
+                </small>
+
+                <div class="ShareaStoryofLove-page-ui-story-actions">
+
+                    <i class="bi bi-copy"></i>
+
+                    <i class="bi bi-pencil"></i>
+
+                    <i class="bi bi-trash"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Story -->
+
+        <div class="ShareaStoryofLove-page-ui-story-item">
+
+            <img src="assets/story/story3.jpg"
+                 class="ShareaStoryofLove-page-ui-story-image"
+                 alt="">
+
+            <div class="ShareaStoryofLove-page-ui-story-content">
+
+                <h5>
+
+                    Blessings from Our Chicken Coop
+
+                </h5>
+
+                <p>
+
+                    Sharing eggs and kindness with neighbors.
+
+                </p>
+
+            </div>
+
+            <div class="ShareaStoryofLove-page-ui-story-meta">
+
+                <span class="badge bg-primary">
+
+                    Story Only
+
+                </span>
+
+                <small>
+
+                    Apr 28, 2024
+
+                </small>
+
+                <div class="ShareaStoryofLove-page-ui-story-actions">
+
+                    <i class="bi bi-copy"></i>
+
+                    <i class="bi bi-pencil"></i>
+
+                    <i class="bi bi-trash"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Story -->
+
+        <div class="ShareaStoryofLove-page-ui-story-item">
+
+            <img src="assets/story/story4.jpg"
+                 class="ShareaStoryofLove-page-ui-story-image"
+                 alt="">
+
+            <div class="ShareaStoryofLove-page-ui-story-content">
+
+                <h5>
+
+                    Learning Together
+
+                </h5>
+
+                <p>
+
+                    Our self-reliance group helped us
+                    support one another.
+
+                </p>
+
+            </div>
+
+            <div class="ShareaStoryofLove-page-ui-story-meta">
+
+                <span class="badge bg-success">
+
+                    True
+
+                </span>
+
+                <small>
+
+                    Apr 15, 2024
+
+                </small>
+
+                <div class="ShareaStoryofLove-page-ui-story-actions">
+
+                    <i class="bi bi-copy"></i>
+
+                    <i class="bi bi-pencil"></i>
+
+                    <i class="bi bi-trash"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Story -->
+
+        <div class="ShareaStoryofLove-page-ui-story-item">
+
+            <img src="assets/story/story5.jpg"
+                 class="ShareaStoryofLove-page-ui-story-image"
+                 alt="">
+
+            <div class="ShareaStoryofLove-page-ui-story-content">
+
+                <h5>
+
+                    Small Acts, Big Impact
+
+                </h5>
+
+                <p>
+
+                    A simple smile and kind words can
+                    brighten someone's day.
+
+                </p>
+
+            </div>
+
+            <div class="ShareaStoryofLove-page-ui-story-meta">
+
+                <span class="badge bg-primary">
+
+                    Story Only
+
+                </span>
+
+                <small>
+
+                    Apr 2, 2024
+
+                </small>
+
+                <div class="ShareaStoryofLove-page-ui-story-actions">
+
+                    <i class="bi bi-copy"></i>
+
+                    <i class="bi bi-pencil"></i>
+
+                    <i class="bi bi-trash"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+
+    <div class="ShareaStoryofLove-page-ui-story-footer">
+
+        <a href="#">
+
+            View All My Stories
+
+            <i class="bi bi-chevron-right"></i>
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+<!--=========================================
+        RIGHT STORY PANEL
+==========================================-->
+
+<div class="col-xl-7 col-lg-7 ">
+
+<div class="ShareaStoryofLove-page-ui-details-panel">
+
+    <!-- Search Area -->
+
+    <div class="ShareaStoryofLove-page-ui-search-area">
+
+        <div class="input-group">
+
+            <span class="input-group-text">
+
+                <i class="bi bi-search"></i>
+
+            </span>
+
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Search stories...">
+
+            <button class="btn btn-primary">
+
+                Search
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Filter Buttons -->
+
+    <div class="ShareaStoryofLove-page-ui-filter-area">
+
+        <button class="btn btn-primary">
+
+            All Stories
+
+        </button>
+
+        <button class="btn btn-outline-primary">
+
+            True Stories
+
+        </button>
+
+        <button class="btn btn-outline-primary">
+
+            Story Only
+
+        </button>
+
+        <button class="btn btn-outline-primary">
+
+            Recent
+
+        </button>
+
+    </div>
+
+    <!-- Featured Story -->
+
+    <div class="ShareaStoryofLove-page-ui-featured-story">
+
+        <!-- Story Image -->
+
+        <div class="ShareaStoryofLove-page-ui-featured-image">
+
+            <img
+                src="assets/story/featured-story.jpg"
+                alt="Featured Story">
+
+        </div>
+
+        <!-- Story Body -->
+
+        <div class="ShareaStoryofLove-page-ui-featured-body">
+
+            <!-- Category -->
+
+            <span class="badge bg-success">
+
+                True Story
+
+            </span>
+
+            <!-- Title -->
+
+            <h2>
+
+                Serving Others Through Small Acts of Love
+
+            </h2>
+
+            <!-- Author -->
+
+            <div class="ShareaStoryofLove-page-ui-author">
+
+                <img
+                    src="assets/story/profile.jpg"
+                    alt="Author">
+
+                <div>
+
+                    <h6>
+
+                        Arun Kumar
+
+                    </h6>
+
+                    <small>
+
+                        Shared on May 15, 2024
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <!-- Story -->
+
+            <p>
+
+                Our church youth group gathered every Saturday
+                morning to prepare meals for elderly people
+                living alone. We packed food, delivered it with
+                smiles, and spent time talking with each family.
+                These small acts of kindness strengthened our
+                faith and reminded us that love is best shown
+                through service.
+
+            </p>
+
+            <p>
+
+                We discovered that even a simple visit could
+                brighten someone's entire week. The experience
+                brought our community closer together and taught
+                us the joy of selfless giving.
+
+            </p>
+
+            <!-- Scripture -->
+
+            <div class="ShareaStoryofLove-page-ui-scripture">
+
+                <i class="bi bi-book-half"></i>
+
+                <div>
+
+                    <strong>
+
+                        Matthew 5:16
+
+                    </strong>
+
+                    <p>
+
+                        Let your light so shine before men,
+                        that they may see your good works,
+                        and glorify your Father in heaven.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Tags -->
+
+            <div class="ShareaStoryofLove-page-ui-tags">
+
+                <span>#Faith</span>
+
+                <span>#Service</span>
+
+                <span>#Love</span>
+
+                <span>#Community</span>
+
+                <span>#Hope</span>
+
+            </div>
+
+            <!-- Story Stats -->
+
+            <div class="ShareaStoryofLove-page-ui-story-stats">
+
+                <div>
+
+                    <i class="bi bi-eye-fill"></i>
+
+                    2,450 Views
+
+                </div>
+
+                <div>
+
+                    <i class="bi bi-heart-fill"></i>
+
+                    385 Likes
+
+                </div>
+
+                <div>
+
+                    <i class="bi bi-chat-left-text-fill"></i>
+
+                    48 Comments
+
+                </div>
+
+            </div>
+
+            <!-- Action Buttons -->
+
+            <div class="ShareaStoryofLove-page-ui-action-buttons">
+
+                <button class="btn btn-primary">
+
+                    <i class="bi bi-heart"></i>
+
+                    Like
+
+                </button>
+
+                <button class="btn btn-success">
+
+                    <i class="bi bi-share-fill"></i>
+
+                    Share
+
+                </button>
+
+                <button class="btn btn-outline-secondary">
+
+                    <i class="bi bi-clipboard"></i>
+
+                    Copy Link
+
+                </button>
+
+                <button class="btn btn-outline-danger">
+
+                    <i class="bi bi-bookmark"></i>
+
+                    Save
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+      
+    </div>
+
+                      </div>
+
+
+
+
+
+</section>
+
+
+<!--=========================================
+      TOP ACTION CARDS
+==========================================-->
+
+<section class="ShareaStoryofLove-page-ui-action-section">
+
+    <div class="container-fluid">
+
+        <div class="row g-0">
+
+            <!-- Card 1 -->
+
+            <div class="col-xl-3 col-md-6">
+
+                <div class="ShareaStoryofLove-page-ui-action-card">
+
+                    <div class="ShareaStoryofLove-page-ui-action-icon blue">
+
+                        <i class="bi bi-pencil-square"></i>
+
+                    </div>
+
+                    <div class="ShareaStoryofLove-page-ui-action-content">
+
+                        <h4>Add a New Story</h4>
+
+                        <p>
+
+                            Share your experience of service,
+                            faith, and love.
+
+                        </p>
+
+                        <a href="#" class="btn btn-primary">
+
+                            <i class="bi bi-plus-lg"></i>
+
+                            Add New Story
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 2 -->
+
+            <div class="col-xl-3 col-md-6">
+
+                <div class="ShareaStoryofLove-page-ui-action-card">
+
+                    <div class="ShareaStoryofLove-page-ui-action-icon green">
+
+                        <i class="bi bi-arrow-repeat"></i>
+
+                    </div>
+
+                    <div class="ShareaStoryofLove-page-ui-action-content">
+
+                        <h4>Update Your Stories</h4>
+
+                        <p>
+
+                            Delete a story to make room
+                            for a new one.
+
+                        </p>
+
+                        <a href="#" class="btn btn-primary">
+
+                            Manage Stories
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 3 -->
+
+            <div class="col-xl-3 col-md-6">
+
+                <div class="ShareaStoryofLove-page-ui-action-card">
+
+                    <div class="ShareaStoryofLove-page-ui-action-icon purple">
+
+                        <i class="bi bi-copy"></i>
+
+                    </div>
+
+                    <div class="ShareaStoryofLove-page-ui-action-content">
+
+                        <h4>Copy and Share</h4>
+
+                        <p>
+
+                            Copy your story and paste it
+                            to share in other places.
+
+                        </p>
+
+                        <a href="#" class="btn btn-primary">
+
+                            <i class="bi bi-clipboard"></i>
+
+                            Copy a Story
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 4 -->
+
+            <div class="col-xl-3 col-md-6">
+
+                <div class="ShareaStoryofLove-page-ui-scripture-card">
+
+                    <div class="ShareaStoryofLove-page-ui-scripture-icon">
+
+                        <i class="bi bi-heart"></i>
+
+                    </div>
+
+                    <div>
+
+                        <p class="ShareaStoryofLove-page-ui-scripture-text">
+
+                            “Wherefore, by their fruits ye shall
+                            know them. For behold, the tree is
+                            known by its fruit.”
+
+                        </p>
+
+                        <span>
+
+                            — Matthew 7:20
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--=========================================
+            FOOTER
+==========================================-->
+
+<footer class="ShareaStoryofLove-page-ui-footer">
+
+    <!-- Top Footer -->
+
+    <div class="ShareaStoryofLove-page-ui-footer-top">
+
+        <div class="container-fluid">
+
+            <div class="row align-items-center">
+
+                <!-- Skyline -->
+
+                <div class="col-xl-3 col-lg-12">
+
+                    <div class="ShareaStoryofLove-page-ui-footer-skyline">
+
+                        <img src="assets/story/footer-skyline.png"
+                             alt="Skyline">
+
+                    </div>
+
+                </div>
+
+                <!-- Scripture -->
+
+                <div class="col-xl-5 col-lg-12">
+
+                    <div class="ShareaStoryofLove-page-ui-footer-scripture">
+
+                        <h3>
+
+                            Love thy neighbor as thyself.
+
+                        </h3>
+
+                        <div class="row">
+
+                            <div class="col-4">
+
+                                <ul>
+
+                                    <li>Galatians 6:10</li>
+
+                                    <li>3 Nephi 12:44</li>
+
+                                    <li>Ephesians 4:32</li>
+
+                                    <li>D&amp;C 59:6</li>
+
+                                </ul>
+
+                            </div>
+
+                            <div class="col-4">
+
+                                <ul>
+
+                                    <li>2 Nephi 31:20</li>
+
+                                    <li>John 15:13</li>
+
+                                    <li>1 John 4:21</li>
+
+                                    <li>Matthew 25:34-40</li>
+
+                                </ul>
+
+                            </div>
+
+                            <div class="col-4">
+
+                                <ul>
+
+                                    <li>Matthew 22:39</li>
+
+                                    <li>Moroni 7:45</li>
+
+                                    <li>Alma 7:11-13</li>
+
+                                    <li>Galatians 5:14</li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Divider -->
+
+                <div class="col-xl-1 d-none d-xl-flex justify-content-center">
+
+                    <div class="ShareaStoryofLove-page-ui-footer-divider"></div>
+
+                </div>
+
+                <!-- Navigation -->
+
+                <div class="col-xl-3 col-lg-12">
+
+                    <div class="ShareaStoryofLove-page-ui-footer-menu">
+
+                        <div class="ShareaStoryofLove-page-ui-footer-item">
+
+                            <i class="bi bi-person-heart"></i>
+
+                            <span>Pray</span>
+
+                        </div>
+
+                        <div class="ShareaStoryofLove-page-ui-footer-item">
+
+                            <i class="bi bi-heart"></i>
+
+                            <span>Serve</span>
+
+                        </div>
+
+                        <div class="ShareaStoryofLove-page-ui-footer-item">
+
+                            <i class="bi bi-book"></i>
+
+                            <span>Learn</span>
+
+                        </div>
+
+                        <div class="ShareaStoryofLove-page-ui-footer-item">
+
+                            <i class="bi bi-people"></i>
+
+                            <span>Unite</span>
+
+                        </div>
+
+                        <div class="ShareaStoryofLove-page-ui-footer-item">
+
+                            <i class="bi bi-bar-chart-line"></i>
+
+                            <span>Build Zion</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+
+    <div class="ShareaStoryofLove-page-ui-footer-bottom">
+
+        <div class="container-fluid">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <p>
+
+                        © 2026 Share a Story of Love. All Rights Reserved.
+
+                    </p>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <ul class="ShareaStoryofLove-page-ui-footer-links">
+
+                        <li>
+
+                            <a href="#">
+
+                                Privacy Policy
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#">
+
+                                Terms
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#">
+
+                                Contact
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#">
+
+                                Help
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

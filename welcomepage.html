@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Hastening.org | Launching Soon</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#0b1020;
+
+background-image:url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=2000&auto=format&fit=crop');
+
+background-size:cover;
+
+background-position:center;
+
+background-repeat:no-repeat;
+
+min-height:100vh;
+
+overflow-x:hidden;
+
+position:relative;
+
+}
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(rgba(5,12,35,.88),rgba(9,15,40,.92));
+
+z-index:-1;
+
+}
+
+.launch-navbar{
+
+padding:25px 0;
+
+}
+
+.launch-logo{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+text-decoration:none;
+
+color:#fff;
+
+}
+
+.launch-logo-icon{
+
+width:65px;
+
+height:65px;
+
+border-radius:18px;
+
+background:linear-gradient(135deg,#7c3aed,#4f46e5);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:28px;
+
+color:#fff;
+
+box-shadow:0 15px 40px rgba(124,58,237,.45);
+
+}
+
+.launch-logo h2{
+
+font-size:30px;
+
+font-weight:700;
+
+margin:0;
+
+}
+
+.launch-logo span{
+
+font-size:14px;
+
+color:#d1d5db;
+
+}
+
+.launch-status{
+
+padding:10px 22px;
+
+background:rgba(255,255,255,.10);
+
+border-radius:40px;
+
+color:#fff;
+
+font-weight:600;
+
+border:1px solid rgba(255,255,255,.15);
+
+}
+
+.launch-status i{
+
+color:#22c55e;
+
+margin-right:8px;
+
+}
+
+.hero{
+
+display:flex;
+
+align-items:center;
+
+min-height:calc(100vh - 100px);
+
+padding:40px 0;
+
+}
+
+.hero-card{
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+padding:70px 50px;
+
+text-align:center;
+
+box-shadow:0 25px 60px rgba(0,0,0,.40);
+
+}
+
+.launch-badge{
+
+display:inline-block;
+
+padding:12px 28px;
+
+border-radius:40px;
+
+background:#7c3aed;
+
+color:#fff;
+
+font-weight:600;
+
+margin-bottom:30px;
+
+}
+
+.hero h1{
+
+font-size:64px;
+
+font-weight:800;
+
+line-height:1.2;
+
+color:#fff;
+
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+font-size:19px;
+
+line-height:34px;
+
+color:#d1d5db;
+
+max-width:760px;
+
+margin:auto;
+
+}
+
+.status-box{
+
+margin-top:50px;
+
+padding:40px;
+
+background:rgba(255,255,255,.06);
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.12);
+
+}
+
+.status-icon{
+
+width:90px;
+
+height:90px;
+
+margin:auto;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#8b5cf6,#4f46e5);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:42px;
+
+color:#fff;
+
+margin-bottom:25px;
+
+}
+
+.status-box h3{
+
+font-size:34px;
+
+font-weight:700;
+
+color:#fff;
+
+margin-bottom:15px;
+
+}
+
+.status-box p{
+
+font-size:17px;
+
+line-height:30px;
+
+color:#d1d5db;
+
+}
+
+.launch-divider{
+
+width:120px;
+
+height:4px;
+
+background:linear-gradient(90deg,#7c3aed,#facc15);
+
+border-radius:50px;
+
+margin:45px auto;
+
+}
+
+.launch-subscribe{
+
+margin-top:20px;
+
+}
+
+.launch-subscribe h4{
+
+font-size:28px;
+
+font-weight:700;
+
+color:#fff;
+
+margin-bottom:10px;
+
+}
+
+.subscribe-text{
+
+color:#d1d5db;
+
+font-size:16px;
+
+margin-bottom:25px;
+
+}
+
+.launch-input{
+
+height:60px;
+
+border:none;
+
+border-radius:40px 0 0 40px;
+
+padding-left:25px;
+
+font-size:16px;
+
+}
+
+.launch-input:focus{
+
+box-shadow:none;
+
+}
+
+.launch-btn{
+
+background:#7c3aed;
+
+color:#fff;
+
+padding:0 35px;
+
+font-weight:600;
+
+border-radius:0 40px 40px 0;
+
+}
+
+.launch-btn:hover{
+
+background:#5b21b6;
+
+color:#fff;
+
+}
+
+.launch-verse{
+
+margin-top:60px;
+
+padding:35px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:20px;
+
+border:1px solid rgba(255,255,255,.10);
+
+}
+
+.verse-icon{
+
+width:70px;
+
+height:70px;
+
+margin:auto;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#7c3aed,#4f46e5);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:30px;
+
+color:#fff;
+
+margin-bottom:20px;
+
+}
+
+.launch-verse h5{
+
+font-size:26px;
+
+font-weight:700;
+
+color:#fff;
+
+margin-bottom:15px;
+
+}
+
+.launch-verse p{
+
+color:#d1d5db;
+
+font-size:17px;
+
+line-height:32px;
+
+margin-bottom:15px;
+
+}
+
+.launch-verse span{
+
+display:inline-block;
+
+padding:8px 20px;
+
+background:#facc15;
+
+color:#111827;
+
+border-radius:30px;
+
+font-weight:700;
+
+}
+
+.launch-social{
+
+margin-top:45px;
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.launch-social a{
+
+width:58px;
+
+height:58px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.10);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:#fff;
+
+font-size:22px;
+
+text-decoration:none;
+
+transition:.35s;
+
+}
+
+.launch-social a:hover{
+
+background:#7c3aed;
+
+transform:translateY(-8px);
+
+}
+
+.launch-footer{
+
+margin-top:45px;
+
+padding-top:25px;
+
+border-top:1px solid rgba(255,255,255,.10);
+
+color:#cbd5e1;
+
+font-size:15px;
+
+}
+
+@media(max-width:991px){
+
+.hero h1{
+
+font-size:46px;
+
+}
+
+.hero-card{
+
+padding:45px 25px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.launch-logo h2{
+
+font-size:22px;
+
+}
+
+.launch-status{
+
+display:none;
+
+}
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+line-height:30px;
+
+}
+
+.status-box{
+
+padding:25px;
+
+}
+
+.status-box h3{
+
+font-size:28px;
+
+}
+
+.launch-input{
+
+border-radius:40px;
+
+margin-bottom:15px;
+
+}
+
+.input-group{
+
+display:none;
+
+}
+
+.launch-btn{
+
+width:100%;
+
+height:56px;
+
+border-radius:40px;
+
+}
+
+.launch-social{
+
+gap:12px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar launch-navbar">
+
+<div class="container">
+
+<a href="#" class="launch-logo">
+
+<div class="launch-logo-icon">
+
+    <img src="home/logo.png" alt="Hastening Logo">
+
+</div>
+s
+<div>
+
+<h2>Hastening</h2>
+
+<span>Sharing God's Love</span>
+
+</div>
+
+</a>
+
+<div class="launch-status">
+
+<i class="bi bi-circle-fill"></i>
+
+Launching Soon
+
+</div>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="row justify-content-center">
+
+<div class="col-xl-9">
+
+<div class="hero-card">
+
+<div class="launch-badge">
+
+✨ CHRISTIAN WEBSITE
+
+</div>
+
+<h1>
+
+Preparing Hearts<br>
+
+Sharing God's Love
+
+</h1>
+
+<p>
+
+Welcome to <strong>Hastening.org</strong>.
+
+We are creating a beautiful Christian platform where believers can discover daily devotionals, Bible verses, inspiring testimonies, faith-building articles, worship resources, and a growing community centered on Christ.
+
+</p>
+
+<div class="status-box">
+
+
+
+<div class="status-icon">
+
+<i class="bi bi-rocket-takeoff-fill"></i>
+
+</div>
+
+<h3>Website Launching Soon</h3>
+
+<p>
+
+We're working hard to deliver an inspiring experience for everyone.
+Thank you for your patience and prayers as we prepare something special.
+
+</p>
+
+<div class="launch-divider"></div>
+
+<div class="launch-subscribe">
+
+<h4>Get Notified When We Launch</h4>
+
+<p class="subscribe-text">
+
+Be the first to experience Hastening.org.
+
+</p>
+
+<div class="input-group mt-4">
+
+<input
+type="email"
+class="form-control launch-input"
+placeholder="Enter your email address">
+
+<button class="btn launch-btn">
+
+Notify Me
+
+</button>
+
+</div>
+
+</div>
+
+<div class="launch-verse">
+
+<div class="verse-icon">
+
+<i class="bi bi-book-half"></i>
+
+</div>
+
+<h5>Verse of Hope</h5>
+
+<p>
+
+<strong>"For I know the plans I have for you,"</strong>
+
+declares the Lord,
+
+<strong>"plans to prosper you and not to harm you,
+
+plans to give you hope and a future."</strong>
+
+</p>
+
+<span>Jeremiah 29:11</span>
+
+</div>
+
+<div class="launch-social">
+
+<a href="#"><i class="bi bi-facebook"></i></a>
+
+<a href="#"><i class="bi bi-instagram"></i></a>
+
+<a href="#"><i class="bi bi-youtube"></i></a>
+
+<a href="#"><i class="bi bi-whatsapp"></i></a>
+
+<a href="#"><i class="bi bi-envelope-fill"></i></a>
+
+</div>
+
+<div class="launch-footer">
+
+© 2026 Hastening.org • Sharing God's Love Worldwide
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
