@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Hastening App</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#f5f5f5;
+    font-family:Georgia, serif;
+}
+
+/*==========================
+HEADER
+===========================*/
+
+.header{
+    background:#fff;
+/*    border-radius:20px 20px 0 0;*/
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo-circle{
+
+    width:62px;
+    height:62px;
+    border-radius:50%;
+    border:2px solid #d99c21;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#d99c21;
+    font-size:26px;
+    margin-right:12px;
+
+}
+
+.logo h3{
+    margin:0;
+    color:#16377c;
+    font-weight:700;
+    font-size:20px;
+}
+
+.logo small{
+    color:#666;
+}
+
+/*=========================
+NAVIGATION
+==========================*/
+
+.nav-menu{
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    gap:38px;
+}
+
+.nav-item-custom{
+
+    text-align:center;
+    text-decoration:none;
+    color:#16377c;
+    transition:.3s;
+    font-size:14px;
+}
+
+.nav-item-custom i{
+
+    display:block;
+    font-size:23px;
+    margin-bottom:8px;
+
+}
+
+.nav-item-custom:hover{
+
+color:#d89d21;
+
+}
+
+.active-nav{
+
+position:relative;
+color:#16377c;
+font-weight:700;
+
+}
+
+.active-nav::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+right:0;
+
+bottom:-16px;
+
+height:4px;
+
+background:#d89d21;
+
+border-radius:20px;
+
+}
+
+ 
+
+
+
+/* Desktop */
+
+.desktop-header{
+    display:block;
+}
+
+/* Mobile */
+
+@media (max-width:991px){
+
+.desktop-header{
+    display:none;
+}
+
+body{
+    padding-top:65px;
+}
+
+.offcanvas{
+    width:320px;
+}
+
+.offcanvas-header{
+    background:#17346f;
+    color:#fff;
+}
+
+.offcanvas-title{
+    font-weight:700;
+}
+
+.offcanvas-body{
+    padding:20px;
+}
+
+.mobile-menu-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-radius:16px;
+    background:#fff;
+    text-decoration:none;
+    margin-bottom:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.mobile-menu-item:hover{
+    transform:translateX(6px);
+    background:#17346f;
+}
+
+.mobile-menu-item:hover h6,
+.mobile-menu-item:hover small{
+    color:#fff;
+}
+
+.mobile-menu-item:hover .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+.menu-icon{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    background:#edf3ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    color:#17346f;
+    transition:.3s;
+}
+
+.mobile-menu-item h6{
+    margin:0;
+    color:#17346f;
+    font-weight:700;
+}
+
+.mobile-menu-item small{
+    color:#777;
+}
+
+.mobile-menu-item.active{
+    background:#17346f;
+}
+
+.mobile-menu-item.active h6,
+.mobile-menu-item.active small{
+    color:#fff;
+}
+
+.mobile-menu-item.active .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+}
+
+
+@media(max-width:991px){
+
+.footer-menu{
+    display:none;
+}
+
+.mobile-header{
+    display:block;
+}
+
+}
+
+@media(min-width:992px){
+
+.mobile-header{
+    display:none;
+}
+
+}
+
+
+/*Common Page*/
+
+
+
+</style>
+
+<style>
+
+/*==========================================
+BODY
+==========================================*/
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f6f7fb;
+
+    overflow-x:hidden;
+
+}
+
+/*==========================================
+HERO
+==========================================*/
+
+.unity-baptism-hero{
+
+    position:relative;
+
+}
+
+.unity-baptism-banner{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.unity-baptism-banner-image{
+
+    width:100%;
+
+    height:520px;
+
+    object-fit:cover;
+
+}
+
+/*==========================================
+OVERLAY
+==========================================*/
+
+.unity-baptism-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        rgba(255,248,240,.92),
+        rgba(255,248,240,.45),
+        rgba(255,255,255,.10));
+
+}
+
+/*==========================================
+CONTENT
+==========================================*/
+
+.unity-baptism-content{
+
+    position:absolute;
+
+    top:70px;
+
+    left:20px;
+
+    z-index:10;
+
+    max-width:520px;
+
+}
+
+.unity-baptism-content h1{
+
+    font-size:62px;
+
+    color:#16345d;
+
+    font-weight:700;
+
+    line-height:1.08;
+
+    margin-left:18px;
+
+}
+
+.unity-baptism-content h4{
+
+    color:#16345d;
+
+    font-size:30px;
+
+    margin-top:20px;
+
+    margin-bottom:20px;
+
+    line-height:1.5;
+
+}
+
+.unity-baptism-content blockquote{
+
+    font-size:24px;
+
+    color:#16345d;
+
+    font-style:italic;
+
+    line-height:1.6;
+
+    margin-bottom:12px;
+
+}
+
+.unity-baptism-content h5{
+
+    color:#16345d;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+/*==========================================
+ICON
+==========================================*/
+
+.unity-baptism-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:#d39b2f;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+    flex-shrink:0;
+
+}
+
+
+/*==========================================
+TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.unity-baptism-banner-image{
+
+    height:450px;
+
+}
+
+.unity-baptism-content{
+
+    top:50px;
+
+}
+
+.unity-baptism-content h1{
+
+    font-size:46px;
+
+}
+
+.unity-baptism-content h4{
+
+    font-size:22px;
+
+}
+
+.unity-baptism-content blockquote{
+
+    font-size:18px;
+
+}
+
+}
+
+/*==========================================
+MOBILE
+==========================================*/
+
+@media(max-width:767px){
+
+.unity-baptism-banner-image{
+
+    height:420px;
+
+}
+
+.unity-baptism-content{
+
+    position:absolute;
+
+    left:18px;
+
+    right:18px;
+
+    top:35px;
+
+    max-width:100%;
+
+}
+
+.unity-baptism-icon{
+
+    width:52px;
+
+    height:52px;
+
+    font-size:24px;
+
+}
+
+.unity-baptism-content h1{
+
+    font-size:34px;
+
+    margin-left:12px;
+
+}
+
+.unity-baptism-content h4{
+
+    font-size:18px;
+
+}
+
+.unity-baptism-content blockquote{
+
+    font-size:15px;
+
+}
+
+.unity-baptism-content h5{
+
+    font-size:16px;
+
+}
+
+}
+
+/*==========================================
+SMALL MOBILE
+==========================================*/
+
+@media(max-width:420px){
+
+.unity-baptism-banner-image{
+
+    height:380px;
+
+}
+
+.unity-baptism-content h1{
+
+    font-size:28px;
+
+}
+
+.unity-baptism-content h4{
+
+    font-size:16px;
+
+}
+
+}
+
+
+/*==========================================
+PART 2
+==========================================*/
+
+.unity-baptism-section{
+
+    margin-top:-40px;
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+.unity-baptism-card{
+
+    background:#ffffff;
+
+    border-radius:28px;
+
+    padding:35px;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.12);
+
+}
+
+.unity-baptism-article h2{
+
+    color:#16345d;
+
+    font-size:38px;
+
+    font-weight:700;
+
+    margin-bottom:22px;
+
+}
+
+.unity-baptism-article p{
+
+    color:#444;
+
+    line-height:1.9;
+
+    font-size:17px;
+
+    margin-bottom:18px;
+
+}
+
+.unity-baptism-image-box{
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    height:100%;
+
+}
+
+.unity-baptism-image-box img{
+
+    width:100%;
+
+    height:430px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    transition:.4s;
+
+}
+
+.unity-baptism-image-box img:hover{
+
+    transform:scale(1.03);
+
+}
+
+/*==========================================
+TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.unity-baptism-section{
+
+    margin-top:20px;
+
+}
+
+.unity-baptism-card{
+
+    padding:28px;
+
+}
+
+.unity-baptism-article h2{
+
+    font-size:30px;
+
+}
+
+.unity-baptism-image-box{
+
+    margin-top:20px;
+
+}
+
+}
+
+/*==========================================
+MOBILE
+==========================================*/
+
+@media(max-width:767px){
+
+.unity-baptism-card{
+
+    padding:22px;
+
+    border-radius:20px;
+
+}
+
+.unity-baptism-article h2{
+
+    font-size:24px;
+
+}
+
+.unity-baptism-article p{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+.unity-baptism-image-box img{
+
+    height:260px;
+
+}
+
+}
+
+/*==========================================
+PART 3
+==========================================*/
+
+.unity-feature-section{
+
+    padding:45px 0;
+
+}
+
+.unity-feature-card{
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.unity-feature-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+.unity-feature-image{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+.unity-feature-card .card-body{
+
+    padding:25px;
+
+}
+
+.unity-feature-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+    font-size:26px;
+
+    flex-shrink:0;
+
+}
+
+.unity-feature-card h3{
+
+    color:#17355d;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin:0;
+
+    line-height:1.2;
+
+}
+
+.unity-feature-card p{
+
+    color:#555;
+
+    line-height:1.8;
+
+    margin-bottom:0;
+
+}
+
+.unity-feature-list{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.unity-feature-list li{
+
+    position:relative;
+
+    padding-left:32px;
+
+    margin-bottom:18px;
+
+    line-height:1.8;
+
+    color:#555;
+
+}
+
+.unity-feature-list li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    top:2px;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:#d39b2f;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+}
+
+/*==========================================
+TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.unity-feature-card{
+
+    margin-bottom:10px;
+
+}
+
+.unity-feature-card h3{
+
+    font-size:24px;
+
+}
+
+}
+
+/*==========================================
+MOBILE
+==========================================*/
+
+@media(max-width:767px){
+
+.unity-feature-section{
+
+    padding:30px 0;
+
+}
+
+.unity-feature-image{
+
+    height:200px;
+
+}
+
+.unity-feature-card .card-body{
+
+    padding:20px;
+
+}
+
+.unity-feature-icon{
+
+    width:50px;
+
+    height:50px;
+
+    font-size:22px;
+
+}
+
+.unity-feature-card h3{
+
+    font-size:20px;
+
+}
+
+.unity-feature-card p,
+
+.unity-feature-list li{
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+.unity-feature-card .btn{
+
+    width:100%;
+
+}
+
+}
+
+/*==========================================
+PART 4
+==========================================*/
+
+.unity-scripture-section{
+
+    padding:20px 0 60px;
+
+}
+
+.unity-scripture-box{
+
+    background:linear-gradient(135deg,#0d2f5d,#143f79);
+
+    border-radius:24px;
+
+    padding:55px 35px;
+
+    color:#fff;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.unity-scripture-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:radial-gradient(circle at top right,
+    rgba(255,255,255,.08),
+    transparent 55%);
+
+}
+
+.unity-scripture-icon{
+
+    width:75px;
+
+    height:75px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto 25px;
+
+    font-size:34px;
+
+    color:#d8a536;
+
+}
+
+.unity-scripture-box h2{
+
+    font-size:36px;
+
+    font-weight:700;
+
+    line-height:1.5;
+
+    margin-bottom:15px;
+
+}
+
+.unity-scripture-box h4{
+
+    color:#f7d37b;
+
+    font-size:24px;
+
+    font-style:italic;
+
+    margin-bottom:30px;
+
+}
+
+.unity-scripture-divider{
+
+    width:100%;
+
+    max-width:800px;
+
+    height:1px;
+
+    background:rgba(255,255,255,.25);
+
+    margin:0 auto 28px;
+
+}
+
+.unity-scripture-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+.unity-scripture-links a{
+
+    color:#f5d07d;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.unity-scripture-links a:hover{
+
+    color:#ffffff;
+
+}
+
+.unity-scripture-links span{
+
+    color:rgba(255,255,255,.4);
+
+}
+
+
+/*==========================================
+TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.unity-scripture-box{
+
+    padding:45px 25px;
+
+}
+
+.unity-scripture-box h2{
+
+    font-size:28px;
+
+}
+
+.unity-scripture-box h4{
+
+    font-size:20px;
+
+}
+
+}
+
+/*==========================================
+MOBILE
+==========================================*/
+
+@media(max-width:767px){
+
+.unity-scripture-section{
+
+    padding:10px 0 40px;
+
+}
+
+.unity-scripture-box{
+
+    padding:35px 20px;
+
+    border-radius:18px;
+
+}
+
+.unity-scripture-icon{
+
+    width:60px;
+
+    height:60px;
+
+    font-size:28px;
+
+}
+
+.unity-scripture-box h2{
+
+    font-size:22px;
+
+    line-height:1.6;
+
+}
+
+.unity-scripture-box h4{
+
+    font-size:18px;
+
+}
+
+.unity-scripture-links{
+
+    gap:8px;
+
+}
+
+.unity-scripture-links a{
+
+    font-size:14px;
+
+}
+
+.unity-scripture-links span{
+
+    display:none;
+
+}
+
+}
+
+/*==========================================
+PART 5
+==========================================*/
+
+/* Smooth Scrolling */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/*------------------------------------------
+Section Spacing
+------------------------------------------*/
+
+.unity-baptism-section,
+.unity-feature-section,
+.unity-scripture-section{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*------------------------------------------
+Card Hover Animation
+------------------------------------------*/
+
+.unity-feature-card,
+.unity-baptism-card{
+
+    transition:.35s ease;
+
+}
+
+.unity-feature-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+.unity-baptism-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.16);
+
+}
+
+/*------------------------------------------
+Button Animation
+------------------------------------------*/
+
+.btn{
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/*------------------------------------------
+Image Hover
+------------------------------------------*/
+
+.unity-feature-image{
+
+    transition:.4s;
+
+}
+
+.unity-feature-card:hover .unity-feature-image{
+
+    transform:scale(1.05);
+
+}
+
+/*------------------------------------------
+Scripture Hover
+------------------------------------------*/
+
+.unity-scripture-links a{
+
+    position:relative;
+
+}
+
+.unity-scripture-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-4px;
+
+    width:0;
+
+    height:2px;
+
+    background:#f5d07d;
+
+    transition:.3s;
+
+}
+
+.unity-scripture-links a:hover::after{
+
+    width:100%;
+
+}
+
+/*------------------------------------------
+Fade Animation
+------------------------------------------*/
+
+@keyframes unityFadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.unity-baptism-card,
+.unity-feature-card,
+.unity-scripture-box{
+
+    animation:unityFadeUp .8s ease;
+
+}
+
+/*------------------------------------------
+Scroll Top Button
+------------------------------------------*/
+
+.unity-scroll-top{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:#d39b2f;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:24px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+
+    transition:.35s;
+
+    z-index:999;
+
+}
+
+.unity-scroll-top:hover{
+
+    background:#16345d;
+
+    color:#fff;
+
+    transform:translateY(-6px);
+
+}
+
+
+/*==========================================
+TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.unity-scroll-top{
+
+    width:50px;
+
+    height:50px;
+
+    font-size:22px;
+
+    right:18px;
+
+    bottom:18px;
+
+}
+
+}
+
+/*==========================================
+MOBILE
+==========================================*/
+
+@media(max-width:767px){
+
+.unity-scroll-top{
+
+    width:46px;
+
+    height:46px;
+
+    font-size:18px;
+
+    right:15px;
+
+    bottom:15px;
+
+}
+
+.unity-feature-card{
+
+    margin-bottom:20px;
+
+}
+
+.unity-scripture-box{
+
+    margin-bottom:25px;
+
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+ <header class="header d-none d-lg-block">
+  <div class="container py-3">
+    <div class="row align-items-center">
+
+      <div class="col-lg-3">
+        <div class="logo">
+          <div class="logo-circle">
+            <i class="bi bi-building"></i>
+          </div>
+
+          <div>
+            <h3>Hastening App</h3>
+            <small>Hasten the Gathering and Unity in Zion</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="nav-menu">
+
+        <a href="index.html" class="nav-item-custom ">
+    <i class="bi bi-house-fill"></i>
+    Home<br>
+    <span class="invisible">.</span>
+</a>
+
+          <a href="Loving.html" class="nav-item-custom">
+            <i class="bi bi-heart"></i>
+            Loving<br>Our Neighbor
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-book"></i>
+            Sharing Our<br>Faith in Christ
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-people-fill"></i>
+            Invitation<br>to Unity
+          </a>
+
+          <a href="#" class="nav-item-custom active-nav">
+            <i class="bi bi-droplet-fill"></i>
+            Does Unity<br>Require Baptism?
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-music-note-beamed"></i>
+            Worshiping Christ<br>through Music
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-calendar-event"></i>
+            Neighborhood<br>B&amp;B Events
+          </a>
+
+          <a href="security.html" class="nav-item-custom">
+            <i class="bi bi-shield-check"></i>
+            Security<br>&amp; More
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Header -->
+<nav class="navbar navbar-dark  d-lg-none fixed-top" style="background-color: #16377c !important;">
+
+    <div class="container-fluid">
+        <span class="navbar-brand fw-bold">
+           Hastening
+        </span>
+
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+      
+    </div>
+
+</nav>
+
+<!-- Mobile Menu -->
+<div class="offcanvas offcanvas-start"
+     tabindex="-1"
+     id="mobileMenu">
+
+    <div class="offcanvas-header">
+
+        <h5 class="offcanvas-title">
+            Menu
+        </h5>
+
+        <button class="btn-close"
+                data-bs-dismiss="offcanvas">
+        </button>
+
+    </div>
+
+<div class="offcanvas-body bg-light">
+
+    <a href="index.html" class="mobile-menu-item ">
+        <div class="menu-icon">
+            <i class="bi bi-house-fill"></i>
+        </div>
+        <div>
+            <h6>Home</h6>
+            <small>Dashboard</small>
+        </div>
+    </a>
+
+    <a href="Loving.html" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-heart"></i>
+        </div>
+        <div>
+            <h6>Loving Our Neighbor</h6>
+            <small>Serve with love</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-book"></i>
+        </div>
+        <div>
+            <h6>Sharing Our Faith</h6>
+            <small>Read Scriptures</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item active">
+        <div class="menu-icon">
+            <i class="bi bi-people-fill"></i>
+        </div>
+        <div>
+            <h6>Invitation to Unity</h6>
+            <small>Invite Friends</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-droplet-fill"></i>
+        </div>
+        <div>
+            <h6>Baptism</h6>
+            <small>Learn More</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-music-note-beamed"></i>
+        </div>
+        <div>
+            <h6>Music</h6>
+            <small>Worship Songs</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-calendar-event"></i>
+        </div>
+        <div>
+            <h6>Events</h6>
+            <small>Upcoming Meetings</small>
+        </div>
+    </a>
+
+    <a href="security.html" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-shield-check"></i>
+        </div>
+        <div>
+            <h6>Security</h6>
+            <small>Account Safety</small>
+        </div>
+    </a>
+
+</div>
+
+</div>
+
+ <!-- ==========================================
+PART 1
+UNITY BAPTISM HERO
+========================================== -->
+
+<section class="unity-baptism-hero">
+
+    <div class="unity-baptism-banner">
+
+        <!-- Hero Image -->
+
+        <img src="assets/unity/unity-banner.jpg"
+            class="img-fluid w-100 unity-baptism-banner-image"
+            alt="Temple Banner">
+
+        <!-- Overlay -->
+
+        <div class="unity-baptism-overlay"></div>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-6 col-md-8">
+
+                    <div class="unity-baptism-content">
+
+                        <div class="d-flex align-items-center mb-4">
+
+                            <div class="unity-baptism-icon">
+
+                                <i class="bi bi-people-fill"></i>
+
+                            </div>
+
+                            <h1>
+
+                                Does Unity
+                                <br>
+                                Require
+                                <br>
+                                Baptism?
+
+                            </h1>
+
+                        </div>
+
+                        <h4>
+
+                            Seeking unity in Christ through
+                            faith, love, and divine order.
+
+                        </h4>
+
+                        <blockquote>
+
+                            "Endeavouring to keep the unity
+                            of the Spirit in the bond of peace."
+
+                        </blockquote>
+
+                        <h5>
+
+                            — Ephesians 4:3
+
+                        </h5>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+PART 2
+MAIN CONTENT
+========================================== -->
+
+<section class="unity-baptism-section">
+
+    <div class="container">
+
+        <div class="unity-baptism-card">
+
+            <div class="row align-items-center g-4">
+
+                <!-- Left Content -->
+
+                <div class="col-lg-6">
+
+                    <div class="unity-baptism-article">
+
+                        <h2>
+
+                            Does Unity Require Baptism?
+
+                        </h2>
+
+                        <p>
+
+                            Ephesians 4 teaches that followers of Christ
+                            should strive to keep "the unity of the Spirit
+                            in the bond of peace," emphasizing humility,
+                            patience, love, and one faith centered in Jesus
+                            Christ.
+
+                        </p>
+
+                        <p>
+
+                            In John 3, Jesus taught Nicodemus that being
+                            born of water and of the Spirit is essential
+                            to enter the kingdom of God. Likewise,
+                            repentance and baptism are sacred principles
+                            taught throughout scripture.
+
+                        </p>
+
+                        <p>
+
+                            Acts 19 records disciples who had received
+                            John's baptism and were later instructed more
+                            fully concerning Jesus Christ. Their experience
+                            reminds us that God guides His children
+                            according to His perfect wisdom.
+
+                        </p>
+
+                        <p>
+
+                            Building Zion begins with faith, repentance,
+                            charity, and a willingness to follow the Lord.
+                            Every individual should prayerfully seek God's
+                            direction while showing love and respect to
+                            others.
+
+                        </p>
+
+                        <p class="mb-0">
+
+                            Loving God first and loving our neighbors
+                            creates lasting unity. Through Christ,
+                            people from many backgrounds can become
+                            one in purpose and one in heart.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Right Image -->
+
+                <div class="col-lg-6">
+
+                    <div class="unity-baptism-image-box">
+
+                        <img src="assets/unity/unity-discussion.jpg"
+                            class="img-fluid"
+                            alt="Unity Discussion">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+ 
+
+<!-- ==========================================
+PART 3
+FEATURE CARDS
+========================================== -->
+
+<section class="unity-feature-section">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <!-- Card 1 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card unity-feature-card h-100 border-0">
+
+                    <img src="assets/unity/journey.jpg"
+                        class="card-img-top unity-feature-image"
+                        alt="Shared Journey">
+
+                    <div class="card-body">
+
+                        <div class="d-flex align-items-center mb-3">
+
+                            <div class="unity-feature-icon bg-warning">
+
+                                <i class="bi bi-people-fill"></i>
+
+                            </div>
+
+                            <h3 class="ms-3">
+
+                                A Shared Journey
+                                <br>
+                                Toward Zion
+
+                            </h3>
+
+                        </div>
+
+                        <ul class="unity-feature-list">
+
+                            <li>
+                                Unity is not diminished by different
+                                starting points.
+                            </li>
+
+                            <li>
+                                Faith, repentance and love
+                                remain central.
+                            </li>
+
+                            <li>
+                                Every step is guided through
+                                prayer and revelation.
+                            </li>
+
+                            <li>
+                                Together we seek to become
+                                one in Christ.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 2 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card unity-feature-card h-100 border-0">
+
+                    <img src="assets/unity/scripture.jpg"
+                        class="card-img-top unity-feature-image"
+                        alt="Grow in Faith">
+
+                    <div class="card-body">
+
+                        <div class="d-flex align-items-center mb-3">
+
+                            <div class="unity-feature-icon bg-primary">
+
+                                <i class="bi bi-book-half"></i>
+
+                            </div>
+
+                            <h3 class="ms-3">
+
+                                Grow in Faith
+                                <br>
+                                and Understanding
+
+                            </h3>
+
+                        </div>
+
+                        <p>
+
+                            Study the scriptures,
+                            pray daily and seek
+                            personal revelation.
+
+                            The Lord guides each
+                            soul according to His
+                            perfect timing.
+
+                        </p>
+
+                        <a href="#"
+                            class="btn btn-warning rounded-pill mt-3">
+
+                            Explore Resources
+
+                            <i class="bi bi-arrow-right ms-2"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 3 -->
+
+            <div class="col-lg-4 col-md-12">
+
+                <div class="card unity-feature-card h-100 border-0">
+
+                    <img src="assets/unity/fellowship.jpg"
+                        class="card-img-top unity-feature-image"
+                        alt="Connect">
+
+                    <div class="card-body">
+
+                        <div class="d-flex align-items-center mb-3">
+
+                            <div class="unity-feature-icon bg-secondary">
+
+                                <i class="bi bi-people"></i>
+
+                            </div>
+
+                            <h3 class="ms-3">
+
+                                Connect in
+                                Fellowship
+
+                            </h3>
+
+                        </div>
+
+                        <p>
+
+                            We are stronger together.
+
+                            Build friendships,
+                            encourage one another,
+                            and strengthen Zion
+                            through Christlike love.
+
+                        </p>
+
+                        <a href="#"
+                            class="btn btn-warning rounded-pill mt-3">
+
+                            Find a Group
+
+                            <i class="bi bi-arrow-right ms-2"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+PART 4
+SCRIPTURE BANNER
+========================================== -->
+
+<section class="unity-scripture-section">
+
+    <div class="container">
+
+        <div class="unity-scripture-box">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-10">
+
+                    <!-- Temple Icon -->
+
+                    <div class="unity-scripture-icon">
+
+                        <i class="bi bi-building"></i>
+
+                    </div>
+
+                    <!-- Scripture -->
+
+                    <h2>
+
+                        "Behold, how good and how pleasant it is
+                        for brethren to dwell together in unity!"
+
+                    </h2>
+
+                    <h4>
+
+                        — Psalm 133:1
+
+                    </h4>
+
+                    <!-- Divider -->
+
+                    <div class="unity-scripture-divider"></div>
+
+                    <!-- References -->
+
+                    <div class="unity-scripture-links">
+
+                        <a href="#">
+
+                            John 3:3–5
+
+                        </a>
+
+                        <span>|</span>
+
+                        <a href="#">
+
+                            Ephesians 4:3–5
+
+                        </a>
+
+                        <span>|</span>
+
+                        <a href="#">
+
+                            2 Nephi 31:10–13
+
+                        </a>
+
+                        <span>|</span>
+
+                        <a href="#">
+
+                            Acts 19:3–5
+
+                        </a>
+
+                        <span>|</span>
+
+                        <a href="#">
+
+                            Moroni 10:3–5
+
+                        </a>
+
+                        <span>|</span>
+
+                        <a href="#">
+
+                            Ecclesiastes 3:1–7
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+PART 5
+SCROLL TO TOP
+========================================== -->
+
+<a href="#"
+    class="unity-scroll-top">
+
+    <i class="bi bi-arrow-up"></i>
+
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,2851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Hastening App</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#f5f5f5;
+    font-family:Georgia, serif;
+}
+
+/*==========================
+HEADER
+===========================*/
+
+.header{
+    background:#fff;
+/*    border-radius:20px 20px 0 0;*/
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo-circle{
+
+    width:62px;
+    height:62px;
+    border-radius:50%;
+    border:2px solid #d99c21;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#d99c21;
+    font-size:26px;
+    margin-right:12px;
+
+}
+
+.logo h3{
+    margin:0;
+    color:#16377c;
+    font-weight:700;
+    font-size:20px;
+}
+
+.logo small{
+    color:#666;
+}
+
+/*=========================
+NAVIGATION
+==========================*/
+
+.nav-menu{
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    gap:38px;
+}
+
+.nav-item-custom{
+
+    text-align:center;
+    text-decoration:none;
+    color:#16377c;
+    transition:.3s;
+    font-size:14px;
+}
+
+.nav-item-custom i{
+
+    display:block;
+    font-size:23px;
+    margin-bottom:8px;
+
+}
+
+.nav-item-custom:hover{
+
+color:#d89d21;
+
+}
+
+.active-nav{
+
+position:relative;
+color:#16377c;
+font-weight:700;
+
+}
+
+.active-nav::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+right:0;
+
+bottom:-16px;
+
+height:4px;
+
+background:#d89d21;
+
+border-radius:20px;
+
+}
+
+ 
+
+
+
+/* Desktop */
+
+.desktop-header{
+    display:block;
+}
+
+/* Mobile */
+
+@media (max-width:991px){
+
+.desktop-header{
+    display:none;
+}
+
+body{
+    padding-top:65px;
+}
+
+.offcanvas{
+    width:320px;
+}
+
+.offcanvas-header{
+    background:#17346f;
+    color:#fff;
+}
+
+.offcanvas-title{
+    font-weight:700;
+}
+
+.offcanvas-body{
+    padding:20px;
+}
+
+.mobile-menu-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-radius:16px;
+    background:#fff;
+    text-decoration:none;
+    margin-bottom:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.mobile-menu-item:hover{
+    transform:translateX(6px);
+    background:#17346f;
+}
+
+.mobile-menu-item:hover h6,
+.mobile-menu-item:hover small{
+    color:#fff;
+}
+
+.mobile-menu-item:hover .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+.menu-icon{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    background:#edf3ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    color:#17346f;
+    transition:.3s;
+}
+
+.mobile-menu-item h6{
+    margin:0;
+    color:#17346f;
+    font-weight:700;
+}
+
+.mobile-menu-item small{
+    color:#777;
+}
+
+.mobile-menu-item.active{
+    background:#17346f;
+}
+
+.mobile-menu-item.active h6,
+.mobile-menu-item.active small{
+    color:#fff;
+}
+
+.mobile-menu-item.active .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+}
+
+
+@media(max-width:991px){
+
+.footer-menu{
+    display:none;
+}
+
+.mobile-header{
+    display:block;
+}
+
+}
+
+@media(min-width:992px){
+
+.mobile-header{
+    display:none;
+}
+
+}
+
+
+/*Common Page*/
+<style>
+
+/****************************************
+BODY
+****************************************/
+
+body{
+
+    background:#f6f6f6;
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+/****************************************
+Hero
+****************************************/
+
+.neighborhood-bb-hero{
+
+    position:relative;
+
+}
+
+.neighborhood-bb-banner{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.neighborhood-bb-banner-image{
+
+    width:100%;
+
+    height:520px;
+
+    object-fit:cover;
+
+}
+
+/****************************************
+Overlay
+****************************************/
+
+.neighborhood-bb-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+    rgba(255,255,255,.35),
+    rgba(255,255,255,.20));
+
+}
+
+/****************************************
+Content
+****************************************/
+
+.neighborhood-bb-content{
+
+    position:absolute;
+
+    top:90px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:100%;
+
+    z-index:10;
+
+}
+
+.neighborhood-bb-icons{
+
+    font-size:45px;
+
+    color:#b97d11;
+
+    margin-bottom:15px;
+
+}
+
+.neighborhood-bb-icons i{
+
+    margin:0 8px;
+
+}
+
+.neighborhood-bb-content h1{
+
+    font-size:66px;
+
+    color:#1f1f1f;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.neighborhood-bb-content h2{
+
+    color:#2f6b42;
+
+    font-size:38px;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.neighborhood-bb-content p{
+
+    font-size:23px;
+
+    color:#333;
+
+    max-width:720px;
+
+    margin:auto;
+
+    line-height:1.7;
+
+}
+/****************************************
+Tablet
+****************************************/
+
+@media(max-width:991px){
+
+.neighborhood-bb-banner-image{
+
+    height:460px;
+
+}
+
+.neighborhood-bb-content{
+
+    top:70px;
+
+}
+
+.neighborhood-bb-content h1{
+
+    font-size:52px;
+
+}
+
+.neighborhood-bb-content h2{
+
+    font-size:30px;
+
+}
+
+.neighborhood-bb-content p{
+
+    font-size:18px;
+
+}
+
+}
+
+/****************************************
+Mobile
+****************************************/
+
+@media(max-width:767px){
+
+.neighborhood-bb-banner-image{
+
+    height:420px;
+
+}
+
+.neighborhood-bb-content{
+
+    top:50px;
+
+    padding:0 20px;
+
+}
+
+.neighborhood-bb-icons{
+
+    font-size:32px;
+
+}
+
+.neighborhood-bb-content h1{
+
+    font-size:34px;
+
+}
+
+.neighborhood-bb-content h2{
+
+    font-size:22px;
+
+}
+
+.neighborhood-bb-content p{
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+}
+
+/****************************************
+Small Mobile
+****************************************/
+
+@media(max-width:420px){
+
+.neighborhood-bb-banner-image{
+
+    height:390px;
+
+}
+
+.neighborhood-bb-content h1{
+
+    font-size:30px;
+
+}
+
+.neighborhood-bb-content h2{
+
+    font-size:18px;
+
+}
+
+.neighborhood-bb-content p{
+
+    font-size:14px;
+
+}
+
+}
+
+
+/*=========================================
+PART 2
+Navigation Tabs
+=========================================*/
+
+.neighborhood-bb-tabs{
+
+    margin-top:-36px;
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+.neighborhood-bb-tab-wrapper{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+.neighborhood-bb-tab{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:20px 10px;
+
+    color:#2f3b52;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+    border-bottom:4px solid transparent;
+
+}
+
+.neighborhood-bb-tab i{
+
+    font-size:22px;
+
+}
+
+.neighborhood-bb-tab:hover{
+
+    background:#faf8f4;
+
+    color:#b57a13;
+
+}
+
+.neighborhood-bb-tab.active{
+
+    color:#b57a13;
+
+    border-bottom:4px solid #b57a13;
+
+}
+
+/*====================================
+Tablet
+====================================*/
+
+@media(max-width:991px){
+
+.neighborhood-bb-tabs{
+
+    margin-top:20px;
+
+}
+
+.neighborhood-bb-tab{
+
+    flex-direction:column;
+
+    gap:8px;
+
+    padding:18px 8px;
+
+}
+
+.neighborhood-bb-tab span{
+
+    font-size:14px;
+
+}
+
+}
+
+/*====================================
+Mobile
+====================================*/
+
+@media(max-width:767px){
+
+.neighborhood-bb-tab-wrapper{
+
+    overflow-x:auto;
+
+    white-space:nowrap;
+
+}
+
+.neighborhood-bb-tab-wrapper .row{
+
+    flex-wrap:nowrap;
+
+    min-width:760px;
+
+}
+
+.neighborhood-bb-tab{
+
+    padding:16px 12px;
+
+}
+
+.neighborhood-bb-tab i{
+
+    font-size:20px;
+
+}
+
+.neighborhood-bb-tab span{
+
+    font-size:13px;
+
+}
+
+}
+
+/*=========================================
+PART 3
+=========================================*/
+
+.neighborhood-bb-event-card{
+
+    background:#fff;
+
+}
+
+.neighborhood-bb-event-card .card-header{
+
+    padding:20px 22px;
+
+}
+
+.neighborhood-bb-event-card h3{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#17355d;
+
+}
+
+.neighborhood-bb-event-item{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+    padding-bottom:18px;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.neighborhood-bb-event-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.neighborhood-bb-event-img{
+
+    width:95px;
+
+    height:70px;
+
+    border-radius:12px;
+
+    object-fit:cover;
+
+}
+
+.neighborhood-bb-event-item h6{
+
+    font-weight:700;
+
+    margin-bottom:6px;
+
+    color:#1b2f57;
+
+}
+
+.neighborhood-bb-event-item .btn{
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    padding:5px 14px;
+
+}
+
+/*=========================================
+Tablet
+=========================================*/
+
+@media(max-width:991px){
+
+.neighborhood-bb-event-card{
+
+    margin-bottom:20px;
+
+}
+
+}
+
+/*=========================================
+Mobile
+=========================================*/
+
+@media(max-width:767px){
+
+.neighborhood-bb-event-card h3{
+
+    font-size:22px;
+
+}
+
+.neighborhood-bb-event-item{
+
+    flex-wrap:wrap;
+
+}
+
+.neighborhood-bb-event-img{
+
+    width:100%;
+
+    height:190px;
+
+    margin-bottom:15px;
+
+}
+
+.neighborhood-bb-event-item .btn{
+
+    width:100%;
+
+    margin-top:15px;
+
+}
+
+}
+
+/*=========================================
+PART 3
+=========================================*/
+
+.neighborhood-bb-event-card{
+
+    background:#fff;
+
+}
+
+.neighborhood-bb-event-card .card-header{
+
+    padding:20px 22px;
+
+}
+
+.neighborhood-bb-event-card h3{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#17355d;
+
+}
+
+.neighborhood-bb-event-item{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+    padding-bottom:18px;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.neighborhood-bb-event-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.neighborhood-bb-event-img{
+
+    width:95px;
+
+    height:70px;
+
+    border-radius:12px;
+
+    object-fit:cover;
+
+}
+
+.neighborhood-bb-event-item h6{
+
+    font-weight:700;
+
+    margin-bottom:6px;
+
+    color:#1b2f57;
+
+}
+
+.neighborhood-bb-event-item .btn{
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    padding:5px 14px;
+
+}
+
+/*======================================
+PART 4
+======================================*/
+
+.neighborhood-bb-map-card,
+.neighborhood-bb-tools-card{
+
+    background:#fff;
+
+}
+
+.neighborhood-bb-map-card .card-header,
+.neighborhood-bb-tools-card .card-header{
+
+    padding:20px;
+
+}
+
+.neighborhood-bb-map-card h3,
+.neighborhood-bb-tools-card h3{
+
+    font-size:28px;
+
+    color:#17355d;
+
+    font-weight:700;
+
+}
+
+.neighborhood-bb-map-image{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+}
+
+.neighborhood-bb-tool{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:18px 0;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.neighborhood-bb-tool:last-child{
+
+    border-bottom:none;
+
+}
+
+.neighborhood-bb-tool>div:first-child{
+
+    width:55px;
+
+    height:55px;
+
+    background:#fff8e6;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:24px;
+
+    color:#b67b11;
+
+}
+
+.neighborhood-bb-tool h6{
+
+    margin-bottom:4px;
+
+    font-weight:700;
+
+}
+
+.neighborhood-bb-tool small{
+
+    color:#666;
+
+}
+
+.neighborhood-bb-tool .bi-chevron-right{
+
+    margin-left:auto;
+
+    color:#777;
+
+}
+
+/*===================================
+Tablet
+===================================*/
+
+@media(max-width:991px){
+
+.neighborhood-bb-map-card{
+
+    margin-top:20px;
+
+}
+
+}
+
+/*===================================
+Mobile
+===================================*/
+
+@media(max-width:767px){
+
+.neighborhood-bb-map-card h3,
+.neighborhood-bb-tools-card h3{
+
+    font-size:22px;
+
+}
+
+.neighborhood-bb-map-image{
+
+    height:220px;
+
+}
+
+.neighborhood-bb-tool{
+
+    gap:12px;
+
+}
+
+.neighborhood-bb-tool>div:first-child{
+
+    width:45px;
+
+    height:45px;
+
+    font-size:20px;
+
+}
+
+.neighborhood-bb-tool h6{
+
+    font-size:15px;
+
+}
+
+.neighborhood-bb-tool small{
+
+    font-size:13px;
+
+}
+
+}
+
+/*==========================================
+PART 5
+==========================================*/
+
+.neighborhood-bb-group-card,
+.neighborhood-bb-conversation-card{
+
+    background:#ffffff;
+
+}
+
+.neighborhood-bb-group-card .card-header,
+.neighborhood-bb-conversation-card .card-header{
+
+    padding:20px;
+
+}
+
+.neighborhood-bb-group-card h3,
+.neighborhood-bb-conversation-card h3{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#17355d;
+
+}
+
+.neighborhood-bb-group-image{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+.neighborhood-bb-group-card p{
+
+    color:#555;
+
+    line-height:1.8;
+
+}
+
+.neighborhood-bb-question{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.neighborhood-bb-question:last-child{
+
+    border-bottom:none;
+
+}
+
+.neighborhood-bb-question i{
+
+    color:#198754;
+
+    font-size:20px;
+
+    margin-top:3px;
+
+}
+
+.neighborhood-bb-question span{
+
+    color:#444;
+
+    line-height:1.7;
+
+}
+
+
+/*====================================
+TABLET
+====================================*/
+
+@media(max-width:991px){
+
+.neighborhood-bb-group-card,
+.neighborhood-bb-conversation-card{
+
+    margin-top:20px;
+
+}
+
+}
+
+/*====================================
+MOBILE
+====================================*/
+
+@media(max-width:767px){
+
+.neighborhood-bb-group-card h3,
+.neighborhood-bb-conversation-card h3{
+
+    font-size:22px;
+
+}
+
+.neighborhood-bb-group-image{
+
+    height:180px;
+
+}
+
+.neighborhood-bb-question{
+
+    gap:12px;
+
+}
+
+.neighborhood-bb-question i{
+
+    font-size:18px;
+
+}
+
+.neighborhood-bb-question span{
+
+    font-size:14px;
+
+}
+
+}
+
+/*==========================================
+PART 6
+==========================================*/
+
+.neighborhood-bb-community{
+
+    background:#fafafa;
+
+}
+
+.neighborhood-bb-section-title{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:#17355d;
+
+}
+
+.neighborhood-bb-feature-card{
+
+    transition:.3s;
+
+}
+
+.neighborhood-bb-feature-icon{
+
+    width:70px;
+
+    height:70px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:28px;
+
+    margin-bottom:20px;
+
+}
+
+.neighborhood-bb-feature-card h4{
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.neighborhood-bb-feature-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+.neighborhood-bb-starter-card h3,
+.neighborhood-bb-story-card h3{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#17355d;
+
+}
+
+.neighborhood-bb-story-image{
+
+    height:260px;
+
+    object-fit:cover;
+
+}
+
+.list-group-item{
+
+    border:none;
+
+    padding-left:0;
+
+}
+
+
+/*==========================================
+TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.neighborhood-bb-section-title{
+
+    font-size:34px;
+
+}
+
+}
+
+/*==========================================
+MOBILE
+==========================================*/
+
+@media(max-width:767px){
+
+.neighborhood-bb-community{
+
+    padding:40px 0;
+
+}
+
+.neighborhood-bb-section-title{
+
+    font-size:28px;
+
+}
+
+.neighborhood-bb-feature-card{
+
+    margin-bottom:10px;
+
+}
+
+.neighborhood-bb-feature-icon{
+
+    width:60px;
+
+    height:60px;
+
+    font-size:24px;
+
+}
+
+.neighborhood-bb-starter-card h3,
+.neighborhood-bb-story-card h3{
+
+    font-size:24px;
+
+}
+
+.neighborhood-bb-story-image{
+
+    height:200px;
+
+}
+
+}
+
+/*==========================================
+PART 7
+==========================================*/
+
+.neighborhood-bb-scripture{
+
+    background:#17355d;
+
+    padding:70px 0;
+
+}
+
+.neighborhood-bb-scripture-card{
+
+    border-radius:30px;
+
+    background:#ffffff;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+}
+
+.neighborhood-bb-scripture-card .card-body{
+
+    padding:60px 40px;
+
+}
+
+.neighborhood-bb-scripture-icon{
+
+    font-size:60px;
+
+    color:#c89b2b;
+
+    margin-bottom:25px;
+
+}
+
+.neighborhood-bb-scripture-card h2{
+
+    font-size:36px;
+
+    color:#17355d;
+
+    font-weight:700;
+
+    line-height:1.6;
+
+}
+
+.neighborhood-bb-scripture-card h5{
+
+    color:#c89b2b;
+
+    margin:25px 0;
+
+    letter-spacing:3px;
+
+    font-weight:700;
+
+}
+
+.neighborhood-bb-scripture-card p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#666;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+/*==========================
+Hover Effects
+==========================*/
+
+.neighborhood-bb-feature-card,
+.neighborhood-bb-event-card,
+.neighborhood-bb-map-card,
+.neighborhood-bb-tools-card,
+.neighborhood-bb-group-card,
+.neighborhood-bb-conversation-card,
+.neighborhood-bb-starter-card,
+.neighborhood-bb-story-card{
+
+    transition:.35s ease;
+
+}
+
+.neighborhood-bb-feature-card:hover,
+.neighborhood-bb-event-card:hover,
+.neighborhood-bb-map-card:hover,
+.neighborhood-bb-tools-card:hover,
+.neighborhood-bb-group-card:hover,
+.neighborhood-bb-conversation-card:hover,
+.neighborhood-bb-starter-card:hover,
+.neighborhood-bb-story-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+}
+
+.neighborhood-bb-banner-image,
+.neighborhood-bb-map-image,
+.neighborhood-bb-group-image,
+.neighborhood-bb-story-image,
+.neighborhood-bb-event-img{
+
+    transition:.4s ease;
+
+}
+
+.neighborhood-bb-banner-image:hover,
+.neighborhood-bb-map-image:hover,
+.neighborhood-bb-group-image:hover,
+.neighborhood-bb-story-image:hover{
+
+    transform:scale(1.04);
+
+}
+
+/* Buttons */
+
+.btn{
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* Smooth Scroll */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* Selection */
+
+::selection{
+
+    background:#17355d;
+
+    color:#fff;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#c89b2b;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ececec;
+
+}
+
+
+/*==================================
+Tablet
+==================================*/
+
+@media(max-width:991px){
+
+.neighborhood-bb-scripture{
+
+    padding:50px 0;
+
+}
+
+.neighborhood-bb-scripture-card .card-body{
+
+    padding:40px 25px;
+
+}
+
+.neighborhood-bb-scripture-card h2{
+
+    font-size:28px;
+
+}
+
+}
+
+/*==================================
+Mobile
+==================================*/
+
+@media(max-width:767px){
+
+.neighborhood-bb-scripture{
+
+    padding:35px 0;
+
+}
+
+.neighborhood-bb-scripture-card{
+
+    border-radius:20px;
+
+}
+
+.neighborhood-bb-scripture-card .card-body{
+
+    padding:30px 20px;
+
+}
+
+.neighborhood-bb-scripture-icon{
+
+    font-size:42px;
+
+}
+
+.neighborhood-bb-scripture-card h2{
+
+    font-size:22px;
+
+    line-height:1.5;
+
+}
+
+.neighborhood-bb-scripture-card h5{
+
+    font-size:16px;
+
+}
+
+.neighborhood-bb-scripture-card p{
+
+    font-size:15px;
+
+}
+
+.neighborhood-bb-scripture .btn{
+
+    width:100%;
+
+}
+
+}
+</style>
+
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+ <header class="header d-none d-lg-block">
+  <div class="container py-3">
+    <div class="row align-items-center">
+
+      <div class="col-lg-3">
+        <div class="logo">
+          <div class="logo-circle">
+            <i class="bi bi-building"></i>
+          </div>
+
+          <div>
+            <h3>Hastening App</h3>
+            <small>Hasten the Gathering and Unity in Zion</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="nav-menu">
+
+        <a href="index.html" class="nav-item-custom ">
+    <i class="bi bi-house-fill"></i>
+    Home<br>
+    <span class="invisible">.</span>
+</a>
+
+          <a href="Loving.html" class="nav-item-custom">
+            <i class="bi bi-heart"></i>
+            Loving<br>Our Neighbor
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-book"></i>
+            Sharing Our<br>Faith in Christ
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-people-fill"></i>
+            Invitation<br>to Unity
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-droplet-fill"></i>
+            Does Unity<br>Require Baptism?
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-music-note-beamed"></i>
+            Worshiping Christ<br>through Music
+          </a>
+
+          <a href="#" class="nav-item-custom active-nav">
+            <i class="bi bi-calendar-event"></i>
+            Neighborhood<br>B&amp;B Events
+          </a>
+
+          <a href="security.html" class="nav-item-custom">
+            <i class="bi bi-shield-check"></i>
+            Security<br>&amp; More
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Header -->
+<nav class="navbar navbar-dark  d-lg-none fixed-top" style="background-color: #16377c !important;">
+
+    <div class="container-fluid">
+        <span class="navbar-brand fw-bold">
+           Hastening
+        </span>
+
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+      
+    </div>
+
+</nav>
+
+<!-- Mobile Menu -->
+<div class="offcanvas offcanvas-start"
+     tabindex="-1"
+     id="mobileMenu">
+
+    <div class="offcanvas-header">
+
+        <h5 class="offcanvas-title">
+            Menu
+        </h5>
+
+        <button class="btn-close"
+                data-bs-dismiss="offcanvas">
+        </button>
+
+    </div>
+
+<div class="offcanvas-body bg-light">
+
+    <a href="index.html" class="mobile-menu-item ">
+        <div class="menu-icon">
+            <i class="bi bi-house-fill"></i>
+        </div>
+        <div>
+            <h6>Home</h6>
+            <small>Dashboard</small>
+        </div>
+    </a>
+
+    <a href="Loving.html" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-heart"></i>
+        </div>
+        <div>
+            <h6>Loving Our Neighbor</h6>
+            <small>Serve with love</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-book"></i>
+        </div>
+        <div>
+            <h6>Sharing Our Faith</h6>
+            <small>Read Scriptures</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-people-fill"></i>
+        </div>
+        <div>
+            <h6>Invitation to Unity</h6>
+            <small>Invite Friends</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-droplet-fill"></i>
+        </div>
+        <div>
+            <h6>Baptism</h6>
+            <small>Learn More</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-music-note-beamed"></i>
+        </div>
+        <div>
+            <h6>Music</h6>
+            <small>Worship Songs</small>
+        </div>
+    </a>
+
+    <a href="neighborhood.html" class="mobile-menu-item active">
+        <div class="menu-icon">
+            <i class="bi bi-calendar-event"></i>
+        </div>
+        <div>
+            <h6>Events</h6>
+            <small>Upcoming Meetings</small>
+        </div>
+    </a>
+
+    <a href="security.html" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-shield-check"></i>
+        </div>
+        <div>
+            <h6>Security</h6>
+            <small>Account Safety</small>
+        </div>
+    </a>
+
+</div>
+
+</div>
+<!-- ==========================================
+Neighborhood B&B Hero Section
+========================================== -->
+
+<section class="neighborhood-bb-hero">
+
+    <div class="container-fluid p-0">
+
+        <div class="neighborhood-bb-banner">
+
+            <!-- Background Image -->
+
+            <img src="assets/neighborhood/banner.jpg"
+                class="img-fluid w-100 neighborhood-bb-banner-image"
+                alt="Neighborhood Banner">
+
+            <!-- Overlay -->
+
+            <div class="neighborhood-bb-overlay"></div>
+
+            <!-- Content -->
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+
+                    <div class="col-xl-7 col-lg-8 col-md-10">
+
+                        <div class="neighborhood-bb-content text-center">
+
+                            <div class="neighborhood-bb-icons">
+
+                                <i class="bi bi-fire"></i>
+
+                                <i class="bi bi-book-half"></i>
+
+                            </div>
+
+                            <h1>
+
+                                Neighborhood B&amp;B
+
+                            </h1>
+
+                            <h2>
+
+                                Barbecue &amp; Book of Mormon
+
+                            </h2>
+
+                            <p>
+
+                                Building trust and fellowship through
+                                food, testimony, scripture,
+                                and Christ-centered conversation.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+ 
+
+ 
+<!-- ==========================================
+Neighborhood B&B Navigation Tabs
+========================================== -->
+
+<section class="neighborhood-bb-tabs">
+
+    <div class="container">
+
+        <div class="neighborhood-bb-tab-wrapper">
+
+            <div class="row g-0 text-center">
+
+                <!-- Upcoming Events -->
+
+                <div class="col">
+
+                    <a href="#" class="neighborhood-bb-tab active">
+
+                        <i class="bi bi-calendar-event"></i>
+
+                        <span>Upcoming Events</span>
+
+                    </a>
+
+                </div>
+
+                <!-- Event Map -->
+
+                <div class="col">
+
+                    <a href="#" class="neighborhood-bb-tab">
+
+                        <i class="bi bi-geo-alt"></i>
+
+                        <span>Event Map</span>
+
+                    </a>
+
+                </div>
+
+                <!-- Host Tools -->
+
+                <div class="col">
+
+                    <a href="#" class="neighborhood-bb-tab">
+
+                        <i class="bi bi-people"></i>
+
+                        <span>Host Tools</span>
+
+                    </a>
+
+                </div>
+
+                <!-- Discussion Guides -->
+
+                <div class="col">
+
+                    <a href="#" class="neighborhood-bb-tab">
+
+                        <i class="bi bi-book"></i>
+
+                        <span>Discussion Guides</span>
+
+                    </a>
+
+                </div>
+
+                <!-- My Activity -->
+
+                <div class="col">
+
+                    <a href="#" class="neighborhood-bb-tab">
+
+                        <i class="bi bi-person"></i>
+
+                        <span>My B&amp;B Activity</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+PART 3
+UPCOMING EVENTS
+========================================== -->
+
+<section class="neighborhood-bb-events py-4">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <!-- Upcoming Events -->
+
+            <div class="col-xl-4 col-lg-5">
+
+                <div class="card neighborhood-bb-event-card border-0 shadow-sm rounded-4 h-100">
+
+                    <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center">
+
+                        <div>
+
+                            <h3 class="mb-1">
+                                Upcoming B&amp;B Events
+                            </h3>
+
+                            <small class="text-muted">
+                                Join a local gathering near you.
+                            </small>
+
+                        </div>
+
+                        <button class="btn btn-outline-warning btn-sm rounded-pill">
+
+                            View All Events
+
+                        </button>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <!-- Event -->
+
+                        <div class="neighborhood-bb-event-item">
+
+                            <img src="assets/neighborhood/event1.jpg"
+                                class="neighborhood-bb-event-img">
+
+                            <div class="flex-grow-1 ms-3">
+
+                                <h6>
+                                    Backyard Barbecue &amp;
+                                    Book of Mormon Night
+                                </h6>
+
+                                <small class="text-muted">
+
+                                    May 24 • 6:00 PM
+
+                                </small>
+
+                                <br>
+
+                                <small class="text-muted">
+
+                                    Johnson Home • Pineview
+
+                                </small>
+
+                            </div>
+
+                            <button class="btn btn-success btn-sm">
+
+                                RSVP
+
+                            </button>
+
+                        </div>
+
+                        <!-- Event -->
+
+                        <div class="neighborhood-bb-event-item">
+
+                            <img src="assets/neighborhood/event2.jpg"
+                                class="neighborhood-bb-event-img">
+
+                            <div class="flex-grow-1 ms-3">
+
+                                <h6>
+
+                                    Potluck &amp; Purpose
+
+                                </h6>
+
+                                <small class="text-muted">
+
+                                    May 31 • 5:30 PM
+
+                                </small>
+
+                                <br>
+
+                                <small class="text-muted">
+
+                                    Carrie Home • Maple Ridge
+
+                                </small>
+
+                            </div>
+
+                            <button class="btn btn-success btn-sm">
+
+                                RSVP
+
+                            </button>
+
+                        </div>
+
+                        <!-- Event -->
+
+                        <div class="neighborhood-bb-event-item">
+
+                            <img src="assets/neighborhood/event3.jpg"
+                                class="neighborhood-bb-event-img">
+
+                            <div class="flex-grow-1 ms-3">
+
+                                <h6>
+
+                                    Sunday Scripture Feast
+
+                                </h6>
+
+                                <small class="text-muted">
+
+                                    June 7 • 4:00 PM
+
+                                </small>
+
+                                <br>
+
+                                <small class="text-muted">
+
+                                    Anderson Home • Hillside
+
+                                </small>
+
+                            </div>
+
+                            <button class="btn btn-success btn-sm">
+
+                                RSVP
+
+                            </button>
+
+                        </div>
+
+                        <!-- Event -->
+
+                        <div class="neighborhood-bb-event-item mb-0">
+
+                            <img src="assets/neighborhood/event4.jpg"
+                                class="neighborhood-bb-event-img">
+
+                            <div class="flex-grow-1 ms-3">
+
+                                <h6>
+
+                                    Youth B&amp;B Hangout
+
+                                </h6>
+
+                                <small class="text-muted">
+
+                                    June 14 • 6:30 PM
+
+                                </small>
+
+                                <br>
+
+                                <small class="text-muted">
+
+                                    Stake Center Pavilion
+
+                                </small>
+
+                            </div>
+
+                            <button class="btn btn-success btn-sm">
+
+                                RSVP
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PART 4 continues here -->
+            <!-- ===========================
+PART 4
+CENTER SECTION
+=========================== -->
+
+<div class="col-xl-4 col-lg-7">
+
+    <div class="row g-4">
+
+        <!-- Map Card -->
+
+        <div class="col-12">
+
+            <div class="card neighborhood-bb-map-card border-0 shadow-sm rounded-4">
+
+                <div class="card-header bg-white border-0">
+
+                    <h3>
+
+                        B&B Gatherings Near You
+
+                    </h3>
+
+                    <small class="text-muted">
+
+                        Find, join and serve in gatherings near your area.
+
+                    </small>
+
+                </div>
+
+                <div class="card-body">
+
+                    <img src="assets/neighborhood/map.jpg"
+                        class="img-fluid rounded-4 neighborhood-bb-map-image"
+                        alt="Map">
+
+                    <div class="row mt-3 align-items-center">
+
+                        <div class="col-md-6">
+
+                            <button class="btn btn-outline-primary rounded-pill btn-sm">
+
+                                <i class="bi bi-geo-alt-fill"></i>
+
+                                Use My Location
+
+                            </button>
+
+                        </div>
+
+                        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+
+                            <button class="btn btn-warning rounded-pill btn-sm">
+
+                                Sign Up To Host
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Host Tools -->
+
+        <div class="col-12">
+
+            <div class="card neighborhood-bb-tools-card border-0 shadow-sm rounded-4">
+
+                <div class="card-header bg-white border-0">
+
+                    <h3>
+
+                        Host Tools & Resources
+
+                    </h3>
+
+                    <small class="text-muted">
+
+                        Everything you need for a meaningful gathering.
+
+                    </small>
+
+                </div>
+
+                <div class="card-body">
+
+                    <!-- Item -->
+
+                    <div class="neighborhood-bb-tool">
+
+                        <div>
+
+                            <i class="bi bi-people-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h6>Sign Up To Host</h6>
+
+                            <small>Create gatherings and invite your neighbors.</small>
+
+                        </div>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </div>
+
+                    <!-- Item -->
+
+                    <div class="neighborhood-bb-tool">
+
+                        <div>
+
+                            <i class="bi bi-fire"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h6>Meal Coordination</h6>
+
+                            <small>Plan menus and serve together.</small>
+
+                        </div>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </div>
+
+                    <!-- Item -->
+
+                    <div class="neighborhood-bb-tool">
+
+                        <div>
+
+                            <i class="bi bi-music-note-beamed"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h6>Music & Worship</h6>
+
+                            <small>Uplift gatherings through sacred music.</small>
+
+                        </div>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </div>
+
+                    <!-- Item -->
+
+                    <div class="neighborhood-bb-tool mb-0">
+
+                        <div>
+
+                            <i class="bi bi-share-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h6>Invite & Share</h6>
+
+                            <small>Easily reach friends and neighbors.</small>
+
+                        </div>
+
+                        <i class="bi bi-chevron-right"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+PART 5
+BOOK OF MORMON GROUPS
+========================================== -->
+
+<div class="col-xl-4 col-lg-12">
+
+    <div class="row g-4">
+
+        <!-- Book of Mormon Group -->
+
+        <div class="col-12">
+
+            <div class="card neighborhood-bb-group-card border-0 shadow-sm rounded-4">
+
+                <div class="card-header bg-white border-0">
+
+                    <h3>
+
+                        Organize or Join a Book of Mormon Group
+
+                    </h3>
+
+                    <small class="text-muted">
+
+                        Meet weekly with families and friends to study together.
+
+                    </small>
+
+                </div>
+
+                <div class="card-body">
+
+                    <img src="assets/neighborhood/bookofmormon-group.jpg"
+                        class="img-fluid rounded-4 neighborhood-bb-group-image"
+                        alt="Book of Mormon Group">
+
+                    <p class="mt-4">
+
+                        Strengthen testimonies, build lasting friendships,
+                        and discover how the Book of Mormon brings us
+                        closer to Jesus Christ.
+
+                    </p>
+
+                    <div class="d-grid mt-3">
+
+                        <button class="btn btn-success rounded-pill">
+
+                            Find or Create a Group
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Conversation Starters -->
+
+        <div class="col-12">
+
+            <div class="card neighborhood-bb-conversation-card border-0 shadow-sm rounded-4">
+
+                <div class="card-header bg-white border-0">
+
+                    <h3>
+
+                        Conversation Starters
+
+                    </h3>
+
+                    <small class="text-muted">
+
+                        Helpful discussion ideas for every gathering.
+
+                    </small>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="neighborhood-bb-question">
+
+                        <i class="bi bi-chat-dots-fill"></i>
+
+                        <span>
+
+                            What scripture strengthened you this week?
+
+                        </span>
+
+                    </div>
+
+                    <div class="neighborhood-bb-question">
+
+                        <i class="bi bi-chat-dots-fill"></i>
+
+                        <span>
+
+                            How have you seen God's hand in your life recently?
+
+                        </span>
+
+                    </div>
+
+                    <div class="neighborhood-bb-question">
+
+                        <i class="bi bi-chat-dots-fill"></i>
+
+                        <span>
+
+                            What can we do as neighbors to serve one another?
+
+                        </span>
+
+                    </div>
+
+                    <div class="neighborhood-bb-question">
+
+                        <i class="bi bi-chat-dots-fill"></i>
+
+                        <span>
+
+                            Which Book of Mormon story inspires your family?
+
+                        </span>
+
+                    </div>
+
+                    <div class="neighborhood-bb-question mb-0">
+
+                        <i class="bi bi-chat-dots-fill"></i>
+
+                        <span>
+
+                            How can we prepare for Christ's Second Coming?
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+PART 6
+COMMUNITY SECTION
+========================================== -->
+
+<section class="neighborhood-bb-community py-5">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+
+        <div class="text-center mb-5">
+
+            <h2 class="neighborhood-bb-section-title">
+                Building Stronger Neighborhoods Through Christ
+            </h2>
+
+            <p class="text-muted mb-0">
+                Every gathering is an opportunity to serve, strengthen faith,
+                and create lasting friendships.
+            </p>
+
+        </div>
+
+        <!-- Four Feature Cards -->
+
+        <div class="row g-4">
+
+            <!-- BBQ -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card neighborhood-bb-feature-card border-0 shadow-sm rounded-4 h-100">
+
+                    <div class="card-body text-center">
+
+                        <div class="neighborhood-bb-feature-icon bg-danger">
+
+                            <i class="bi bi-fire text-white"></i>
+
+                        </div>
+
+                        <h4>
+
+                            BBQ Together
+
+                        </h4>
+
+                        <p>
+
+                            Enjoy delicious meals while strengthening
+                            friendships with your neighbors.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Pray -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card neighborhood-bb-feature-card border-0 shadow-sm rounded-4 h-100">
+
+                    <div class="card-body text-center">
+
+                        <div class="neighborhood-bb-feature-icon bg-primary">
+
+                            <i class="bi bi-heart-fill text-white"></i>
+
+                        </div>
+
+                        <h4>
+
+                            Pray Together
+
+                        </h4>
+
+                        <p>
+
+                            Invite the Spirit by offering sincere
+                            prayers as families and friends.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Read -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card neighborhood-bb-feature-card border-0 shadow-sm rounded-4 h-100">
+
+                    <div class="card-body text-center">
+
+                        <div class="neighborhood-bb-feature-icon bg-success">
+
+                            <i class="bi bi-book-fill text-white"></i>
+
+                        </div>
+
+                        <h4>
+
+                            Read Together
+
+                        </h4>
+
+                        <p>
+
+                            Study the Book of Mormon and
+                            strengthen your testimony together.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Testify -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card neighborhood-bb-feature-card border-0 shadow-sm rounded-4 h-100">
+
+                    <div class="card-body text-center">
+
+                        <div class="neighborhood-bb-feature-icon bg-warning">
+
+                            <i class="bi bi-chat-heart-fill text-white"></i>
+
+                        </div>
+
+                        <h4>
+
+                            Share Testimonies
+
+                        </h4>
+
+                        <p>
+
+                            Bear testimony of Jesus Christ
+                            and inspire one another in faith.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom Row -->
+
+        <div class="row g-4 mt-4">
+
+            <!-- Starter Kit -->
+
+            <div class="col-lg-6">
+
+                <div class="card neighborhood-bb-starter-card border-0 shadow-sm rounded-4 h-100">
+
+                    <div class="card-body">
+
+                        <h3>
+
+                            Neighborhood Starter Kit
+
+                        </h3>
+
+                        <p>
+
+                            Download printable invitations,
+                            discussion guides, BBQ planning
+                            checklists and simple activities.
+
+                        </p>
+
+                        <ul class="list-group list-group-flush">
+
+                            <li class="list-group-item">
+
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+
+                                Invitation Templates
+
+                            </li>
+
+                            <li class="list-group-item">
+
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+
+                                BBQ Planning Checklist
+
+                            </li>
+
+                            <li class="list-group-item">
+
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+
+                                Book of Mormon Reading Guide
+
+                            </li>
+
+                            <li class="list-group-item">
+
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+
+                                Family Activities
+
+                            </li>
+
+                        </ul>
+
+                        <button class="btn btn-success rounded-pill mt-4">
+
+                            Download Starter Kit
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Share Story -->
+
+            <div class="col-lg-6">
+
+                <div class="card neighborhood-bb-story-card border-0 shadow-sm rounded-4 h-100">
+
+                    <img src="assets/neighborhood/share-story.jpg"
+                        class="card-img-top neighborhood-bb-story-image"
+                        alt="Share Story">
+
+                    <div class="card-body">
+
+                        <h3>
+
+                            Share Your Story
+
+                        </h3>
+
+                        <p>
+
+                            Tell us how your neighborhood gathering
+                            has blessed your family and strengthened
+                            your faith in Jesus Christ.
+
+                        </p>
+
+                        <button class="btn btn-warning rounded-pill">
+
+                            Submit Your Story
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+PART 7
+SCRIPTURE & CALL TO ACTION
+========================================== -->
+
+<section class="neighborhood-bb-scripture">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-10">
+
+                <div class="card neighborhood-bb-scripture-card border-0">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-book-half neighborhood-bb-scripture-icon"></i>
+
+                        <h2>
+
+                            "And charity suffereth long, and is kind,
+                            and envieth not, and seeketh not her own."
+
+                        </h2>
+
+                        <h5>
+
+                            — Moroni 7:45 —
+
+                        </h5>
+
+                        <p>
+
+                            Let every neighborhood gathering strengthen faith,
+                            friendship, service, and love through Jesus Christ.
+
+                        </p>
+
+                        <a href="#" class="btn btn-warning btn-lg rounded-pill mt-3">
+
+                            Become a Neighborhood Host
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

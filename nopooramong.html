@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Hastening App</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+
+body{
+    background:#f5f5f5;
+    font-family:Georgia, serif;
+}
+
+/*==========================
+HEADER
+===========================*/
+
+.header{
+    background:#fff;
+/*    border-radius:20px 20px 0 0;*/
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo-circle{
+
+    width:62px;
+    height:62px;
+    border-radius:50%;
+    border:2px solid #d99c21;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#d99c21;
+    font-size:26px;
+    margin-right:12px;
+
+}
+
+.logo h3{
+    margin:0;
+    color:#16377c;
+    font-weight:700;
+    font-size:20px;
+}
+
+.logo small{
+    color:#666;
+}
+
+/*=========================
+NAVIGATION
+==========================*/
+
+.nav-menu{
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    gap:38px;
+}
+
+.nav-item-custom{
+
+    text-align:center;
+    text-decoration:none;
+    color:#16377c;
+    transition:.3s;
+    font-size:14px;
+}
+
+.nav-item-custom i{
+
+    display:block;
+    font-size:23px;
+    margin-bottom:8px;
+
+}
+
+.nav-item-custom:hover{
+
+color:#d89d21;
+
+}
+
+.active-nav{
+
+position:relative;
+color:#16377c;
+font-weight:700;
+
+}
+
+.active-nav::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+right:0;
+
+bottom:-16px;
+
+height:4px;
+
+background:#d89d21;
+
+border-radius:20px;
+
+}
+
+ 
+
+
+
+/* Desktop */
+
+.desktop-header{
+    display:block;
+}
+
+/* Mobile */
+
+@media (max-width:991px){
+
+.desktop-header{
+    display:none;
+}
+
+body{
+    padding-top:65px;
+}
+
+.offcanvas{
+    width:320px;
+}
+
+.offcanvas-header{
+    background:#17346f;
+    color:#fff;
+}
+
+.offcanvas-title{
+    font-weight:700;
+}
+
+.offcanvas-body{
+    padding:20px;
+}
+
+.mobile-menu-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-radius:16px;
+    background:#fff;
+    text-decoration:none;
+    margin-bottom:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.mobile-menu-item:hover{
+    transform:translateX(6px);
+    background:#17346f;
+}
+
+.mobile-menu-item:hover h6,
+.mobile-menu-item:hover small{
+    color:#fff;
+}
+
+.mobile-menu-item:hover .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+.menu-icon{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    background:#edf3ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    color:#17346f;
+    transition:.3s;
+}
+
+.mobile-menu-item h6{
+    margin:0;
+    color:#17346f;
+    font-weight:700;
+}
+
+.mobile-menu-item small{
+    color:#777;
+}
+
+.mobile-menu-item.active{
+    background:#17346f;
+}
+
+.mobile-menu-item.active h6,
+.mobile-menu-item.active small{
+    color:#fff;
+}
+
+.mobile-menu-item.active .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+}
+
+
+@media(max-width:991px){
+
+.footer-menu{
+    display:none;
+}
+
+.mobile-header{
+    display:block;
+}
+
+}
+
+@media(min-width:992px){
+
+.mobile-header{
+    display:none;
+}
+
+}
+
+
+/*Common Page*/
+
+/*=====================================================
+ JESUS NO POOR AMONG DASHBOARD
+ PART 4 - DESKTOP CSS
+======================================================*/
+
+.jesus-nopooramong-dashboard-wrapper{
+    background:#ffffff;
+    width:100%;
+    overflow:hidden;
+}
+
+/*=====================================
+Hero Section
+======================================*/
+
+.jesus-nopooramong-dashboard-hero{
+    padding:0;
+    margin-top:10px;
+}
+
+.jesus-nopooramong-dashboard-left{
+    padding:40px 35px;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    background:#ffffff;
+}
+
+.jesus-nopooramong-dashboard-left h1{
+    font-size:68px;
+    font-weight:700;
+    color:#14346b;
+    line-height:1;
+    margin-bottom:20px;
+    font-family:Georgia, serif;
+}
+
+.jesus-nopooramong-dashboard-left p{
+    color:#24374d;
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.jesus-nopooramong-dashboard-image{
+    position:relative;
+    overflow:hidden;
+    border-radius:10px;
+}
+
+.jesus-nopooramong-dashboard-image img{
+    width:100%;
+    height:540px;
+    object-fit:cover;
+}
+
+.jesus-nopooramong-dashboard-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to right,
+    rgba(255,255,255,.95),
+    rgba(255,255,255,.30),
+    rgba(255,255,255,0));
+}
+
+/*=====================================
+Divider
+======================================*/
+
+.jesus-nopooramong-dashboard-divider{
+    width:100%;
+    height:3px;
+    background:#d79d29;
+    margin:20px 0;
+}
+
+/*=====================================
+Title
+======================================*/
+
+.jesus-nopooramong-dashboard-title{
+    color:#14346b;
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:35px;
+    font-family:Georgia, serif;
+}
+
+/*=====================================
+Cards
+======================================*/
+
+.jesus-nopooramong-dashboard-card-section{
+    margin-bottom:35px;
+}
+
+.jesus-nopooramong-dashboard-card{
+    background:#fff;
+    border:1px solid #e8e8e8;
+    border-radius:14px;
+    padding:22px;
+    transition:.35s;
+    height:100%;
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
+}
+
+.jesus-nopooramong-dashboard-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.jesus-nopooramong-dashboard-icon{
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    background:#fbf1df;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.jesus-nopooramong-dashboard-icon img{
+    width:40px;
+}
+
+.jesus-nopooramong-dashboard-card h4{
+    color:#14346b;
+    font-size:28px;
+    margin-bottom:10px;
+    font-family:Georgia, serif;
+}
+
+.jesus-nopooramong-dashboard-card p{
+    color:#444;
+    font-size:16px;
+    line-height:1.7;
+    margin-bottom:12px;
+}
+
+.jesus-nopooramong-dashboard-card a{
+    color:#14346b;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.jesus-nopooramong-dashboard-card a:hover{
+    color:#d89d26;
+}
+
+/*=====================================
+Promise Section
+======================================*/
+
+.jesus-nopooramong-dashboard-promise{
+    background:#fff9f0;
+    border:1px solid #efcf8f;
+    border-radius:12px;
+    padding:25px 30px;
+}
+
+.jesus-nopooramong-dashboard-promise-icon{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:#fbf1df;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.jesus-nopooramong-dashboard-promise-icon img{
+    width:48px;
+}
+
+.jesus-nopooramong-dashboard-promise h3{
+    color:#14346b;
+    font-size:34px;
+    font-family:Georgia, serif;
+    margin-bottom:10px;
+}
+
+.jesus-nopooramong-dashboard-promise p{
+    color:#444;
+    font-size:17px;
+    line-height:1.8;
+    margin:0;
+}
+
+.jesus-nopooramong-dashboard-promise blockquote{
+    font-size:28px;
+    color:#5f4d31;
+    font-style:italic;
+    margin-bottom:8px;
+}
+
+.jesus-nopooramong-dashboard-promise h6{
+    color:#14346b;
+    font-size:18px;
+}
+
+/*=====================================
+Blue Scripture Section
+======================================*/
+
+.jesus-nopooramong-dashboard-scripture{
+    background:#0b2c67;
+    padding:55px 0;
+    margin-top:40px;
+    color:#fff;
+}
+
+.jesus-nopooramong-dashboard-scripture h2{
+    font-size:42px;
+    font-family:Georgia, serif;
+    margin-bottom:10px;
+}
+
+.jesus-nopooramong-dashboard-scripture h5{
+    color:#ffd57b;
+    margin-bottom:20px;
+}
+
+.jesus-nopooramong-dashboard-scripture p{
+    font-size:18px;
+    line-height:1.9;
+}
+
+.jesus-nopooramong-dashboard-scripture h6{
+    color:#ffd57b;
+    margin-bottom:30px;
+}
+
+.jesus-nopooramong-dashboard-scripture hr{
+    border-color:rgba(255,255,255,.2);
+    margin:35px 0;
+}
+
+.jesus-nopooramong-dashboard-verses{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+}
+
+.jesus-nopooramong-dashboard-verses span{
+    color:#ffffff;
+    font-size:15px;
+    white-space:nowrap;
+}
+
+/*=====================================
+Information Footer
+======================================*/
+
+.jesus-nopooramong-dashboard-information{
+    background:#f5f7fa;
+    border:1px solid #d8dee8;
+    border-radius:12px;
+    padding:20px;
+}
+
+.jesus-nopooramong-dashboard-info-icon{
+    width:70px;
+    height:70px;
+    background:#0b2c67;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.jesus-nopooramong-dashboard-info-icon img{
+    width:32px;
+}
+
+.jesus-nopooramong-dashboard-information p{
+    margin:0 0 8px;
+    font-size:16px;
+    color:#333;
+    line-height:1.8;
+}
+
+.jesus-nopooramong-dashboard-information a{
+    color:#0d5cc3;
+    text-decoration:none;
+    font-weight:600;
+    word-break:break-word;
+}
+
+.jesus-nopooramong-dashboard-information a:hover{
+    text-decoration:underline;
+}
+
+/*====================================================
+JESUS NO POOR AMONG DASHBOARD
+PART 5 - MOBILE RESPONSIVE CSS
+====================================================*/
+
+/* Large Desktop */
+@media (max-width:1400px){
+
+    .jesus-nopooramong-dashboard-left h1{
+        font-size:60px;
+    }
+
+}
+
+/* Laptop */
+@media (max-width:1200px){
+
+    .jesus-nopooramong-dashboard-left{
+        padding:30px;
+    }
+
+    .jesus-nopooramong-dashboard-left h1{
+        font-size:52px;
+    }
+
+    .jesus-nopooramong-dashboard-image img{
+        height:480px;
+    }
+
+    .jesus-nopooramong-dashboard-title{
+        font-size:38px;
+    }
+
+}
+
+/* Tablet Landscape */
+@media (max-width:992px){
+
+    .jesus-nopooramong-dashboard-left{
+        text-align:center;
+        padding:40px 20px;
+    }
+
+    .jesus-nopooramong-dashboard-left h1{
+        font-size:46px;
+    }
+
+    .jesus-nopooramong-dashboard-image{
+        margin-top:20px;
+    }
+
+    .jesus-nopooramong-dashboard-image img{
+        height:420px;
+    }
+
+    .jesus-nopooramong-dashboard-title{
+        font-size:34px;
+    }
+
+    .jesus-nopooramong-dashboard-promise{
+        text-align:center;
+    }
+
+    .jesus-nopooramong-dashboard-promise .d-flex{
+        flex-direction:column;
+    }
+
+    .jesus-nopooramong-dashboard-promise-icon{
+        margin-bottom:20px;
+    }
+
+    .jesus-nopooramong-dashboard-scripture h2{
+        font-size:34px;
+    }
+
+}
+
+/* Tablet */
+@media (max-width:768px){
+
+    .jesus-nopooramong-dashboard-left h1{
+        font-size:40px;
+    }
+
+    .jesus-nopooramong-dashboard-left p{
+        font-size:16px;
+    }
+
+    .jesus-nopooramong-dashboard-image img{
+        height:320px;
+    }
+
+    .jesus-nopooramong-dashboard-title{
+        font-size:30px;
+    }
+
+    .jesus-nopooramong-dashboard-card{
+        padding:20px;
+    }
+
+    .jesus-nopooramong-dashboard-card h4{
+        font-size:22px;
+    }
+
+    .jesus-nopooramong-dashboard-card p{
+        font-size:15px;
+    }
+
+    .jesus-nopooramong-dashboard-icon{
+        width:60px;
+        height:60px;
+    }
+
+    .jesus-nopooramong-dashboard-icon img{
+        width:34px;
+    }
+
+    .jesus-nopooramong-dashboard-promise h3{
+        font-size:28px;
+    }
+
+    .jesus-nopooramong-dashboard-promise blockquote{
+        font-size:22px;
+    }
+
+    .jesus-nopooramong-dashboard-scripture{
+        padding:40px 20px;
+    }
+
+    .jesus-nopooramong-dashboard-scripture h2{
+        font-size:28px;
+    }
+
+    .jesus-nopooramong-dashboard-scripture p{
+        font-size:16px;
+    }
+
+}
+
+/* Mobile Large */
+@media (max-width:576px){
+
+    .jesus-nopooramong-dashboard-left{
+        padding:25px 15px;
+    }
+
+    .jesus-nopooramong-dashboard-left h1{
+        font-size:34px;
+    }
+
+    .jesus-nopooramong-dashboard-left p{
+        font-size:15px;
+    }
+
+    .jesus-nopooramong-dashboard-image img{
+        height:250px;
+    }
+
+    .jesus-nopooramong-dashboard-title{
+        font-size:26px;
+        margin-bottom:25px;
+    }
+
+    .jesus-nopooramong-dashboard-card{
+        padding:18px;
+    }
+
+    .jesus-nopooramong-dashboard-card h4{
+        font-size:20px;
+    }
+
+    .jesus-nopooramong-dashboard-card p{
+        font-size:14px;
+        line-height:1.6;
+    }
+
+    .jesus-nopooramong-dashboard-icon{
+        width:55px;
+        height:55px;
+    }
+
+    .jesus-nopooramong-dashboard-icon img{
+        width:30px;
+    }
+
+    .jesus-nopooramong-dashboard-promise{
+        padding:20px;
+    }
+
+    .jesus-nopooramong-dashboard-promise h3{
+        font-size:24px;
+    }
+
+    .jesus-nopooramong-dashboard-promise p{
+        font-size:15px;
+    }
+
+    .jesus-nopooramong-dashboard-scripture h2{
+        font-size:24px;
+    }
+
+    .jesus-nopooramong-dashboard-scripture h5{
+        font-size:18px;
+    }
+
+    .jesus-nopooramong-dashboard-scripture p{
+        font-size:15px;
+    }
+
+    .jesus-nopooramong-dashboard-verses{
+        gap:8px;
+    }
+
+    .jesus-nopooramong-dashboard-verses span{
+        font-size:13px;
+    }
+
+    .jesus-nopooramong-dashboard-information{
+        text-align:center;
+    }
+
+    .jesus-nopooramong-dashboard-info-icon{
+        margin:0 auto 15px;
+    }
+
+}
+
+/* Small Mobile */
+@media (max-width:425px){
+
+    .jesus-nopooramong-dashboard-left h1{
+        font-size:30px;
+    }
+
+    .jesus-nopooramong-dashboard-title{
+        font-size:22px;
+    }
+
+    .jesus-nopooramong-dashboard-card h4{
+        font-size:18px;
+    }
+
+    .jesus-nopooramong-dashboard-scripture h2{
+        font-size:20px;
+    }
+
+}
+
+/* Very Small Devices */
+@media (max-width:320px){
+
+    .jesus-nopooramong-dashboard-left h1{
+        font-size:26px;
+    }
+
+    .jesus-nopooramong-dashboard-card{
+        padding:15px;
+    }
+
+    .jesus-nopooramong-dashboard-card h4{
+        font-size:17px;
+    }
+
+    .jesus-nopooramong-dashboard-card p{
+        font-size:13px;
+    }
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+ <header class="header d-none d-lg-block">
+  <div class="container py-3">
+    <div class="row align-items-center">
+
+      <div class="col-lg-3">
+        <div class="logo">
+          <div class="logo-circle">
+            <i class="bi bi-building"></i>
+          </div>
+
+          <div>
+            <h3>Hastening App</h3>
+            <small>Hasten the Gathering and Unity in Zion</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="nav-menu">
+
+        <a href="index.html" class="nav-item-custom active-nav">
+    <i class="bi bi-house-fill"></i>
+    Home<br>
+    <span class="invisible">.</span>
+</a>
+
+          <a href="Loving.html" class="nav-item-custom">
+            <i class="bi bi-heart"></i>
+            Loving<br>Our Neighbor
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-book"></i>
+            Sharing Our<br>Faith in Christ
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-people-fill"></i>
+            Invitation<br>to Unity
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-droplet-fill"></i>
+            Does Unity<br>Require Baptism?
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-music-note-beamed"></i>
+            Worshiping Christ<br>through Music
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-calendar-event"></i>
+            Neighborhood<br>B&amp;B Events
+          </a>
+
+          <a href="security.html" class="nav-item-custom">
+            <i class="bi bi-shield-check"></i>
+            Security<br>&amp; More
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Header -->
+<nav class="navbar navbar-dark  d-lg-none fixed-top" style="background-color: #16377c !important;">
+
+    <div class="container-fluid">
+        <span class="navbar-brand fw-bold">
+           Hastening
+        </span>
+
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+      
+    </div>
+
+</nav>
+
+<!-- Mobile Menu -->
+<div class="offcanvas offcanvas-start"
+     tabindex="-1"
+     id="mobileMenu">
+
+    <div class="offcanvas-header">
+
+        <h5 class="offcanvas-title">
+            Menu
+        </h5>
+
+        <button class="btn-close"
+                data-bs-dismiss="offcanvas">
+        </button>
+
+    </div>
+
+<div class="offcanvas-body bg-light">
+
+    <a href="index.html" class="mobile-menu-item active">
+        <div class="menu-icon">
+            <i class="bi bi-house-fill"></i>
+        </div>
+        <div>
+            <h6>Home</h6>
+            <small>Dashboard</small>
+        </div>
+    </a>
+
+    <a href="Loving.html" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-heart"></i>
+        </div>
+        <div>
+            <h6>Loving Our Neighbor</h6>
+            <small>Serve with love</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-book"></i>
+        </div>
+        <div>
+            <h6>Sharing Our Faith</h6>
+            <small>Read Scriptures</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-people-fill"></i>
+        </div>
+        <div>
+            <h6>Invitation to Unity</h6>
+            <small>Invite Friends</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-droplet-fill"></i>
+        </div>
+        <div>
+            <h6>Baptism</h6>
+            <small>Learn More</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-music-note-beamed"></i>
+        </div>
+        <div>
+            <h6>Music</h6>
+            <small>Worship Songs</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-calendar-event"></i>
+        </div>
+        <div>
+            <h6>Events</h6>
+            <small>Upcoming Meetings</small>
+        </div>
+    </a>
+
+    <a href="security.html" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-shield-check"></i>
+        </div>
+        <div>
+            <h6>Security</h6>
+            <small>Account Safety</small>
+        </div>
+    </a>
+
+</div>
+
+</div>
+
+ <!-- ========================================= -->
+<!-- JESUS NO POOR AMONG DASHBOARD - PART 1 -->
+<!-- Hero Section -->
+<!-- ========================================= -->
+
+<section class="jesus-nopooramong-dashboard-wrapper">
+
+    <!-- Hero -->
+    <section class="jesus-nopooramong-dashboard-hero container-fluid">
+
+        <div class="row g-0 align-items-center">
+
+            <!-- Left Content -->
+
+            <div class="col-lg-4 col-md-12">
+
+                <div class="jesus-nopooramong-dashboard-left">
+
+                    <h1>
+                        No Poor
+                        <br>
+                        Among Us
+                    </h1>
+
+                    <p>
+
+                        As disciples of Christ, we care for one another and
+                        lift those in need. Together, we build self-reliant
+                        communities where no one lacks the necessities of life.
+
+                    </p>
+
+                    <p>
+
+                        Inspired by the commandment to
+                        <strong>"Remember the Poor"</strong>,
+                        we ensure that everyone has access to food,
+                        skills, opportunities and support.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Right Image -->
+
+            <div class="col-lg-8 col-md-12">
+
+                <div class="jesus-nopooramong-dashboard-image">
+
+                    <img
+                        src="assets/images/no-poor-banner.jpg"
+                        class="img-fluid w-100"
+                        alt="No Poor Among Us">
+
+                    <div class="jesus-nopooramong-dashboard-overlay"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Divider -->
+
+    <div class="container">
+
+        <div class="jesus-nopooramong-dashboard-divider"></div>
+
+    </div>
+
+    <!-- Section Heading -->
+
+    <section class="container">
+
+        <div class="text-center">
+
+            <h2 class="jesus-nopooramong-dashboard-title">
+
+                How We Care for One Another
+
+            </h2>
+
+        </div>
+
+    </section>
+    <!-- ========================================= -->
+<!-- JESUS NO POOR AMONG DASHBOARD - PART 2 -->
+<!-- Care Cards Section -->
+<!-- ========================================= -->
+
+<section class="container jesus-nopooramong-dashboard-card-section">
+
+    <div class="row g-4">
+
+        <!-- Bread -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="jesus-nopooramong-dashboard-card">
+
+                <div class="row align-items-center">
+
+                    <div class="col-3">
+
+                        <div class="jesus-nopooramong-dashboard-icon">
+
+                            <img
+                                src="assets/icons/bread.png"
+                                class="img-fluid"
+                                alt="Bread">
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-9">
+
+                        <h4>Bread</h4>
+
+                        <p>
+
+                            Ensure access to nutritious food
+                            for all through pantries,
+                            meals and community support.
+
+                        </p>
+
+                        <a href="#">
+
+                            Learn More
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Gardens -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="jesus-nopooramong-dashboard-card">
+
+                <div class="row align-items-center">
+
+                    <div class="col-3">
+
+                        <div class="jesus-nopooramong-dashboard-icon">
+
+                            <img
+                                src="assets/icons/garden.png"
+                                class="img-fluid"
+                                alt="Garden">
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-9">
+
+                        <h4>Gardens</h4>
+
+                        <p>
+
+                            Grow together.
+                            Share produce.
+                            Strengthen families and
+                            neighborhoods.
+
+                        </p>
+
+                        <a href="#">
+
+                            Learn More
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Chickens -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="jesus-nopooramong-dashboard-card">
+
+                <div class="row align-items-center">
+
+                    <div class="col-3">
+
+                        <div class="jesus-nopooramong-dashboard-icon">
+
+                            <img
+                                src="assets/icons/chicken.png"
+                                class="img-fluid"
+                                alt="Chicken">
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-9">
+
+                        <h4>Chickens</h4>
+
+                        <p>
+
+                            Provide resources and
+                            training for raising poultry
+                            and sustainable food.
+
+                        </p>
+
+                        <a href="#">
+
+                            Learn More
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Self Reliance -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="jesus-nopooramong-dashboard-card">
+
+                <div class="row align-items-center">
+
+                    <div class="col-3">
+
+                        <div class="jesus-nopooramong-dashboard-icon">
+
+                            <img
+                                src="assets/icons/group.png"
+                                class="img-fluid"
+                                alt="Groups">
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-9">
+
+                        <h4>Self-Reliance Groups</h4>
+
+                        <p>
+
+                            Join with others to learn,
+                            earn and achieve economic
+                            independence.
+
+                        </p>
+
+                        <a href="#">
+
+                            Learn More
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Employment -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="jesus-nopooramong-dashboard-card">
+
+                <div class="row align-items-center">
+
+                    <div class="col-3">
+
+                        <div class="jesus-nopooramong-dashboard-icon">
+
+                            <img
+                                src="assets/icons/job.png"
+                                class="img-fluid"
+                                alt="Employment">
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-9">
+
+                        <h4>Employment Leads</h4>
+
+                        <p>
+
+                            Find job opportunities,
+                            training and support
+                            for meaningful work.
+
+                        </p>
+
+                        <a href="#">
+
+                            Learn More
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Community -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="jesus-nopooramong-dashboard-card">
+
+                <div class="row align-items-center">
+
+                    <div class="col-3">
+
+                        <div class="jesus-nopooramong-dashboard-icon">
+
+                            <img
+                                src="assets/icons/community.png"
+                                class="img-fluid"
+                                alt="Community">
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-9">
+
+                        <h4>Community Resources</h4>
+
+                        <p>
+
+                            Connect to local aid,
+                            services and tools that
+                            build stronger lives.
+
+                        </p>
+
+                        <a href="#">
+
+                            Learn More
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- JESUS NO POOR AMONG DASHBOARD - PART 3 -->
+<!-- Promise & Footer Section -->
+<!-- ========================================= -->
+
+<!-- Our Promise -->
+
+<section class="container mt-4">
+
+    <div class="jesus-nopooramong-dashboard-promise">
+
+        <div class="row align-items-center">
+
+            <!-- Left -->
+
+            <div class="col-lg-8 col-md-12">
+
+                <div class="d-flex align-items-center">
+
+                    <div class="jesus-nopooramong-dashboard-promise-icon">
+
+                        <img
+                            src="assets/icons/promise.png"
+                            class="img-fluid"
+                            alt="Promise">
+
+                    </div>
+
+                    <div class="ms-3">
+
+                        <h3>Our Promise</h3>
+
+                        <p>
+
+                            No one in our community will walk alone.
+                            Together, we serve, uplift and rejoice in
+                            the blessings of Zion, where all things
+                            are shared in love.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="col-lg-4 col-md-12 text-lg-end text-center mt-4 mt-lg-0">
+
+                <blockquote>
+
+                    "And there were no poor among them."
+
+                </blockquote>
+
+                <h6>
+
+                    — Moses 7:18
+
+                </h6>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Scripture Footer -->
+
+<section class="jesus-nopooramong-dashboard-scripture">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-12 text-center">
+
+                <h2>
+
+                    "That there should be no poor among you."
+
+                </h2>
+
+                <h5>
+
+                    — Deuteronomy 15:4
+
+                </h5>
+
+                <p>
+
+                    We believe in being honest, true, chaste,
+                    benevolent, virtuous and in doing good
+                    to all men.
+
+                </p>
+
+                <h6>
+
+                    — Articles of Faith 1:13
+
+                </h6>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <div class="jesus-nopooramong-dashboard-verses">
+
+                    <span>Moses 7:18</span>
+
+                    <span>Mosiah 4:26</span>
+
+                    <span>Mosiah 18:27</span>
+
+                    <span>Mosiah 29:4</span>
+
+                    <span>Alma 1:26</span>
+
+                    <span>Romans 12:13</span>
+
+                    <span>D&C 38:26</span>
+
+                    <span>D&C 51:12</span>
+
+                    <span>2 Chronicles 29:30</span>
+
+                    <span>2 Samuel 6:5</span>
+
+                    <span>1 Chronicles 25:3</span>
+
+                    <span>Mormon 7:7</span>
+
+                    <span>Psalm 96:1</span>
+
+                    <span>Isaiah 42:10</span>
+
+                    <span>Psalm 147:7</span>
+
+                    <span>Ezekiel 40:44</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Bottom Information -->
+
+<section class="container my-4">
+
+    <div class="jesus-nopooramong-dashboard-information">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-1 col-md-2 text-center">
+
+                <div class="jesus-nopooramong-dashboard-info-icon">
+
+                    <img
+                        src="assets/icons/info.png"
+                        class="img-fluid"
+                        alt="Information">
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-11 col-md-10">
+
+                <p>
+
+                    Many of these links herein are maintained by
+                    <strong>NJ (New Jerusalem) Community Development</strong>,
+                    which also has a separate website.
+
+                </p>
+
+                <p>
+
+                    <a href="#">
+                        https://www.nopooramongthem.com/
+                    </a>
+
+                    &nbsp;&nbsp;&nbsp;
+
+                    <a href="#">
+                        https://www.justserve.org/
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</section>
+<!-- End jesus-nopooramong-dashboard-wrapper -->
+
+ 
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,3127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Hastening App</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
+
+<style>
+
+body{
+    background:#f5f5f5;
+    font-family:Georgia, serif;
+}
+
+/*==========================
+HEADER
+===========================*/
+
+.header{
+    background:#fff;
+/*    border-radius:20px 20px 0 0;*/
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo-circle{
+
+    width:62px;
+    height:62px;
+    border-radius:50%;
+    border:2px solid #d99c21;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#d99c21;
+    font-size:26px;
+    margin-right:12px;
+
+}
+
+.logo h3{
+    margin:0;
+    color:#16377c;
+    font-weight:700;
+    font-size:20px;
+}
+
+.logo small{
+    color:#666;
+}
+
+/*=========================
+NAVIGATION
+==========================*/
+
+.nav-menu{
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    gap:38px;
+}
+
+.nav-item-custom{
+
+    text-align:center;
+    text-decoration:none;
+    color:#16377c;
+    transition:.3s;
+    font-size:14px;
+}
+
+.nav-item-custom i{
+
+    display:block;
+    font-size:23px;
+    margin-bottom:8px;
+
+}
+
+.nav-item-custom:hover{
+
+color:#d89d21;
+
+}
+
+.active-nav{
+
+position:relative;
+color:#16377c;
+font-weight:700;
+
+}
+
+.active-nav::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+right:0;
+
+bottom:-16px;
+
+height:4px;
+
+background:#d89d21;
+
+border-radius:20px;
+
+}
+
+ 
+
+
+
+/* Desktop */
+
+.desktop-header{
+    display:block;
+}
+
+/* Mobile */
+
+@media (max-width:991px){
+
+.desktop-header{
+    display:none;
+}
+
+body{
+    padding-top:65px;
+}
+
+.offcanvas{
+    width:320px;
+}
+
+.offcanvas-header{
+    background:#17346f;
+    color:#fff;
+}
+
+.offcanvas-title{
+    font-weight:700;
+}
+
+.offcanvas-body{
+    padding:20px;
+}
+
+.mobile-menu-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-radius:16px;
+    background:#fff;
+    text-decoration:none;
+    margin-bottom:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.mobile-menu-item:hover{
+    transform:translateX(6px);
+    background:#17346f;
+}
+
+.mobile-menu-item:hover h6,
+.mobile-menu-item:hover small{
+    color:#fff;
+}
+
+.mobile-menu-item:hover .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+.menu-icon{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    background:#edf3ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    color:#17346f;
+    transition:.3s;
+}
+
+.mobile-menu-item h6{
+    margin:0;
+    color:#17346f;
+    font-weight:700;
+}
+
+.mobile-menu-item small{
+    color:#777;
+}
+
+.mobile-menu-item.active{
+    background:#17346f;
+}
+
+.mobile-menu-item.active h6,
+.mobile-menu-item.active small{
+    color:#fff;
+}
+
+.mobile-menu-item.active .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+}
+
+
+@media(max-width:991px){
+
+.footer-menu{
+    display:none;
+}
+
+.mobile-header{
+    display:block;
+}
+
+}
+
+@media(min-width:992px){
+
+.mobile-header{
+    display:none;
+}
+
+}
+
+
+/*Common Page*/
+
+
+
+</style>
+<style>
+
+/******************************************
+BODY
+******************************************/
+
+body{
+
+    background:#f7f7f7;
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+/******************************************
+Hero
+******************************************/
+
+.worship-music-hero{
+
+    position:relative;
+
+}
+
+.worship-music-banner{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.worship-music-banner-image{
+
+    width:100%;
+
+    height:520px;
+
+    object-fit:cover;
+
+}
+
+/******************************************
+Overlay
+******************************************/
+
+.worship-music-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        rgba(255,255,255,.25),
+        rgba(255,255,255,.15));
+
+}
+
+/******************************************
+Content
+******************************************/
+
+.worship-music-content{
+
+    position:absolute;
+
+    top:70px;
+
+    left:30px;
+
+    z-index:10;
+
+    max-width:560px;
+
+}
+
+.worship-music-content h1{
+
+    font-size:64px;
+
+    color:#17355d;
+
+    font-weight:700;
+
+    line-height:1.1;
+
+    margin-bottom:18px;
+
+}
+
+.worship-music-content h3{
+
+    color:#17355d;
+
+    font-size:30px;
+
+    margin-bottom:20px;
+
+}
+
+.worship-music-content p{
+
+    font-size:22px;
+
+    color:#17355d;
+
+    font-style:italic;
+
+    line-height:1.7;
+
+    margin-bottom:10px;
+
+}
+
+.worship-music-content h5{
+
+    color:#17355d;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+/******************************************
+Music Notes
+******************************************/
+
+.worship-music-notes{
+
+    position:absolute;
+
+    top:60px;
+
+    left:48%;
+
+    transform:translateX(-50%);
+
+    color:#c28a1d;
+
+    font-size:65px;
+
+    display:flex;
+
+    gap:22px;
+
+}
+
+.worship-music-notes i{
+
+    animation:worshipMusicFloat 3s infinite ease-in-out;
+
+}
+
+.worship-music-notes i:nth-child(2){
+
+    animation-delay:.5s;
+
+}
+
+.worship-music-notes i:nth-child(3){
+
+    animation-delay:1s;
+
+}
+
+.worship-music-notes i:nth-child(4){
+
+    animation-delay:1.5s;
+
+}
+
+.worship-music-notes i:nth-child(5){
+
+    animation-delay:2s;
+
+}
+
+/******************************************
+Animation
+******************************************/
+
+@keyframes worshipMusicFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/******************************************
+Tablet
+******************************************/
+
+@media(max-width:991px){
+
+.worship-music-banner-image{
+
+    height:450px;
+
+}
+
+.worship-music-content{
+
+    top:55px;
+
+}
+
+.worship-music-content h1{
+
+    font-size:46px;
+
+}
+
+.worship-music-content h3{
+
+    font-size:24px;
+
+}
+
+.worship-music-content p{
+
+    font-size:18px;
+
+}
+
+.worship-music-notes{
+
+    font-size:42px;
+
+    top:30px;
+
+}
+
+}
+
+/******************************************
+Mobile
+******************************************/
+
+@media(max-width:767px){
+
+.worship-music-banner-image{
+
+    height:420px;
+
+}
+
+.worship-music-content{
+
+    left:20px;
+
+    right:20px;
+
+    top:35px;
+
+    max-width:100%;
+
+}
+
+.worship-music-content h1{
+
+    font-size:34px;
+
+}
+
+.worship-music-content h3{
+
+    font-size:20px;
+
+}
+
+.worship-music-content p{
+
+    font-size:15px;
+
+}
+
+.worship-music-content h5{
+
+    font-size:16px;
+
+}
+
+.worship-music-notes{
+
+    font-size:26px;
+
+    top:18px;
+
+    left:60%;
+
+    gap:8px;
+
+}
+
+}
+
+/******************************************
+Small Mobile
+******************************************/
+
+@media(max-width:420px){
+
+.worship-music-banner-image{
+
+    height:380px;
+
+}
+
+.worship-music-content h1{
+
+    font-size:30px;
+
+}
+
+.worship-music-content h3{
+
+    font-size:18px;
+
+}
+
+}
+
+/*==========================================
+PART 2
+==========================================*/
+
+.worship-music-tabs{
+
+    margin-top:-35px;
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+.worship-music-tab-wrapper{
+
+    background:#ffffff;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+.worship-music-tab{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:20px 15px;
+
+    color:#1d3358;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    border-bottom:4px solid transparent;
+
+}
+
+.worship-music-tab i{
+
+    font-size:22px;
+
+}
+
+.worship-music-tab span{
+
+    font-size:17px;
+
+}
+
+.worship-music-tab:hover{
+
+    background:#faf8f4;
+
+    color:#c28718;
+
+}
+
+.worship-music-tab.active{
+
+    color:#c28718;
+
+    border-bottom:4px solid #c28718;
+
+}
+
+/*==========================================
+TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.worship-music-tabs{
+
+    margin-top:20px;
+
+}
+
+.worship-music-tab{
+
+    flex-direction:column;
+
+    gap:8px;
+
+    padding:18px 8px;
+
+}
+
+.worship-music-tab span{
+
+    font-size:14px;
+
+}
+
+}
+
+/*==========================================
+MOBILE
+==========================================*/
+
+@media(max-width:767px){
+
+.worship-music-tab-wrapper{
+
+    overflow-x:auto;
+
+    white-space:nowrap;
+
+}
+
+.worship-music-tab-wrapper .row{
+
+    flex-wrap:nowrap;
+
+    min-width:760px;
+
+}
+
+.worship-music-tab{
+
+    padding:16px 14px;
+
+}
+
+.worship-music-tab i{
+
+    font-size:20px;
+
+}
+
+.worship-music-tab span{
+
+    font-size:13px;
+
+}
+
+}
+
+/*==========================================
+PART 3
+==========================================*/
+
+.worship-music-library-card{
+
+    background:#fff;
+
+}
+
+.worship-music-library-card .card-header{
+
+    padding:22px;
+
+}
+
+.worship-music-library-card h3{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#17355d;
+
+}
+
+.worship-music-song{
+
+    transition:.3s;
+
+}
+
+.worship-music-song img{
+
+    width:100%;
+
+    height:130px;
+
+    object-fit:cover;
+
+    margin-bottom:12px;
+
+}
+
+.worship-music-song h6{
+
+    margin-bottom:5px;
+
+    color:#17355d;
+
+    font-weight:700;
+
+}
+
+.worship-music-song div{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+.worship-music-player{
+
+    background:#f8f9fa;
+
+    border-radius:18px;
+
+    padding:20px;
+
+}
+
+
+/*==========================================
+TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.worship-music-library-card{
+
+    margin-bottom:20px;
+
+}
+
+}
+
+/*==========================================
+MOBILE
+==========================================*/
+
+@media(max-width:767px){
+
+.worship-music-library-card h3{
+
+    font-size:24px;
+
+}
+
+.worship-music-song img{
+
+    height:120px;
+
+}
+
+.worship-music-player{
+
+    text-align:center;
+
+}
+
+.worship-music-player .btn{
+
+    margin-bottom:10px;
+
+}
+
+}   
+/*==========================================
+PART 4
+==========================================*/
+
+.worship-music-choir-card{
+
+    background:#ffffff;
+
+}
+
+.worship-music-choir-card .card-header{
+
+    padding:22px;
+
+}
+
+.worship-music-choir-card h3{
+
+    font-size:30px;
+
+    color:#17355d;
+
+    font-weight:700;
+
+}
+
+.worship-music-choir-item{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.worship-music-choir-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.worship-music-choir-img{
+
+    width:120px;
+
+    height:90px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+}
+
+.worship-music-choir-item h5{
+
+    font-weight:700;
+
+    color:#17355d;
+
+    margin-bottom:8px;
+
+}
+
+.worship-music-choir-item p{
+
+    color:#666;
+
+    margin-bottom:8px;
+
+    line-height:1.5;
+
+}
+
+.worship-music-choir-item small{
+
+    color:#888;
+
+}
+
+/*==========================================
+TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.worship-music-choir-card{
+
+    margin-top:20px;
+
+}
+
+}
+
+/*==========================================
+MOBILE
+==========================================*/
+
+@media(max-width:767px){
+
+.worship-music-choir-card h3{
+
+    font-size:24px;
+
+}
+
+.worship-music-choir-item{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+.worship-music-choir-img{
+
+    width:100%;
+
+    height:200px;
+
+    margin-bottom:15px;
+
+}
+
+.worship-music-choir-item .btn{
+
+    width:100%;
+
+    margin-top:15px;
+
+}
+
+}
+/*==========================================
+PART 5
+==========================================*/
+
+.worship-music-event-card,
+.worship-music-schedule-card{
+
+    background:#fff;
+
+}
+
+.worship-music-event-card .card-header,
+.worship-music-schedule-card .card-header{
+
+    padding:22px;
+
+}
+
+.worship-music-event-card h3,
+.worship-music-schedule-card h3{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#17355d;
+
+}
+
+.worship-music-event-image{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+}
+
+.worship-music-event-card h4{
+
+    color:#17355d;
+
+    font-weight:700;
+
+}
+
+.worship-music-schedule{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.worship-music-schedule:last-child{
+
+    border-bottom:none;
+
+}
+
+.worship-music-date{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:15px;
+
+    background:#17355d;
+
+    color:#fff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:700;
+
+    font-size:22px;
+
+}
+
+.worship-music-date span{
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+}
+
+/*==========================================
+TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.worship-music-schedule-card{
+
+    margin-top:20px;
+
+}
+
+}
+
+/*==========================================
+MOBILE
+==========================================*/
+
+@media(max-width:767px){
+
+.worship-music-event-card h3,
+.worship-music-schedule-card h3{
+
+    font-size:24px;
+
+}
+
+.worship-music-event-image{
+
+    height:220px;
+
+}
+
+.worship-music-schedule{
+
+    flex-wrap:wrap;
+
+}
+
+.worship-music-date{
+
+    width:55px;
+
+    height:55px;
+
+    font-size:18px;
+
+}
+
+.worship-music-schedule .btn{
+
+    width:100%;
+
+    margin-top:15px;
+
+}
+
+}
+
+/*==========================================
+PART 6
+==========================================*/
+
+.worship-resource-title{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:#17355d;
+
+}
+
+.worship-resource-subtitle{
+
+    color:#777;
+
+    font-size:18px;
+
+    margin-top:10px;
+
+}
+
+.worship-resource-card{
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+}
+
+.worship-resource-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12)!important;
+
+}
+
+.worship-resource-card img{
+
+    height:210px;
+
+    object-fit:cover;
+
+}
+
+.worship-resource-icon{
+
+    width:65px;
+
+    height:65px;
+
+    background:#17355d;
+
+    color:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    margin-bottom:20px;
+
+}
+
+.worship-resource-card h4{
+
+    color:#17355d;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.worship-resource-card p{
+
+    color:#666;
+
+    line-height:1.7;
+
+}
+
+.worship-feature-box{
+
+    background:linear-gradient(135deg,#17355d,#31588c);
+
+    border-radius:25px;
+
+    padding:50px;
+
+    color:#fff;
+
+}
+
+.worship-feature-box h3{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.worship-feature-box p{
+
+    font-size:18px;
+
+    opacity:.9;
+
+    margin-bottom:0;
+
+}
+
+/*==========================================
+TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.worship-resource-title{
+
+    font-size:34px;
+
+}
+
+.worship-feature-box{
+
+    padding:35px;
+
+}
+
+}
+
+/*==========================================
+MOBILE
+==========================================*/
+
+@media(max-width:767px){
+
+.worship-resource-title{
+
+    font-size:28px;
+
+}
+
+.worship-resource-subtitle{
+
+    font-size:16px;
+
+}
+
+.worship-resource-card img{
+
+    height:220px;
+
+}
+
+.worship-feature-box{
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+.worship-feature-box h3{
+
+    font-size:26px;
+
+}
+
+.worship-feature-box p{
+
+    font-size:16px;
+
+}
+
+.worship-feature-box .btn{
+
+    width:100%;
+
+}
+
+}
+/*==========================================
+PART 7
+==========================================*/
+
+.worship-footer-banner{
+
+    background:linear-gradient(135deg,#17355d,#284d80);
+
+    color:#fff;
+
+    padding:70px 0;
+
+}
+
+.worship-footer-banner h2{
+
+    font-size:40px;
+
+    font-weight:700;
+
+    line-height:1.4;
+
+}
+
+.worship-footer-banner p{
+
+    margin-top:20px;
+
+    font-size:18px;
+
+    opacity:.9;
+
+}
+
+.worship-footer-main{
+
+    background:#102845;
+
+    color:#d7d7d7;
+
+    padding:70px 0 30px;
+
+}
+
+.worship-footer-main h4,
+.worship-footer-main h5{
+
+    color:#fff;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+
+}
+
+.worship-footer-main ul{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.worship-footer-main ul li{
+
+    margin-bottom:12px;
+
+}
+
+.worship-footer-main ul li a{
+
+    color:#d7d7d7;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.worship-footer-main ul li a:hover{
+
+    color:#ffc107;
+
+}
+
+.worship-social{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.worship-social a{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:#1d3b60;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:20px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.worship-social a:hover{
+
+    background:#ffc107;
+
+    color:#17355d;
+
+    transform:translateY(-4px);
+
+}
+
+.worship-footer hr{
+
+    border-color:rgba(255,255,255,.15);
+
+    margin:40px 0 25px;
+
+}
+
+.worship-scroll-top{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:#ffc107;
+
+    color:#17355d;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:24px;
+
+    text-decoration:none;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+.worship-scroll-top:hover{
+
+    transform:translateY(-6px);
+
+    background:#fff;
+
+}
+
+/*==========================================
+TABLET
+==========================================*/
+
+@media(max-width:991px){
+
+.worship-footer-banner{
+
+    text-align:center;
+
+}
+
+.worship-footer-banner h2{
+
+    font-size:32px;
+
+}
+
+}
+
+/*==========================================
+MOBILE
+==========================================*/
+
+@media(max-width:767px){
+
+.worship-footer-banner{
+
+    padding:50px 20px;
+
+}
+
+.worship-footer-banner h2{
+
+    font-size:26px;
+
+}
+
+.worship-footer-banner p{
+
+    font-size:16px;
+
+}
+
+.worship-footer-main{
+
+    text-align:center;
+
+}
+
+.worship-social{
+
+    justify-content:center;
+
+}
+
+.worship-footer-main ul{
+
+    margin-bottom:25px;
+
+}
+
+.worship-scroll-top{
+
+    width:48px;
+
+    height:48px;
+
+    right:15px;
+
+    bottom:15px;
+
+    font-size:20px;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+ <header class="header d-none d-lg-block">
+  <div class="container py-3">
+    <div class="row align-items-center">
+
+      <div class="col-lg-3">
+        <div class="logo">
+          <div class="logo-circle">
+            <i class="bi bi-building"></i>
+          </div>
+
+          <div>
+            <h3>Hastening App</h3>
+            <small>Hasten the Gathering and Unity in Zion</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="nav-menu">
+
+        <a href="index.html" class="nav-item-custom active-nav">
+    <i class="bi bi-house-fill"></i>
+    Home<br>
+    <span class="invisible">.</span>
+</a>
+
+          <a href="Loving.html" class="nav-item-custom">
+            <i class="bi bi-heart"></i>
+            Loving<br>Our Neighbor
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-book"></i>
+            Sharing Our<br>Faith in Christ
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-people-fill"></i>
+            Invitation<br>to Unity
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-droplet-fill"></i>
+            Does Unity<br>Require Baptism?
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-music-note-beamed"></i>
+            Worshiping Christ<br>through Music
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-calendar-event"></i>
+            Neighborhood<br>B&amp;B Events
+          </a>
+
+          <a href="security.html" class="nav-item-custom">
+            <i class="bi bi-shield-check"></i>
+            Security<br>&amp; More
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Header -->
+<nav class="navbar navbar-dark  d-lg-none fixed-top" style="background-color: #16377c !important;">
+
+    <div class="container-fluid">
+        <span class="navbar-brand fw-bold">
+           Hastening
+        </span>
+
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+      
+    </div>
+
+</nav>
+
+<!-- Mobile Menu -->
+<div class="offcanvas offcanvas-start"
+     tabindex="-1"
+     id="mobileMenu">
+
+    <div class="offcanvas-header">
+
+        <h5 class="offcanvas-title">
+            Menu
+        </h5>
+
+        <button class="btn-close"
+                data-bs-dismiss="offcanvas">
+        </button>
+
+    </div>
+
+<div class="offcanvas-body bg-light">
+
+    <a href="index.html" class="mobile-menu-item active">
+        <div class="menu-icon">
+            <i class="bi bi-house-fill"></i>
+        </div>
+        <div>
+            <h6>Home</h6>
+            <small>Dashboard</small>
+        </div>
+    </a>
+
+    <a href="Loving.html" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-heart"></i>
+        </div>
+        <div>
+            <h6>Loving Our Neighbor</h6>
+            <small>Serve with love</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-book"></i>
+        </div>
+        <div>
+            <h6>Sharing Our Faith</h6>
+            <small>Read Scriptures</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-people-fill"></i>
+        </div>
+        <div>
+            <h6>Invitation to Unity</h6>
+            <small>Invite Friends</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-droplet-fill"></i>
+        </div>
+        <div>
+            <h6>Baptism</h6>
+            <small>Learn More</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-music-note-beamed"></i>
+        </div>
+        <div>
+            <h6>Music</h6>
+            <small>Worship Songs</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-calendar-event"></i>
+        </div>
+        <div>
+            <h6>Events</h6>
+            <small>Upcoming Meetings</small>
+        </div>
+    </a>
+
+    <a href="security.html" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-shield-check"></i>
+        </div>
+        <div>
+            <h6>Security</h6>
+            <small>Account Safety</small>
+        </div>
+    </a>
+
+</div>
+
+</div>
+
+ <!-- ===========================================================
+WORSHIP MUSIC HERO
+=========================================================== -->
+
+<section class="worship-music-hero">
+
+    <div class="container-fluid p-0">
+
+        <div class="worship-music-banner">
+
+            <!-- Background -->
+
+            <img src="assets/music/music-banner.jpg"
+                class="img-fluid w-100 worship-music-banner-image"
+                alt="Worship Banner">
+
+            <!-- Overlay -->
+
+            <div class="worship-music-overlay"></div>
+
+            <!-- Hero Content -->
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+
+                        <div class="worship-music-content">
+
+                            <h1>
+
+                                Worshiping
+                                <br>
+                                Christ Through Music
+
+                            </h1>
+
+                            <h3>
+
+                                Unite hearts.
+                                Lift voices.
+                                Glorify the Lord.
+
+                            </h3>
+
+                            <p>
+
+                                Sing unto the Lord; bless his name;
+                                shew forth his salvation from
+                                day to day.
+
+                            </p>
+
+                            <h5>
+
+                                Psalm 96:2
+
+                            </h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Floating Music Notes -->
+
+            <div class="worship-music-notes">
+
+                <i class="bi bi-music-note-beamed"></i>
+                <i class="bi bi-music-note"></i>
+                <i class="bi bi-music-note-beamed"></i>
+                <i class="bi bi-music-note"></i>
+                <i class="bi bi-music-note-beamed"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+ 
+<!-- ==========================================
+PART 2
+MUSIC NAVIGATION
+========================================== -->
+
+<section class="worship-music-tabs">
+
+    <div class="container">
+
+        <div class="worship-music-tab-wrapper">
+
+            <div class="row g-0 text-center">
+
+                <!-- Music & Worship -->
+
+                <div class="col">
+
+                    <a href="#" class="worship-music-tab active">
+
+                        <i class="bi bi-music-note-beamed"></i>
+
+                        <span>Music & Worship</span>
+
+                    </a>
+
+                </div>
+
+                <!-- Choirs -->
+
+                <div class="col">
+
+                    <a href="#" class="worship-music-tab">
+
+                        <i class="bi bi-people-fill"></i>
+
+                        <span>Choirs You Can Join</span>
+
+                    </a>
+
+                </div>
+
+                <!-- Youth Music -->
+
+                <div class="col">
+
+                    <a href="#" class="worship-music-tab">
+
+                        <i class="bi bi-person-fill"></i>
+
+                        <span>Youth Music</span>
+
+                    </a>
+
+                </div>
+
+                <!-- Worship Events -->
+
+                <div class="col">
+
+                    <a href="#" class="worship-music-tab">
+
+                        <i class="bi bi-calendar-event"></i>
+
+                        <span>Worship Events</span>
+
+                    </a>
+
+                </div>
+
+                <!-- My Music -->
+
+                <div class="col">
+
+                    <a href="#" class="worship-music-tab">
+
+                        <i class="bi bi-heart"></i>
+
+                        <span>My Music</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+PART 3
+SACRED WORSHIP MUSIC
+========================================== -->
+
+<section class="worship-music-library py-4">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <!-- Left Music Card -->
+
+            <div class="col-xl-6 col-lg-12">
+
+                <div class="card worship-music-library-card border-0 shadow-sm rounded-4">
+
+                    <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center">
+
+                        <div>
+
+                            <h3 class="mb-1">
+
+                                Sacred Worship Music
+
+                            </h3>
+
+                            <small class="text-muted">
+
+                                Uplifting songs and instrumentals to draw closer to Christ.
+
+                            </small>
+
+                        </div>
+
+                        <button class="btn btn-outline-primary rounded-pill btn-sm">
+
+                            View All Music
+
+                        </button>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="row g-3">
+
+                            <!-- Song 1 -->
+
+                            <div class="col-md-3 col-6">
+
+                                <div class="worship-music-song">
+
+                                    <img src="assets/music/song1.jpg"
+                                        class="img-fluid rounded-3">
+
+                                    <h6>
+
+                                        Sing Praises
+
+                                    </h6>
+
+                                    <small class="text-muted">
+
+                                        Various Artists
+
+                                    </small>
+
+                                    <div>3:45</div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Song 2 -->
+
+                            <div class="col-md-3 col-6">
+
+                                <div class="worship-music-song">
+
+                                    <img src="assets/music/song2.jpg"
+                                        class="img-fluid rounded-3">
+
+                                    <h6>
+
+                                        Come Unto Christ
+
+                                    </h6>
+
+                                    <small class="text-muted">
+
+                                        Megan Taylor
+
+                                    </small>
+
+                                    <div>4:22</div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Song 3 -->
+
+                            <div class="col-md-3 col-6">
+
+                                <div class="worship-music-song">
+
+                                    <img src="assets/music/song3.jpg"
+                                        class="img-fluid rounded-3">
+
+                                    <h6>
+
+                                        Hope of Zion
+
+                                    </h6>
+
+                                    <small class="text-muted">
+
+                                        David Tolk
+
+                                    </small>
+
+                                    <div>4:28</div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Song 4 -->
+
+                            <div class="col-md-3 col-6">
+
+                                <div class="worship-music-song">
+
+                                    <img src="assets/music/song4.jpg"
+                                        class="img-fluid rounded-3">
+
+                                    <h6>
+
+                                        Restoration Hymns
+
+                                    </h6>
+
+                                    <small class="text-muted">
+
+                                        Various Artists
+
+                                    </small>
+
+                                    <div>4:15</div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Audio Player -->
+
+                        <div class="worship-music-player mt-4">
+
+                            <div class="row align-items-center">
+
+                                <div class="col-md-4">
+
+                                    <div class="d-flex align-items-center">
+
+                                        <img src="assets/music/song5.jpg"
+                                            class="rounded-3"
+                                            width="70"
+                                            height="70">
+
+                                        <div class="ms-3">
+
+                                            <strong>
+
+                                                How Great Thou Art
+
+                                            </strong>
+
+                                            <br>
+
+                                            <small class="text-muted">
+
+                                                New Jerusalem Choir
+
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-5 text-center mt-3 mt-md-0">
+
+                                    <button class="btn btn-light">
+
+                                        <i class="bi bi-skip-backward-fill"></i>
+
+                                    </button>
+
+                                    <button class="btn btn-primary rounded-circle mx-2">
+
+                                        <i class="bi bi-pause-fill"></i>
+
+                                    </button>
+
+                                    <button class="btn btn-light">
+
+                                        <i class="bi bi-skip-forward-fill"></i>
+
+                                    </button>
+
+                                </div>
+
+                                <div class="col-md-3 text-md-end mt-3 mt-md-0">
+
+                                    <i class="bi bi-volume-up-fill fs-4"></i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Part 4 Starts Here -->
+            <!-- ==========================================
+PART 4
+CHOIRS YOU CAN JOIN
+========================================== -->
+
+<div class="col-xl-6 col-lg-12">
+
+    <div class="card worship-music-choir-card border-0 shadow-sm rounded-4">
+
+        <div class="card-header bg-white border-0">
+
+            <h3 class="mb-1">
+                Choirs You Can Join
+            </h3>
+
+            <small class="text-muted">
+                Lift your voice together in harmony.
+            </small>
+
+        </div>
+
+        <div class="card-body">
+
+            <!-- Choir 1 -->
+
+            <div class="worship-music-choir-item">
+
+                <img src="assets/music/choir1.jpg"
+                    class="worship-music-choir-img"
+                    alt="Restoration Choir">
+
+                <div class="flex-grow-1 ms-3">
+
+                    <h5>Restoration Choir</h5>
+
+                    <p>
+                        The global choir of The Church of Jesus Christ
+                        of Latter-day Saints.
+                    </p>
+
+                    <small>
+                        <i class="bi bi-clock"></i>
+                        Sundays at 9:30 AM
+                    </small>
+
+                </div>
+
+                <button class="btn btn-primary rounded-pill">
+
+                    Join
+
+                </button>
+
+            </div>
+
+            <!-- Choir 2 -->
+
+            <div class="worship-music-choir-item">
+
+                <img src="assets/music/choir2.jpg"
+                    class="worship-music-choir-img"
+                    alt="Sisters Choir">
+
+                <div class="flex-grow-1 ms-3">
+
+                    <h5>Sisters' Choir</h5>
+
+                    <p>
+                        Worship together with women
+                        of faith and testimony.
+                    </p>
+
+                    <small>
+                        <i class="bi bi-clock"></i>
+                        Sundays at 2:00 PM
+                    </small>
+
+                </div>
+
+                <button class="btn btn-primary rounded-pill">
+
+                    Join
+
+                </button>
+
+            </div>
+
+            <!-- Choir 3 -->
+
+            <div class="worship-music-choir-item">
+
+                <img src="assets/music/choir3.jpg"
+                    class="worship-music-choir-img"
+                    alt="Youth Choir">
+
+                <div class="flex-grow-1 ms-3">
+
+                    <h5>Youth Choir</h5>
+
+                    <p>
+                        For youth ages 14–18.
+                        Worship through music together.
+                    </p>
+
+                    <small>
+                        <i class="bi bi-clock"></i>
+                        Sundays at 8:00 PM
+                    </small>
+
+                </div>
+
+                <button class="btn btn-primary rounded-pill">
+
+                    Join
+
+                </button>
+
+            </div>
+
+            <!-- Choir 4 -->
+
+            <div class="worship-music-choir-item mb-0">
+
+                <img src="assets/music/choir4.jpg"
+                    class="worship-music-choir-img"
+                    alt="Children Choir">
+
+                <div class="flex-grow-1 ms-3">
+
+                    <h5>Children's Choir</h5>
+
+                    <p>
+                        Ages 8–13 learning
+                        joyful worship through music.
+                    </p>
+
+                    <small>
+                        <i class="bi bi-clock"></i>
+                        Saturdays at 10:00 AM
+                    </small>
+
+                </div>
+
+                <button class="btn btn-primary rounded-pill">
+
+                    Join
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+PART 5
+WORSHIP EVENTS
+========================================== -->
+
+<section class="worship-music-events py-5">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <!-- Featured Worship Broadcast -->
+
+            <div class="col-lg-7">
+
+                <div class="card worship-music-event-card border-0 shadow-sm rounded-4 h-100">
+
+                    <div class="card-header bg-white border-0">
+
+                        <h3 class="mb-1">
+                            Featured Worship Broadcast
+                        </h3>
+
+                        <small class="text-muted">
+                            Join live worship services and conference broadcasts.
+                        </small>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <img src="assets/music/worship-event.jpg"
+                            class="img-fluid rounded-4 worship-music-event-image"
+                            alt="Worship Event">
+
+                        <h4 class="mt-4">
+
+                            Worldwide Devotional
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            Worship through music, scripture,
+                            prayer and inspiring messages
+                            from Church leaders.
+
+                        </p>
+
+                        <div class="d-flex flex-wrap gap-2">
+
+                            <button class="btn btn-primary rounded-pill">
+
+                                <i class="bi bi-play-fill"></i>
+
+                                Watch Live
+
+                            </button>
+
+                            <button class="btn btn-outline-primary rounded-pill">
+
+                                Learn More
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Conference Schedule -->
+
+            <div class="col-lg-5">
+
+                <div class="card worship-music-schedule-card border-0 shadow-sm rounded-4 h-100">
+
+                    <div class="card-header bg-white border-0">
+
+                        <h3>
+
+                            Upcoming Worship Events
+
+                        </h3>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <!-- Item -->
+
+                        <div class="worship-music-schedule">
+
+                            <div class="worship-music-date">
+
+                                12
+
+                                <span>JUL</span>
+
+                            </div>
+
+                            <div class="flex-grow-1 ms-3">
+
+                                <h6>
+
+                                    Worldwide Devotional
+
+                                </h6>
+
+                                <small>
+
+                                    Sunday • 7:00 PM
+
+                                </small>
+
+                            </div>
+
+                            <button class="btn btn-sm btn-outline-primary">
+
+                                Join
+
+                            </button>
+
+                        </div>
+
+                        <!-- Item -->
+
+                        <div class="worship-music-schedule">
+
+                            <div class="worship-music-date">
+
+                                19
+
+                                <span>JUL</span>
+
+                            </div>
+
+                            <div class="flex-grow-1 ms-3">
+
+                                <h6>
+
+                                    Youth Music Night
+
+                                </h6>
+
+                                <small>
+
+                                    Friday • 6:30 PM
+
+                                </small>
+
+                            </div>
+
+                            <button class="btn btn-sm btn-outline-primary">
+
+                                Join
+
+                            </button>
+
+                        </div>
+
+                        <!-- Item -->
+
+                        <div class="worship-music-schedule">
+
+                            <div class="worship-music-date">
+
+                                27
+
+                                <span>JUL</span>
+
+                            </div>
+
+                            <div class="flex-grow-1 ms-3">
+
+                                <h6>
+
+                                    Stake Choir Practice
+
+                                </h6>
+
+                                <small>
+
+                                    Saturday • 5:00 PM
+
+                                </small>
+
+                            </div>
+
+                            <button class="btn btn-sm btn-outline-primary">
+
+                                Join
+
+                            </button>
+
+                        </div>
+
+                        <!-- Item -->
+
+                        <div class="worship-music-schedule mb-0">
+
+                            <div class="worship-music-date">
+
+                                03
+
+                                <span>AUG</span>
+
+                            </div>
+
+                            <div class="flex-grow-1 ms-3">
+
+                                <h6>
+
+                                    Temple Music Evening
+
+                                </h6>
+
+                                <small>
+
+                                    Sunday • 6:00 PM
+
+                                </small>
+
+                            </div>
+
+                            <button class="btn btn-sm btn-outline-primary">
+
+                                Join
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+PART 6
+WORSHIP RESOURCES
+========================================== -->
+
+<section class="worship-music-resources py-5">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+
+        <div class="row mb-4">
+
+            <div class="col-lg-12 text-center">
+
+                <h2 class="worship-resource-title">
+
+                    Worship Resources
+
+                </h2>
+
+                <p class="worship-resource-subtitle">
+
+                    Discover music resources, improve your talents,
+                    and serve the Lord through sacred music.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Resource 1 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card worship-resource-card h-100 border-0 shadow-sm">
+
+                    <img src="assets/music/resource-library.jpg"
+                        class="card-img-top"
+                        alt="Music Library">
+
+                    <div class="card-body">
+
+                        <div class="worship-resource-icon">
+
+                            <i class="bi bi-journal-music"></i>
+
+                        </div>
+
+                        <h4>
+
+                            Music Library
+
+                        </h4>
+
+                        <p>
+
+                            Browse hymns, choir arrangements,
+                            instrumental music and worship songs.
+
+                        </p>
+
+                    </div>
+
+                    <div class="card-footer bg-white border-0">
+
+                        <a href="#" class="btn btn-outline-primary rounded-pill w-100">
+
+                            Explore
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Resource 2 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card worship-resource-card h-100 border-0 shadow-sm">
+
+                    <img src="assets/music/resource-piano.jpg"
+                        class="card-img-top"
+                        alt="Learn Instrument">
+
+                    <div class="card-body">
+
+                        <div class="worship-resource-icon">
+
+                            <i class="bi bi-music-note-list"></i>
+
+                        </div>
+
+                        <h4>
+
+                            Learn an Instrument
+
+                        </h4>
+
+                        <p>
+
+                            Piano, Organ, Guitar and Vocal
+                            lessons for worship services.
+
+                        </p>
+
+                    </div>
+
+                    <div class="card-footer bg-white border-0">
+
+                        <a href="#" class="btn btn-outline-primary rounded-pill w-100">
+
+                            Start Learning
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Resource 3 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card worship-resource-card h-100 border-0 shadow-sm">
+
+                    <img src="assets/music/resource-talent.jpg"
+                        class="card-img-top"
+                        alt="Share Talent">
+
+                    <div class="card-body">
+
+                        <div class="worship-resource-icon">
+
+                            <i class="bi bi-stars"></i>
+
+                        </div>
+
+                        <h4>
+
+                            Share Your Talent
+
+                        </h4>
+
+                        <p>
+
+                            Record your testimony through
+                            music and bless others.
+
+                        </p>
+
+                    </div>
+
+                    <div class="card-footer bg-white border-0">
+
+                        <a href="#" class="btn btn-outline-primary rounded-pill w-100">
+
+                            Share Now
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Resource 4 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card worship-resource-card h-100 border-0 shadow-sm">
+
+                    <img src="assets/music/resource-volunteer.jpg"
+                        class="card-img-top"
+                        alt="Volunteer">
+
+                    <div class="card-body">
+
+                        <div class="worship-resource-icon">
+
+                            <i class="bi bi-heart-fill"></i>
+
+                        </div>
+
+                        <h4>
+
+                            Volunteer
+
+                        </h4>
+
+                        <p>
+
+                            Help organize choir events,
+                            conferences and worship nights.
+
+                        </p>
+
+                    </div>
+
+                    <div class="card-footer bg-white border-0">
+
+                        <a href="#" class="btn btn-outline-primary rounded-pill w-100">
+
+                            Join Team
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom CTA -->
+
+        <div class="row mt-5">
+
+            <div class="col-lg-12">
+
+                <div class="worship-feature-box">
+
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-8">
+
+                            <h3>
+
+                                "Make a joyful noise unto the Lord,
+                                all the earth."
+
+                            </h3>
+
+                            <p>
+
+                                Let music strengthen your testimony,
+                                bring peace to your home,
+                                and invite the Spirit into your life.
+
+                            </p>
+
+                        </div>
+
+                        <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+
+                            <a href="#"
+                                class="btn btn-warning btn-lg rounded-pill">
+
+                                Start Worshiping
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+PART 7
+FOOTER
+========================================== -->
+
+<footer class="worship-footer">
+
+    <!-- Scripture Banner -->
+
+    <section class="worship-footer-banner">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-8">
+
+                    <h2>
+
+                        "Praise the Lord with singing,
+                        with instruments,
+                        and with thankful hearts."
+
+                    </h2>
+
+                    <p>
+
+                        Let every song strengthen faith,
+                        invite the Spirit,
+                        and bring souls closer to Jesus Christ.
+
+                    </p>
+
+                </div>
+
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+
+                    <a href="#" class="btn btn-warning btn-lg rounded-pill">
+
+                        Explore More Music
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <section class="worship-footer-main">
+
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <!-- About -->
+
+                <div class="col-lg-4">
+
+                    <h4>
+
+                        Worship Through Music
+
+                    </h4>
+
+                    <p>
+
+                        Sharing sacred hymns, choir performances,
+                        devotionals and worship opportunities
+                        that bring people closer to Jesus Christ.
+
+                    </p>
+
+                </div>
+
+                <!-- Quick Links -->
+
+                <div class="col-lg-2 col-6">
+
+                    <h5>
+
+                        Explore
+
+                    </h5>
+
+                    <ul>
+
+                        <li><a href="#">Music Library</a></li>
+
+                        <li><a href="#">Choirs</a></li>
+
+                        <li><a href="#">Youth Music</a></li>
+
+                        <li><a href="#">Events</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Resources -->
+
+                <div class="col-lg-2 col-6">
+
+                    <h5>
+
+                        Resources
+
+                    </h5>
+
+                    <ul>
+
+                        <li><a href="#">Hymns</a></li>
+
+                        <li><a href="#">Conference</a></li>
+
+                        <li><a href="#">Lessons</a></li>
+
+                        <li><a href="#">Volunteer</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Contact -->
+
+                <div class="col-lg-4">
+
+                    <h5>
+
+                        Connect With Us
+
+                    </h5>
+
+                    <div class="worship-social">
+
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+
+                    </div>
+
+                    <p class="mt-4 mb-0">
+
+                        Email:
+                        music@example.org
+
+                    </p>
+
+                    <p>
+
+                        Phone:
+                        +1 (000) 123-4567
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    © 2026 Worship Through Music.
+                    All Rights Reserved.
+
+                </div>
+
+                <div class="col-lg-6 text-lg-end">
+
+                    Designed with ❤️ for Worship
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</footer>
+
+<!-- Scroll Top -->
+
+<a href="#" class="worship-scroll-top">
+
+    <i class="bi bi-arrow-up"></i>
+
+</a>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

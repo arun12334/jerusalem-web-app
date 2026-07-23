@@ -1,0 +1,5242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Hastening App</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#f5f5f5;
+    font-family:Georgia, serif;
+}
+
+/*==========================
+HEADER
+===========================*/
+
+.header{
+    background:#fff;
+/*    border-radius:20px 20px 0 0;*/
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo-circle{
+
+    width:62px;
+    height:62px;
+    border-radius:50%;
+    border:2px solid #d99c21;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#d99c21;
+    font-size:26px;
+    margin-right:12px;
+
+}
+
+.logo h3{
+    margin:0;
+    color:#16377c;
+    font-weight:700;
+    font-size:20px;
+}
+
+.logo small{
+    color:#666;
+}
+
+/*=========================
+NAVIGATION
+==========================*/
+
+.nav-menu{
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    gap:38px;
+}
+
+.nav-item-custom{
+
+    text-align:center;
+    text-decoration:none;
+    color:#16377c;
+    transition:.3s;
+    font-size:14px;
+}
+
+.nav-item-custom i{
+
+    display:block;
+    font-size:23px;
+    margin-bottom:8px;
+
+}
+
+.nav-item-custom:hover{
+
+color:#d89d21;
+
+}
+
+.active-nav{
+
+position:relative;
+color:#16377c;
+font-weight:700;
+
+}
+
+.active-nav::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+right:0;
+
+bottom:-16px;
+
+height:4px;
+
+background:#d89d21;
+
+border-radius:20px;
+
+}
+
+ 
+
+
+
+/* Desktop */
+
+.desktop-header{
+    display:block;
+}
+
+/* Mobile */
+
+@media (max-width:991px){
+
+.desktop-header{
+    display:none;
+}
+
+body{
+    padding-top:65px;
+}
+
+.offcanvas{
+    width:320px;
+}
+
+.offcanvas-header{
+    background:#17346f;
+    color:#fff;
+}
+
+.offcanvas-title{
+    font-weight:700;
+}
+
+.offcanvas-body{
+    padding:20px;
+}
+
+.mobile-menu-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-radius:16px;
+    background:#fff;
+    text-decoration:none;
+    margin-bottom:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.mobile-menu-item:hover{
+    transform:translateX(6px);
+    background:#17346f;
+}
+
+.mobile-menu-item:hover h6,
+.mobile-menu-item:hover small{
+    color:#fff;
+}
+
+.mobile-menu-item:hover .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+.menu-icon{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    background:#edf3ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    color:#17346f;
+    transition:.3s;
+}
+
+.mobile-menu-item h6{
+    margin:0;
+    color:#17346f;
+    font-weight:700;
+}
+
+.mobile-menu-item small{
+    color:#777;
+}
+
+.mobile-menu-item.active{
+    background:#17346f;
+}
+
+.mobile-menu-item.active h6,
+.mobile-menu-item.active small{
+    color:#fff;
+}
+
+.mobile-menu-item.active .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+}
+
+
+@media(max-width:991px){
+
+.footer-menu{
+    display:none;
+}
+
+.mobile-header{
+    display:block;
+}
+
+}
+
+@media(min-width:992px){
+
+.mobile-header{
+    display:none;
+}
+
+}
+
+
+/*Common Page*/
+
+
+
+</style>
+
+<!-- ==========================================================
+PART 1B START
+INTERNAL CSS
+========================================================== -->
+
+<style>
+
+/*==========================================================
+GENERAL
+==========================================================*/
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f5f6fa;
+
+    overflow-x:hidden;
+
+}
+
+/*==========================================================
+HERO SECTION
+==========================================================*/
+
+.invitation-unity-hero{
+
+    position:relative;
+
+}
+
+.invitation-unity-banner{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.invitation-unity-banner-image{
+
+    width:100%;
+
+    height:520px;
+
+    object-fit:cover;
+
+}
+
+/*==========================================================
+OVERLAY
+==========================================================*/
+
+.invitation-unity-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+    90deg,
+    rgba(255,248,238,.90) 0%,
+    rgba(255,248,238,.55) 40%,
+    rgba(255,255,255,.10) 100%);
+
+}
+
+/*==========================================================
+CONTENT
+==========================================================*/
+
+.invitation-unity-content{
+
+    position:absolute;
+
+    top:55px;
+
+    left:10px;
+
+    z-index:5;
+
+    max-width:700px;
+
+}
+
+.invitation-unity-content h1{
+
+    color:#163b70;
+
+    font-size:64px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+    line-height:1.1;
+
+}
+
+.invitation-unity-content h2{
+
+    color:#163b70;
+
+    font-size:30px;
+
+    font-weight:500;
+
+    margin-bottom:5px;
+
+}
+
+.invitation-unity-content p{
+
+    font-size:28px;
+
+    color:#163b70;
+
+    font-style:italic;
+
+    margin-top:20px;
+
+}
+
+.invitation-unity-content span{
+
+    color:#8c5c00;
+
+    font-weight:700;
+
+}
+
+/*==========================================================
+ICON
+==========================================================*/
+
+.invitation-unity-icon{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    background:#d19b2a;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:48px;
+
+    flex-shrink:0;
+
+}
+
+/*==========================================================
+TEMPLE
+==========================================================*/
+
+.invitation-unity-temple{
+
+    position:absolute;
+
+    right:250px;
+
+    bottom:0;
+
+    width:220px;
+
+    z-index:3;
+
+}
+
+.invitation-unity-temple img{
+
+    width:100%;
+
+}
+
+/*==========================================================
+JESUS IMAGE
+==========================================================*/
+
+.invitation-unity-jesus{
+
+    position:absolute;
+
+    right:30px;
+
+    top:20px;
+
+    width:190px;
+
+    z-index:4;
+
+}
+
+.invitation-unity-jesus img{
+
+    width:100%;
+
+}
+
+/*==========================================================
+GRID SECTION
+==========================================================*/
+
+.invitation-unity-grid{
+
+    margin-top:-35px;
+
+    position:relative;
+
+    z-index:20;
+
+    padding-bottom:40px;
+
+}
+
+/*==========================================================
+CARD
+==========================================================*/
+
+.invitation-unity-card{
+
+    border:none;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    background:#ffffff;
+
+    box-shadow:0 10px 28px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.invitation-unity-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+/*==========================================================
+CARD HEADER
+==========================================================*/
+
+.invitation-unity-card .card-header{
+
+    background:#173c72;
+
+    color:#fff;
+
+    border:none;
+
+    padding:18px 22px;
+
+}
+
+.invitation-unity-card .card-header h3{
+
+    font-size:26px;
+
+    margin:0;
+
+    font-weight:700;
+
+}
+
+/*==========================================================
+CARD BODY
+==========================================================*/
+
+.invitation-unity-card .card-body{
+
+    padding:24px;
+
+}
+
+.invitation-unity-card h2{
+
+    color:#173c72;
+
+    font-size:36px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.invitation-unity-card p{
+
+    color:#444;
+
+    line-height:1.8;
+
+}
+
+.invitation-unity-card ul{
+
+    padding-left:20px;
+
+}
+
+.invitation-unity-card li{
+
+    margin-bottom:10px;
+
+    line-height:1.6;
+
+}
+
+/*==========================================================
+MINI BOXES
+==========================================================*/
+
+.invitation-mini-box{
+
+    background:#edf4ff;
+
+    border-radius:16px;
+
+    padding:18px;
+
+    text-align:center;
+
+    height:100%;
+
+}
+
+.invitation-mini-box.green{
+
+    background:#eef9ed;
+
+}
+
+.invitation-mini-box h4{
+
+    color:#163b70;
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+.invitation-mini-box p{
+
+    margin:0;
+
+    color:#555;
+
+}
+
+/*==========================================================
+QUOTE
+==========================================================*/
+
+.invitation-quote{
+
+    background:#f7f7fb;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    font-style:italic;
+
+    font-size:24px;
+
+    color:#173c72;
+
+    margin-top:25px;
+
+    border:1px solid #ececec;
+
+}
+
+/*==========================================================
+IMAGE
+==========================================================*/
+
+.invitation-unity-card img{
+
+    transition:.4s;
+
+}
+
+.invitation-unity-card:hover img{
+
+    transform:scale(1.03);
+
+}
+
+
+
+</style>
+
+<!-- ==========================================================
+PART 1B END
+========================================================== -->
+
+
+<!-- ==========================================================
+PART 1C START
+MOBILE RESPONSIVE CSS
+========================================================== -->
+
+<style>
+
+/*==========================================================
+LARGE DESKTOP
+==========================================================*/
+
+@media (max-width:1400px){
+
+.invitation-unity-content{
+
+    max-width:620px;
+
+}
+
+.invitation-unity-content h1{
+
+    font-size:56px;
+
+}
+
+.invitation-unity-content h2{
+
+    font-size:28px;
+
+}
+
+.invitation-unity-temple{
+
+    width:190px;
+
+    right:220px;
+
+}
+
+.invitation-unity-jesus{
+
+    width:170px;
+
+}
+
+}
+
+/*==========================================================
+LAPTOP
+==========================================================*/
+
+@media (max-width:1200px){
+
+.invitation-unity-banner-image{
+
+    height:470px;
+
+}
+
+.invitation-unity-content{
+
+    top:50px;
+
+    max-width:540px;
+
+}
+
+.invitation-unity-content h1{
+
+    font-size:48px;
+
+}
+
+.invitation-unity-content h2{
+
+    font-size:24px;
+
+}
+
+.invitation-unity-content p{
+
+    font-size:22px;
+
+}
+
+.invitation-unity-icon{
+
+    width:75px;
+
+    height:75px;
+
+    font-size:38px;
+
+}
+
+.invitation-unity-temple{
+
+    width:170px;
+
+    right:170px;
+
+}
+
+.invitation-unity-jesus{
+
+    width:155px;
+
+}
+
+}
+
+/*==========================================================
+TABLET
+==========================================================*/
+
+@media (max-width:991px){
+
+.invitation-unity-banner-image{
+
+    height:420px;
+
+}
+
+.invitation-unity-content{
+
+    position:absolute;
+
+    top:35px;
+
+    left:15px;
+
+    max-width:470px;
+
+}
+
+.invitation-unity-content h1{
+
+    font-size:38px;
+
+}
+
+.invitation-unity-content h2{
+
+    font-size:20px;
+
+}
+
+.invitation-unity-content p{
+
+    font-size:18px;
+
+    margin-top:12px;
+
+}
+
+.invitation-unity-icon{
+
+    width:65px;
+
+    height:65px;
+
+    font-size:30px;
+
+}
+
+.invitation-unity-temple{
+
+    width:130px;
+
+    right:115px;
+
+}
+
+.invitation-unity-jesus{
+
+    width:120px;
+
+    right:10px;
+
+}
+
+.invitation-unity-grid{
+
+    margin-top:20px;
+
+}
+
+.invitation-unity-card{
+
+    margin-bottom:20px;
+
+}
+
+.invitation-unity-card h2{
+
+    font-size:28px;
+
+}
+
+.invitation-unity-card .card-header h3{
+
+    font-size:22px;
+
+}
+
+.invitation-mini-box{
+
+    margin-bottom:20px;
+
+}
+
+.invitation-quote{
+
+    font-size:20px;
+
+}
+
+}
+
+/*==========================================================
+MOBILE
+==========================================================*/
+
+@media (max-width:767px){
+
+.invitation-unity-banner-image{
+
+    height:620px;
+
+}
+
+.invitation-unity-overlay{
+
+    background:linear-gradient(
+    rgba(255,248,238,.95),
+    rgba(255,248,238,.78));
+
+}
+
+.invitation-unity-content{
+
+    position:absolute;
+
+    top:20px;
+
+    left:15px;
+
+    right:15px;
+
+    max-width:100%;
+
+}
+
+.invitation-unity-content .d-flex{
+
+    flex-direction:column;
+
+    align-items:flex-start!important;
+
+}
+
+.invitation-unity-content .ms-4{
+
+    margin-left:0!important;
+
+    margin-top:18px;
+
+}
+
+.invitation-unity-content h1{
+
+    font-size:32px;
+
+}
+
+.invitation-unity-content h2{
+
+    font-size:18px;
+
+}
+
+.invitation-unity-content p{
+
+    font-size:16px;
+
+    line-height:1.7;
+
+}
+
+.invitation-unity-icon{
+
+    width:60px;
+
+    height:60px;
+
+    font-size:28px;
+
+}
+
+.invitation-unity-temple{
+
+    width:120px;
+
+    right:20px;
+
+    bottom:0;
+
+}
+
+.invitation-unity-jesus{
+
+    width:115px;
+
+    top:auto;
+
+    bottom:20px;
+
+    right:145px;
+
+}
+
+.invitation-unity-grid{
+
+    margin-top:25px;
+
+    padding-bottom:30px;
+
+}
+
+.invitation-unity-card{
+
+    border-radius:18px;
+
+}
+
+.invitation-unity-card .card-body{
+
+    padding:20px;
+
+}
+
+.invitation-unity-card .card-header{
+
+    padding:18px;
+
+}
+
+.invitation-unity-card .card-header h3{
+
+    font-size:20px;
+
+}
+
+.invitation-unity-card h2{
+
+    font-size:24px;
+
+}
+
+.invitation-unity-card p,
+
+.invitation-unity-card li{
+
+    font-size:15px;
+
+}
+
+.invitation-mini-box{
+
+    margin-bottom:15px;
+
+}
+
+.invitation-mini-box h4{
+
+    font-size:20px;
+
+}
+
+.invitation-quote{
+
+    padding:20px;
+
+    font-size:18px;
+
+}
+
+}
+
+/*==========================================================
+SMALL MOBILE
+==========================================================*/
+
+@media (max-width:480px){
+
+.invitation-unity-banner-image{
+
+    height:670px;
+
+}
+
+.invitation-unity-content{
+
+    top:15px;
+
+}
+
+.invitation-unity-content h1{
+
+    font-size:28px;
+
+}
+
+.invitation-unity-content h2{
+
+    font-size:16px;
+
+}
+
+.invitation-unity-content p{
+
+    font-size:15px;
+
+}
+
+.invitation-unity-icon{
+
+    width:55px;
+
+    height:55px;
+
+    font-size:24px;
+
+}
+
+.invitation-unity-temple{
+
+    width:95px;
+
+    right:15px;
+
+}
+
+.invitation-unity-jesus{
+
+    width:90px;
+
+    right:115px;
+
+    bottom:15px;
+
+}
+
+.invitation-unity-card .card-header h3{
+
+    font-size:18px;
+
+}
+
+.invitation-unity-card h2{
+
+    font-size:22px;
+
+}
+
+.invitation-mini-box{
+
+    padding:15px;
+
+}
+
+.invitation-quote{
+
+    font-size:16px;
+
+}
+
+}
+
+</style>
+
+<!-- ==========================================================
+PART 1C END
+========================================================== -->
+
+<!-- ==========================================================
+PART 2B START
+INTERNAL CSS
+========================================================== -->
+
+<style>
+
+/*==========================================================
+PART 2
+CONTENT SECTION
+==========================================================*/
+
+.invitation-content-section{
+
+    padding:70px 0;
+
+    position:relative;
+
+}
+
+/*==========================================================
+CARD
+==========================================================*/
+
+.invitation-content-card{
+
+    border:none;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    background:#ffffff;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+    transition:.35s ease;
+
+}
+
+.invitation-content-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+/*==========================================================
+HEADER
+==========================================================*/
+
+.invitation-blue-header{
+
+    background:#153c73;
+
+    border:none;
+
+    padding:22px;
+
+}
+
+.invitation-blue-header h3{
+
+    color:#fff;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin:0;
+
+    line-height:1.2;
+
+}
+
+.invitation-header-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:#d39a25;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+    font-size:30px;
+
+}
+
+/*==========================================================
+CARD BODY
+==========================================================*/
+
+.invitation-content-card .card-body{
+
+    padding:30px;
+
+}
+
+.invitation-content-card h2{
+
+    color:#173c72;
+
+    font-size:36px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.invitation-content-card p{
+
+    color:#555;
+
+    line-height:1.9;
+
+    font-size:16px;
+
+}
+
+/*==========================================================
+LIST
+==========================================================*/
+
+.invitation-list{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:25px 0;
+
+}
+
+.invitation-list li{
+
+    position:relative;
+
+    padding-left:32px;
+
+    margin-bottom:15px;
+
+    color:#444;
+
+    line-height:1.7;
+
+}
+
+.invitation-list li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:#d39a25;
+
+    color:#fff;
+
+    font-size:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+/*==========================================================
+SMALL BOX
+==========================================================*/
+
+.invitation-small-box{
+
+    background:#eef4ff;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    text-align:center;
+
+    height:100%;
+
+    transition:.3s;
+
+}
+
+.invitation-small-box.green{
+
+    background:#eef9ee;
+
+}
+
+.invitation-small-box:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.invitation-small-box h5{
+
+    color:#173c72;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.invitation-small-box p{
+
+    margin:0;
+
+    color:#666;
+
+}
+
+/*==========================================================
+NUMBER LIST
+==========================================================*/
+
+.invitation-number-list{
+
+    padding-left:24px;
+
+    margin:25px 0;
+
+}
+
+.invitation-number-list li{
+
+    margin-bottom:16px;
+
+    color:#444;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+/*==========================================================
+QUOTE
+==========================================================*/
+
+.invitation-quote-box{
+
+    margin-top:35px;
+
+    background:#f8f9fc;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    border:1px solid #ececec;
+
+}
+
+.invitation-quote-box i{
+
+    color:#d39a25;
+
+    font-size:42px;
+
+}
+
+.invitation-quote-box p{
+
+    font-size:22px;
+
+    font-style:italic;
+
+    color:#173c72;
+
+    margin:20px 0;
+
+    line-height:1.7;
+
+}
+
+.invitation-quote-box h6{
+
+    color:#666;
+
+    font-weight:600;
+
+}
+
+/*==========================================================
+IMAGES
+==========================================================*/
+
+.invitation-content-card img{
+
+    width:100%;
+
+    border-radius:20px;
+
+    transition:.4s;
+
+}
+
+.invitation-content-card:hover img{
+
+    transform:scale(1.04);
+
+}
+
+/*==========================================================
+BUTTONS
+==========================================================*/
+
+.btn{
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/*==========================================================
+ANIMATION
+==========================================================*/
+
+@keyframes invitationFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.invitation-content-card{
+
+    animation:invitationFade .8s ease;
+
+}
+
+</style>
+
+<!-- ==========================================================
+PART 2B END
+========================================================== -->
+
+<!-- ==========================================================
+PART 2C START
+MOBILE RESPONSIVE CSS
+========================================================== -->
+
+<style>
+
+/*==========================================================
+LARGE DESKTOP
+==========================================================*/
+
+@media (max-width:1400px){
+
+.invitation-content-card h2{
+
+    font-size:32px;
+
+}
+
+.invitation-blue-header h3{
+
+    font-size:26px;
+
+}
+
+.invitation-content-card .card-body{
+
+    padding:26px;
+
+}
+
+}
+
+/*==========================================================
+LAPTOP
+==========================================================*/
+
+@media (max-width:1200px){
+
+.invitation-content-section{
+
+    padding:60px 0;
+
+}
+
+.invitation-content-card h2{
+
+    font-size:28px;
+
+}
+
+.invitation-blue-header{
+
+    padding:20px;
+
+}
+
+.invitation-blue-header h3{
+
+    font-size:24px;
+
+}
+
+.invitation-header-icon{
+
+    width:58px;
+
+    height:58px;
+
+    font-size:26px;
+
+}
+
+.invitation-small-box{
+
+    padding:18px;
+
+}
+
+.invitation-small-box h5{
+
+    font-size:20px;
+
+}
+
+.invitation-quote-box{
+
+    padding:24px;
+
+}
+
+.invitation-quote-box p{
+
+    font-size:20px;
+
+}
+
+}
+
+/*==========================================================
+TABLET
+==========================================================*/
+
+@media (max-width:991px){
+
+.invitation-content-section{
+
+    padding:45px 0;
+
+}
+
+.invitation-content-card{
+
+    margin-bottom:25px;
+
+}
+
+.invitation-content-card .card-body{
+
+    padding:24px;
+
+}
+
+.invitation-content-card h2{
+
+    font-size:26px;
+
+}
+
+.invitation-blue-header{
+
+    padding:18px;
+
+}
+
+.invitation-blue-header h3{
+
+    font-size:22px;
+
+}
+
+.invitation-header-icon{
+
+    width:55px;
+
+    height:55px;
+
+    font-size:24px;
+
+}
+
+.invitation-list li{
+
+    margin-bottom:12px;
+
+}
+
+.invitation-small-box{
+
+    margin-bottom:15px;
+
+}
+
+.invitation-quote-box{
+
+    margin-top:25px;
+
+}
+
+.invitation-quote-box p{
+
+    font-size:18px;
+
+}
+
+}
+
+/*==========================================================
+MOBILE
+==========================================================*/
+
+@media (max-width:767px){
+
+.invitation-content-section{
+
+    padding:35px 0;
+
+}
+
+.invitation-content-card{
+
+    border-radius:18px;
+
+}
+
+.invitation-content-card .card-body{
+
+    padding:20px;
+
+}
+
+.invitation-blue-header{
+
+    padding:16px;
+
+}
+
+.invitation-blue-header .d-flex{
+
+    align-items:center;
+
+}
+
+.invitation-blue-header h3{
+
+    font-size:20px;
+
+    line-height:1.3;
+
+}
+
+.invitation-header-icon{
+
+    width:50px;
+
+    height:50px;
+
+    font-size:22px;
+
+}
+
+.invitation-content-card h2{
+
+    font-size:22px;
+
+    line-height:1.3;
+
+}
+
+.invitation-content-card p{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+.invitation-list{
+
+    margin:20px 0;
+
+}
+
+.invitation-list li{
+
+    font-size:15px;
+
+    padding-left:28px;
+
+}
+
+.invitation-number-list{
+
+    padding-left:18px;
+
+}
+
+.invitation-number-list li{
+
+    font-size:15px;
+
+    margin-bottom:12px;
+
+}
+
+.invitation-small-box{
+
+    padding:16px;
+
+}
+
+.invitation-small-box h5{
+
+    font-size:18px;
+
+}
+
+.invitation-small-box p{
+
+    font-size:14px;
+
+}
+
+.invitation-quote-box{
+
+    padding:20px;
+
+}
+
+.invitation-quote-box i{
+
+    font-size:34px;
+
+}
+
+.invitation-quote-box p{
+
+    font-size:17px;
+
+    margin:15px 0;
+
+}
+
+.invitation-quote-box h6{
+
+    font-size:14px;
+
+}
+
+.invitation-content-card img{
+
+    margin-top:15px;
+
+}
+
+}
+
+/*==========================================================
+SMALL MOBILE
+==========================================================*/
+
+@media (max-width:480px){
+
+.invitation-content-section{
+
+    padding:25px 0;
+
+}
+
+.invitation-blue-header{
+
+    padding:15px;
+
+}
+
+.invitation-header-icon{
+
+    width:46px;
+
+    height:46px;
+
+    font-size:20px;
+
+}
+
+.invitation-blue-header h3{
+
+    font-size:18px;
+
+}
+
+.invitation-content-card h2{
+
+    font-size:20px;
+
+}
+
+.invitation-content-card p,
+
+.invitation-list li,
+
+.invitation-number-list li{
+
+    font-size:14px;
+
+}
+
+.invitation-small-box{
+
+    padding:14px;
+
+}
+
+.invitation-small-box h5{
+
+    font-size:17px;
+
+}
+
+.invitation-quote-box{
+
+    padding:18px;
+
+}
+
+.invitation-quote-box p{
+
+    font-size:16px;
+
+}
+
+.invitation-quote-box h6{
+
+    font-size:13px;
+
+}
+
+}
+
+</style>
+
+<!-- ==========================================================
+PART 2C END
+========================================================== -->
+
+<!-- ==========================================================
+PART 3B-1 START
+INTERNAL CSS
+FULFILLMENT & TESTIMONY SECTION
+========================================================== -->
+
+<style>
+
+/*==========================================================
+PART 3
+FULFILLMENT SECTION
+==========================================================*/
+
+.invitation-fulfillment-section{
+
+    padding:80px 0;
+
+    position:relative;
+
+}
+
+/*==========================================================
+COMMON CARD
+==========================================================*/
+
+.invitation-fulfillment-card,
+.invitation-testimony-card{
+
+    border:none;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+    transition:.35s ease;
+
+}
+
+.invitation-fulfillment-card:hover,
+.invitation-testimony-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+/*==========================================================
+HEADER
+==========================================================*/
+
+.invitation-fulfillment-header{
+
+    background:#173c72;
+
+    color:#fff;
+
+    border:none;
+
+    padding:22px 26px;
+
+}
+
+.invitation-fulfillment-header h3{
+
+    margin:0;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+.invitation-fulfillment-header small{
+
+    color:rgba(255,255,255,.85);
+
+    font-size:15px;
+
+}
+
+/*==========================================================
+HEADER ICON
+==========================================================*/
+
+.invitation-fulfillment-icon{
+
+    width:68px;
+
+    height:68px;
+
+    border-radius:50%;
+
+    background:#d49a20;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+    flex-shrink:0;
+
+}
+
+/*==========================================================
+CARD BODY
+==========================================================*/
+
+.invitation-fulfillment-card .card-body,
+.invitation-testimony-card .card-body{
+
+    padding:32px;
+
+}
+
+.invitation-fulfillment-card p,
+.invitation-testimony-card p{
+
+    color:#555;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+/*==========================================================
+COMPARE BOX
+==========================================================*/
+
+.invitation-compare-box{
+
+    border-radius:18px;
+
+    padding:24px;
+
+    transition:.35s;
+
+}
+
+.invitation-compare-box.blue{
+
+    background:#edf5ff;
+
+    border-left:6px solid #2d6cdf;
+
+}
+
+.invitation-compare-box.green{
+
+    background:#eefbf2;
+
+    border-left:6px solid #2da44e;
+
+}
+
+.invitation-compare-box:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.invitation-compare-box h5{
+
+    color:#173c72;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.invitation-compare-box p{
+
+    margin:0;
+
+}
+
+/*==========================================================
+FULFILLMENT LIST
+==========================================================*/
+
+.invitation-fulfillment-list{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.invitation-fulfillment-list li{
+
+    position:relative;
+
+    padding-left:34px;
+
+    margin-bottom:16px;
+
+    line-height:1.8;
+
+    color:#444;
+
+}
+
+.invitation-fulfillment-list li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    top:2px;
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:50%;
+
+    background:#d49a20;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:12px;
+
+    font-weight:700;
+
+}
+
+/*==========================================================
+TESTIMONY CARD
+==========================================================*/
+
+.invitation-testimony-card{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.invitation-testimony-card h3{
+
+    color:#173c72;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.invitation-shield-icon{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:50%;
+
+    background:#173c72;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:32px;
+
+}
+
+.invitation-testimony-card hr{
+
+    margin:28px 0;
+
+    opacity:.15;
+
+}
+
+/*==========================================================
+IMAGES
+==========================================================*/
+
+.invitation-testimony-card img{
+
+    width:100%;
+
+    border-radius:18px;
+
+    transition:.35s;
+
+}
+
+.invitation-testimony-card:hover img{
+
+    transform:scale(1.04);
+
+}
+
+/*==========================================================
+ANIMATION
+==========================================================*/
+
+@keyframes invitationRise{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.invitation-fulfillment-card,
+.invitation-testimony-card{
+
+    animation:invitationRise .8s ease;
+
+}
+
+</style>
+
+<!-- ==========================================================
+PART 3B-1 END
+========================================================== -->
+
+<!-- ==========================================================
+PART 3B-2 START
+INTERNAL CSS
+FELLOWSHIP • FEATURE • BOTTOM • FINAL • SCRIPTURE
+========================================================== -->
+
+<style>
+
+/*==========================================================
+FELLOWSHIP SECTION
+==========================================================*/
+
+.invitation-fellowship-card,
+.invitation-bottom-card,
+.invitation-final-card{
+
+    border:none;
+    border-radius:24px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+    transition:.35s ease;
+
+}
+
+.invitation-fellowship-card:hover,
+.invitation-bottom-card:hover,
+.invitation-final-card:hover{
+
+    transform:translateY(-8px);
+    box-shadow:0 20px 45px rgba(0,0,0,.16);
+
+}
+
+.invitation-fellowship-header,
+.invitation-bottom-header,
+.invitation-final-header{
+
+    background:#163c73;
+    color:#fff;
+    border:none;
+    padding:22px;
+
+}
+
+.invitation-fellowship-header h3,
+.invitation-bottom-header h3,
+.invitation-final-header h3{
+
+    margin:0;
+    font-size:28px;
+    font-weight:700;
+
+}
+
+.invitation-fellowship-header small{
+
+    color:rgba(255,255,255,.85);
+
+}
+
+.invitation-fellowship-icon{
+
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#d79d24;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+
+}
+
+.invitation-fellowship-card .card-body,
+.invitation-bottom-card .card-body,
+.invitation-final-card .card-body{
+
+    padding:30px;
+
+}
+
+/*==========================================================
+FEATURE CARDS
+==========================================================*/
+
+.invitation-feature-card{
+
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 28px rgba(0,0,0,.08);
+    transition:.35s;
+
+}
+
+.invitation-feature-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.invitation-feature-card img{
+
+    height:170px;
+    object-fit:cover;
+    transition:.4s;
+
+}
+
+.invitation-feature-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.invitation-feature-card .card-body{
+
+    padding:22px;
+    text-align:center;
+
+}
+
+.invitation-feature-card h5{
+
+    color:#163c73;
+    font-weight:700;
+    margin-top:10px;
+
+}
+
+.invitation-feature-card p{
+
+    color:#666;
+    margin-bottom:0;
+    line-height:1.7;
+
+}
+
+/*==========================================================
+BOTTOM CARDS
+==========================================================*/
+
+.invitation-highlight-box{
+
+    background:#f7f8fc;
+    border-radius:18px;
+    padding:18px;
+
+}
+
+.invitation-highlight-box h5{
+
+    color:#163c73;
+    font-weight:700;
+
+}
+
+.invitation-check-list,
+.invitation-promise-list{
+
+    padding-left:20px;
+
+}
+
+.invitation-check-list li,
+.invitation-promise-list li{
+
+    margin-bottom:14px;
+    color:#444;
+    line-height:1.7;
+
+}
+
+/*==========================================================
+MISSION MINI BOX
+==========================================================*/
+
+.invitation-mini-mission{
+
+    background:#edf5ff;
+    border-radius:18px;
+    padding:22px;
+    text-align:center;
+    transition:.3s;
+
+}
+
+.invitation-mini-mission:hover{
+
+    transform:translateY(-5px);
+    background:#163c73;
+    color:#fff;
+
+}
+
+.invitation-mini-mission i{
+
+    font-size:32px;
+    color:#d79d24;
+
+}
+
+.invitation-mini-mission:hover i{
+
+    color:#fff;
+
+}
+
+.invitation-mini-mission h6{
+
+    margin-top:12px;
+    font-weight:700;
+
+}
+
+/*==========================================================
+DECLARATION
+==========================================================*/
+
+.invitation-declaration-box{
+
+    background:#f6f8fb;
+    border-radius:20px;
+    padding:25px;
+    margin-top:25px;
+    border:1px solid #e5e5e5;
+
+}
+
+.invitation-declaration-box i{
+
+    color:#d79d24;
+
+}
+
+.invitation-declaration-box p{
+
+    color:#163c73;
+    font-size:20px;
+    font-style:italic;
+
+}
+
+.invitation-declaration-box small{
+
+    color:#666;
+
+}
+
+/*==========================================================
+SCRIPTURE BANNER
+==========================================================*/
+
+.invitation-scripture-banner{
+
+    padding:80px 0;
+    background:#eef4fb;
+
+}
+
+.invitation-scripture-card{
+
+    background:#fff;
+    border-radius:28px;
+    padding:60px 40px;
+    box-shadow:0 14px 35px rgba(0,0,0,.08);
+
+}
+
+.invitation-scripture-icon{
+
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:#d79d24;
+    color:#fff;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:42px;
+
+}
+
+.invitation-scripture-card h2{
+
+    color:#163c73;
+    font-weight:700;
+    margin-bottom:20px;
+
+}
+
+.invitation-scripture-card p{
+
+    color:#555;
+    font-size:20px;
+    line-height:1.8;
+
+}
+
+.invitation-scripture-card h5{
+
+    color:#d79d24;
+    font-weight:700;
+    margin-top:20px;
+
+}
+
+.invitation-scripture-card hr{
+
+    margin:35px 0;
+    opacity:.15;
+
+}
+
+.invitation-scripture-card h6{
+
+    color:#163c73;
+    font-weight:700;
+
+}
+
+/*==========================================================
+COMMON IMAGES
+==========================================================*/
+
+.invitation-fellowship-card img,
+.invitation-bottom-card img,
+.invitation-final-card img,
+.invitation-scripture-card img{
+
+    width:100%;
+    border-radius:18px;
+    transition:.35s;
+
+}
+
+.invitation-fellowship-card:hover img,
+.invitation-bottom-card:hover img,
+.invitation-final-card:hover img{
+
+    transform:scale(1.04);
+
+}
+
+/*==========================================================
+GLOBAL ANIMATION
+==========================================================*/
+
+@keyframes invitationFadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.invitation-fellowship-card,
+.invitation-feature-card,
+.invitation-bottom-card,
+.invitation-final-card,
+.invitation-scripture-card{
+
+    animation:invitationFadeUp .8s ease;
+
+}
+
+</style>
+
+<!-- ==========================================================
+PART 3B-2 END
+========================================================== -->
+
+<!-- ==========================================================
+PART 3C-1 START
+RESPONSIVE CSS
+DESKTOP • LAPTOP • TABLET
+========================================================== -->
+
+<style>
+
+/*==========================================================
+LARGE DESKTOP
+==========================================================*/
+
+@media (max-width:1400px){
+
+.invitation-fulfillment-section{
+
+    padding:70px 0;
+
+}
+
+.invitation-fulfillment-header h3,
+.invitation-fellowship-header h3,
+.invitation-bottom-header h3,
+.invitation-final-header h3{
+
+    font-size:26px;
+
+}
+
+.invitation-fulfillment-card .card-body,
+.invitation-testimony-card .card-body,
+.invitation-fellowship-card .card-body,
+.invitation-bottom-card .card-body,
+.invitation-final-card .card-body{
+
+    padding:28px;
+
+}
+
+.invitation-feature-card img{
+
+    height:155px;
+
+}
+
+.invitation-scripture-card{
+
+    padding:50px 35px;
+
+}
+
+.invitation-scripture-card h2{
+
+    font-size:34px;
+
+}
+
+}
+
+/*==========================================================
+LAPTOP
+==========================================================*/
+
+@media (max-width:1200px){
+
+.invitation-fulfillment-section{
+
+    padding:60px 0;
+
+}
+
+.invitation-fulfillment-header,
+.invitation-fellowship-header,
+.invitation-bottom-header,
+.invitation-final-header{
+
+    padding:20px;
+
+}
+
+.invitation-fulfillment-header h3,
+.invitation-fellowship-header h3,
+.invitation-bottom-header h3,
+.invitation-final-header h3{
+
+    font-size:24px;
+
+}
+
+.invitation-fulfillment-icon,
+.invitation-fellowship-icon{
+
+    width:58px;
+
+    height:58px;
+
+    font-size:26px;
+
+}
+
+.invitation-compare-box{
+
+    padding:20px;
+
+}
+
+.invitation-compare-box h5{
+
+    font-size:20px;
+
+}
+
+.invitation-shield-icon{
+
+    width:64px;
+
+    height:64px;
+
+    font-size:28px;
+
+}
+
+.invitation-feature-card img{
+
+    height:145px;
+
+}
+
+.invitation-mini-mission{
+
+    padding:18px;
+
+}
+
+.invitation-scripture-banner{
+
+    padding:70px 0;
+
+}
+
+.invitation-scripture-card{
+
+    padding:45px 30px;
+
+}
+
+.invitation-scripture-card h2{
+
+    font-size:30px;
+
+}
+
+.invitation-scripture-card p{
+
+    font-size:18px;
+
+}
+
+}
+
+/*==========================================================
+TABLET
+==========================================================*/
+
+@media (max-width:991px){
+
+.invitation-fulfillment-section{
+
+    padding:50px 0;
+
+}
+
+.invitation-fulfillment-card,
+.invitation-testimony-card,
+.invitation-fellowship-card,
+.invitation-bottom-card,
+.invitation-final-card{
+
+    margin-bottom:25px;
+
+}
+
+.invitation-fulfillment-card .card-body,
+.invitation-testimony-card .card-body,
+.invitation-fellowship-card .card-body,
+.invitation-bottom-card .card-body,
+.invitation-final-card .card-body{
+
+    padding:24px;
+
+}
+
+.invitation-fulfillment-header,
+.invitation-fellowship-header,
+.invitation-bottom-header,
+.invitation-final-header{
+
+    padding:18px;
+
+}
+
+.invitation-fulfillment-header h3,
+.invitation-fellowship-header h3,
+.invitation-bottom-header h3,
+.invitation-final-header h3{
+
+    font-size:22px;
+
+}
+
+.invitation-fulfillment-header small,
+.invitation-fellowship-header small{
+
+    font-size:13px;
+
+}
+
+.invitation-fulfillment-icon,
+.invitation-fellowship-icon{
+
+    width:54px;
+
+    height:54px;
+
+    font-size:24px;
+
+}
+
+.invitation-compare-box{
+
+    padding:18px;
+
+}
+
+.invitation-compare-box h5{
+
+    font-size:18px;
+
+}
+
+.invitation-feature-card{
+
+    margin-bottom:20px;
+
+}
+
+.invitation-feature-card img{
+
+    height:170px;
+
+}
+
+.invitation-mini-mission{
+
+    margin-bottom:15px;
+
+}
+
+.invitation-scripture-banner{
+
+    padding:60px 0;
+
+}
+
+.invitation-scripture-card{
+
+    padding:40px 25px;
+
+}
+
+.invitation-scripture-icon{
+
+    width:75px;
+
+    height:75px;
+
+    font-size:34px;
+
+}
+
+.invitation-scripture-card h2{
+
+    font-size:28px;
+
+}
+
+.invitation-scripture-card p{
+
+    font-size:17px;
+
+}
+
+}
+
+</style>
+
+<!-- ==========================================================
+PART 3C-1 END
+========================================================== -->
+
+<!-- ==========================================================
+PART 3C-2 START
+RESPONSIVE CSS
+MOBILE • SMALL MOBILE • EXTRA SMALL
+========================================================== -->
+
+<style>
+
+/*==========================================================
+MOBILE
+==========================================================*/
+
+@media (max-width:767px){
+
+.invitation-fulfillment-section{
+
+    padding:40px 0;
+
+}
+
+.invitation-fulfillment-card,
+.invitation-testimony-card,
+.invitation-fellowship-card,
+.invitation-bottom-card,
+.invitation-final-card{
+
+    border-radius:18px;
+
+}
+
+.invitation-fulfillment-card .card-body,
+.invitation-testimony-card .card-body,
+.invitation-fellowship-card .card-body,
+.invitation-bottom-card .card-body,
+.invitation-final-card .card-body{
+
+    padding:20px;
+
+}
+
+.invitation-fulfillment-header,
+.invitation-fellowship-header,
+.invitation-bottom-header,
+.invitation-final-header{
+
+    padding:16px;
+
+}
+
+.invitation-fulfillment-header h3,
+.invitation-fellowship-header h3,
+.invitation-bottom-header h3,
+.invitation-final-header h3{
+
+    font-size:20px;
+    line-height:1.3;
+
+}
+
+.invitation-fulfillment-header small,
+.invitation-fellowship-header small{
+
+    display:block;
+    margin-top:5px;
+    font-size:12px;
+
+}
+
+.invitation-fulfillment-icon,
+.invitation-fellowship-icon{
+
+    width:50px;
+    height:50px;
+    font-size:22px;
+
+}
+
+.invitation-shield-icon{
+
+    width:58px;
+    height:58px;
+    font-size:24px;
+
+}
+
+.invitation-compare-box{
+
+    padding:16px;
+
+}
+
+.invitation-compare-box h5{
+
+    font-size:18px;
+
+}
+
+.invitation-compare-box p,
+.invitation-fulfillment-card p,
+.invitation-testimony-card p,
+.invitation-fellowship-card p,
+.invitation-bottom-card p,
+.invitation-final-card p{
+
+    font-size:15px;
+    line-height:1.8;
+
+}
+
+.invitation-fulfillment-list li,
+.invitation-check-list li,
+.invitation-promise-list li{
+
+    font-size:15px;
+    margin-bottom:12px;
+
+}
+
+.invitation-feature-card{
+
+    margin-bottom:20px;
+
+}
+
+.invitation-feature-card img{
+
+    height:200px;
+
+}
+
+.invitation-feature-card .card-body{
+
+    padding:18px;
+
+}
+
+.invitation-feature-card h5{
+
+    font-size:18px;
+
+}
+
+.invitation-feature-card p{
+
+    font-size:14px;
+
+}
+
+.invitation-mini-mission{
+
+    padding:16px;
+
+}
+
+.invitation-mini-mission i{
+
+    font-size:28px;
+
+}
+
+.invitation-mini-mission h6{
+
+    font-size:15px;
+
+}
+
+.invitation-declaration-box{
+
+    padding:18px;
+
+}
+
+.invitation-declaration-box p{
+
+    font-size:17px;
+
+}
+
+.invitation-scripture-banner{
+
+    padding:45px 0;
+
+}
+
+.invitation-scripture-card{
+
+    padding:28px 20px;
+    border-radius:20px;
+
+}
+
+.invitation-scripture-icon{
+
+    width:65px;
+    height:65px;
+    font-size:30px;
+
+}
+
+.invitation-scripture-card h2{
+
+    font-size:24px;
+
+}
+
+.invitation-scripture-card p{
+
+    font-size:15px;
+
+}
+
+.invitation-scripture-card h5{
+
+    font-size:20px;
+
+}
+
+.invitation-scripture-card h6{
+
+    margin-top:10px;
+    font-size:14px;
+
+}
+
+}
+
+/*==========================================================
+SMALL MOBILE
+==========================================================*/
+
+@media (max-width:480px){
+
+.invitation-fulfillment-section{
+
+    padding:30px 0;
+
+}
+
+.invitation-fulfillment-header,
+.invitation-fellowship-header,
+.invitation-bottom-header,
+.invitation-final-header{
+
+    padding:15px;
+
+}
+
+.invitation-fulfillment-header h3,
+.invitation-fellowship-header h3,
+.invitation-bottom-header h3,
+.invitation-final-header h3{
+
+    font-size:18px;
+
+}
+
+.invitation-fulfillment-icon,
+.invitation-fellowship-icon{
+
+    width:46px;
+    height:46px;
+    font-size:20px;
+
+}
+
+.invitation-shield-icon{
+
+    width:52px;
+    height:52px;
+    font-size:22px;
+
+}
+
+.invitation-feature-card img{
+
+    height:170px;
+
+}
+
+.invitation-scripture-card{
+
+    padding:24px 16px;
+
+}
+
+.invitation-scripture-card h2{
+
+    font-size:22px;
+
+}
+
+.invitation-scripture-card p{
+
+    font-size:14px;
+
+}
+
+.invitation-scripture-card h5{
+
+    font-size:18px;
+
+}
+
+}
+
+/*==========================================================
+EXTRA SMALL
+==========================================================*/
+
+@media (max-width:360px){
+
+.invitation-fulfillment-header h3,
+.invitation-fellowship-header h3,
+.invitation-bottom-header h3,
+.invitation-final-header h3{
+
+    font-size:16px;
+
+}
+
+.invitation-fulfillment-card .card-body,
+.invitation-testimony-card .card-body,
+.invitation-fellowship-card .card-body,
+.invitation-bottom-card .card-body,
+.invitation-final-card .card-body{
+
+    padding:16px;
+
+}
+
+.invitation-feature-card img{
+
+    height:150px;
+
+}
+
+.invitation-scripture-card{
+
+    padding:20px 14px;
+
+}
+
+.invitation-scripture-icon{
+
+    width:58px;
+    height:58px;
+    font-size:26px;
+
+}
+
+.invitation-scripture-card h2{
+
+    font-size:20px;
+
+}
+
+.invitation-scripture-card p{
+
+    font-size:13px;
+    line-height:1.7;
+
+}
+
+.invitation-scripture-card h5{
+
+    font-size:16px;
+
+}
+
+.invitation-scripture-card h6{
+
+    font-size:13px;
+
+}
+
+}
+
+</style>
+
+<!-- ==========================================================
+PART 3C-2 END
+========================================================== -->
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+ <header class="header d-none d-lg-block">
+  <div class="container py-3">
+    <div class="row align-items-center">
+
+      <div class="col-lg-3">
+        <div class="logo">
+          <div class="logo-circle">
+            <i class="bi bi-building"></i>
+          </div>
+
+          <div>
+            <h3>Hastening App</h3>
+            <small>Hasten the Gathering and Unity in Zion</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="nav-menu">
+
+        <a href="index.html" class="nav-item-custom">
+    <i class="bi bi-house-fill"></i>
+    Home<br>
+    <span class="invisible">.</span>
+</a>
+
+          <a href="Loving.html" class="nav-item-custom">
+            <i class="bi bi-heart"></i>
+            Loving<br>Our Neighbor
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-book"></i>
+            Sharing Our<br>Faith in Christ
+          </a>
+
+          <a href="#" class="nav-item-custom active-nav">
+            <i class="bi bi-people-fill"></i>
+            Invitation<br>to Unity
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-droplet-fill"></i>
+            Does Unity<br>Require Baptism?
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-music-note-beamed"></i>
+            Worshiping Christ<br>through Music
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-calendar-event"></i>
+            Neighborhood<br>B&amp;B Events
+          </a>
+
+          <a href="security.html" class="nav-item-custom">
+            <i class="bi bi-shield-check"></i>
+            Security<br>&amp; More
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Header -->
+<nav class="navbar navbar-dark  d-lg-none fixed-top" style="background-color: #16377c !important;">
+
+    <div class="container-fluid">
+        <span class="navbar-brand fw-bold">
+           Hastening
+        </span>
+
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+      
+    </div>
+
+</nav>
+
+<!-- Mobile Menu -->
+<div class="offcanvas offcanvas-start"
+     tabindex="-1"
+     id="mobileMenu">
+
+    <div class="offcanvas-header">
+
+        <h5 class="offcanvas-title">
+            Menu
+        </h5>
+
+        <button class="btn-close"
+                data-bs-dismiss="offcanvas">
+        </button>
+
+    </div>
+
+<div class="offcanvas-body bg-light">
+
+    <a href="index.html" class="mobile-menu-item ">
+        <div class="menu-icon">
+            <i class="bi bi-house-fill"></i>
+        </div>
+        <div>
+            <h6>Home</h6>
+            <small>Dashboard</small>
+        </div>
+    </a>
+
+    <a href="Loving.html" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-heart"></i>
+        </div>
+        <div>
+            <h6>Loving Our Neighbor</h6>
+            <small>Serve with love</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-book"></i>
+        </div>
+        <div>
+            <h6>Sharing Our Faith</h6>
+            <small>Read Scriptures</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item active">
+        <div class="menu-icon">
+            <i class="bi bi-people-fill"></i>
+        </div>
+        <div>
+            <h6>Invitation to Unity</h6>
+            <small>Invite Friends</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-droplet-fill"></i>
+        </div>
+        <div>
+            <h6>Baptism</h6>
+            <small>Learn More</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-music-note-beamed"></i>
+        </div>
+        <div>
+            <h6>Music</h6>
+            <small>Worship Songs</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-calendar-event"></i>
+        </div>
+        <div>
+            <h6>Events</h6>
+            <small>Upcoming Meetings</small>
+        </div>
+    </a>
+
+    <a href="security.html" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-shield-check"></i>
+        </div>
+        <div>
+            <h6>Security</h6>
+            <small>Account Safety</small>
+        </div>
+    </a>
+
+</div>
+
+</div>
+
+ 
+
+ <!-- ==========================================================
+PART 1A START
+INVITATION TO UNITY - HERO SECTION
+Place this code immediately after your Header
+========================================================== -->
+
+<section class="invitation-unity-hero">
+
+    <!-- Hero Banner -->
+
+    <div class="invitation-unity-banner">
+
+        <!-- Background Image -->
+
+        <img src="assets/invitation/invitation-banner.jpg"
+            class="img-fluid w-100 invitation-unity-banner-image"
+            alt="Invitation to Unity">
+
+        <!-- Overlay -->
+
+        <div class="invitation-unity-overlay"></div>
+
+        <!-- Hero Content -->
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <!-- Left Content -->
+
+                <div class="col-xl-7 col-lg-8 col-md-8">
+
+                    <div class="invitation-unity-content">
+
+                        <!-- Icon + Heading -->
+
+                        <div class="d-flex align-items-start">
+
+                            <div class="invitation-unity-icon">
+
+                                <i class="bi bi-people-fill"></i>
+
+                            </div>
+
+                            <div class="ms-4">
+
+                                <h1>
+
+                                    Invitation to Unity
+
+                                </h1>
+
+                                <h2>
+
+                                    Gathering hearts together in Christ.
+
+                                </h2>
+
+                                <h2>
+
+                                    One Body. One Spirit. One Zion.
+
+                                </h2>
+
+                                <p>
+
+                                    “That they all may be one...”
+
+                                    <span>
+
+                                        — John 17:21
+
+                                    </span>
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Temple Image -->
+
+        <div class="invitation-unity-temple">
+
+            <img src="assets/invitation/temple.png"
+                class="img-fluid"
+                alt="Temple">
+
+        </div>
+
+        <!-- Jesus Image -->
+
+        <div class="invitation-unity-jesus">
+
+            <img src="assets/invitation/jesus.png"
+                class="img-fluid"
+                alt="Jesus Christ">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+PART 1A END
+========================================================== -->
+
+
+
+
+
+<!-- ==========================================================
+PART 1A CONTINUE
+INTRO GRID START
+========================================================== -->
+
+<section class="invitation-unity-grid">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <!-- LEFT COLUMN -->
+
+            <div class="col-xl-3 col-lg-6">
+
+                <!-- Card 1 -->
+
+                <div class="card invitation-unity-card h-100">
+
+                    <div class="card-header">
+
+                        <div class="d-flex align-items-center">
+
+                            <i class="bi bi-book fs-3"></i>
+
+                            <h3 class="ms-3">
+
+                                Book of Mormon
+                                Believers
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <p>
+
+                            We lovingly identify and invite all who
+                            believe in the Book of Mormon.
+
+                        </p>
+
+                        <ul>
+
+                            <li>Stone Church</li>
+
+                            <li>LDS Church</li>
+
+                            <li>Remnant Church</li>
+
+                            <li>Restoration Branches</li>
+
+                            <li>Temple Lot</li>
+
+                        </ul>
+
+                        <img src="assets/invitation/group1.jpg"
+                            class="img-fluid rounded-4 mt-3"
+                            alt="Believers">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CENTER COLUMN -->
+
+            <div class="col-xl-5 col-lg-6">
+
+                <div class="card invitation-unity-card h-100">
+
+                    <div class="card-body">
+
+                        <h2>
+
+                            Two Peoples,
+                            One Covenant
+
+                        </h2>
+
+                        <p>
+
+                            The Book of Mormon provides
+                            a clear example of God
+                            working through two groups
+                            of believers.
+
+                        </p>
+
+                        <div class="row mt-4">
+
+                            <div class="col-md-6">
+
+                                <div class="invitation-mini-box">
+
+                                    <h4>
+
+                                        King Limhi
+
+                                    </h4>
+
+                                    <p>
+
+                                        and his people
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="invitation-mini-box green">
+
+                                    <h4>
+
+                                        Mosiah & Alma
+
+                                    </h4>
+
+                                    <p>
+
+                                        in Zarahemla
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <img src="assets/invitation/covenant.jpg"
+                            class="img-fluid rounded-4 mt-4"
+                            alt="Covenant">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+
+            <div class="col-xl-4">
+
+                <div class="card invitation-unity-card h-100">
+
+                    <div class="card-body">
+
+                        <h2>
+
+                            We Have A
+                            Common Vision
+
+                        </h2>
+
+                        <ol>
+
+                            <li>Seek Jesus Christ.</li>
+
+                            <li>Establish Zion.</li>
+
+                            <li>Love our neighbors.</li>
+
+                            <li>Serve together.</li>
+
+                            <li>Welcome believers.</li>
+
+                            <li>Become one in Christ.</li>
+
+                        </ol>
+
+                        <div class="invitation-quote">
+
+                            "Be one; and if ye are not one,
+                            ye are not mine."
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+PART 1A END
+========================================================== -->
+<!-- ==========================================================
+PART 2A START
+INVITATION TO UNITY - CONTENT SECTION
+========================================================== -->
+
+<section class="invitation-content-section">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <!-- ==========================================
+            LEFT COLUMN
+            ========================================== -->
+
+            <div class="col-xl-4 col-lg-5">
+
+                <div class="card invitation-content-card h-100">
+
+                    <div class="card-header invitation-blue-header">
+
+                        <div class="d-flex align-items-center">
+
+                            <div class="invitation-header-icon">
+
+                                <i class="bi bi-book-half"></i>
+
+                            </div>
+
+                            <div class="ms-3">
+
+                                <h3>
+
+                                    Book of Mormon
+                                    Believers
+
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <p>
+
+                            We lovingly recognize every disciple
+                            who believes the Book of Mormon and
+                            desires to follow Jesus Christ.
+
+                        </p>
+
+                        <ul class="invitation-list">
+
+                            <li>Church of Jesus Christ</li>
+
+                            <li>Community of Christ</li>
+
+                            <li>Temple Lot</li>
+
+                            <li>Restoration Branches</li>
+
+                            <li>Remnant Fellowship</li>
+
+                            <li>Independent Saints</li>
+
+                        </ul>
+
+                        <img
+                            src="assets/invitation/book-mormon-believers.jpg"
+                            class="img-fluid rounded-4 mt-3"
+                            alt="Believers">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================================
+            CENTER COLUMN
+            ========================================== -->
+
+            <div class="col-xl-4 col-lg-7">
+
+                <div class="card invitation-content-card h-100">
+
+                    <div class="card-body">
+
+                        <h2>
+
+                            Two Peoples,
+                            One Covenant
+
+                        </h2>
+
+                        <p>
+
+                            Scripture teaches that God gathers
+                            His covenant people through faith,
+                            repentance and obedience to Christ.
+
+                        </p>
+
+                        <div class="row mt-4 g-3">
+
+                            <div class="col-6">
+
+                                <div class="invitation-small-box">
+
+                                    <h5>
+
+                                        King Limhi
+
+                                    </h5>
+
+                                    <p>
+
+                                        Mosiah 21–22
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <div class="invitation-small-box green">
+
+                                    <h5>
+
+                                        Alma
+
+                                    </h5>
+
+                                    <p>
+
+                                        Mosiah 23–25
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <img
+                            src="assets/invitation/two-peoples.jpg"
+                            class="img-fluid rounded-4 mt-4"
+                            alt="Two Peoples">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================================
+            RIGHT COLUMN
+            ========================================== -->
+
+            <div class="col-xl-4">
+
+                <div class="card invitation-content-card h-100">
+
+                    <div class="card-body">
+
+                        <h2>
+
+                            We Have
+                            A Common Vision
+
+                        </h2>
+
+                        <ol class="invitation-number-list">
+
+                            <li>
+
+                                Follow Jesus Christ.
+
+                            </li>
+
+                            <li>
+
+                                Build Zion.
+
+                            </li>
+
+                            <li>
+
+                                Love one another.
+
+                            </li>
+
+                            <li>
+
+                                Share the Gospel.
+
+                            </li>
+
+                            <li>
+
+                                Strengthen families.
+
+                            </li>
+
+                            <li>
+
+                                Gather Israel.
+
+                            </li>
+
+                        </ol>
+
+                        <div class="invitation-quote-box">
+
+                            <i class="bi bi-quote"></i>
+
+                            <p>
+
+                                "Be one; and if ye are not one,
+                                ye are not mine."
+
+                            </p>
+
+                            <h6>
+
+                                Doctrine and Covenants 38:27
+
+                            </h6>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+PART 2A END
+========================================================== -->
+
+<!-- ==========================================================
+PART 3A-1.1 START
+A FULFILLMENT IN OUR DAY
+========================================================== -->
+
+<section class="invitation-fulfillment-section">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <!-- =========================================
+            LEFT COLUMN
+            ========================================== -->
+
+            <div class="col-xl-7 col-lg-7">
+
+                <div class="card invitation-fulfillment-card h-100">
+
+                    <div class="card-header invitation-fulfillment-header">
+
+                        <div class="d-flex align-items-center">
+
+                            <div class="invitation-fulfillment-icon">
+
+                                <i class="bi bi-building"></i>
+
+                            </div>
+
+                            <div class="ms-3">
+
+                                <h3>
+
+                                    A Fulfillment in Our Day
+
+                                </h3>
+
+                                <small>
+
+                                    That same pattern exists today
+
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <!-- First Comparison -->
+
+                        <div class="invitation-compare-box blue">
+
+                            <div class="row align-items-center">
+
+                                <div class="col-md-2 text-center">
+
+                                    <i class="bi bi-diagram-3-fill display-6 text-primary"></i>
+
+                                </div>
+
+                                <div class="col-md-10">
+
+                                    <h5>
+
+                                        On one hand
+
+                                    </h5>
+
+                                    <p>
+
+                                        Stone Church,
+                                        Community of Christ,
+                                        Temple Lot traditions,
+                                        Restoration Branches
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Second Comparison -->
+
+                        <div class="invitation-compare-box green mt-4">
+
+                            <div class="row align-items-center">
+
+                                <div class="col-md-2 text-center">
+
+                                    <i class="bi bi-bank display-6 text-success"></i>
+
+                                </div>
+
+                                <div class="col-md-10">
+
+                                    <h5>
+
+                                        On the other hand
+
+                                    </h5>
+
+                                    <p>
+
+                                        The Church of Jesus Christ
+                                        of Latter-day Saints
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Bullet Points -->
+
+                        <div class="mt-4">
+
+                            <ul class="invitation-fulfillment-list">
+
+                                <li>
+
+                                    Both are walking a path
+                                    toward Christ.
+
+                                </li>
+
+                                <li>
+
+                                    Both have sought to serve
+                                    Him faithfully.
+
+                                </li>
+
+                                <li>
+
+                                    Both desire unity among
+                                    believers.
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- =========================================
+            RIGHT COLUMN
+            ========================================== -->
+
+            <div class="col-xl-5 col-lg-5">
+
+                <div class="card invitation-testimony-card h-100">
+
+                    <div class="card-body">
+
+                        <div class="d-flex">
+
+                            <div class="me-3">
+
+                                <div class="invitation-shield-icon">
+
+                                    <i class="bi bi-shield-check"></i>
+
+                                </div>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+
+                                    We Testify
+
+                                </h3>
+
+                                <p>
+
+                                    The Church of Jesus Christ
+                                    of Latter-day Saints holds
+                                    the authority to invite all
+                                    into the baptismal covenant.
+
+                                </p>
+
+                                <p>
+
+                                    The Lord is preparing His
+                                    covenant people to become one.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <div class="row g-3 mt-1">
+
+                            <div class="col-6">
+
+                                <img
+                                    src="assets/invitation/baptism.jpg"
+                                    class="img-fluid rounded-4"
+                                    alt="Baptism">
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <img
+                                    src="assets/invitation/temple-entry.jpg"
+                                    class="img-fluid rounded-4"
+                                    alt="Temple">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- ==========================================================
+PART 3A-1.2 START
+OUR PRESENT FELLOWSHIP
+========================================================== -->
+
+<div class="row g-4 mt-2">
+
+    <!-- ==========================================
+    LEFT COLUMN
+    ========================================== -->
+
+    <div class="col-lg-7">
+
+        <div class="card invitation-fellowship-card h-100">
+
+            <div class="card-header invitation-fellowship-header">
+
+                <div class="d-flex align-items-center">
+
+                    <div class="invitation-fellowship-icon">
+
+                        <i class="bi bi-people-fill"></i>
+
+                    </div>
+
+                    <div class="ms-3">
+
+                        <h3>
+
+                            Our Present Fellowship
+
+                        </h3>
+
+                        <small>
+
+                            Together we worship and love Jesus Christ.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-body">
+
+                <p>
+
+                    President Russell M. Nelson has invited God's
+                    covenant people to gather Israel and prepare the
+                    earth for the Second Coming of Jesus Christ.
+
+                    We gladly work together in faith, love and
+                    service while respecting one another.
+
+                </p>
+
+                <div class="row g-3 mt-3">
+
+                    <div class="col-md-6">
+
+                        <img src="assets/invitation/present-fellowship.jpg"
+                             class="img-fluid rounded-4"
+                             alt="Present Fellowship">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <img src="assets/invitation/unity-meeting.jpg"
+                             class="img-fluid rounded-4"
+                             alt="Unity Meeting">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+    RIGHT COLUMN
+    ========================================== -->
+
+    <div class="col-lg-5">
+
+        <div class="row g-3">
+
+            <!-- CARD 1 -->
+
+            <div class="col-6">
+
+                <div class="card invitation-feature-card h-100">
+
+                    <img src="assets/invitation/temple-card.jpg"
+                         class="card-img-top"
+                         alt="Temple">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-building fs-2 text-warning"></i>
+
+                        <h5 class="mt-3">
+
+                            Temples &
+                            Tabernacles
+
+                        </h5>
+
+                        <p>
+
+                            Sacred places where
+                            God gathers His people.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="col-6">
+
+                <div class="card invitation-feature-card h-100">
+
+                    <img src="assets/invitation/sacred-gathering.jpg"
+                         class="card-img-top"
+                         alt="Gathering">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-stars fs-2 text-warning"></i>
+
+                        <h5 class="mt-3">
+
+                            Sacred
+                            Gatherings
+
+                        </h5>
+
+                        <p>
+
+                            Worship together in
+                            peace and unity.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="col-6">
+
+                <div class="card invitation-feature-card h-100">
+
+                    <img src="assets/invitation/work-accomplished.jpg"
+                         class="card-img-top"
+                         alt="Work">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-handshake fs-2 text-warning"></i>
+
+                        <h5 class="mt-3">
+
+                            The Work Already
+                            Accomplished
+
+                        </h5>
+
+                        <p>
+
+                            Celebrate every good
+                            thing the Lord has done.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 4 -->
+
+            <div class="col-6">
+
+                <div class="card invitation-feature-card h-100">
+
+                    <img src="assets/invitation/scriptures.jpg"
+                         class="card-img-top"
+                         alt="Scriptures">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-book-half fs-2 text-warning"></i>
+
+                        <h5 class="mt-3">
+
+                            We Are One
+                            In His Covenant
+
+                        </h5>
+
+                        <p>
+
+                            United by faith,
+                            baptism and Jesus Christ.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+
+
+
+</section>
+
+<!-- ==========================================================
+PART 3A-1.1 END
+========================================================== -->
+
+
+
+<!-- ==========================================================
+PART 3A-1.2 END
+========================================================== -->
+
+<!-- ==========================================================
+PART 3A-2.1 START
+BOTTOM CONTENT - SECTION 1
+========================================================== -->
+
+<section class="invitation-bottom-section py-4">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <!-- ==========================================
+            TWO CHURCHES
+            ========================================== -->
+
+            <div class="col-xl-4 col-lg-6">
+
+                <div class="card invitation-bottom-card h-100">
+
+                    <div class="card-header invitation-bottom-header">
+
+                        <div class="d-flex align-items-center">
+
+                            <i class="bi bi-building fs-3 me-3"></i>
+
+                            <h3 class="mb-0">
+
+                                Two Churches —
+                                Both on the Path
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <p>
+
+                            Mosiah 21:31–35,
+                            22:13–14,
+                            25:14–18
+
+                        </p>
+
+                        <p>
+
+                            Both groups in Mosiah were accepted
+                            of God and prepared for something
+                            greater through covenant faithfulness.
+
+                        </p>
+
+                        <p>
+
+                            Likewise today, sincere disciples are
+                            walking toward Jesus Christ while
+                            preparing for greater unity.
+
+                        </p>
+
+                        <div class="invitation-highlight-box mt-4">
+
+                            <img src="assets/invitation/pathway.jpg"
+                                 class="img-fluid rounded-4"
+                                 alt="Path">
+
+                            <div class="mt-3 text-center">
+
+                                <h5>
+
+                                    Unity is not the end—
+                                    It is a historic beginning.
+
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================================
+            COVENANT UNITY
+            ========================================== -->
+
+            <div class="col-xl-4 col-lg-6">
+
+                <div class="card invitation-bottom-card h-100">
+
+                    <div class="card-header invitation-bottom-header">
+
+                        <div class="d-flex align-items-center">
+
+                            <i class="bi bi-link-45deg fs-3 me-3"></i>
+
+                            <h3 class="mb-0">
+
+                                A Call to
+                                Covenant Unity
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <p>
+
+                            Let us come together through faith,
+                            priesthood covenant and the love of
+                            Jesus Christ.
+
+                        </p>
+
+                        <ul class="invitation-check-list">
+
+                            <li>
+
+                                United in priesthood covenant
+
+                            </li>
+
+                            <li>
+
+                                United in purpose
+
+                            </li>
+
+                            <li>
+
+                                United in Christ
+
+                            </li>
+
+                            <li>
+
+                                United in serving others
+
+                            </li>
+
+                            <li>
+
+                                United in gathering Israel
+
+                            </li>
+
+                        </ul>
+
+                        <img src="assets/invitation/covenant-unity.jpg"
+                             class="img-fluid rounded-4 mt-3"
+                             alt="Unity">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================================
+            PROPHETIC PROMISES
+            ========================================== -->
+
+            <div class="col-xl-4">
+
+                <div class="card invitation-bottom-card h-100">
+
+                    <div class="card-header invitation-bottom-header">
+
+                        <div class="d-flex align-items-center">
+
+                            <i class="bi bi-stars fs-3 me-3"></i>
+
+                            <h3 class="mb-0">
+
+                                Prophetic
+                                Promises
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <ul class="invitation-promise-list">
+
+                            <li>
+
+                                Surely the Lord God will reveal
+                                His secret unto His servants.
+
+                            </li>
+
+                            <li>
+
+                                He will suddenly come to
+                                His Holy Temple.
+
+                            </li>
+
+                            <li>
+
+                                Two witnesses will testify
+                                in Jerusalem.
+
+                            </li>
+
+                            <li>
+
+                                The Gospel will be preached
+                                to every nation, kindred,
+                                tongue and people.
+
+                            </li>
+
+                        </ul>
+
+                        <img src="assets/invitation/prophetic-promises.jpg"
+                             class="img-fluid rounded-4 mt-4"
+                             alt="Prophetic Promises">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+PART 3A-2.1 END
+========================================================== -->
+<!-- ==========================================================
+PART 3A-2.2 START
+MISSION • DECLARATION • SCRIPTURE BANNER
+========================================================== -->
+
+<section class="invitation-final-section py-5">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <!-- ==========================================
+            THE WORK BEFORE US
+            ========================================== -->
+
+            <div class="col-lg-4">
+
+                <div class="card invitation-final-card h-100">
+
+                    <div class="card-header invitation-final-header">
+
+                        <div class="d-flex align-items-center">
+
+                            <i class="bi bi-globe2 fs-2 me-3"></i>
+
+                            <h3 class="mb-0">
+
+                                The Work
+                                Before Us
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <p>
+
+                            The Lord's work continues across the
+                            earth as disciples gather Israel,
+                            strengthen families, proclaim the
+                            Gospel and prepare the world for the
+                            Second Coming of Jesus Christ.
+
+                        </p>
+
+                        <ul class="invitation-check-list">
+
+                            <li>Gather scattered Israel</li>
+
+                            <li>Build Zion communities</li>
+
+                            <li>Strengthen families</li>
+
+                            <li>Invite all to Christ</li>
+
+                            <li>Serve with charity</li>
+
+                            <li>Prepare for His return</li>
+
+                        </ul>
+
+                        <img src="assets/invitation/work-before-us.jpg"
+                             class="img-fluid rounded-4 mt-4"
+                             alt="Work Before Us">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================================
+            NEW MISSION
+            ========================================== -->
+
+            <div class="col-lg-4">
+
+                <div class="card invitation-final-card h-100">
+
+                    <div class="card-header invitation-final-header">
+
+                        <div class="d-flex align-items-center">
+
+                            <i class="bi bi-compass fs-2 me-3"></i>
+
+                            <h3 class="mb-0">
+
+                                A New
+                                Mission Together
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <p>
+
+                            Every disciple is invited to work
+                            together in faith, humility and love.
+
+                        </p>
+
+                        <div class="row g-3 mt-3">
+
+                            <div class="col-6">
+
+                                <div class="invitation-mini-mission">
+
+                                    <i class="bi bi-heart-fill"></i>
+
+                                    <h6>Love</h6>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <div class="invitation-mini-mission">
+
+                                    <i class="bi bi-book-half"></i>
+
+                                    <h6>Learn</h6>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <div class="invitation-mini-mission">
+
+                                    <i class="bi bi-people-fill"></i>
+
+                                    <h6>Serve</h6>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-6">
+
+                                <div class="invitation-mini-mission">
+
+                                    <i class="bi bi-stars"></i>
+
+                                    <h6>Gather</h6>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <img src="assets/invitation/new-mission.jpg"
+                             class="img-fluid rounded-4 mt-4"
+                             alt="Mission">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================================
+            DECLARATION
+            ========================================== -->
+
+            <div class="col-lg-4">
+
+                <div class="card invitation-final-card h-100">
+
+                    <div class="card-header invitation-final-header">
+
+                        <div class="d-flex align-items-center">
+
+                            <i class="bi bi-megaphone-fill fs-2 me-3"></i>
+
+                            <h3 class="mb-0">
+
+                                Closing
+                                Declaration
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-body text-center">
+
+                        <img src="assets/invitation/declaration.jpg"
+                             class="img-fluid rounded-4 mb-4"
+                             alt="Declaration">
+
+                        <p>
+
+                            We invite every believer in Jesus
+                            Christ to seek unity, receive His
+                            covenant blessings and become one
+                            family in the Kingdom of God.
+
+                        </p>
+
+                        <div class="invitation-declaration-box">
+
+                            <i class="bi bi-quote display-6"></i>
+
+                            <p class="mt-3 mb-0">
+
+                                "Be one; and if ye are not one,
+                                ye are not mine."
+
+                            </p>
+
+                            <small>
+
+                                Doctrine and Covenants 38:27
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+BOTTOM SCRIPTURE BANNER
+========================================== -->
+
+<section class="invitation-scripture-banner">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10">
+
+                <div class="invitation-scripture-card text-center">
+
+                    <div class="mb-4">
+
+                        <i class="bi bi-book invitation-scripture-icon"></i>
+
+                    </div>
+
+                    <h2>
+
+                        Our Prayer for Unity
+
+                    </h2>
+
+                    <p>
+
+                        "That they all may be one; as thou,
+                        Father, art in me, and I in thee,
+                        that they also may be one in us."
+
+                    </p>
+
+                    <h5>
+
+                        John 17:21
+
+                    </h5>
+
+                    <hr>
+
+                    <div class="row text-center mt-4">
+
+                        <div class="col-md-4">
+
+                            <i class="bi bi-heart-fill fs-2"></i>
+
+                            <h6 class="mt-2">
+
+                                Love
+
+                            </h6>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <i class="bi bi-people-fill fs-2"></i>
+
+                            <h6 class="mt-2">
+
+                                Unity
+
+                            </h6>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <i class="bi bi-globe fs-2"></i>
+
+                            <h6 class="mt-2">
+
+                                Zion
+
+                            </h6>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+PART 3A-2.2 END
+========================================================== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
