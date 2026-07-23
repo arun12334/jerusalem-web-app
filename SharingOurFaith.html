@@ -287,7 +287,7 @@ body{
       <div class="col-lg-9">
         <div class="nav-menu">
 
-        <a href="index.html" class="nav-item-custom active-nav">
+        <a href="index.html" class="nav-item-custom ">
     <i class="bi bi-house-fill"></i>
     Home<br>
     <span class="invisible">.</span>
@@ -298,7 +298,7 @@ body{
             Loving<br>Our Neighbor
           </a>
 
-          <a href="#" class="nav-item-custom">
+          <a href="#" class="nav-item-custom active-nav">
             <i class="bi bi-book"></i>
             Sharing Our<br>Faith in Christ
           </a>
@@ -377,7 +377,7 @@ body{
 
 <div class="offcanvas-body bg-light">
 
-    <a href="index.html" class="mobile-menu-item active">
+    <a href="index.html" class="mobile-menu-item ">
         <div class="menu-icon">
             <i class="bi bi-house-fill"></i>
         </div>
@@ -397,7 +397,7 @@ body{
         </div>
     </a>
 
-    <a href="#" class="mobile-menu-item">
+    <a href="#" class="mobile-menu-item active">
         <div class="menu-icon">
             <i class="bi bi-book"></i>
         </div>
@@ -462,8 +462,2421 @@ body{
 </div>
 
  
+<!DOCTYPE html>
+<html lang="en">
 
- 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Sharing Our Faith In Christ</title>
+
+<!-- =======================================================
+BOOTSTRAP CSS
+======================================================= -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- =======================================================
+BOOTSTRAP ICONS
+======================================================= -->
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- =======================================================
+GOOGLE FONT
+======================================================= -->
+
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =======================================================
+PAGE
+======================================================= */
+
+body{
+
+background:#f3f5fa;
+
+font-family:'Poppins',sans-serif;
+
+color:#1d2b55;
+
+}
+
+/* =======================================================
+MAIN CONTAINER
+======================================================= */
+
+.jesus-sharing-faith-wrapper{
+
+padding:20px;
+
+}
+
+/* =======================================================
+LEFT SIDEBAR
+======================================================= */
+
+.jesus-sharing-faith-sidebar{
+
+background:#fff;
+
+border-radius:18px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+padding:20px;
+
+height:100%;
+
+}
+
+/* =======================================================
+SIDEBAR TITLE
+======================================================= */
+
+.jesus-sharing-faith-side-heading{
+
+font-size:14px;
+
+font-weight:700;
+
+color:#6c757d;
+
+text-transform:uppercase;
+
+margin-bottom:15px;
+
+}
+
+/* =======================================================
+SIDEBAR MENU
+======================================================= */
+
+.jesus-sharing-faith-menu{
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+/* =======================================================
+MENU ITEM
+======================================================= */
+
+.jesus-sharing-faith-menu a{
+
+text-decoration:none;
+
+background:#fff;
+
+border:1px solid #ececec;
+
+border-radius:12px;
+
+padding:12px 14px;
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-weight:500;
+
+color:#1b2b5c;
+
+transition:.3s;
+
+}
+
+/* =======================================================
+ACTIVE MENU
+======================================================= */
+
+.jesus-sharing-faith-menu a.active{
+
+background:#f5e8c6;
+
+border-color:#edd7a0;
+
+}
+
+/* =======================================================
+MENU HOVER
+======================================================= */
+
+.jesus-sharing-faith-menu a:hover{
+
+background:#f5f7fb;
+
+transform:translateY(-2px);
+
+}
+
+/* =======================================================
+MENU ICON
+======================================================= */
+
+.jesus-sharing-faith-menu i{
+
+font-size:20px;
+
+color:#0c3f87;
+
+}
+
+/* =======================================================
+QUICK ACTIONS
+======================================================= */
+
+.jesus-sharing-faith-actions{
+
+margin-top:35px;
+
+}
+
+/* =======================================================
+ACTION BUTTON
+======================================================= */
+
+.jesus-sharing-faith-action{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+text-decoration:none;
+
+padding:10px 0;
+
+font-weight:500;
+
+color:#1f356d;
+
+}
+
+/* =======================================================
+SCRIPTURE BOX
+======================================================= */
+
+.jesus-sharing-faith-scripture{
+
+margin-top:35px;
+
+background:#f9f9f9;
+
+border-radius:16px;
+
+padding:20px;
+
+text-align:center;
+
+font-style:italic;
+
+font-size:15px;
+
+line-height:1.8;
+
+color:#4c4c4c;
+
+}
+
+/* =======================================================
+RIGHT SIDE
+======================================================= */
+
+.jesus-sharing-faith-content{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+/* =======================================================
+HERO CARD
+======================================================= */
+
+.jesus-sharing-faith-banner{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:18px;
+
+height:220px;
+
+background:url('images/church-banner.jpg') center center/cover;
+
+display:flex;
+
+align-items:center;
+
+padding:45px;
+
+}
+
+/* =======================================================
+OVERLAY
+======================================================= */
+
+.jesus-sharing-faith-banner::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(255,255,255,.72);
+
+}
+
+/* =======================================================
+BANNER CONTENT
+======================================================= */
+
+.jesus-sharing-faith-banner-content{
+
+position:relative;
+
+z-index:2;
+
+max-width:650px;
+
+}
+
+/* =======================================================
+BANNER TITLE
+======================================================= */
+
+.jesus-sharing-faith-banner h1{
+
+font-family:'Libre Baskerville',serif;
+
+font-size:52px;
+
+font-weight:700;
+
+color:#17376c;
+
+margin-bottom:15px;
+
+}
+
+/* =======================================================
+BANNER PARAGRAPH
+======================================================= */
+
+.jesus-sharing-faith-banner p{
+
+font-size:24px;
+
+line-height:1.6;
+
+color:#29497e;
+
+margin:0;
+
+}
+
+/* =======================================================
+RESPONSIVE
+======================================================= */
+
+@media(max-width:992px){
+
+.jesus-sharing-faith-sidebar{
+
+margin-bottom:20px;
+
+}
+
+.jesus-sharing-faith-banner{
+
+height:auto;
+
+padding:30px;
+
+}
+
+.jesus-sharing-faith-banner h1{
+
+font-size:36px;
+
+}
+
+.jesus-sharing-faith-banner p{
+
+font-size:18px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.jesus-sharing-faith-banner{
+
+padding:20px;
+
+}
+
+.jesus-sharing-faith-banner h1{
+
+font-size:28px;
+
+}
+
+.jesus-sharing-faith-banner p{
+
+font-size:15px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =======================================================
+MAIN WRAPPER START
+======================================================= -->
+
+<div class="container-fluid jesus-sharing-faith-wrapper">
+
+<div class="row">
+
+<!-- =======================================================
+LEFT SIDEBAR START
+======================================================= -->
+
+<div class="col-lg-3">
+
+<div class="jesus-sharing-faith-sidebar">
+
+<div class="jesus-sharing-faith-side-heading">
+EXPLORE & SHARE
+</div>
+
+<div class="jesus-sharing-faith-menu">
+
+<a href="#" class="active">
+
+<i class="bi bi-person-video3"></i>
+
+<span>Messages from Church Prophets</span>
+
+</a>
+
+<a href="#">
+
+<i class="bi bi-people"></i>
+
+<span>Message from Disciples</span>
+
+</a>
+
+<a href="#">
+
+<i class="bi bi-book"></i>
+
+<span>Scriptures & Book of Mormon</span>
+
+</a>
+
+<a href="#">
+
+<i class="bi bi-building"></i>
+
+<span>Temple Heritage</span>
+
+</a>
+
+<a href="#">
+
+<i class="bi bi-sun"></i>
+
+<span>Daily Worship & Inspiration</span>
+
+</a>
+
+<a href="#">
+
+<i class="bi bi-pencil-square"></i>
+
+<span>Share Your Testimony</span>
+
+</a>
+
+</div>
+
+<!-- =======================================================
+QUICK ACTIONS
+======================================================= -->
+
+<div class="jesus-sharing-faith-actions">
+
+<div class="jesus-sharing-faith-side-heading">
+Quick Actions
+</div>
+
+<a href="#" class="jesus-sharing-faith-action">
+
+<i class="bi bi-person-plus-fill"></i>
+
+Invite Friend
+
+</a>
+
+<a href="#" class="jesus-sharing-faith-action">
+
+<i class="bi bi-envelope"></i>
+
+Create Invitation
+
+</a>
+
+<a href="#" class="jesus-sharing-faith-action">
+
+<i class="bi bi-calendar-event"></i>
+
+Upcoming Events
+
+</a>
+
+<a href="#" class="jesus-sharing-faith-action">
+
+<i class="bi bi-bookmark"></i>
+
+Bookmarks
+
+</a>
+
+</div>
+
+<!-- =======================================================
+SCRIPTURE
+======================================================= -->
+
+<div class="jesus-sharing-faith-scripture">
+
+"Always be prepared to give an answer to everyone who asks you to give the reason for the hope that you have."
+
+<br><br>
+
+<strong>— 1 Peter 3:15</strong>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- =======================================================
+RIGHT CONTENT START
+======================================================= -->
+
+<div class="col-lg-9">
+
+<div class="jesus-sharing-faith-content">
+
+<!-- =======================================================
+HERO BANNER START
+======================================================= -->
+
+<div class="jesus-sharing-faith-banner">
+
+<div class="jesus-sharing-faith-banner-content">
+
+<h1>
+
+Sharing Our Faith in Christ
+
+</h1>
+
+<p>
+
+Strengthening disciples through testimony, worship,
+scripture and sacred learning.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- =======================================================
+NEXT SECTION STARTS FROM PART 2
+======================================================= -->
+
+<!-- =======================================================
+ROW 1 START
+A. CHURCH PROPHETS
+B. DISCIPLES
+POSTING GUIDELINES
+======================================================= -->
+
+<div class="row g-4">
+
+    <!-- =======================================================
+    A. MESSAGES FROM CHURCH PROPHETS
+    ======================================================= -->
+
+    <div class="col-lg-5">
+
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+
+            <!-- Card Header -->
+
+            <div class="card-header bg-white border-0">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <h5 class="fw-bold text-primary mb-0">
+
+                        <i class="bi bi-person-video3 me-2"></i>
+
+                        A. Messages from Church Prophets
+
+                    </h5>
+
+                    <a href="#" class="text-decoration-none fw-semibold">
+
+                        View All
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Card Body -->
+
+            <div class="card-body">
+
+                <div class="row">
+
+                    <!-- Image -->
+
+                    <div class="col-md-6">
+
+                        <div class="position-relative">
+
+                            <img src="images/prophet.jpg"
+                                 class="img-fluid rounded-3 w-100"
+                                 alt="">
+
+                            <div class="position-absolute top-50 start-50 translate-middle">
+
+                                <button class="btn btn-light rounded-circle shadow">
+
+                                    <i class="bi bi-play-fill fs-2"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Text -->
+
+                    <div class="col-md-6">
+
+                        <h4 class="fw-bold">
+
+                            The Joy of Sharing the Gospel
+
+                        </h4>
+
+                        <h6 class="text-muted">
+
+                            Elder Dieter F. Uchtdorf
+
+                        </h6>
+
+                        <p class="mt-3">
+
+                            A message of hope and encouragement
+                            to share the light of Christ with
+                            gentleness and love.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Slider Dots -->
+
+                <div class="text-center mt-4">
+
+                    <span class="badge rounded-pill bg-primary">&nbsp;</span>
+
+                    <span class="badge rounded-pill bg-secondary">&nbsp;</span>
+
+                    <span class="badge rounded-pill bg-secondary">&nbsp;</span>
+
+                    <span class="badge rounded-pill bg-secondary">&nbsp;</span>
+
+                    <span class="badge rounded-pill bg-secondary">&nbsp;</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =======================================================
+    B. MESSAGE FROM DISCIPLES
+    ======================================================= -->
+
+    <div class="col-lg-4">
+
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+
+            <!-- Header -->
+
+            <div class="card-header bg-white border-0">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <h5 class="fw-bold text-primary mb-0">
+
+                        <i class="bi bi-person-heart me-2"></i>
+
+                        B. Message from Disciples
+
+                    </h5>
+
+                    <a href="#" class="text-decoration-none fw-semibold">
+
+                        View All
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Body -->
+
+            <div class="card-body">
+
+
+                <!-- Item -->
+
+                <div class="d-flex mb-4">
+
+                    <img src="images/user1.jpg"
+
+                         class="rounded-circle"
+
+                         width="60"
+
+                         height="60">
+
+                    <div class="ms-3">
+
+                        <h6 class="fw-bold">
+
+                            Finding Peace Through Faith
+
+                        </h6>
+
+                        <small class="text-muted">
+
+                            Faith is a good brought peace
+                            during life's hardest moments.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Item -->
+
+                <div class="d-flex mb-4">
+
+                    <img src="images/user2.jpg"
+
+                         class="rounded-circle"
+
+                         width="60"
+
+                         height="60">
+
+                    <div class="ms-3">
+
+                        <h6 class="fw-bold">
+
+                            A Changed Heart
+
+                        </h6>
+
+                        <small class="text-muted">
+
+                            The power of forgiveness and
+                            the Atonement in my life.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Item -->
+
+                <div class="d-flex">
+
+                    <img src="images/user3.jpg"
+
+                         class="rounded-circle"
+
+                         width="60"
+
+                         height="60">
+
+                    <div class="ms-3">
+
+                        <h6 class="fw-bold">
+
+                            Hope in Christ
+
+                        </h6>
+
+                        <small class="text-muted">
+
+                            Sacrifices of His love,
+                            grace and constant guidance.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Button -->
+
+                <div class="d-grid mt-4">
+
+                    <button class="btn btn-primary rounded-pill">
+
+                        <i class="bi bi-pencil-square"></i>
+
+                        Share Your Testimony
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =======================================================
+    POSTING GUIDELINES
+    ======================================================= -->
+
+    <div class="col-lg-3">
+
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+
+            <!-- Header -->
+
+            <div class="card-header bg-white border-0">
+
+                <h5 class="fw-bold text-primary">
+
+                    <i class="bi bi-card-checklist me-2"></i>
+
+                    Posting Guidelines
+
+                </h5>
+
+            </div>
+
+            <!-- Body -->
+
+            <div class="card-body">
+
+                <p>
+
+                    Share your testimony,
+                    faith and encouragement
+                    with others.
+
+                </p>
+
+                <ul class="small">
+
+                    <li class="mb-2">
+
+                        Be kind and respectful
+
+                    </li>
+
+                    <li class="mb-2">
+
+                        Keep messages uplifting
+
+                    </li>
+
+                    <li class="mb-2">
+
+                        One page maximum
+
+                    </li>
+
+                </ul>
+
+                <div class="d-grid mt-4">
+
+                    <button class="btn btn-primary rounded-3">
+
+                        Thank you for helping build
+                        faith and unity in Christ
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =======================================================
+PART 2 END
+PART 3 STARTS BELOW
+======================================================= -->
+<!-- =======================================================
+PART 3 START
+C. SCRIPTURES & BOOK OF MORMON
+======================================================= -->
+
+<div class="row mt-4">
+
+    <!-- =======================================================
+    LEFT COLUMN
+    ======================================================= -->
+
+    <div class="col-lg-5">
+
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+
+            <!-- ==========================================
+            CARD HEADER
+            =========================================== -->
+
+            <div class="card-header bg-white border-0">
+
+                <h5 class="fw-bold text-primary mb-0">
+
+                    <i class="bi bi-book me-2"></i>
+
+                    C. Scriptures & Book of Mormon
+
+                </h5>
+
+            </div>
+
+            <!-- ==========================================
+            CARD BODY
+            =========================================== -->
+
+            <div class="card-body">
+
+                <!-- =====================================
+                BLUE INTRO BOX
+                ====================================== -->
+
+                <div class="bg-primary text-white rounded-4 p-4 mb-4">
+
+                    <p class="mb-0">
+
+                        Share verses from any scripture that
+                        strengthens your faith and uplifts others.
+
+                        You may post verses from the Bible,
+                        Book of Mormon, or any other scripture.
+
+                    </p>
+
+                </div>
+
+                <!-- =====================================
+                READING PLAN TITLE
+                ====================================== -->
+
+                <h6 class="fw-bold mb-3">
+
+                    Today's Reading Plan
+
+                </h6>
+
+                <!-- =====================================
+                READING ITEM
+                ====================================== -->
+
+                <div class="d-flex justify-content-between align-items-center border rounded-3 p-3 mb-3">
+
+                    <div>
+
+                        <i class="bi bi-book me-2 text-primary"></i>
+
+                        <strong>Old Testament</strong>
+
+                    </div>
+
+                    <div>
+
+                        Psalm 23:1–6
+
+                    </div>
+
+                    <i class="bi bi-check-circle-fill text-success fs-5"></i>
+
+                </div>
+
+                <!-- =====================================
+                READING ITEM
+                ====================================== -->
+
+                <div class="d-flex justify-content-between align-items-center border rounded-3 p-3 mb-3">
+
+                    <div>
+
+                        <i class="bi bi-book me-2 text-primary"></i>
+
+                        <strong>New Testament</strong>
+
+                    </div>
+
+                    <div>
+
+                        John 14:1–6
+
+                    </div>
+
+                    <i class="bi bi-check-circle-fill text-success fs-5"></i>
+
+                </div>
+
+                <!-- =====================================
+                READING ITEM
+                ====================================== -->
+
+                <div class="d-flex justify-content-between align-items-center border rounded-3 p-3">
+
+                    <div>
+
+                        <i class="bi bi-book me-2 text-primary"></i>
+
+                        <strong>Book of Mormon</strong>
+
+                    </div>
+
+                    <div>
+
+                        Mosiah 2–5
+
+                    </div>
+
+                    <i class="bi bi-check-circle-fill text-success fs-5"></i>
+
+                </div>
+
+                <!-- =====================================
+                BUTTON
+                ====================================== -->
+
+                <div class="d-grid mt-4">
+
+                    <button class="btn btn-primary btn-lg rounded-pill">
+
+                        Open Scripture Library
+
+                    </button>
+
+                </div>
+
+                <!-- =====================================
+                STRONGER TOGETHER
+                ====================================== -->
+
+                <div class="border rounded-4 p-4 mt-4">
+
+                    <div class="d-flex align-items-center">
+
+                        <i class="bi bi-people-fill fs-1 text-primary me-3"></i>
+
+                        <div>
+
+                            <h5 class="fw-bold mb-2">
+
+                                We are stronger together.
+
+                            </h5>
+
+                            <p class="mb-0 text-muted">
+
+                                Invite others to come unto Christ
+                                and be built upon the foundation
+                                of apostles and prophets.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =======================================================
+    RIGHT COLUMN EMPTY
+    (Temple Heritage comes in Part 4)
+    ======================================================= -->
+
+    <div class="col-lg-7">
+
+        <!-- Temple Heritage Section
+             Starts in Part 4 -->
+             <!-- =======================================================
+PART 4A START
+D. TEMPLE HERITAGE
+======================================================= -->
+
+<div class="card border-0 shadow-sm rounded-4 h-100">
+
+    <!-- =======================================================
+    TEMPLE HEADER
+    ======================================================= -->
+
+    <div class="card-header bg-white border-0">
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <h5 class="fw-bold text-primary mb-0">
+
+                <i class="bi bi-bank me-2"></i>
+
+                D. Temple Heritage
+
+            </h5>
+
+            <a href="#" class="text-decoration-none fw-semibold">
+
+                View All
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- =======================================================
+    CARD BODY
+    ======================================================= -->
+
+    <div class="card-body">
+
+        <!-- ===================================================
+        TIMELINE
+        ==================================================== -->
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <span class="badge bg-primary px-4 py-2">
+
+                Ancient
+
+            </span>
+
+            <div class="flex-grow-1 mx-3">
+
+                <hr>
+
+            </div>
+
+            <span class="badge bg-success px-4 py-2">
+
+                Present
+
+            </span>
+
+            <div class="flex-grow-1 mx-3">
+
+                <hr>
+
+            </div>
+
+            <span class="badge bg-warning text-dark px-4 py-2">
+
+                Future
+
+            </span>
+
+        </div>
+
+
+
+        <!-- ===================================================
+        TEMPLE GRID START
+        ==================================================== -->
+
+        <div class="row g-4">
+
+            <!-- ===========================================
+            CARD 1
+            ============================================ -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card h-100 border rounded-4">
+
+                    <img src="images/temple1.jpg"
+                         class="card-img-top rounded-top-4"
+                         alt="Temple">
+
+                    <div class="card-body">
+
+                        <h6 class="fw-bold">
+
+                            Kirtland Temple
+
+                        </h6>
+
+                        <p class="small text-muted mb-3">
+
+                            The first temple built in this
+                            dispensation, dedicated in 1836.
+
+                        </p>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+
+                            Read More
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ===========================================
+            CARD 2
+            ============================================ -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card h-100 border rounded-4">
+
+                    <img src="images/temple2.jpg"
+                         class="card-img-top rounded-top-4"
+                         alt="Temple">
+
+                    <div class="card-body">
+
+                        <h6 class="fw-bold">
+
+                            Nauvoo Temple
+
+                        </h6>
+
+                        <p class="small text-muted mb-3">
+
+                            A symbol of sacrifice, faith,
+                            and restoration.
+
+                        </p>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+
+                            Read More
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ===========================================
+            CARD 3
+            ============================================ -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card h-100 border rounded-4">
+
+                    <img src="images/temple3.jpg"
+                         class="card-img-top rounded-top-4"
+                         alt="Temple">
+
+                    <div class="card-body">
+
+                        <h6 class="fw-bold">
+
+                            Salt Lake Temple
+
+                        </h6>
+
+                        <p class="small text-muted mb-3">
+
+                            One of the most recognized temples
+                            in the world.
+
+                        </p>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+
+                            Read More
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ===========================================
+            CARD 4
+            ============================================ -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card h-100 border rounded-4">
+
+                    <img src="images/temple4.jpg"
+                         class="card-img-top rounded-top-4"
+                         alt="Temple">
+
+                    <div class="card-body">
+
+                        <h6 class="fw-bold">
+
+                            Rome Italy Temple
+
+                        </h6>
+
+                        <p class="small text-muted mb-3">
+
+                            Serving members across Europe
+                            with faith and devotion.
+
+                        </p>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+
+                            Read More
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ===========================================
+            CARD 5
+            ============================================ -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card h-100 border rounded-4">
+
+                    <img src="images/temple5.jpg"
+                         class="card-img-top rounded-top-4"
+                         alt="Temple">
+
+                    <div class="card-body">
+
+                        <h6 class="fw-bold">
+
+                            India Temple
+
+                        </h6>
+
+                        <p class="small text-muted mb-3">
+
+                            A future place of worship bringing
+                            hope to countless believers.
+
+                        </p>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+
+                            Read More
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ===================================================
+            MORE TEMPLE CARDS CONTINUE IN PART 4B
+            ==================================================== -->
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =======================================================
+PART 4A END
+PART 4B CONTINUES
+======================================================= -->
+
+
+    </div>
+
+</div>
+
+<!-- =======================================================
+PART 3 END
+PART 4 STARTS BELOW
+======================================================= -->
+ <!-- =======================================================
+PART 4B START
+TEMPLE HERITAGE CONTINUED
+======================================================= -->
+
+            <!-- ===========================================
+            CARD 6
+            ============================================ -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card h-100 border rounded-4">
+
+                    <img src="images/temple6.jpg"
+                         class="card-img-top rounded-top-4"
+                         alt="Temple">
+
+                    <div class="card-body">
+
+                        <h6 class="fw-bold">
+
+                            Jerusalem Temple
+
+                        </h6>
+
+                        <p class="small text-muted mb-3">
+
+                            Discover the history and sacred
+                            importance of the Holy Land.
+
+                        </p>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+
+                            Read More
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ===========================================
+            CARD 7
+            ============================================ -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card h-100 border rounded-4">
+
+                    <img src="images/temple7.jpg"
+                         class="card-img-top rounded-top-4"
+                         alt="Temple">
+
+                    <div class="card-body">
+
+                        <h6 class="fw-bold">
+
+                            Mesa Arizona Temple
+
+                        </h6>
+
+                        <p class="small text-muted mb-3">
+
+                            One of the earliest temples with a
+                            rich spiritual heritage.
+
+                        </p>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+
+                            Read More
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ===========================================
+            CARD 8
+            ============================================ -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card h-100 border rounded-4">
+
+                    <img src="images/temple8.jpg"
+                         class="card-img-top rounded-top-4"
+                         alt="Temple">
+
+                    <div class="card-body">
+
+                        <h6 class="fw-bold">
+
+                            Washington D.C. Temple
+
+                        </h6>
+
+                        <p class="small text-muted mb-3">
+
+                            A symbol of peace, faith, and
+                            commitment to Jesus Christ.
+
+                        </p>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+
+                            Read More
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ===========================================
+            CARD 9
+            ============================================ -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card h-100 border rounded-4">
+
+                    <img src="images/temple9.jpg"
+                         class="card-img-top rounded-top-4"
+                         alt="Temple">
+
+                    <div class="card-body">
+
+                        <h6 class="fw-bold">
+
+                            Paris France Temple
+
+                        </h6>
+
+                        <p class="small text-muted mb-3">
+
+                            Beautiful architecture reflecting
+                            faith, hope and eternal families.
+
+                        </p>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+
+                            Read More
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ===========================================
+            CARD 10
+            ============================================ -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card h-100 border rounded-4">
+
+                    <img src="images/temple10.jpg"
+                         class="card-img-top rounded-top-4"
+                         alt="Temple">
+
+                    <div class="card-body">
+
+                        <h6 class="fw-bold">
+
+                            Future Temples
+
+                        </h6>
+
+                        <p class="small text-muted mb-3">
+
+                            Learn about announced temples
+                            throughout the world.
+
+                        </p>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+
+                            Read More
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- =======================================================
+        FEATURED CHRIST SECTION
+        ======================================================= -->
+
+        <div class="row mt-5">
+
+            <div class="col-lg-5">
+
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+
+                    <img src="images/jesus-christ.jpg"
+                         class="img-fluid"
+                         alt="Jesus Christ">
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-7 mt-4 mt-lg-0">
+
+                <div class="card border-0 shadow-sm rounded-4 h-100">
+
+                    <div class="card-body p-4">
+
+                        <h3 class="fw-bold text-primary">
+
+                            The House of the Lord
+
+                        </h3>
+
+                        <p class="mt-3">
+
+                            Temples are sacred places where individuals
+                            and families draw closer to Jesus Christ,
+                            make eternal covenants, and find peace,
+                            hope, and spiritual strength.
+
+                        </p>
+
+                        <p>
+
+                            Throughout history, temples have stood as
+                            symbols of God's love and His desire to
+                            bless His children with eternal happiness.
+
+                        </p>
+
+                        <div class="alert alert-light border rounded-4 mt-4">
+
+                            <i class="bi bi-lightbulb-fill text-warning me-2"></i>
+
+                            Continue discovering the history,
+                            purpose, and blessings of temples
+                            around the world.
+
+                        </div>
+
+                        <div class="d-grid mt-4">
+
+                            <a href="#"
+                               class="btn btn-primary btn-lg rounded-pill">
+
+                                <i class="bi bi-bank me-2"></i>
+
+                                Explore Temple Heritage
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =======================================================
+END OF TEMPLE HERITAGE
+======================================================= -->
+
+<!-- =======================================================
+PART 4B END
+
+NEXT:
+PART 5
+
+• Daily Worship & Inspiration
+• Weekly Lesson
+• Featured Devotional
+• Daily Prayer
+• Worship Resources
+• Bottom CTA
+======================================================= -->
+
+<!-- =======================================================
+PART 5 START
+E. DAILY WORSHIP & INSPIRATION
+======================================================= -->
+
+<div class="row mt-5">
+
+    <!-- ===================================================
+    LEFT COLUMN
+    ==================================================== -->
+
+    <div class="col-lg-8">
+
+        <div class="card border-0 shadow-sm rounded-4">
+
+            <!-- ==========================================
+            HEADER
+            =========================================== -->
+
+            <div class="card-header bg-white border-0">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <h4 class="fw-bold text-primary mb-0">
+
+                        <i class="bi bi-sun me-2"></i>
+
+                        E. Daily Worship & Inspiration
+
+                    </h4>
+
+                    <a href="#" class="text-decoration-none fw-semibold">
+
+                        View All
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================================
+            BODY
+            =========================================== -->
+
+            <div class="card-body">
+
+                <!-- Daily Devotional -->
+
+                <div class="p-4 rounded-4 bg-light border mb-4">
+
+                    <small class="text-primary fw-bold">
+
+                        TODAY'S DEVOTIONAL
+
+                    </small>
+
+                    <h3 class="fw-bold mt-2">
+
+                        Walking by Faith Every Day
+
+                    </h3>
+
+                    <p class="text-muted">
+
+                        Every new morning is another opportunity to
+                        trust God, strengthen your faith, and become
+                        a blessing to those around you.
+
+                    </p>
+
+                    <a href="#"
+                       class="btn btn-primary rounded-pill">
+
+                        Read Today's Message
+
+                    </a>
+
+                </div>
+
+                <!-- Weekly Lessons -->
+
+                <h5 class="fw-bold mb-3">
+
+                    Weekly Learning Plan
+
+                </h5>
+
+                <div class="list-group">
+
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+
+                        <div>
+
+                            <strong>Monday</strong>
+
+                            <br>
+
+                            <small class="text-muted">
+
+                                Faith in Jesus Christ
+
+                            </small>
+
+                        </div>
+
+                        <i class="bi bi-check-circle-fill text-success fs-4"></i>
+
+                    </div>
+
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+
+                        <div>
+
+                            <strong>Tuesday</strong>
+
+                            <br>
+
+                            <small class="text-muted">
+
+                                Prayer & Gratitude
+
+                            </small>
+
+                        </div>
+
+                        <i class="bi bi-check-circle-fill text-success fs-4"></i>
+
+                    </div>
+
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+
+                        <div>
+
+                            <strong>Wednesday</strong>
+
+                            <br>
+
+                            <small class="text-muted">
+
+                                Serving Others
+
+                            </small>
+
+                        </div>
+
+                        <i class="bi bi-check-circle-fill text-success fs-4"></i>
+
+                    </div>
+
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+
+                        <div>
+
+                            <strong>Thursday</strong>
+
+                            <br>
+
+                            <small class="text-muted">
+
+                                Sharing the Gospel
+
+                            </small>
+
+                        </div>
+
+                        <i class="bi bi-check-circle-fill text-success fs-4"></i>
+
+                    </div>
+
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+
+                        <div>
+
+                            <strong>Friday</strong>
+
+                            <br>
+
+                            <small class="text-muted">
+
+                                Living with Hope
+
+                            </small>
+
+                        </div>
+
+                        <i class="bi bi-check-circle-fill text-success fs-4"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================================
+    RIGHT COLUMN
+    ==================================================== -->
+
+    <div class="col-lg-4 mt-4 mt-lg-0">
+
+        <!-- Prayer Card -->
+
+        <div class="card border-0 shadow-sm rounded-4 mb-4">
+
+            <div class="card-body text-center">
+
+                <i class="bi bi-heart-fill text-danger display-4"></i>
+
+                <h5 class="fw-bold mt-3">
+
+                    Daily Prayer
+
+                </h5>
+
+                <p class="text-muted">
+
+                    Begin today with prayer and
+                    invite the Savior into every
+                    decision you make.
+
+                </p>
+
+                <a href="#"
+                   class="btn btn-outline-primary rounded-pill">
+
+                    Read Prayer
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Quote Card -->
+
+        <div class="card border-0 shadow-sm rounded-4">
+
+            <div class="card-body">
+
+                <h5 class="fw-bold text-primary">
+
+                    Inspiration
+
+                </h5>
+
+                <blockquote class="blockquote mt-3">
+
+                    <p>
+
+                        "Trust in the Lord with all your
+                        heart and lean not unto your own
+                        understanding."
+
+                    </p>
+
+                </blockquote>
+
+                <footer class="blockquote-footer mt-3">
+
+                    Proverbs 3:5–6
+
+                </footer>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =======================================================
+BOTTOM CALL TO ACTION
+======================================================= -->
+
+<div class="card border-0 shadow rounded-4 mt-5">
+
+    <div class="card-body text-center p-5">
+
+        <h2 class="fw-bold text-primary">
+
+            Continue Growing in Faith
+
+        </h2>
+
+        <p class="text-muted mt-3">
+
+            Worship, learn, serve, and inspire others by
+            sharing the love of Jesus Christ every day.
+
+        </p>
+
+        <a href="#"
+           class="btn btn-primary btn-lg rounded-pill px-5">
+
+            Explore More Resources
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- =======================================================
+PART 5 END
+======================================================= -->
+
+<!-- =======================================================
+PART 6 START
+FOOTER
+======================================================= -->
+
+<footer class="mt-5">
+
+    <div class="card border-0 shadow rounded-4">
+
+        <div class="card-body p-5">
+
+            <div class="row gy-4">
+
+                <!-- ======================================
+                ABOUT
+                ======================================= -->
+
+                <div class="col-lg-4">
+
+                    <h4 class="fw-bold text-primary mb-3">
+
+                        Sharing Our Faith In Christ
+
+                    </h4>
+
+                    <p class="text-muted">
+
+                        A place where disciples, families,
+                        missionaries and friends strengthen
+                        each other through faith, scripture,
+                        worship and Christ-centered service.
+
+                    </p>
+
+                </div>
+
+                <!-- ======================================
+                QUICK LINKS
+                ======================================= -->
+
+                <div class="col-lg-3">
+
+                    <h5 class="fw-bold mb-3">
+
+                        Quick Links
+
+                    </h5>
+
+                    <ul class="list-unstyled">
+
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none">
+                                Church Messages
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none">
+                                Scriptures
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none">
+                                Temple Heritage
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none">
+                                Worship
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- ======================================
+                RESOURCES
+                ======================================= -->
+
+                <div class="col-lg-2">
+
+                    <h5 class="fw-bold mb-3">
+
+                        Resources
+
+                    </h5>
+
+                    <ul class="list-unstyled">
+
+                        <li class="mb-2">
+
+                            <a href="#" class="text-decoration-none">
+
+                                Articles
+
+                            </a>
+
+                        </li>
+
+                        <li class="mb-2">
+
+                            <a href="#" class="text-decoration-none">
+
+                                Videos
+
+                            </a>
+
+                        </li>
+
+                        <li class="mb-2">
+
+                            <a href="#" class="text-decoration-none">
+
+                                Podcasts
+
+                            </a>
+
+                        </li>
+
+                        <li class="mb-2">
+
+                            <a href="#" class="text-decoration-none">
+
+                                Downloads
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- ======================================
+                CONTACT
+                ======================================= -->
+
+                <div class="col-lg-3">
+
+                    <h5 class="fw-bold mb-3">
+
+                        Contact
+
+                    </h5>
+
+                    <p>
+
+                        <i class="bi bi-envelope-fill text-primary me-2"></i>
+
+                        info@example.com
+
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-telephone-fill text-primary me-2"></i>
+
+                        +91 98765 43210
+
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+
+                        Your Church Location
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- ======================================
+            SOCIAL ICONS
+            ======================================= -->
+
+            <hr class="my-4">
+
+            <div class="d-flex justify-content-center gap-3 mb-4">
+
+                <a href="#" class="btn btn-outline-primary rounded-circle">
+
+                    <i class="bi bi-facebook"></i>
+
+                </a>
+
+                <a href="#" class="btn btn-outline-primary rounded-circle">
+
+                    <i class="bi bi-youtube"></i>
+
+                </a>
+
+                <a href="#" class="btn btn-outline-primary rounded-circle">
+
+                    <i class="bi bi-instagram"></i>
+
+                </a>
+
+                <a href="#" class="btn btn-outline-primary rounded-circle">
+
+                    <i class="bi bi-twitter-x"></i>
+
+                </a>
+
+            </div>
+
+            <!-- ======================================
+            COPYRIGHT
+            ======================================= -->
+
+            <div class="text-center">
+
+                <p class="mb-1">
+
+                    © 2026 Sharing Our Faith In Christ.
+
+                </p>
+
+                <small class="text-muted">
+
+                    Designed with ❤️ using HTML5, Bootstrap 5 & CSS3.
+
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- =======================================================
+BOOTSTRAP JAVASCRIPT
+======================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- =======================================================
+EXTRA MOBILE RESPONSIVE CSS
+======================================================= -->
+
+<style>
+
+@media (max-width:991px){
+
+.card{
+
+margin-bottom:20px;
+
+}
+
+footer .row{
+
+text-align:center;
+
+}
+
+footer .d-flex{
+
+justify-content:center !important;
+
+}
+
+}
+
+@media (max-width:767px){
+
+h1{
+
+font-size:30px !important;
+
+}
+
+h2{
+
+font-size:26px !important;
+
+}
+
+h3{
+
+font-size:22px !important;
+
+}
+
+h4{
+
+font-size:20px !important;
+
+}
+
+.btn{
+
+width:100%;
+
+margin-bottom:10px;
+
+}
+
+img{
+
+max-width:100%;
+
+height:auto;
+
+}
+
+.list-group-item{
+
+flex-direction:column;
+
+align-items:flex-start !important;
+
+gap:10px;
+
+}
+
+}
+
+@media (max-width:576px){
+
+.container-fluid{
+
+padding:15px;
+
+}
+
+.card-body{
+
+padding:18px !important;
+
+}
+
+.card-header{
+
+padding:18px !important;
+
+}
+
+blockquote{
+
+font-size:15px;
+
+}
+
+}
+
+</style>
+
+
 
 
 
