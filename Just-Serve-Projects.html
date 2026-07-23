@@ -1,0 +1,3978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Hastening App</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#f5f5f5;
+    font-family:Georgia, serif;
+}
+
+/*==========================
+HEADER
+===========================*/
+
+.header{
+    background:#fff;
+/*    border-radius:20px 20px 0 0;*/
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo-circle{
+
+    width:62px;
+    height:62px;
+    border-radius:50%;
+    border:2px solid #d99c21;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#d99c21;
+    font-size:26px;
+    margin-right:12px;
+
+}
+
+.logo h3{
+    margin:0;
+    color:#16377c;
+    font-weight:700;
+    font-size:20px;
+}
+
+.logo small{
+    color:#666;
+}
+
+/*=========================
+NAVIGATION
+==========================*/
+
+.nav-menu{
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    gap:38px;
+}
+
+.nav-item-custom{
+
+    text-align:center;
+    text-decoration:none;
+    color:#16377c;
+    transition:.3s;
+    font-size:14px;
+}
+
+.nav-item-custom i{
+
+    display:block;
+    font-size:23px;
+    margin-bottom:8px;
+
+}
+
+.nav-item-custom:hover{
+
+color:#d89d21;
+
+}
+
+.active-nav{
+
+position:relative;
+color:#16377c;
+font-weight:700;
+
+}
+
+.active-nav::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+right:0;
+
+bottom:-16px;
+
+height:4px;
+
+background:#d89d21;
+
+border-radius:20px;
+
+}
+
+ 
+
+/*==========================
+FOOTER
+==========================*/
+
+.footer-section{
+
+background:#16377c;
+
+padding:90px 0 40px;
+
+color:#fff;
+
+margin-top:70px;
+
+}
+
+.footer-circle{
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+border:3px solid #d7a437;
+
+margin:auto;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:40px;
+
+color:#d7a437;
+
+}
+
+.footer-title{
+
+font-size:42px;
+
+font-weight:700;
+
+}
+
+.footer-subtitle{
+
+font-size:20px;
+
+color:rgba(255,255,255,.8);
+
+}
+
+.footer-card{
+
+background:#21488f;
+
+padding:45px;
+
+border-radius:25px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+text-align:center;
+
+}
+
+.footer-card h4{
+
+font-size:32px;
+
+margin-bottom:25px;
+
+}
+
+.footer-card blockquote{
+
+font-size:26px;
+
+font-style:italic;
+
+line-height:1.6;
+
+margin-bottom:20px;
+
+}
+
+.footer-card small{
+
+font-size:18px;
+
+opacity:.8;
+
+}
+
+.footer-box{
+
+text-align:center;
+
+padding:25px;
+
+}
+
+.footer-box i{
+
+font-size:40px;
+
+color:#d7a437;
+
+margin-bottom:20px;
+
+display:block;
+
+}
+
+.footer-box h5{
+
+font-weight:700;
+
+margin-bottom:15px;
+
+}
+
+.footer-box p{
+
+color:rgba(255,255,255,.75);
+
+line-height:1.7;
+
+}
+
+.footer-divider{
+
+border-color:rgba(255,255,255,.2);
+
+margin:40px 0;
+
+}
+
+.footer-section a{
+
+color:#fff;
+
+text-decoration:none;
+
+margin:0 8px;
+
+}
+
+.footer-section a:hover{
+
+color:#d7a437;
+
+}
+
+.copyright{
+
+margin:0;
+
+color:rgba(255,255,255,.7);
+
+}
+
+@media(max-width:991px){
+
+.footer-title{
+
+font-size:34px;
+
+}
+
+.footer-card{
+
+padding:30px;
+
+}
+
+.footer-card blockquote{
+
+font-size:22px;
+
+}
+
+.footer-box{
+
+margin-bottom:30px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.footer-section{
+
+padding:60px 0 30px;
+
+}
+
+.footer-title{
+
+font-size:28px;
+
+}
+
+.footer-subtitle{
+
+font-size:16px;
+
+}
+
+.footer-card{
+
+padding:20px;
+
+}
+
+.footer-card h4{
+
+font-size:24px;
+
+}
+
+.footer-card blockquote{
+
+font-size:18px;
+
+}
+
+.footer-circle{
+
+width:70px;
+
+height:70px;
+
+font-size:30px;
+
+}
+
+}
+
+
+
+/* Desktop */
+
+.desktop-header{
+    display:block;
+}
+
+/* Mobile */
+
+@media (max-width:991px){
+
+.desktop-header{
+    display:none;
+}
+
+body{
+    padding-top:65px;
+}
+
+.offcanvas{
+    width:320px;
+}
+
+.offcanvas-header{
+    background:#17346f;
+    color:#fff;
+}
+
+.offcanvas-title{
+    font-weight:700;
+}
+
+.offcanvas-body{
+    padding:20px;
+}
+
+.mobile-menu-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-radius:16px;
+    background:#fff;
+    text-decoration:none;
+    margin-bottom:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.mobile-menu-item:hover{
+    transform:translateX(6px);
+    background:#17346f;
+}
+
+.mobile-menu-item:hover h6,
+.mobile-menu-item:hover small{
+    color:#fff;
+}
+
+.mobile-menu-item:hover .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+.menu-icon{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    background:#edf3ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    color:#17346f;
+    transition:.3s;
+}
+
+.mobile-menu-item h6{
+    margin:0;
+    color:#17346f;
+    font-weight:700;
+}
+
+.mobile-menu-item small{
+    color:#777;
+}
+
+.mobile-menu-item.active{
+    background:#17346f;
+}
+
+.mobile-menu-item.active h6,
+.mobile-menu-item.active small{
+    color:#fff;
+}
+
+.mobile-menu-item.active .menu-icon{
+    background:#fff;
+    color:#17346f;
+}
+
+}
+
+
+@media(max-width:991px){
+
+.footer-menu{
+    display:none;
+}
+
+.mobile-header{
+    display:block;
+}
+
+}
+
+@media(min-width:992px){
+
+.mobile-header{
+    display:none;
+}
+
+}
+
+
+/*Common Page*/
+
+.services-section{
+
+background:#faf8f5;
+
+}
+
+.services-section .row{
+
+align-items:stretch;
+
+}
+
+.service-card{
+
+background:#fff;
+
+border-radius:18px;
+
+overflow:hidden;
+
+box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+border:1px solid #ececec;
+
+transition:.35s;
+
+height:100%;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.service-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.service-header{
+
+display:flex;
+
+gap:15px;
+
+padding:18px;
+
+align-items:flex-start;
+
+}
+
+.service-icon{
+
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:bold;
+
+font-size:20px;
+
+color:#fff;
+
+flex-shrink:0;
+
+}
+
+.service-header h5{
+
+font-size:20px;
+
+font-weight:700;
+
+margin-bottom:8px;
+
+line-height:1.3;
+
+color:#15315b;
+
+}
+
+.service-header p{
+
+font-size:14px;
+
+color:#666;
+
+margin:0;
+
+line-height:1.6;
+
+}
+
+.service-main-img{
+
+height:230px;
+
+width:100%;
+
+object-fit:cover;
+
+}
+
+.thumb-img{
+
+width:100%;
+
+height:90px;
+
+object-fit:cover;
+
+border-radius:10px;
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.thumb-img:hover{
+
+transform:scale(1.05);
+
+}
+
+.service-footer{
+
+margin-top:auto;
+
+padding:18px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+border-top:1px solid #eee;
+
+}
+
+.service-footer span{
+
+font-size:14px;
+
+font-weight:600;
+
+color:#2b63d9;
+
+}
+
+.service-footer span i{
+
+margin-right:6px;
+
+}
+
+.service-footer a{
+
+text-decoration:none;
+
+font-size:14px;
+
+font-weight:600;
+
+color:#15315b;
+
+}
+
+.service-footer a:hover{
+
+color:#0d6efd;
+
+}
+
+
+@media (max-width:991px){
+
+.service-main-img{
+
+height:200px;
+
+}
+
+.service-header{
+
+padding:15px;
+
+}
+
+.service-header h5{
+
+font-size:18px;
+
+}
+
+}
+
+@media (max-width:767px){
+
+.service-card{
+
+margin-bottom:25px;
+
+}
+
+.service-main-img{
+
+height:220px;
+
+}
+
+.thumb-img{
+
+height:80px;
+
+}
+
+.service-footer{
+
+flex-direction:column;
+
+gap:10px;
+
+text-align:center;
+
+}
+
+.service-header{
+
+gap:12px;
+
+}
+
+.service-header h5{
+
+font-size:17px;
+
+}
+
+.service-header p{
+
+font-size:13px;
+
+}
+
+}
+
+@media (max-width:576px){
+
+.service-main-img{
+
+height:200px;
+
+}
+
+.thumb-img{
+
+height:70px;
+
+}
+
+.service-icon{
+
+width:38px;
+
+height:38px;
+
+font-size:18px;
+
+}
+
+.service-header h5{
+
+font-size:16px;
+
+}
+
+.service-header p{
+
+font-size:12px;
+
+}
+
+}
+
+.action-section{
+
+background:#faf8f5;
+
+}
+
+.action-card{
+
+background:#fff;
+
+padding:28px;
+
+height:100%;
+
+border-radius:18px;
+
+border:1px solid #ececec;
+
+box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+transition:.35s;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:space-between;
+
+}
+
+.action-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.action-icon{
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:28px;
+
+margin-bottom:20px;
+
+}
+
+.blue{
+
+background:#eaf3ff;
+
+color:#0d6efd;
+
+}
+
+.gold{
+
+background:#fff5d8;
+
+color:#d19d00;
+
+}
+
+.navy{
+
+background:#eef1ff;
+
+color:#243c9c;
+
+}
+
+.action-card h5{
+
+font-weight:700;
+
+font-size:22px;
+
+margin-bottom:12px;
+
+color:#16335c;
+
+}
+
+.action-card p{
+
+color:#666;
+
+font-size:15px;
+
+line-height:1.7;
+
+margin-bottom:25px;
+
+}
+
+.action-card .btn{
+
+padding:11px 22px;
+
+font-weight:600;
+
+}
+
+.quote-card{
+
+justify-content:center;
+
+text-align:center;
+
+background:#fffef9;
+
+}
+
+.quote-icon{
+
+font-size:36px;
+
+color:#caa03d;
+
+margin-bottom:20px;
+
+}
+
+.quote-card blockquote{
+
+font-style:italic;
+
+font-size:19px;
+
+line-height:1.8;
+
+color:#6a5530;
+
+margin-bottom:18px;
+
+}
+
+.quote-card span{
+
+font-weight:700;
+
+color:#9a7a24;
+
+}
+
+@media (max-width:991px){
+
+.action-card{
+
+padding:24px;
+
+}
+
+.action-card h5{
+
+font-size:20px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.action-card{
+
+text-align:center;
+
+align-items:center;
+
+}
+
+.action-icon{
+
+margin:auto auto 20px;
+
+}
+
+.action-card .btn{
+
+width:100%;
+
+}
+
+.quote-card{
+
+padding:30px 20px;
+
+}
+
+.quote-card blockquote{
+
+font-size:17px;
+
+}
+
+}
+
+@media (max-width:576px){
+
+.action-card{
+
+padding:20px;
+
+}
+
+.action-card h5{
+
+font-size:18px;
+
+}
+
+.action-card p{
+
+font-size:14px;
+
+}
+
+.action-icon{
+
+width:60px;
+
+height:60px;
+
+font-size:24px;
+
+}
+
+.quote-card blockquote{
+
+font-size:16px;
+
+}
+
+}
+
+/*=====================================
+      Loving Our Neighbor Banner
+======================================*/
+
+.lonp-banner-section{
+
+    background:#f7f2eb;
+
+    overflow:hidden;
+
+}
+
+/* Banner */
+
+.lonp-banner-wrapper{
+
+    min-height:280px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    position:relative;
+
+    background:linear-gradient(
+    90deg,
+    #d6b16d 0%,
+    #f4e7d3 18%,
+    #fffaf4 50%,
+    #f4e7d3 82%,
+    #d6b16d 100%);
+
+}
+
+/* Left */
+
+.lonp-banner-left{
+
+    width:28%;
+
+    height:280px;
+
+}
+
+.lonp-banner-left img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* Right */
+
+.lonp-banner-right{
+
+    width:28%;
+
+    height:280px;
+
+}
+
+.lonp-banner-right img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* Center */
+
+.lonp-banner-content{
+
+    width:44%;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+.lonp-banner-icon{
+
+    width:70px;
+
+    height:70px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    color:#d19b2d;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.12);
+
+}
+
+.lonp-banner-title{
+
+    margin-top:15px;
+
+    color:#18366f;
+
+    font-size:56px;
+
+    font-family:Georgia, serif;
+
+    font-weight:700;
+
+}
+
+.lonp-banner-subtitle{
+
+    font-size:22px;
+
+    color:#6c5d4a;
+
+    margin-top:10px;
+
+}
+
+.lonp-banner-verse{
+
+    margin-top:18px;
+
+    color:#5b4d3b;
+
+    font-style:italic;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+}
+
+.lonp-banner-reference{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#1c3e79;
+
+    font-weight:700;
+
+}
+
+/*=========================
+      Tablet
+=========================*/
+
+@media(max-width:991px){
+
+.lonp-banner-wrapper{
+
+flex-direction:column;
+
+min-height:auto;
+
+padding:30px 20px;
+
+}
+
+.lonp-banner-left,
+.lonp-banner-right{
+
+width:100%;
+
+height:220px;
+
+}
+
+.lonp-banner-content{
+
+width:100%;
+
+padding:35px 15px;
+
+}
+
+.lonp-banner-title{
+
+font-size:42px;
+
+}
+
+}
+
+/*=========================
+      Mobile
+=========================*/
+
+@media(max-width:767px){
+
+.lonp-banner-left,
+.lonp-banner-right{
+
+height:170px;
+
+}
+
+.lonp-banner-icon{
+
+width:55px;
+
+height:55px;
+
+font-size:26px;
+
+}
+
+.lonp-banner-title{
+
+font-size:30px;
+
+line-height:1.2;
+
+}
+
+.lonp-banner-subtitle{
+
+font-size:18px;
+
+}
+
+.lonp-banner-verse{
+
+font-size:15px;
+
+line-height:1.6;
+
+}
+
+}
+
+/*=========================
+      Small Mobile
+=========================*/
+
+@media(max-width:575px){
+
+.lonp-banner-wrapper{
+
+padding:20px 10px;
+
+}
+
+.lonp-banner-left,
+.lonp-banner-right{
+
+height:140px;
+
+}
+
+.lonp-banner-title{
+
+font-size:26px;
+
+}
+
+.lonp-banner-subtitle{
+
+font-size:16px;
+
+}
+
+.lonp-banner-verse{
+
+font-size:14px;
+
+}
+
+}
+
+
+
+
+/*=========================================
+        Navigation Tabs
+==========================================*/
+
+.lonp-service-nav{
+
+    margin-top:-18px;
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+.lonp-nav-wrapper{
+
+    background:#ffffff;
+
+    border-radius:20px 20px 0 0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 18px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+    border:1px solid #ececec;
+
+}
+
+/* Item */
+
+.lonp-nav-item{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    text-decoration:none;
+
+    color:#666;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+/* Icon */
+
+.lonp-nav-item i{
+
+    font-size:18px;
+
+}
+
+/* Hover */
+
+.lonp-nav-item:hover{
+
+    background:#f7f8fb;
+
+    color:#1d4d9b;
+
+}
+
+/* Active */
+
+.lonp-nav-item.active{
+
+    color:#1d4d9b;
+
+}
+
+.lonp-nav-item.active i{
+
+    color:#d39c1a;
+
+}
+
+/*==========================
+        Tablet
+===========================*/
+
+@media(max-width:991px){
+
+.lonp-nav-wrapper{
+
+overflow-x:auto;
+
+justify-content:flex-start;
+
+gap:12px;
+
+padding:12px;
+
+}
+
+.lonp-nav-item{
+
+min-width:170px;
+
+justify-content:flex-start;
+
+}
+
+}
+
+/*==========================
+        Mobile
+===========================*/
+
+@media(max-width:767px){
+
+.lonp-service-nav{
+
+margin-top:0;
+
+}
+
+.lonp-nav-wrapper{
+
+border-radius:12px;
+
+padding:10px;
+
+}
+
+.lonp-nav-item{
+
+min-width:150px;
+
+font-size:13px;
+
+padding:10px;
+
+}
+
+.lonp-nav-item i{
+
+font-size:16px;
+
+}
+
+}
+
+/* Small Mobile */
+
+@media(max-width:480px){
+
+.lonp-nav-item{
+
+min-width:135px;
+
+font-size:12px;
+
+gap:6px;
+
+}
+
+.lonp-nav-item i{
+
+font-size:15px;
+
+}
+
+}
+
+
+/*==========================
+        Services Grid
+===========================*/
+
+.lonp-services-section{
+
+    background:#f8f8f8;
+
+    padding:35px 25px 60px;
+
+}
+
+.lonp-services-section .row{
+
+    align-items:stretch;
+
+}
+
+.lonp-services-section .col-xl-3{
+
+    display:flex;
+
+}
+
+.lonp-services-section .lonp-card{
+
+    width:100%;
+
+}
+/*==========================
+      Large Desktop
+===========================*/
+
+@media(min-width:1400px){
+
+.lonp-services-section{
+
+padding-left:40px;
+
+padding-right:40px;
+
+}
+
+}
+
+/*==========================
+        Laptop
+===========================*/
+
+@media(max-width:1200px){
+
+.lonp-services-section{
+
+padding:30px 20px;
+
+}
+
+}
+
+/*==========================
+        Tablet
+===========================*/
+
+@media(max-width:991px){
+
+.lonp-services-section{
+
+padding:25px 15px;
+
+}
+
+}
+
+/*==========================
+        Mobile
+===========================*/
+
+@media(max-width:767px){
+
+.lonp-services-section{
+
+padding:20px 12px;
+
+}
+
+.lonp-services-section .row{
+
+row-gap:20px;
+
+}
+
+}
+
+/*==========================
+      Small Mobile
+===========================*/
+
+@media(max-width:576px){
+
+.lonp-services-section{
+
+padding:15px 10px;
+
+}
+
+}
+
+/*=========================================
+        CARD
+==========================================*/
+
+.lonp-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    border:1px solid #e7e7e7;
+
+    overflow:hidden;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.lonp-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.16);
+
+}
+
+/*=========================================
+        HEADER
+==========================================*/
+
+.lonp-card-header{
+
+    display:flex;
+
+    gap:14px;
+
+    padding:18px;
+
+    align-items:flex-start;
+
+}
+
+.lonp-card-icon{
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    background:#2c6ed5;
+
+    color:#fff;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+}
+
+.lonp-blue{
+
+    background:#2c6ed5;
+
+}
+
+.lonp-card-info{
+
+    flex:1;
+
+}
+
+.lonp-card-title{
+
+    margin:0 0 8px;
+
+    color:#1d3c74;
+
+    font-size:24px;
+
+    font-family:Georgia, serif;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+}
+
+.lonp-card-desc{
+
+    margin:0;
+
+    color:#666;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+/*=========================================
+        HERO IMAGE
+==========================================*/
+
+.lonp-card-hero{
+
+    overflow:hidden;
+
+}
+
+.lonp-card-hero img{
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+.lonp-card:hover .lonp-card-hero img{
+
+    transform:scale(1.05);
+
+}
+
+/*=========================================
+        GALLERY
+==========================================*/
+
+.lonp-card-gallery{
+
+    padding:8px;
+
+}
+
+.lonp-card-gallery img{
+
+    width:100%;
+
+    height:90px;
+
+    border-radius:10px;
+
+    object-fit:cover;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.lonp-card-gallery img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*=========================================
+            FOOTER
+==========================================*/
+
+.lonp-card-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 18px;
+
+    border-top:1px solid #ececec;
+
+    background:#fff;
+
+}
+
+.lonp-card-footer-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#2b6dd8;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.lonp-card-footer-left i{
+
+    font-size:15px;
+
+}
+
+.lonp-card-footer-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    text-decoration:none;
+
+    color:#1d3c74;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.lonp-card-footer-btn:hover{
+
+    color:#0d6efd;
+
+}
+
+.lonp-card-footer-btn i{
+
+    font-size:13px;
+
+    transition:.3s;
+
+}
+
+.lonp-card-footer-btn:hover i{
+
+    transform:translateX(4px);
+
+}
+
+/*=========================================
+            Laptop
+==========================================*/
+
+@media (max-width:1200px){
+
+    .lonp-card-title{
+
+        font-size:22px;
+
+    }
+
+}
+
+/*=========================================
+            Tablet
+==========================================*/
+
+@media (max-width:992px){
+
+    .lonp-card{
+
+        margin-bottom:25px;
+
+    }
+
+    .lonp-card-title{
+
+        font-size:20px;
+
+    }
+
+    .lonp-card-hero img{
+
+        height:210px;
+
+    }
+
+}
+
+/*=========================================
+            Mobile
+==========================================*/
+
+@media (max-width:768px){
+
+    .lonp-card-header{
+
+        padding:15px;
+
+        gap:12px;
+
+    }
+
+    .lonp-card-title{
+
+        font-size:18px;
+
+    }
+
+    .lonp-card-desc{
+
+        font-size:13px;
+
+    }
+
+    .lonp-card-hero img{
+
+        height:220px;
+
+    }
+
+    .lonp-card-gallery{
+
+        padding:6px;
+
+    }
+
+    .lonp-card-gallery img{
+
+        height:75px;
+
+    }
+
+    .lonp-card-footer{
+
+        flex-direction:column;
+
+        gap:12px;
+
+        text-align:center;
+
+    }
+
+}
+
+/*=========================================
+          Small Mobile
+==========================================*/
+
+@media (max-width:576px){
+
+    .lonp-card{
+
+        border-radius:14px;
+
+    }
+
+    .lonp-card-header{
+
+        padding:14px;
+
+    }
+
+    .lonp-card-icon{
+
+        width:34px;
+
+        height:34px;
+
+        font-size:18px;
+
+    }
+
+    .lonp-card-title{
+
+        font-size:17px;
+
+    }
+
+    .lonp-card-desc{
+
+        font-size:12px;
+
+    }
+
+    .lonp-card-hero img{
+
+        height:180px;
+
+    }
+
+    .lonp-card-gallery img{
+
+        height:65px;
+
+        border-radius:8px;
+
+    }
+
+    .lonp-card-footer{
+
+        padding:12px 14px;
+
+    }
+
+    .lonp-card-footer-left,
+
+    .lonp-card-footer-btn{
+
+        font-size:13px;
+
+    }
+
+}
+
+/*=====================================
+      Garden Card Gallery
+======================================*/
+
+.lonp-green{
+
+    background:#3FA64A;
+
+}
+
+.lonp-card-gallery-4{
+
+    padding:8px;
+
+}
+
+.lonp-card-gallery-4 img{
+
+    width:100%;
+
+    height:95px;
+
+    border-radius:10px;
+
+    object-fit:cover;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.lonp-card-gallery-4 img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*=========================================
+        Chicken Card Footer
+==========================================*/
+
+.lonp-orange-text{
+
+    color:#e58b17;
+
+}
+
+.lonp-card-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 18px;
+
+    background:#fff;
+
+    border-top:1px solid #ececec;
+
+}
+
+.lonp-card-footer-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.lonp-card-footer-left i{
+
+    font-size:17px;
+
+}
+
+.lonp-card-footer-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    text-decoration:none;
+
+    color:#18366f;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.30s;
+
+}
+
+.lonp-card-footer-btn:hover{
+
+    color:#e58b17;
+
+}
+
+.lonp-card-footer-btn i{
+
+    transition:.30s;
+
+}
+
+.lonp-card-footer-btn:hover i{
+
+    transform:translateX(4px);
+
+}
+
+/*=========================================
+        Hover Effects
+==========================================*/
+
+.lonp-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.lonp-card:hover .lonp-card-hero img{
+
+    transform:scale(1.05);
+
+}
+
+.lonp-card-gallery-3 img{
+
+    transition:.35s;
+
+}
+
+.lonp-card-gallery-3 img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*=====================================
+            Tablet
+======================================*/
+
+@media(max-width:991px){
+
+    .lonp-card-gallery-3 img{
+
+        height:82px;
+
+    }
+
+}
+
+/*=====================================
+            Mobile
+======================================*/
+
+@media(max-width:767px){
+
+    .lonp-card-gallery-3{
+
+        padding:6px;
+
+    }
+
+    .lonp-card-gallery-3 img{
+
+        height:72px;
+
+    }
+
+    .lonp-card-footer{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:12px;
+
+        text-align:center;
+
+    }
+
+}
+
+/*=====================================
+          Small Mobile
+======================================*/
+
+@media(max-width:576px){
+
+    .lonp-card-gallery-3 img{
+
+        height:62px;
+
+        border-radius:8px;
+
+    }
+
+    .lonp-card-footer{
+
+        padding:14px;
+
+    }
+
+    .lonp-card-footer-left{
+
+        font-size:13px;
+
+    }
+
+    .lonp-card-footer-btn{
+
+        font-size:13px;
+
+    }
+
+}
+
+
+/*=====================================
+      Chicken Card
+======================================*/
+
+.lonp-orange{
+
+    background:#e58b17;
+
+}
+
+/* Gallery */
+
+.lonp-card-gallery-3{
+
+    padding:8px;
+
+}
+
+.lonp-card-gallery-3 img{
+
+    width:100%;
+
+    height:90px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.lonp-card-gallery-3 img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*=====================================
+        Purple Theme
+======================================*/
+
+.lonp-purple{
+
+    background:#5B43B5;
+
+}
+
+/*=====================================
+      Finance Bottom Section
+======================================*/
+
+.lonp-finance-bottom{
+
+    padding:8px;
+
+}
+
+.lonp-finance-quote{
+
+    background:#f4f1ff;
+
+    border-radius:12px;
+
+    height:100%;
+
+    padding:15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.lonp-finance-quote i{
+
+    color:#5B43B5;
+
+    font-size:22px;
+
+    margin-bottom:8px;
+
+}
+
+.lonp-finance-quote h6{
+
+    color:#233a73;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.lonp-finance-quote p{
+
+    margin:0;
+
+    font-size:13px;
+
+    line-height:1.5;
+
+    color:#666;
+
+}
+
+.lonp-finance-thumb{
+
+    width:100%;
+
+    height:120px;
+
+    border-radius:12px;
+
+    object-fit:cover;
+
+    transition:.35s;
+
+}
+
+.lonp-finance-thumb:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*=========================================
+        Loving Our Neighbor Footer
+==========================================*/
+
+.lonpftr-wrapper{
+
+    background:#082d6b;
+
+    color:#ffffff;
+
+    padding:30px 0;
+
+    overflow:hidden;
+
+}
+
+.lonpftr-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:40px;
+
+}
+
+/*=========================================
+        Left
+==========================================*/
+
+.lonpftr-left{
+
+    width:22%;
+
+}
+
+.lonpftr-temple{
+
+    width:100%;
+
+}
+
+.lonpftr-temple img{
+
+    width:100%;
+
+    max-width:220px;
+
+    display:block;
+
+    opacity:.95;
+
+}
+
+/*=========================================
+        Center
+==========================================*/
+
+.lonpftr-center{
+
+    width:48%;
+
+}
+
+.lonpftr-title{
+
+    color:#d8aa46;
+
+    text-align:center;
+
+    font-family:Georgia,serif;
+
+    font-size:24px;
+
+    font-style:italic;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.lonpftr-verse-list{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.lonpftr-verse-list li{
+
+    color:#e8e8e8;
+
+    font-size:14px;
+
+    line-height:2;
+
+    position:relative;
+
+    padding-left:14px;
+
+}
+
+.lonpftr-verse-list li::before{
+
+    content:"•";
+
+    position:absolute;
+
+    left:0;
+
+    color:#d8aa46;
+
+}
+
+/*=========================================
+        Right
+==========================================*/
+
+.lonpftr-right{
+
+    width:30%;
+
+}
+
+.lonpftr-menu{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.lonpftr-item{
+
+    text-decoration:none;
+
+    color:#fff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    transition:.35s;
+
+}
+
+.lonpftr-item i{
+
+    font-size:28px;
+
+    color:#d8aa46;
+
+    margin-bottom:10px;
+
+}
+
+.lonpftr-item span{
+
+    font-size:13px;
+
+    font-weight:500;
+
+}
+
+.lonpftr-item:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.lonpftr-item:hover i{
+
+    color:#ffd36a;
+
+}
+
+.lonpftr-item:hover span{
+
+    color:#ffd36a;
+
+}
+
+/*=========================================
+        Divider
+==========================================*/
+
+.lonpftr-center .row>div{
+
+    border-right:1px solid rgba(255,255,255,.15);
+
+}
+
+.lonpftr-center .row>div:last-child{
+
+    border-right:none;
+
+}
+
+/*=========================================
+        Temple Hover
+==========================================*/
+
+.lonpftr-temple img{
+
+    transition:.4s;
+
+}
+
+.lonpftr-temple img:hover{
+
+    transform:scale(1.03);
+
+}
+
+/*=========================================
+        Smooth Animation
+==========================================*/
+
+.lonpftr-item,
+.lonpftr-temple img{
+
+    transition:all .35s ease;
+
+}
+
+
+/*==================================================
+JUST SERVE SINGLE BANNER
+==================================================*/
+
+.jsp-banner-section{
+
+    width:100%;
+
+    overflow:hidden;
+
+}
+
+.jsp-banner-wrapper{
+
+    position:relative;
+
+    width:100%;
+
+    height:420px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+}
+
+/*==========================================
+Banner Image
+==========================================*/
+
+.jsp-banner-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+/*==========================================
+Dark Overlay
+==========================================*/
+
+.jsp-banner-wrapper::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.18);
+
+}
+
+/*==========================================
+Banner Content
+==========================================*/
+
+.jsp-banner-content{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    text-align:center;
+
+    color:#ffffff;
+
+    width:90%;
+
+    max-width:750px;
+
+    z-index:2;
+
+}
+
+/*==========================================
+Icon
+==========================================*/
+
+.jsp-banner-icon{
+
+    font-size:48px;
+
+    color:#f7b500;
+
+    margin-bottom:10px;
+
+}
+
+/*==========================================
+Heading
+==========================================*/
+
+.jsp-banner-title{
+
+    font-size:52px;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+/*==========================================
+Subtitle
+==========================================*/
+
+.jsp-banner-subtitle{
+
+    font-size:24px;
+
+    margin-bottom:15px;
+
+}
+
+/*==========================================
+Verse
+==========================================*/
+
+.jsp-banner-verse{
+
+    font-size:20px;
+
+    font-style:italic;
+
+    line-height:1.7;
+
+    margin-bottom:10px;
+
+}
+
+/*==========================================
+Reference
+==========================================*/
+
+.jsp-banner-reference{
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+/*==================================================
+Responsive
+==================================================*/
+
+@media(max-width:992px){
+
+    .jsp-banner-wrapper{
+
+        height:340px;
+
+    }
+
+    .jsp-banner-title{
+
+        font-size:40px;
+
+    }
+
+    .jsp-banner-subtitle{
+
+        font-size:20px;
+
+    }
+
+    .jsp-banner-verse{
+
+        font-size:17px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .jsp-banner-wrapper{
+
+        height:270px;
+
+    }
+
+    .jsp-banner-title{
+
+        font-size:30px;
+
+    }
+
+    .jsp-banner-subtitle{
+
+        font-size:16px;
+
+    }
+
+    .jsp-banner-verse{
+
+        font-size:14px;
+
+        line-height:1.5;
+
+    }
+
+    .jsp-banner-reference{
+
+        font-size:14px;
+
+    }
+
+    .jsp-banner-icon{
+
+        font-size:34px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .jsp-banner-wrapper{
+
+        height:220px;
+
+        border-radius:12px;
+
+    }
+
+    .jsp-banner-title{
+
+        font-size:24px;
+
+    }
+
+    .jsp-banner-subtitle{
+
+        font-size:14px;
+
+    }
+
+    .jsp-banner-verse{
+
+        display:none;
+
+    }
+
+    .jsp-banner-reference{
+
+        font-size:13px;
+
+    }
+
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+ <header class="header d-none d-lg-block">
+  <div class="container py-3">
+    <div class="row align-items-center">
+
+      <div class="col-lg-3">
+        <div class="logo">
+          <div class="logo-circle">
+            <i class="bi bi-building"></i>
+          </div>
+
+          <div>
+            <h3>Hastening App</h3>
+            <small>Hasten the Gathering and Unity in Zion</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="nav-menu">
+
+        <a href="index.html" class="nav-item-custom ">
+    <i class="bi bi-house-fill"></i>
+    Home<br>
+    <span class="invisible">.</span>
+</a>
+
+          <a href="#" class="nav-item-custom active-nav">
+            <i class="bi bi-heart"></i>
+            Loving<br>Our Neighbor
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-book"></i>
+            Sharing Our<br>Faith in Christ
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-people-fill"></i>
+            Invitation<br>to Unity
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-droplet-fill"></i>
+            Does Unity<br>Require Baptism?
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-music-note-beamed"></i>
+            Worshiping Christ<br>through Music
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-calendar-event"></i>
+            Neighborhood<br>B&amp;B Events
+          </a>
+
+          <a href="#" class="nav-item-custom">
+            <i class="bi bi-shield-check"></i>
+            Security<br>&amp; More
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Header -->
+<nav class="navbar navbar-dark  d-lg-none fixed-top" style="background-color: #16377c !important;">
+
+    <div class="container-fluid">
+        <span class="navbar-brand fw-bold">
+           Hastening
+        </span>
+
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+      
+    </div>
+
+</nav>
+
+<!-- Mobile Menu -->
+<div class="offcanvas offcanvas-start"
+     tabindex="-1"
+     id="mobileMenu">
+
+    <div class="offcanvas-header">
+
+        <h5 class="offcanvas-title">
+            Menu
+        </h5>
+
+        <button class="btn-close"
+                data-bs-dismiss="offcanvas">
+        </button>
+
+    </div>
+
+<div class="offcanvas-body bg-light">
+
+    <a href="index.html" class="mobile-menu-item ">
+        <div class="menu-icon">
+            <i class="bi bi-house-fill"></i>
+        </div>
+        <div>
+            <h6>Home</h6>
+            <small>Dashboard</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item active">
+        <div class="menu-icon">
+            <i class="bi bi-heart"></i>
+        </div>
+        <div>
+            <h6>Loving Our Neighbor</h6>
+            <small>Serve with love</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-book"></i>
+        </div>
+        <div>
+            <h6>Sharing Our Faith</h6>
+            <small>Read Scriptures</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-people-fill"></i>
+        </div>
+        <div>
+            <h6>Invitation to Unity</h6>
+            <small>Invite Friends</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-droplet-fill"></i>
+        </div>
+        <div>
+            <h6>Baptism</h6>
+            <small>Learn More</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-music-note-beamed"></i>
+        </div>
+        <div>
+            <h6>Music</h6>
+            <small>Worship Songs</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-calendar-event"></i>
+        </div>
+        <div>
+            <h6>Events</h6>
+            <small>Upcoming Meetings</small>
+        </div>
+    </a>
+
+    <a href="#" class="mobile-menu-item">
+        <div class="menu-icon">
+            <i class="bi bi-shield-check"></i>
+        </div>
+        <div>
+            <h6>Security</h6>
+            <small>Account Safety</small>
+        </div>
+    </a>
+
+</div>
+
+</div>
+
+ <!-- ===========================================
+     Loving Our Neighbor - Banner Section
+============================================ -->
+
+<!-- ========================================= -->
+<!-- JUST SERVE SINGLE BANNER START -->
+<!-- ========================================= -->
+
+<section class="jsp-banner-section">
+
+    <div class="container-fluid p-0">
+
+        <div class="jsp-banner-wrapper">
+
+            <!-- Banner Image -->
+            <img src="assets/loving/justservedbanner.jpg"
+                 class="jsp-banner-image"
+                 alt="Just Serve Banner">
+
+            <!-- Banner Content -->
+            <div class="jsp-banner-content">
+
+                <div class="jsp-banner-icon">
+                    <i class="bi bi-person-hearts"></i>
+                </div>
+
+                <h1 class="jsp-banner-title">
+                    Just Serve Projects
+                </h1>
+
+                <p class="jsp-banner-subtitle">
+                    Small acts of service.<br>
+                    Eternal impact.
+                </p>
+
+                <p class="jsp-banner-verse">
+                    "As ye have done it unto one of the least of these my brethren,
+                    ye have done it unto me."
+                </p>
+
+                <span class="jsp-banner-reference">
+                    — Matthew 25:40
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- JUST SERVE SINGLE BANNER END -->
+<!-- ========================================= -->
+
+
+<!-- ==========================================
+     Loving Our Neighbor - Navigation Tabs
+========================================== -->
+
+<section class="lonp-service-nav">
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <div class="lonp-nav-wrapper">
+
+                    <a href="#" class="lonp-nav-item active">
+
+                        <i class="bi bi-person-praying"></i>
+
+                        <span>Pray for Others</span>
+
+                    </a>
+
+                    <a href="#" class="lonp-nav-item">
+
+                        <i class="bi bi-people"></i>
+
+                        <span>Sisters in Zion</span>
+
+                    </a>
+
+                    <a href="#" class="lonp-nav-item">
+
+                        <i class="bi bi-map"></i>
+
+                        <span>Just Serve Map</span>
+
+                    </a>
+
+                    <a href="#" class="lonp-nav-item">
+
+                        <i class="bi bi-heart"></i>
+
+                        <span>Stories of Love</span>
+
+                    </a>
+
+                    <a href="#" class="lonp-nav-item">
+
+                        <i class="bi bi-person-circle"></i>
+
+                        <span>My Service</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+    Loving Our Neighbor Service Grid
+====================================== -->
+
+<section class="lonp-services-section">
+
+    <div class="container-fluid">
+
+        <div class="row g-4">
+
+            <!-- Card 1 -->
+
+            <div class="col-xl-3 col-lg-6 col-md-6">
+
+              <!-- =====================================
+     LONP CARD 01 - Baking Bread
+====================================== -->
+
+<div class="lonp-card">
+
+    <!-- Header -->
+
+    <div class="lonp-card-header">
+
+        <div class="lonp-card-icon lonp-blue">
+            a
+        </div>
+
+        <div class="lonp-card-info">
+
+            <h4 class="lonp-card-title">
+                JustServe–
+                <br>
+                Baking Bread for Others
+            </h4>
+
+            <p class="lonp-card-desc">
+                Bake bread and share it with neighbors,
+                families, and those in need.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Hero Image -->
+
+    <div class="lonp-card-hero">
+
+        <img src="assets/loving/bread-main.jpg"
+             alt="Bread Service">
+
+    </div>
+
+    <!-- Bottom Gallery -->
+
+    <div class="lonp-card-gallery">
+
+        <div class="row g-2">
+
+            <div class="col-4">
+
+                <img src="assets/loving/bread-1.jpg"
+                     alt="Bread">
+
+            </div>
+
+            <div class="col-4">
+
+                <img src="assets/loving/bread-2.jpg"
+                     alt="Bag">
+
+            </div>
+
+            <div class="col-4">
+
+                <img src="assets/loving/bread-3.jpg"
+                     alt="Family">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer Comes in Part 2 -->
+
+    <!-- ===========================
+      Card Footer
+============================ -->
+
+<div class="lonp-card-footer">
+
+    <div class="lonp-card-footer-left">
+
+        <i class="bi bi-heart-fill"></i>
+
+        <span>Serve with Love</span>
+
+    </div>
+
+    <a href="#" class="lonp-card-footer-btn">
+
+        View Opportunities
+
+        <i class="bi bi-chevron-right"></i>
+
+    </a>
+
+</div>
+
+</div>
+
+            </div>
+
+            <!-- Card 2 -->
+
+            <div class="col-xl-3 col-lg-6 col-md-6">
+
+                <<!-- ==========================================
+     LONP CARD 02 - Helping Others Garden
+=========================================== -->
+
+<div class="lonp-card">
+
+    <!-- Header -->
+
+    <div class="lonp-card-header">
+
+        <div class="lonp-card-icon lonp-green">
+
+            b
+
+        </div>
+
+        <div class="lonp-card-info">
+
+            <h4 class="lonp-card-title">
+
+                Helping Others
+                <br>
+                with a Garden
+
+            </h4>
+
+            <p class="lonp-card-desc">
+
+                Help plant, water and harvest gardens
+                for families and neighbors.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Hero Image -->
+
+    <div class="lonp-card-hero">
+
+        <img src="assets/loving/garden-main.jpg"
+             alt="Garden Service">
+
+    </div>
+
+    <!-- Gallery -->
+
+    <div class="lonp-card-gallery-4">
+
+        <div class="row g-2">
+
+            <div class="col-6">
+
+                <img src="assets/loving/garden-1.jpg"
+                     alt="">
+
+            </div>
+
+            <div class="col-6">
+
+                <img src="assets/loving/garden-2.jpg"
+                     alt="">
+
+            </div>
+
+            <div class="col-6">
+
+                <img src="assets/loving/garden-3.jpg"
+                     alt="">
+
+            </div>
+
+            <div class="col-6">
+
+                <img src="assets/loving/garden-4.jpg"
+                     alt="">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer (Part 2) -->
+    <!--=========================================
+        Garden Card Footer
+==========================================-->
+
+<div class="lonp-card-footer">
+
+    <div class="lonp-card-footer-left">
+
+        <i class="bi bi-tree-fill"></i>
+
+        <span>Grow Together</span>
+
+    </div>
+
+    <a href="#" class="lonp-card-footer-btn">
+
+        View Opportunities
+
+        <i class="bi bi-chevron-right"></i>
+
+    </a>
+
+</div>
+
+</div>
+
+            </div>
+
+            <!-- Card 3 -->
+
+            <div class="col-xl-3 col-lg-6 col-md-6">
+<!-- ==========================================
+     LONP CARD 03 - Chicken Coops & Eggs
+=========================================== -->
+
+<div class="lonp-card">
+
+    <!-- Header -->
+
+    <div class="lonp-card-header">
+
+        <div class="lonp-card-icon lonp-orange">
+
+            c
+
+        </div>
+
+        <div class="lonp-card-info">
+
+            <h4 class="lonp-card-title">
+
+                Chicken Coops
+                <br>
+                & Fresh Eggs
+
+            </h4>
+
+            <p class="lonp-card-desc">
+
+                Raise chickens, collect fresh eggs,
+                and bless families with nutritious food.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Hero Image -->
+
+    <div class="lonp-card-hero">
+
+        <img src="images/service/chicken-main.jpg"
+             alt="Chicken Service">
+
+    </div>
+
+    <!-- Gallery -->
+
+    <div class="lonp-card-gallery-3">
+
+        <div class="row g-2">
+
+            <div class="col-4">
+
+                <img src="images/service/chicken-1.jpg"
+                     alt="Chicken Coop">
+
+            </div>
+
+            <div class="col-4">
+
+                <img src="images/service/chicken-2.jpg"
+                     alt="Egg Basket">
+
+            </div>
+
+            <div class="col-4">
+
+                <img src="images/service/chicken-3.jpg"
+                     alt="Helping Family">
+
+            </div>
+
+        </div>
+
+    </div>
+
+<!--=========================================
+        Chicken Card Footer
+==========================================-->
+
+<div class="lonp-card-footer">
+
+    <div class="lonp-card-footer-left lonp-orange-text">
+
+        <i class="bi bi-egg-fried"></i>
+
+        <span>Share Fresh Food</span>
+
+    </div>
+
+    <a href="#" class="lonp-card-footer-btn">
+
+        View Opportunities
+
+        <i class="bi bi-chevron-right"></i>
+
+    </a>
+
+</div>
+    <!-- Footer (Part 2) -->
+
+</div>
+
+            </div>
+
+            <!-- Card 4 -->
+
+            <div class="col-xl-3 col-lg-6 col-md-6">
+
+               <!-- ==========================================
+     LONP CARD 04 - Financial Self-Reliance
+=========================================== -->
+
+<div class="lonp-card">
+
+    <!-- Header -->
+
+    <div class="lonp-card-header">
+
+        <div class="lonp-card-icon lonp-purple">
+
+            d
+
+        </div>
+
+        <div class="lonp-card-info">
+
+            <h4 class="lonp-card-title">
+
+                Financial
+                <br>
+                Self-Reliance
+                <br>
+                Training Group
+
+            </h4>
+
+            <p class="lonp-card-desc">
+
+                Learn budgeting, saving and self-reliance
+                skills while strengthening your community.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Hero Image -->
+
+    <div class="lonp-card-hero">
+
+        <img src="images/service/finance-main.jpg"
+             alt="Financial Training">
+
+    </div>
+
+    <!-- Bottom Content -->
+
+    <div class="lonp-finance-bottom">
+
+        <div class="row g-2">
+
+            <!-- Quote Panel -->
+
+            <div class="col-7">
+
+                <div class="lonp-finance-quote">
+
+                    <i class="bi bi-coin"></i>
+
+                    <h6>Wise Stewardship</h6>
+
+                    <p>
+
+                        Learn together,
+                        save together,
+                        grow together.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Thumbnail -->
+
+            <div class="col-5">
+
+                <img src="images/service/finance-thumb.jpg"
+                     class="lonp-finance-thumb"
+                     alt="Training">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer (Part 2) -->
+
+</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+ 
+<section class="action-section py-4">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <!-- Card 1 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="action-card">
+
+                    <div class="action-icon blue">
+                        <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+
+                    <h5>Find Service Opportunities</h5>
+
+                    <p>
+                        Search nearby projects and events
+                        that match your gifts and passions.
+                    </p>
+
+                    <a href="#" class="btn btn-primary rounded-pill">
+                        Explore JustServe Map
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Card 2 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="action-card">
+
+                    <div class="action-icon gold">
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+
+                    <h5>Record Your Service</h5>
+
+                    <p>
+                        Track your hours, celebrate your
+                        impact and inspire others.
+                    </p>
+
+                    <a href="#" class="btn btn-outline-primary rounded-pill">
+                        Go to My Service
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Card 3 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="action-card quote-card">
+
+                    <i class="bi bi-heart-fill quote-icon"></i>
+
+                    <blockquote>
+
+                        "Let us not love in word,
+                        neither in tongue;
+                        but in deed and in truth."
+
+                    </blockquote>
+
+                    <span>
+                        1 John 3:18
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- Card 4 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="action-card">
+
+                    <div class="action-icon navy">
+
+                        <i class="bi bi-people-fill"></i>
+
+                    </div>
+
+                    <h5>Invite Others to Serve</h5>
+
+                    <p>
+
+                        Invite friends and family
+                        to join you in making
+                        a difference.
+
+                    </p>
+
+                    <a href="#" class="btn btn-primary rounded-pill">
+
+                        Invite Someone
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+ 
+
+
+
+<!-- =========================================
+     Loving Our Neighbor Footer
+========================================== -->
+
+<footer class="lonpftr-wrapper">
+
+    <div class="container-fluid">
+
+        <div class="lonpftr-container">
+
+            <!-- Left Section -->
+
+            <div class="lonpftr-left">
+
+                <!-- Temple Skyline -->
+
+                <div class="lonpftr-temple">
+
+                    <img src="images/footer/footer-temple-line.png"
+                        alt="Temple Skyline">
+
+                </div>
+
+            </div>
+
+            <!-- Center Section -->
+
+            <div class="lonpftr-center">
+
+                <h4 class="lonpftr-title">
+
+                    Love thy neighbor as thyself.
+
+                </h4>
+
+                <div class="row">
+
+                    <!-- Column 1 -->
+
+                    <div class="col-lg-3 col-6">
+
+                        <ul class="lonpftr-verse-list">
+
+                            <li>Galatians 6:10</li>
+
+                            <li>3 Nephi 12:44</li>
+
+                            <li>Ephesians 4:32</li>
+
+                            <li>D&C 59:6</li>
+
+                        </ul>
+
+                    </div>
+
+                    <!-- Column 2 -->
+
+                    <div class="col-lg-3 col-6">
+
+                        <ul class="lonpftr-verse-list">
+
+                            <li>2 Nephi 31:20</li>
+
+                            <li>John 15:13</li>
+
+                            <li>1 John 4:21</li>
+
+                            <li>Matthew 25:34–40</li>
+
+                        </ul>
+
+                    </div>
+
+                    <!-- Column 3 -->
+
+                    <div class="col-lg-3 col-6">
+
+                        <ul class="lonpftr-verse-list">
+
+                            <li>Matthew 22:39</li>
+
+                            <li>Moroni 7:45</li>
+
+                            <li>Alma 7:11–13</li>
+
+                            <li>Galatians 5:14</li>
+
+                        </ul>
+
+                    </div>
+
+                    <!-- Column 4 -->
+
+                    <div class="col-lg-3 col-6">
+
+                        <ul class="lonpftr-verse-list">
+
+                            <li>Ephesians 2:8</li>
+
+                            <li>Ephesians 5:2</li>
+
+                            <li>Mosiah 2:17</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right Section -->
+
+            <div class="lonpftr-right">
+
+                <div class="lonpftr-menu">
+
+                    <a href="#" class="lonpftr-item">
+
+                        <i class="bi bi-person-praying"></i>
+
+                        <span>Pray</span>
+
+                    </a>
+
+                    <a href="#" class="lonpftr-item">
+
+                        <i class="bi bi-heart"></i>
+
+                        <span>Serve</span>
+
+                    </a>
+
+                    <a href="#" class="lonpftr-item">
+
+                        <i class="bi bi-book"></i>
+
+                        <span>Learn</span>
+
+                    </a>
+
+                    <a href="#" class="lonpftr-item">
+
+                        <i class="bi bi-people"></i>
+
+                        <span>Unite</span>
+
+                    </a>
+
+                    <a href="#" class="lonpftr-item">
+
+                        <i class="bi bi-building"></i>
+
+                        <span>Build Zion</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
